@@ -2,7 +2,7 @@
 
 ## Moved from Bitbucket
 
-I've finally decided to move most of my coding stuff from Bitbucket to github. As a consequence, here are my dotfiles, that where originally hostet at https://bitbucket.org/pygospa/dotfiles
+I've finally decided to move most of my coding stuff to github. As a consequence, here are my dotfiles, that where originally hostet at [Bitbucket](https://bitbucket.org/pygospa/dotfiles)
 
 ## How to install
 
