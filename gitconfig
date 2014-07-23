@@ -1,0 +1,50 @@
+; Author:	Kannan Thambiah <pygospa@gmail.com>; gpg: 0x402CB18E
+; Jabber:	pygospa@jabber.ccc.de
+
+[alias]
+	; FUNCTIONS
+	; i		incomming
+	; l		log (all commits)
+	; l <name>	log (all commits) from <name>
+	; m		my commits 
+	; me		my username
+	; o		outgoing
+	; t		todays log (commits since midnight)
+	; t <name>	todays log (commits since midnight) from <name>
+	; tm		todays log (commits since midnight) from me
+	; y		yesterdays log
+	; y <name>	yesterdays log from <name>
+	; ym		yesterdays log from me
+	a = add
+	b = branch
+	c = commit 
+	co = checkout
+	d = diff
+	i = !git fetch && git lg ..origin/master
+	l = !sh -c 'git lg --author=$1' -
+	m = !git l \"\"`git me`\"\"
+	o = !git fetch && git lg origin/master..
+	s = status -s
+	t = !sh -c 'git to --author=$1' -
+	tm = !git t \"\"`git me`\"\"
+	y = !sh -c 'git ye --author=$1' -
+	ym = !git y \"\"`git me`\"\"
+	; HELPER FUNCTIONS
+	lg = log --graph --pretty=format:'%Cblue<%an>%Creset : %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	me = config user.name
+	to = !git lg --since=midnight 
+	ye = !git lg --since=day.before.yesterday.midnight --until=midnight 
+[color]
+	ui = auto
+[diff]
+	tool = vimdiff
+[difftool "diff"]
+	cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = threesome
+[mergetool "threesome"]
+	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+	trustExitCode = true
+[user]
+	email = pygospa@gmail.com
+	name = Kannan Thambiah
