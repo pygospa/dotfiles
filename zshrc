@@ -3389,7 +3389,7 @@ export NODE_PATH="/usr/local/lib/node"
 # Other Variables I like to use
 export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
 
-
+alias g='git'
 alias vi='/usr/local/bin/vim'
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
