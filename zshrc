@@ -1,9 +1,7 @@
 # Author:       Kannan Thambiah <pygospa@gmail.com>
 # Contact:      pygospa@jabber.ccc.de
-# Last change:  Nov 15th, 2013
-# $Id: zshrc,v e8b54c7ec873 2014/02/04 22:03:50 pygospa $
 #
-# Comment:      Up to 95% this file consists of the very excellent work of
+#               Up to 95% this file consists of the very excellent work of
 #               Michael Prokop, taken from the grml live CD.
 #               Stuff I added is at the bottom of this file, and there's
 #               nothing much to it ;)

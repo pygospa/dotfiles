@@ -1,8 +1,5 @@
 # Author:	Kannan Thambiah <pygospa@gmail.com>
 # Contact:	pygospa@jabber.ccc.de
-# Last change:	July 17th, 2013
-# $Id: hgrc,v 54f9ddb391dc 2013/07/17 08:42:35 pygospa $
-
 
 # <--- user interface settings --->
 [ui]

@@ -1,7 +1,5 @@
 " Author:		Kannan Thambiah <pygospa@gmail.com>
 " Contact:		pygospa@jabber.ccc.de
-" Latest update:	June 11th, 2013	
-" $Id: vimrc,v 8f7729d90e0a 2014/05/16 08:57:48 pygospa $
 
 call pathogen#infect()
 filetype plugin indent on	"We want vim to automatically load plugins

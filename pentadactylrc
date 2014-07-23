@@ -1,7 +1,5 @@
 " Author:               Kannan Thambiah <pygospa@gmail.com>
 " Contact:              pygospa@jabber.ccc.de
-" Latest update:        Feb 4th, 2014 
-" $Id: pentadactylrc,v 9479a46d452b 2014/02/13 19:32:21 pygospa $
 
 " GUI should display:
 "	b = bottom scrollbar
