@@ -1,6 +1,7 @@
 " Author:		Kannan Thambiah <pygospa@gmail.com>
 " Contact:		pygospa@jabber.ccc.de
 
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 filetype plugin indent on	"We want vim to automatically load plugins
 
@@ -19,7 +20,6 @@ let g:rehash256 = 1
 "colorscheme jellybeans		" Use a nice color scheme 
 				" Scheme needs to be present in
 				" ~/.vim/colors/jellybeans.rc
-
 
 "My mappings
 let mapleader=","		" We want to use the comma as map leader

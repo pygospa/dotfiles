@@ -25,6 +25,7 @@
 	m = !git l \"\"`git me`\"\"
 	o = !git fetch && git lg origin/master..
 	s = status -s
+	sub = submodule 
 	t = !sh -c 'git to --author=$1' -
 	tm = !git t \"\"`git me`\"\"
 	y = !sh -c 'git ye --author=$1' -
