@@ -29,7 +29,7 @@ Currently this repository does not contain mutch, but I intend to get all my dot
 
 Before running the install skript, check whats included in the root directory of the repository. Any files that you already have will be overwritten, so check if you didn't change any of your confingsto make sure not to loose anything.
 
-Only the `README.md`, `.gitignore` and the `ousted` subdirectory are ignored. If you just want single files, link them by hand. If you want to use most of my files, just open your favorit editor and edit the `install.sh` script to exclude anything you don't want. 
+Only the `README.md`, `install.sh` and the `ousted` subdirectory are ignored. If you just want single files, link them by hand. If you want to use most of my files, just open your favorit editor and edit the `install.sh` script to exclude anything you don't want. 
 
 To do so, locate the line 
 
