@@ -1,0 +1,57 @@
+" Author:               Kannan Thambiah <pygospa@gmail.com>
+" Contact:              pygospa@jabber.ccc.de
+" Latest update:        Feb 4th, 2014 
+" $Id: pentadactylrc,v 9479a46d452b 2014/02/13 19:32:21 pygospa $
+
+" GUI should display:
+"	b = bottom scrollbar
+"	C = command line outside of status bar
+"	r = right scrollbar
+"       s = status bar
+"       n = tab numbers
+"       B = bookmark bar
+set guioptions=bCrsn
+
+" GUI should have title
+set titlestring="pygospas Pentadactyl"
+
+" When using completeion, in this order consider:
+"	s = search engines and keyword URLs
+"	l = firefox location bar entries (i.e. bookmarks + history)
+"       S = search engine suggestions
+"       f = local files
+set complete=slSf
+
+" highlight all search matches, not just the first
+set hlfind
+
+" search while typing
+set incfind
+
+" Path to start in (this is usefull when downloading stuff)
+cd ~/Downloads
+
+
+" Bookmarks
+
+" I want these keys to be passed to the site, when I'm on it:
+set passkeys+='feedly.com':?JKarjknpvAmxsbcV,gh,ga,gg,gl,<Esc>
+set passkeys+='twitter.com':nfrmbu<Return>l/?jk<Space>.,gh,gc,ga,gr,gd,gp,gf,gl,gm,gs,gu
+set passkeys+='github.com':s?jkxlwi<M-Return><M-P><M-L>clu/r<Esc>pMhHLKJ,gn,gc,gi,gp
+set passkeys+='bitbucket.org':?/<Esc>u,gd,ga,gi,cr,ir
+set passkeys+='class.coursera.org':hp<Up><Down><Left><Right>fc<Esc>
+set passkeys+='memrise.com':hpmwrlsim<Return>12345678
+set passkeys+='wordpress.com':cazbu1234569vxinjuqwplrsmth
+set passkeys+='facebook.com':cjklmqp/0123456789
+set passkeys+='delicious.com':abes/#@12345?
+set passkeys+='youtube.com':f<Esc><Space><Up><Down><Left><Right>0123456789<Return>kjlm
+set passkeys+='plus.google.com':?jknprlv/?<Left><Right>
+
+" Mappings
+nmap <M-d> <Nop>
+nmap <M-d> :delicious<CR>
+
+" Commands
+command! delicious :open javascript:(function(e,t){var%20n=e.document;setTimeout(function(){function%20a(e){if(e.data==="destroy_bookmarklet"){var%20r=n.getElementById(t);if(r){n.body.removeChild(r);r=null}}}var%20t="DELI_bookmarklet_iframe",r=n.getElementById(t);if(r){return}var%20i="https://delicious.com/save?source=bookmarklet&",s=n.createElement("iframe");s.id=t;s.src=i+"url="+encodeURIComponent(e.location.href)+"&title="+encodeURIComponent(n.title)+"&note="+encodeURIComponent(""+(e.getSelection?e.getSelection():n.getSelection?n.getSelection():n.selection.createRange().text))+"&v=1.1";s.style.position="fixed";s.style.top="0";s.style.left="0";s.style.height="100%25";s.style.width="100%25";s.style.zIndex="16777270";s.style.border="none";s.style.visibility="hidden";s.onload=function(){this.style.visibility="visible"};n.body.appendChild(s);var%20o=e.addEventListener?"addEventListener":"attachEvent";var%20u=o=="attachEvent"?"onmessage":"message";e[o](u,a,false)},1)})(window)
+command! valid :open javascript:void(location='http://validator.w3.org/check?uri='+escape(location))
+command! firebug :emenu Ansicht.Firebug
