@@ -63,15 +63,96 @@ If you decided to use my vim setup, I use `pathogen` to organize my plugins. Thi
 includes being able to install new plugins as git submodules. You don't have to
 keep up with that, you can simply clone your desired additional plugins as
 normal repositories into ~/.vim/bundle/ but then you'll loose the ability to
-keep your 
+keep your directory under version control. 
 
+After doing the three steps described at "How to install everything" you'll
+need to issue the following commands:
 
-Currently this repository does not contain mutch, but I intend to get all my
+	git submodule init
+	git submodule update
+
+This will initialize the submodules which up to then where just links to the
+repositories. git will get all the plugin from all the repositories and there
+you go: You have the current version of all plugins.
+
+If you want to change a plugins version, just go to the plugin and checkout the
+desired version, as you would normally do in git:
+
+	cd dot/vim/bundle/plugin-name
+	git checkout v2.0
+
+If you want to update a single submodule repository (i.e. a certain plugin),
+do:
+	cd dot/vim/bundle/plugin-name
+	git pull origin master
+
+If you want to add a plugin, just clone it as submodule:
+
+	cd dot
+	git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
+	git commit -am "Add fugitive plugin to vim"
+
+If you want to remove a plugin, you'll issue the following commands:
+
+	cd dot
+	git submodule deinit fugitive
+	git rm fugitive
+
+And last, but not least - to update all plugins in a single command, just issue
+the following:
+
+	cd dot
+	git submodule foreach git pull origin master
+
+### A small note on vundle and NeoBundle, etc.
+
+In the past, more and more people switched from `pathogen` to `vundle` or
+`NeoBundle`. In the past, the main reason for doing so was, that git did not
+offer a way to remove submodules. Since version 1.8.3 (April 2013) git does.
+vundle introduces an elegant way to easily update all plugins, but there's no
+way to update individual plugins, and whenever you add or remove a plugin, all
+plugins need to be updated. Also vundle does not know how to handle Mercurial
+or SVN repositories of plugins, and you cannot just add content (e.g. from a
+zip file) to the `bundle`-Directory, which makes it non-usable to me, as I
+still often encounter plugins that I like to try out that are not yet available
+in git. NeoBundle offers *experimental* support for other VCS, but also cannot
+handle manual files. Other than that, the main difference to vundle is it's
+integration in `unite` plugin by the same developer.
+
+So to me, there's no real value in switching from pathogen. If you, like so
+many more, like to switch anyhow, there is an easy way of doing so. First
+instlal vundle or NeoBundle (which is fully vundle compatible). vundle and
+NeoBundle expect a list of the plugins you want to install in the following
+way:
+
+	Plugin 'gituser/repository'
+
+As I use submodules, the full URLs are in the .gitmodule file, so with a bit of
+help from grep and sed we can produce a list and append it to the vimrc file:
+
+	cd dot
+	echo "filetype off\nset rtp+=~/.vim/bundle/Vundle.vim\ncall vundle#begin()" >> vimrc
+	grep url .gitmodules | sed -e s/.*:// -e s/^/Plugin\ \'/ -e s/.git$/\'/ >> vimrc
+	echo "call vundle#end()\nfiletype plugin indent on"
+	git submodule deinit .
+	git rm vim/bundle/*
+	git commit -am "Remove submoduesl for vundle"
+
+This will set up all the required changes in the vimrc (lines 2-4) and then
+remove all submodules (line 5-6). After that (line 7) we commit the changes.
+
+Now install the plugins according to the instructions at vundle/NeoBundle and
+you're good to go.
+
+## Deprecated files
+
+Currently this repository does not contain much, but I intend to get all my
 dotfiles into it. It'll also contain a folder called `ousted` containing all my
 dotfiles for programs I don't use anymore. You can of course just manually link
 them to your home directory if you like (but they are not maintained anymore).
 
 	ln -s ~/dot/ousted/screen ~/.screenrc
+
 
 ## Contact
 
