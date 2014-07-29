@@ -2,20 +2,20 @@
 
 ## Moved from Bitbucket
 
-I've finally decided to move most of my coding stuff to github. As a
-consequence, here are my dotfiles, that where originally hostet at
+I've finally decided to move most of my coding stuff to GitHub. As a
+consequence, here are my dotfiles, that where originally hosted at
 [Bitbucket](https://bitbucket.org/pygospa/dotfiles) 
 
 ## BE CAREFUL NOT TO OVERWRITE YOUR FILES!
 
-Before running the install skript, check whats included in the root directory
+Before running the install script, check whats included in the root directory
 of the repository. Any files that you already have will be overwritten, so
-check if you didn't change any of your confingsto make sure not to loose
+check if you didn't change any of your configs to make sure not to loose
 anything.
 
 Only the `README.md`, `install.sh` and the `ousted` subdirectory are ignored.
 If you just want single files, link them by hand. If you want to use most of my
-files, just open your favorit editor and edit the `install.sh` script to
+files, just open your favorite editor and edit the `install.sh` script to
 exclude anything you don't want. 
 
 To do so, locate the line 
@@ -34,7 +34,7 @@ your files in a repository of your own, is to fork my project. This will not
 only allow you to track your changes but also - if you inserted some
 improvements and like me to profit from them - to send me a pull request.
 
-If you do so, in the next step (How to install everyting) just enter your own
+If you do so, in the next step (How to install everything) just enter your own
 repository link instead of mine, when cloning the repository to your local
 machine.
 
@@ -122,7 +122,7 @@ integration in `unite` plugin by the same developer.
 
 So to me, there's no real value in switching from pathogen. If you, like so
 many more, like to switch anyhow, there is an easy way of doing so. First
-instlal vundle or NeoBundle (which is fully vundle compatible). vundle and
+install vundle or NeoBundle (which is fully vundle compatible). vundle and
 NeoBundle expect a list of the plugins you want to install in the following
 way:
 
@@ -160,7 +160,7 @@ them to your home directory if you like (but they are not maintained anymore).
 If you have any questions or suggestions, just contact me. You'll find my mail
 address at my github profile, which is probably the best way to reach me. I use
 GPG, and prefer encrypted mails; you can find my public key on keyservers,
-serching for 1024D/402CB18E.
+searching for 1024D/402CB18E.
 
 ## License
 
