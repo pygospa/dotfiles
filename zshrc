@@ -1,5 +1,4 @@
 # Author:       Kannan Thambiah <pygospa@gmail.com>
-# Contact:      pygospa@jabber.ccc.de
 #
 #               Up to 95% this file consists of the very excellent work of
 #               Michael Prokop, taken from the grml live CD.

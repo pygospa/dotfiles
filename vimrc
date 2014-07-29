@@ -1,5 +1,5 @@
-" Author:		Kannan Thambiah <pygospa@gmail.com>
-" Contact:		pygospa@jabber.ccc.de
+" Author:	Kannan Thambiah <pygospa@gmail.com>
+" Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()

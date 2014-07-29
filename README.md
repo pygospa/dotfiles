@@ -50,10 +50,11 @@ The Install script will link all files you find in the repository to your home
 directory, prefixing it with a '.', so for instance after executing the script
 you'll find this in your home directory when executing `ls -ahl`
 
-	.vimrc@ -> ~/dot/vimrc
+	.gitconfig@ -> /Users/pygospa/dot/gitconfig
 	.hgrc@ -> ~/dot/hgrc
 	.pentadactylrc@ -> ~/dot/pentadactylrc
 	.tmux.conf@ -> ~/dot/tmux.conf
+	.vim@ -> ~/dot/vim
 	.vimrc@ -> ~/dot/vimrc
 	.zshrc@ -> ~/dot/zshrc
 
@@ -115,7 +116,7 @@ plugins need to be updated. Also vundle does not know how to handle Mercurial
 or SVN repositories of plugins, and you cannot just add content (e.g. from a
 zip file) to the `bundle`-Directory, which makes it non-usable to me, as I
 still often encounter plugins that I like to try out that are not yet available
-in git. NeoBundle offers *experimental* support for other VCS, but also cannot
+in git. NeoBundle offers **experimental** support for other VCS, but also cannot
 handle manual files. Other than that, the main difference to vundle is it's
 integration in `unite` plugin by the same developer.
 
@@ -133,7 +134,7 @@ help from grep and sed we can produce a list and append it to the vimrc file:
 	cd dot
 	echo "filetype off\nset rtp+=~/.vim/bundle/Vundle.vim\ncall vundle#begin()" >> vimrc
 	grep url .gitmodules | sed -e s/.*:// -e s/^/Plugin\ \'/ -e s/.git$/\'/ >> vimrc
-	echo "call vundle#end()\nfiletype plugin indent on"
+	echo "call vundle#end()\nfiletype plugin indent on" >> vimrc
 	git submodule deinit .
 	git rm vim/bundle/*
 	git commit -am "Remove submoduesl for vundle"
@@ -161,3 +162,8 @@ address at my github profile, which is probably the best way to reach me. I use
 GPG, and prefer encrypted mails; you can find my public key on keyservers,
 serching for 1024D/402CB18E.
 
+## License
+
+If not stated differently, all my works in this repository fall under Creative
+Commons Attribution-ShareAlike 4.0 International License. See [CC BY-SA
+4.0](http://creativecommons.org/licenses/by-sa/4.0/) for further information.
