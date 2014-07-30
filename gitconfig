@@ -18,6 +18,9 @@
 	a = add
 	b = branch
 	c = commit 
+	ca = commit -a
+	cam = commit -am
+	cm = commit -m
 	co = checkout
 	d = diff
 	i = !git fetch && git lg ..origin/master
@@ -26,6 +29,9 @@
 	o = !git fetch && git lg origin/master..
 	s = status -s
 	sub = submodule 
+	suba = submodule add
+	subd = submoudle deinit
+	subi = submodule init
 	t = !sh -c 'git to --author=$1' -
 	tm = !git t \"\"`git me`\"\"
 	y = !sh -c 'git ye --author=$1' -
