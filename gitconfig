@@ -30,7 +30,7 @@
 	s = status -s
 	sub = submodule 
 	suba = submodule add
-	subd = submoudle deinit
+	subd = submodule deinit
 	subi = submodule init
 	t = !sh -c 'git to --author=$1' -
 	tm = !git t \"\"`git me`\"\"
