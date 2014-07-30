@@ -126,7 +126,7 @@ if has("autocmd")
 	autocmd FileType c setlocal ts=2 sts=2 sw=2 noexpandtab		" According to SC workgroup @ CAU
 
 
-"	autocmd BufEnter * Rvm  "Automatically switch to the right Ruby version using rvm and .rvmrc per buffer switch
+	autocmd BufEnter * Rvm  "Automatically switch to the right Ruby version using rvm and .rvmrc per buffer switch
 endif
 
 " <---- Recognize .markdown files even when they use the .md extension ---->

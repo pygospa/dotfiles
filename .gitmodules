@@ -46,3 +46,6 @@
 [submodule "vim/bundle/mru"]
 	path = vim/bundle/mru
 	url = https://github.com/yegappan/mru
+[submodule "vim/bundle/rvm"]
+	path = vim/bundle/rvm
+	url = https://github.com/tpope/vim-rvm
