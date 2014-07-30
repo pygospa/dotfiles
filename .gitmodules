@@ -22,9 +22,6 @@
 [submodule "vim/bundle/vim-instant-markdown"]
 	path = vim/bundle/vim-instant-markdown
 	url = git@github.com:suan/vim-instant-markdown.git
-[submodule "vim/bundle/vim-rvm"]
-	path = vim/bundle/vim-rvm
-	url = git@github.com:tpope/vim-rvm.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
