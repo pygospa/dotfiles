@@ -1,7 +1,7 @@
 " Author:	Kannan Thambiah <pygospa@gmail.com>
 " Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
 
-runtime bundle/vim-pathogen/autoload/pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 filetype plugin indent on	"We want vim to automatically load plugins
 
