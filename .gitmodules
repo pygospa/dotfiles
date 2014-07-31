@@ -13,21 +13,12 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git@github.com:majutsushi/tagbar.git
-[submodule "vim/bundle/emmet-vim"]
-	path = vim/bundle/emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
-[submodule "vim/bundle/mru"]
-	path = vim/bundle/mru
-	url = https://github.com/yegappan/mru
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
-	url = https://github.com/tpope/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular
+	url = git@github.com:godlygeek/tabular.git
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = git@github.com:tpope/vim-pathogen.git
@@ -45,10 +36,22 @@
 	url = git@github.com:Valloric/YouCompleteMe.git
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
-	url = https://github.com/tomtom/tlib_vim.git
+	url = git@github.com:tomtom/tlib_vim.git
 [submodule "vim/bundle/addon-mw-utils"]
 	path = vim/bundle/addon-mw-utils
 	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "vim/bundle/snippets"]
+	path = vim/bundle/snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "vim/bundle/emmet"]
+	path = vim/bundle/emmet
+	url = git@github.com:mattn/emmet-vim.git
+[submodule "vim/bundle/mru"]
+	path = vim/bundle/mru
+	url = git@github.com:yegappan/mru.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
