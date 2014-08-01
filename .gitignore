@@ -1,2 +1,4 @@
 *.gpg
 *.gpg~
+*.gpg.lock
+random_seed
