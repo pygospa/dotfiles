@@ -2,3 +2,5 @@
 *.gpg~
 *.gpg.lock
 random_seed
+gnupg/profile.jpg
+
