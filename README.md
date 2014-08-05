@@ -116,9 +116,9 @@ plugins need to be updated. Also vundle does not know how to handle Mercurial
 or SVN repositories of plugins, and you cannot just add content (e.g. from a
 zip file) to the `bundle`-Directory, which makes it non-usable to me, as I
 still often encounter plugins that I like to try out that are not yet available
-in git. NeoBundle offers **experimental** support for other VCS, but also cannot
-handle manual files. Other than that, the main difference to vundle is it's
-integration in `unite` plugin by the same developer.
+in git. NeoBundle offers **experimental** support for other VCS, but also
+cannot handle manual files. Other than that, the main difference to vundle is
+it's integration in `unite` plugin by the same developer.
 
 So to me, there's no real value in switching from pathogen. If you, like so
 many more, like to switch anyhow, there is an easy way of doing so. First
@@ -164,6 +164,8 @@ searching for 1024D/402CB18E.
 
 ## License
 
-If not stated differently, all my works in this repository fall under Creative
-Commons Attribution-ShareAlike 4.0 International License. See [CC BY-SA
-4.0](http://creativecommons.org/licenses/by-sa/4.0/) for further information.
+If not stated differently and if applicable by law and the licenses of the
+software I've configured with these dotfiles, all my works in this repository
+fall under Creative Commons Attribution-ShareAlike 4.0 International License.
+See [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) for further
+information.
