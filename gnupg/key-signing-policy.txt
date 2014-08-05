@@ -1,0 +1,186 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+
+
+# PGP Signature Policy
+
+These are the policies according to which I will sign your key with my own key:
+
+    pub   4096R/6ADBD5B7 2014-08-01 
+          Key fingerprint = F057 A0D6 CAC6 2E12 75EF  9E24 7C43 853E 6ADB D5B7
+
+
+The purpose of a signature policy is to write down your own interpretation of
+RFC2440, Section 5.2.1 "Signature Types", which defines four different
+certification levels, 0x10, 0x11, 0x12 and 0x13 (commonly numbered in PGP user
+interfaces from 0 to 3); this section states the general idea of how to use the
+signature types (also referred to as "Certification Levels"), but it leaves room
+for interpretation and to some it even contradicts the general idea of when
+and how to sign a key.
+
+It's a good idea to also base your trust on signature policies. Someone who
+transparently declares when and how he signs a key, is probably trustworthier
+(especially if his declarations are reasonable) than a signature by someone
+where you don't know how it was signed.
+
+
+
+# Certification levels
+
+My interpretation of the certification levels and how I use them, are as
+follows:
+
+0x10
+	This level states, that the signatory doesn't want to give any statement
+	on how thorough he verified the key and how sure he is about that
+	person being who he is.
+
+	I see no reason in keeping it a secret about how sure I am, that a
+	person actually is who he states he is and the only time I cannot tell
+	is when I didn't actually check. That totally counters the general idea
+	of signing keys, so I'll *never* use this level
+
+0x11
+	This level states that you don't know the person and you didn't verify
+	the identity, but you are still pretty certain that it is the person
+	you suspect. 
+
+	I understand "persona certification" as a third person, whom I deeply
+	trust. This third person is absolutely certain, that the person in
+	question is who he pretends to be. So only if someone I deeply trust
+	assures me, that a person is who he is, and if additionally it is
+	impossible for me to meet this person, will I use certification level
+	1. I think this case will be highly improbable for me, so I'll hardly
+	ever use this level.
+
+0x12
+	In the RFC2449 this level is called "Casual certification" while the
+	next is "Substantial certification". 
+	
+	I don't know, how to "casually" check an ID of a person. If I issue
+	this signature (this will be the majority of signatures), I will have
+	looked at an officially issued ID, I will have checked that the ID
+	looks genuine as thoroughly as possible, and I will also check the key
+	fingerprint and email address before signing.
+
+0x13
+	To be able to create a "Substantial Certification", I would really have
+	to know that the person is, who he says he is. This will be impossible
+	with most persons, as everybody can just pretend to be someone they are
+	not. I'm also no expert in detecting forged documents, etc.
+
+	So this level is reserved for people that I believe to *really* know.
+	This is true for people, with whom I grew up and knew my "whole life",
+	so only long-time best friends and family will get a level three
+	signature. 
+
+There will be no exceptions to this policy so if you want a signature, and you
+don't fall into the levels 0x11 or 0x13 you'll have to visit me with a valid ID
+and present me your fingerprint and UID personally (see Protocol).
+
+If applicable and reasonable, I will add a notation to the signature, stating
+under which circumstances I verified your identity (e.g. if it happened on
+fairs, conferences or key-signing parties).
+
+
+
+# Protocol
+
+If you want me to sign your key, we will have to meet in person, and you will
+need to provide following information, that you'll have to prepare before the
+meeting:
+
+* A paper (at least DIN A5) with these information on it:
+  - your PGP key's entire fingerprint (not just the ID!)
+  - the associated UIDs you want me to sign (they have to match with your name)
+  - the email address you want your signatures send to 
+  - the location where I will be able to get your key
+  You'll prepare this paper for me, so please make it clean and readable and
+  leave room so I can take notes (see below).
+* Identity Documents. If you have more than one that's preferable. At least one
+  of them must be government issued photo ID that's still valid! Also, please
+  tell me beforehand, what kind of documents you'll bring, so I can prepare for
+  it, i.e. I cannot check a non-German document I've never seen before.
+* Information about your demands for cross-signing.
+
+After contacting me and preparing the documents, we'll meet in person under
+"reasonable circumstances". To me, this means that you'll have time for at
+least half an hour - I will not sign anything in a hurry. Also we meet at a
+location that is suitable, e.g. not in a discotheque or on a subway or
+anything, but a calm place with space to sit down and take notes. A public
+place with a bench, a café etc. will suffice.
+
+I will then check your photo ID against your appearance and against your UID. I
+won't sign a key where there is no UID that matches your documents. I will make
+notes on the paper you prepared, about where and when we met, and what
+documents you provided to me. I will also ask you for a signature on the paper,
+and check it against the one on your documents.
+
+You'll be allowed to do the same - as mentioned, give me all the information
+you need from me for checking my identity and I'll be prepared as well.
+
+After we are both satisfied that we are, who we claim we are, I'll take the
+paper home and get your key from the specified location. I will check the
+fingerprint you provided me against the key, I'll check the UIDs you provided
+me against the key, and if you have a photograph, I'll check that as well. If
+everything is in order, I will sign your keys, and provide the signature to you
+as specified by you (i.e. via mail or key server upload).
+
+
+
+# Data privacy
+
+The document you provided me will be kept save all times, i.e. I will not show
+it to any third party, nor will I digitalize it, upload it anywhere or copy it.
+As mentioned, it will contain the information you provided (UID, email
+addresses, fingerprints, key locations), notes I make (i.e. what documents you
+provided, for clarifying things that may come up during our meeting), any
+further notes I consider important and your signature. You are free to check my
+notes, before allowing me to take that paper home.  I have access to a document
+shredder which according to DIN 32757 has security level 3, which is
+recommended for confidential documents, and once I have signed your key and
+don't need the paper anymore, I'll destroy it with that shredder.
+
+
+
+# Location
+
+I live in Bremen, Germany and sometimes I am also in Hamburg or
+Schleswig-Holstein. I sometimes also visit different events around Germany
+(BarCamps, EasterHegg, Linux-Days, Hackerspace events, etc.), so you could
+always ask me if I'm on a certain event.  I'm otherwise bound to public
+transportation, so please be aware of that. I'm also a huge fan of Cafés, so
+Cafés as a meeting location are preferred ;) I also take part in Key Signing
+Parties (KSP). Please prepare for a KSP according to the hosts rules, not to
+mine! If you want me to join a KSP,  please feel free to send me an invitation.  
+
+
+
+# Verification
+
+You can verify the integrity and authentic of this document by calling
+
+    gpg --verify key-signing-policy.txt
+
+Sincerely,
+
+    Kannan Thambiah
+
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCgAGBQJT4M4kAAoJEHxDhT5q29W3C58P/2PhbFX3uJeKLtBIyuplzWe5
+ZOi8Ni75eI1bb0X0kojbRH44OXQI+OeXTULd0sfBULOi3Iuytz7GXq9LSXXmDWRo
+s2VkOxnL0QL+MrosVFOPYtcIIwgELH8PRc9O4dQ9o5ZJchRP7QSX+fTt9qZ3JQTw
+KQUOkIQpua7xycQ2dvc2rZSqcNYxjo70mh6p0TKQFVpClYxdND6My4NsI/HTkxx8
+YiiBu858Zw0CXml8Lnsk8LrrO4+V2poMo3cr55KVMj8w3NoqEWhcUeCU1qJGwaNO
+y+JBE1Jzuipl9CTXnXNPmhSTaWeBEzTBDRTL+xHts0QTpxJm31eGxEtEF3Hqkm2z
++0Vuj0Opw/1YVBgh1PraHXxwP8UggN890noCVoYqPSiZbHIsKOohaEsKPDeqi9Zd
+1GMnYHf38dSiy5EcDGsiJAypdy612Mts92ZU0tIqs6BG1g/Tkygh3RhsW9Lb2l74
+8Fouzkkk4B91FOisqBmKtdhBPtunBL7XbShc3qAR0Fz4VW4KOiCs+lfBgRGBMU1Y
+lpcz1na9heMFLlGllLi0BiSSYFp+BKcnflfTfJGVHUIRiTtSb8GFkfrJWnYagvKf
+Od8h7XqFd7IMzcflIjUQlLKGszLZw+HKaofNoJHzLPl+buk3pmEnBWOkYmRD9m/Q
+GiqJozy4T2fARLjT+OMa
+=bEOR
+-----END PGP SIGNATURE-----

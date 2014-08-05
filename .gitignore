@@ -1,0 +1,8 @@
+# GPG ignores
+*.gpg
+*.gpg~
+*.gpg.lock
+.*.lalaith.local.*
+random_seed
+gnupg/profile.jpg
+
