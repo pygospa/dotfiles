@@ -77,8 +77,8 @@ don't fall into the levels 0x11 or 0x13 you'll have to visit me with a valid ID
 and present me your fingerprint and UID personally (see Protocol).
 
 If applicable and reasonable, I will add a notation to the signature, stating
-under which circumstances I verified your identity (e.g. if it happened on fairs,
-conferences or key-signing parties).
+under which circumstances I verified your identity (e.g. if it happened on
+fairs, conferences or key-signing parties).
 
 
 
@@ -89,30 +89,30 @@ need to provide following information, that you'll have to prepare before the
 meeting:
 
 * A paper (at least DIN A5) with these information on it:
-  - your PGP key's fingerprint
-  - the associated UIDs you want me to sign 
+  - your PGP key's entire fingerprint (not just the ID!)
+  - the associated UIDs you want me to sign (they have to match with your name)
   - the email address you want your signatures send to 
   - the location where I will be able to get your key
-  You'll prepare this paper for me, so please make it clean and readable and 
+  You'll prepare this paper for me, so please make it clean and readable and
   leave room so I can take notes (see below).
 * Identity Documents. If you have more than one that's preferable. At least one
-  of them must be government issued photo ID that's still valid! Also, please 
+  of them must be government issued photo ID that's still valid! Also, please
   tell me beforehand, what kind of documents you'll bring, so I can prepare for
   it, i.e. I cannot check a non-German document I've never seen before.
 * Information about your demands for cross-signing.
 
 After contacting me and preparing the documents, we'll meet in person under
-"reasonable circumstances". To me, this means that you'll have time for at 
-least half an hour - I will not sign anything in a hurry. Also we meet at a 
-location that is suitable, e.g. not in a discotheque or on a subway or 
+"reasonable circumstances". To me, this means that you'll have time for at
+least half an hour - I will not sign anything in a hurry. Also we meet at a
+location that is suitable, e.g. not in a discotheque or on a subway or
 anything, but a calm place with space to sit down and take notes. A public
 place with a bench, a café etc. will suffice.
 
-I will then check your photo ID against your apperance and against your UID. I
+I will then check your photo ID against your appearance and against your UID. I
 won't sign a key where there is no UID that matches your documents. I will make
-notes on the paper you prepared, about where and when we met, and what documents you
-provided to me. I will also ask you for a signature on the paper, and check it
-against the one on your documents.
+notes on the paper you prepared, about where and when we met, and what
+documents you provided to me. I will also ask you for a signature on the paper,
+and check it against the one on your documents.
 
 You'll be allowed to do the same - as mentioned, give me all the information
 you need from me for checking my identity and I'll be prepared as well.
@@ -121,20 +121,40 @@ After we are both satisfied that we are, who we claim we are, I'll take the
 paper home and get your key from the specified location. I will check the
 fingerprint you provided me against the key, I'll check the UIDs you provided
 me against the key, and if you have a photograph, I'll check that as well. If
-everything is okey, I will sign your keys, and provide the signature to you as
-specified.
+everything is in order, I will sign your keys, and provide the signature to you
+as specified by you (i.e. via mail or key server upload).
+
+
+
+# Data privacy
+
+The document you provided me will be kept save all times, i.e. I will not show
+it to any third party, nor will I digitalize it, upload it anywhere or copy it.
+As mentioned, it will contain the information you provided (UID, email
+addresses, fingerprints, key locations), notes I make (i.e. what documents you
+provided, for clarifying things that may come up during our meeting), any
+further notes I consider important and your signature. You are free to check my
+notes, before allowing me to take that paper home.  I have access to a document
+shredder which according to DIN 32757 has security level 3, which is
+recommended for confidential documents, and once I have signed your key and
+don't need the paper anymore, I'll destroy it with that shredder.
 
 
 
 # Location
 
-I live in Bremen and sometimes I am also in Hamburg or Schleswig-Holstein. I
-sometimes also visit different events around Germany (BarCamps, EasterHegg,
-Linux-Days, Hackerspace events, etc.), so you could always ask me if I'm on a
-certain event. I'm otherwise bound to public transportation, so please be aware
-of that. I'm also a huge fan of Cafés, so Cafés as a meeting location are
-prefered ;)
+I live in Bremen, Germany and sometimes I am also in Hamburg or
+Schleswig-Holstein. I sometimes also visit different events around Germany
+(BarCamps, EasterHegg, Linux-Days, Hackerspace events, etc.), so you could
+always ask me if I'm on a certain event.  I'm otherwise bound to public
+transportation, so please be aware of that. I'm also a huge fan of Cafés, so
+Cafés as a meeting location are preferred ;) I also take part in Key Signing
+Parties (KSP). Please prepare for a KSP according to the hosts rules, not to
+mine! If you want me to join a KSP,  please feel free to send me an invitation.  
 
+
+
+# Verification
 
 You can verify the integrity and authentic of this document by calling
 
