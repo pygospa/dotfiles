@@ -1,4 +1,10 @@
-# GPG ignores
+# OS X 
+.DS_Store
+
+# vim 
+.*.swp
+
+# GPG 
 *.gpg
 *.gpg~
 *.gpg.lock
