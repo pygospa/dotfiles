@@ -1,11 +1,8 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 
 
 # PGP Signature Policy
 
-These are the policies according to which I will sign your key with my own key:
+This is the policy according to which I will sign your key with my own key:
 
     pub   4096R/6ADBD5B7 2014-08-01 
           Key fingerprint = F057 A0D6 CAC6 2E12 75EF  9E24 7C43 853E 6ADB D5B7
@@ -99,10 +96,11 @@ meeting:
   You'll prepare this paper for me, so please make it clean and readable and
   leave room so I can take notes (see below).
 * Identity Documents. If you have more than one that's preferable. At least one
-  of them must be government issued photo ID that's still valid! Also, please
+  of them must be a government issued photo ID that's still valid! Also, please
   tell me beforehand, what kind of documents you'll bring, so I can prepare for
   it, i.e. I cannot check a non-German document I've never seen before.
-* Information about your demands for cross-signing.
+* Information about your demands for cross-signing. Also, please give me this
+  information before our meeting so I can prepare.
 
 After contacting me and preparing the documents, we'll meet in person under
 "reasonable circumstances". To me, this means that you'll have time for at
@@ -137,7 +135,7 @@ As mentioned, it will contain the information you provided (UID, email
 addresses, fingerprints, key locations), notes I make (i.e. what documents you
 provided, for clarifying things that may come up during our meeting), any
 further notes I consider important and your signature. You are free to check my
-notes, before allowing me to take that paper home.  I have access to a document
+notes, before allowing me to take that paper home. I have access to a document
 shredder which according to DIN 32757 has security level 3, which is
 recommended for confidential documents, and once I have signed your key and
 don't need the paper anymore, I'll destroy it with that shredder.
@@ -168,19 +166,3 @@ Sincerely,
     Kannan Thambiah
 
 
------BEGIN PGP SIGNATURE-----
-
-iQIcBAEBCgAGBQJT4M4kAAoJEHxDhT5q29W3C58P/2PhbFX3uJeKLtBIyuplzWe5
-ZOi8Ni75eI1bb0X0kojbRH44OXQI+OeXTULd0sfBULOi3Iuytz7GXq9LSXXmDWRo
-s2VkOxnL0QL+MrosVFOPYtcIIwgELH8PRc9O4dQ9o5ZJchRP7QSX+fTt9qZ3JQTw
-KQUOkIQpua7xycQ2dvc2rZSqcNYxjo70mh6p0TKQFVpClYxdND6My4NsI/HTkxx8
-YiiBu858Zw0CXml8Lnsk8LrrO4+V2poMo3cr55KVMj8w3NoqEWhcUeCU1qJGwaNO
-y+JBE1Jzuipl9CTXnXNPmhSTaWeBEzTBDRTL+xHts0QTpxJm31eGxEtEF3Hqkm2z
-+0Vuj0Opw/1YVBgh1PraHXxwP8UggN890noCVoYqPSiZbHIsKOohaEsKPDeqi9Zd
-1GMnYHf38dSiy5EcDGsiJAypdy612Mts92ZU0tIqs6BG1g/Tkygh3RhsW9Lb2l74
-8Fouzkkk4B91FOisqBmKtdhBPtunBL7XbShc3qAR0Fz4VW4KOiCs+lfBgRGBMU1Y
-lpcz1na9heMFLlGllLi0BiSSYFp+BKcnflfTfJGVHUIRiTtSb8GFkfrJWnYagvKf
-Od8h7XqFd7IMzcflIjUQlLKGszLZw+HKaofNoJHzLPl+buk3pmEnBWOkYmRD9m/Q
-GiqJozy4T2fARLjT+OMa
-=bEOR
------END PGP SIGNATURE-----
