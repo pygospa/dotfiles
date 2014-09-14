@@ -55,3 +55,6 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "vim/bundle/vim-opencl"]
+	path = vim/bundle/vim-opencl
+	url = git://github.com/petRUShka/vim-opencl.git
