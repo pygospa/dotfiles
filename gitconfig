@@ -23,10 +23,12 @@
 	cm = commit -m
 	co = checkout
 	d = diff
-	i = !git fetch && git lg ..origin/master
+	in = !git fetch && git lg ..origin/master
+	i = !git in
 	l = !sh -c 'git lg --author=$1' -
 	m = !git l \"\"`git me`\"\"
-	o = !git fetch && git lg origin/master..
+	out = !git fetch && git lg origin/master..
+	o = !git out
 	s = status -s
 	sub = submodule 
 	suba = submodule add
