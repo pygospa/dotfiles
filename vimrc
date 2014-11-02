@@ -68,7 +68,7 @@ set showmatch			" Shows the matchint paranteese for an open one, if added/mousov
 set showmode			" Shows the current mode in the status line
 set spelllang=de,en		" Spelling languages
 set spellsuggest=double,10	" How controll spelling should look like and howmany suggestions to make
-set textwidth=79		" Have the text wrapped after 74 characters
+set textwidth=80		" Have the text wrapped after 80 characters
 set ttyfast			" As we are only using vim at home, tell it, that you have a fast terminal connection
 set wildmenu			" We want tab completion for the command line
 set wrap			" Wrap the text, when out of window
@@ -123,7 +123,7 @@ if has("autocmd")
 	autocmd FileType tex setlocal ts=4 sts=4 sw=4 noexpandtab
 
 	autocmd FileType cpp setlocal ts=2 sts=2 sw=2 noexpandtab	" According to MIP workgroup @ CAU
-	autocmd FileType c setlocal ts=2 sts=2 sw=2 noexpandtab		" According to SC workgroup @ CAU
+	autocmd FileType c setlocal ts=4 sts=4 sw=4 noexpandtab		" According to Linux Kernel Coding styles 
 
 
 "	autocmd BufEnter * Rvm  "Automatically switch to the right Ruby version using rvm and .rvmrc per buffer switch
