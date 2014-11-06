@@ -45,6 +45,8 @@
 	ye = !git lg --since=day.before.yesterday.midnight --until=midnight 
 [color]
 	ui = auto
+[core]
+	excludesfile = /Users/pygospa/.gitignore
 [diff]
 	tool = vimdiff
 [difftool "diff"]
