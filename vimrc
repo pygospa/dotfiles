@@ -114,6 +114,7 @@ if has("autocmd")
 
 	autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab	" According to googles style-guide
 	autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab		" According to googles style-guide
+	autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab		" According to google style guide
 	autocmd FileType javascript setlocal ts=4 sts=4 sw=4		
 
 	autocmd FileType java setlocal ts=4 sts=4 sw=4 noexpandtab	" According to oracle/sun
