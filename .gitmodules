@@ -58,3 +58,7 @@
 [submodule "vim/bundle/vim-opencl"]
 	path = vim/bundle/vim-opencl
 	url = git://github.com/petRUShka/vim-opencl.git
+[submodule "vim/bundle/xml"]
+	path = vim/bundle/xml
+	url = git@github.com:othree/xml.vim.git
+
