@@ -618,8 +618,8 @@ if is4 ; then
 fi
 
 # completion system
-if zrcautoload compinit ; then
-    compinit || print 'Notice: no compinit available :('
+if zrcautoload compinit -u; then
+    compinit -u || print 'Notice: no compinit available :('
 else
     print 'Notice: no compinit available :('
     function compdef { }
@@ -3383,7 +3383,7 @@ export JUNIT_HOME="~/slab/libs/junit4.10"
 export CLASSPATH="$JUNIT_HOME:$JUNIT_HOME/junit-4.10.jar"
 export PATH="/Users/pygospa/bin:/usr/local/bin:/Applications/Postgres93.app/Contents/MacOS/bin:$PATH:$HOME/.rvm/bin"
 export MANPATH="/usr/local/share/man:$MANPATH"
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
 export NODE_PATH="/usr/local/lib/node"
 export GNUTERM="x11"
 

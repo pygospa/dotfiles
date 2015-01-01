@@ -1,6 +1,14 @@
 " Author:	Kannan Thambiah <pygospa@gmail.com>
 " Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
 
+" Mardown instant rendering
+let g:instant_markdown_slow = 1
+" Explicitly call plugin by :InstantMarkdownPreview
+let g:instant_markdown_autostart = 0	
+
+" 
+let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"y sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp\""' 
+
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 filetype plugin indent on	"We want vim to automatically load plugins
@@ -23,6 +31,10 @@ let g:rehash256 = 1
 
 "My mappings
 let mapleader=","		" We want to use the comma as map leader
+
+" Spelling - who really uses ]s and [s ?!
+map <leader>sn ]s
+map <leader>sp [s
 
 map nt :NERDTreeToggle<cr>
 map be :BufExplorer
@@ -140,7 +152,6 @@ set spelllang=de_de
 
 "Set tasklist to open on bottom
 "let g:tlWindowPosition = 1
-
 
 "Statusline 
 set statusline=
