@@ -57,5 +57,5 @@
 	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
 	trustExitCode = true
 [user]
-	email = pygospa@gmail.com
+	email = kannan.thambiah@dfki.de
 	name = Kannan Thambiah
