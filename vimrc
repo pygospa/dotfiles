@@ -12,8 +12,10 @@ set clipboard=unnamed
 set nocompatible
 
 " Colors
+set t_Co=256
+set background=dark
 colorscheme molokai		" Use a nice color scheme (needs to be present in ~/.vim/colors/
-let g:rehash256 = 1
+highlight NonText ctermbg=Black
 " Legacy Color Schemes
 "colorscheme wombat
 "colorscheme vimbrant
@@ -52,7 +54,9 @@ scriptencoding utf-8		"Set the encoding for the script
 
 set background=dark		" We plan to use a drak background. This setting will choose proper coloring
 set encoding=utf-8		" We want to produce utf-8 documents
+set fileencoding=utf-8
 set filetype=on			" We want vim to inspect the files it is editing
+
 set hidden			" We want to switch between buffers, even if they are unsaved!
 set history=100			" We want to keep the last 100 commands in the history
 set hlsearch			" Mark all parts in the text that match search
