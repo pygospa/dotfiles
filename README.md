@@ -167,5 +167,9 @@ searching for 1024D/402CB18E.
 If not stated differently and if applicable by law and the licenses of the
 software I've configured with these dotfiles, all my works in this repository
 fall under Creative Commons Attribution-ShareAlike 4.0 International License.
-See [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) for further
-information.
+This means that you can use and republish any file and modify them to your
+desire. If you like my stuff, I'd be glad if you refer to my
+[blog](http://pygospa.wordpress.com). For furter information on the license, 
+see [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
+
+
