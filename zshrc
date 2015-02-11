@@ -3379,25 +3379,29 @@ gith() {
 # <----------------------- For my MAC OS X machine ------------------------->
 
 # Different PATHs for software I installed
-export JUNIT_HOME="~/slab/libs/junit4.10"
-export CLASSPATH="$JUNIT_HOME:$JUNIT_HOME/junit-4.10.jar"
-export PATH="/Users/pygospa/bin:/usr/local/bin:/Applications/Postgres93.app/Contents/MacOS/bin:$PATH:$HOME/.rvm/bin"
-export MANPATH="/usr/local/share/man:$MANPATH"
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-export NODE_PATH="/usr/local/lib/node"
-export GNUTERM="x11"
+#export JUNIT_HOME="~/slab/libs/junit4.10"
+#export CLASSPATH="$JUNIT_HOME:$JUNIT_HOME/junit-4.10.jar"
+#export PATH="/Users/pygospa/bin:/usr/local/bin:/Applications/Postgres93.app/Contents/MacOS/bin:$PATH:$HOME/.rvm/bin"
+#export MANPATH="/usr/local/share/man:$MANPATH"
+#export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+#export NODE_PATH="/usr/local/lib/node"
+#export GNUTERM="x11"
 
 # Other Variables I like to use
-export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
+#export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
 
 alias g='git'
-alias vi='/usr/local/bin/vim'
-alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias vi='/usr/bin/vim'
+export PATH=/usr/lib/ccache:$PATH
+export CCACHE_PREFIX=icecc
+export MARS_DEV_ROOT=/home/kth/mars_git
+#alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+#alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # <----------------------- For my Gentoo Linux machine ------------------------->
 # Start mplayer with sourround sound activated
-alias surround='mplayer -ao alsa:device=plug=surround51 -channels 6'
+# alias surround='mplayer -ao alsa:device=plug=surround51 -channels 6'
 # Start TV on mplayer with names for channels
-alias fernseher='mplayer -tv driver=v4l2:chanlist=europe-west:channels=E6-ard,E8-zdf,E7-ndr,E10-sat1,SE18-rtl,E12-rtl2,E11-pro7,SE9-kabel1,SE10-vox,SE17-br,SE11-3sat,SE15-mdr,SE6-arte,SE14-n24,SE8-phoenix,SE7-mtv,SE12-viva,22-dasvierte,S22-dmax,S23-superrtl,SE16-kika,E9-kieltv,SE13-sport1,SE20-9live,S21-eurosport,S35-qvc,21-dr1:alsa:adevice=hw.1,0:amode=1:audiorate=32000:forceaudio:immediatemode=0:volume=100:norm=PAL:tdevice=/dev/vbi0 -vo gl2'
+# alias fernseher='mplayer -tv driver=v4l2:chanlist=europe-west:channels=E6-ard,E8-zdf,E7-ndr,E10-sat1,SE18-rtl,E12-rtl2,E11-pro7,SE9-kabel1,SE10-vox,SE17-br,SE11-3sat,SE15-mdr,SE6-arte,SE14-n24,SE8-phoenix,SE7-mtv,SE12-viva,22-dasvierte,S22-dmax,S23-superrtl,SE16-kika,E9-kieltv,SE13-sport1,SE20-9live,S21-eurosport,S35-qvc,21-dr1:alsa:adevice=hw.1,0:amode=1:audiorate=32000:forceaudio:immediatemode=0:volume=100:norm=PAL:tdevice=/dev/vbi0 -vo gl2'
 
+#export TERM=screen-256color-bce
