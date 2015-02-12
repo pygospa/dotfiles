@@ -14,15 +14,15 @@
 # for sharing their configurations wich has been a great basis to work on my
 # own!
 
-if [ -f ~/.zsh/exports.zsh ]; then
-	source ~/.zsh/exports.zsh
+if [ -f ~/dot/zsh/exports.zsh ]; then
+	source ~/dot/zsh/exports.zsh
 else
 	print "Note: ~/.zsh/exports.zsh is unavailable"
 fi
 
 
-if [ -f ~/.zsh/aliases.zsh ]; then
-	source ~/.zsh/aliases.zsh ]
+if [ -f ~/dot/zsh/aliases.zsh ]; then
+	source ~/dot/zsh/aliases.zsh ]
 else
 	print "Note: ~/.zsh/aliases.zsh is unavailable"
 fi
