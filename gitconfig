@@ -3,6 +3,7 @@
 
 [alias]
 	; FUNCTIONS
+	; fst		list of first word in commit messages and count
 	; i		incomming
 	; l		log (all commits)
 	; l <name>	log (all commits) from <name>
@@ -12,6 +13,7 @@
 	; t		todays log (commits since midnight)
 	; t <name>	todays log (commits since midnight) from <name>
 	; tm		todays log (commits since midnight) from me
+	; who		list of all commiters and their commit count
 	; y		yesterdays log
 	; y <name>	yesterdays log from <name>
 	; ym		yesterdays log from me
@@ -23,7 +25,7 @@
 	cm = commit -m
 	co = checkout
 	d = diff
-	in = !git fetch && git lg ..origin/master
+	fst = !git log --pretty=format:'%s' | cut -d \" \" -f 1 | sort | uniq -c | sort -nr
 	i = !git in
 	l = !sh -c 'git lg --author=$1' -
 	m = !git l \"\"`git me`\"\"
@@ -36,9 +38,11 @@
 	subi = submodule init
 	t = !sh -c 'git to --author=$1' -
 	tm = !git t \"\"`git me`\"\"
+	who = !git shortlog | grep -E '^[^ ]'
 	y = !sh -c 'git ye --author=$1' -
 	ym = !git y \"\"`git me`\"\"
 	; HELPER FUNCTIONS
+	in = !git fetch && git lg ..origin/master
 	lg = log --graph --pretty=format:'%Cblue<%an>%Creset : %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	me = config user.name
 	to = !git lg --since=midnight 
