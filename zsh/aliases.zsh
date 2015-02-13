@@ -67,12 +67,18 @@ elif [[ `uname -s` == Darwin ]]; then
 fi
 
 # --------------------------------------------------------------------------- #
-#			Editor						      #
+#			Editor, Pager, etc.				      #
 # --------------------------------------------------------------------------- #
 
 # vi should point to vim
 if [[ -x `which vim` ]]; then
 	alias vi=`which vim`
+fi
+
+# Set less and zless to point to vimpager, if vimpager is installed
+if [[ -x `which vimpager` ]]; then
+	alias less=$PAGER
+	alias zless=$PAGER
 fi
 
 # --------------------------------------------------------------------------- #
