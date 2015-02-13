@@ -19,7 +19,6 @@ elif [[ $OSTYPE == freebsd* ]]; then
         ls_options=( -G )
 fi
 
-
 # PATH 
 # ~/bin -> /usr/local/bin -> /usr/bin -> /bin -> /usr/sbin -> /sbin -> /
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -32,4 +31,9 @@ for file in /etc/paths.d/*; do
 	export PATH="$PATH:$new"
 done
 
-
+if [[ `uname -s` == Darwin ]]; then 
+	# Use Firefox as default browser on OS X, if available
+	if [[ -x /Applications/Firefox.app/Contents/MacOS/firefox ]]; then
+		export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
+	fi
+fi
