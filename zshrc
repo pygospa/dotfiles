@@ -13,17 +13,10 @@
 # Thanks to Christian Schneider, Michael Prokop, ...
 # for sharing their configurations wich has been a great basis to work on my
 # own!
-
-if [ -f ~/dot/zsh/options.zsh ]; then
-	source ~/dot/zsh/options.zsh
+if [[ -f ~/dot/zsh/autoload.zsh ]]; then 
+	source ~/dot/zsh/autoload.zsh
 else
-	print "Note: ~/.zsh/options.zsh is unavailable"
-fi
-
-if [ -f ~/dot/zsh/exports.zsh ]; then
-	source ~/dot/zsh/exports.zsh
-else
-	print "Note: ~/.zsh/exports.zsh is unavailable"
+	printf "Note ~/.zsh/autoload.zsh is unavailable"
 fi
 
 if [ -f ~/dot/zsh/functions.zsh ]; then
@@ -32,10 +25,21 @@ else
 	printf "Note: ~/.zsh/functions.zsh is unavailable"
 fi
 
+#if [ -f ~/dot/zsh/options.zsh ]; then
+#	source ~/dot/zsh/options.zsh
+#else
+#	print "Note: ~/.zsh/options.zsh is unavailable"
+#fi
+
 if [ -f ~/dot/zsh/prompt.zsh ]; then
 	source ~/dot/zsh/prompt.zsh 
 else
 	print "Note: ~/.zsh/prompt.zsh is unavailable"
+fi
+if [ -f ~/dot/zsh/exports.zsh ]; then
+	source ~/dot/zsh/exports.zsh
+else
+	print "Note: ~/.zsh/exports.zsh is unavailable"
 fi
 
 if [ -f ~/dot/zsh/aliases.zsh ]; then
