@@ -25,6 +25,13 @@ else
 	printf "Note: ~/.zsh/functions.zsh is unavailable"
 fi
 
+if [ -f ~/dot/zsh/zstyle.zsh ]; then
+	source ~/dot/zsh/zstyle.zsh
+else
+	printf "Note: ~/.zsh/zstyle.zsh is unavailable"
+fi
+
+
 #if [ -f ~/dot/zsh/options.zsh ]; then
 #	source ~/dot/zsh/options.zsh
 #else
@@ -46,5 +53,12 @@ if [ -f ~/dot/zsh/aliases.zsh ]; then
 	source ~/dot/zsh/aliases.zsh ]
 else
 	print "Note: ~/.zsh/aliases.zsh is unavailable"
+fi
+
+if [ -f ~/dot/zsh-vcs-prompt/zshrc.sh ]; then
+	source ~/dot/zsh-vcs-prompt/zshrc.sh
+	ZSH_VCS_PROMPT_ENABLE_CACHING='true'
+else
+	printf "Note: ~/.zsh-vc-prompt/zshrc.sh is unavailable"
 fi
 

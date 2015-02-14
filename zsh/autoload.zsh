@@ -34,3 +34,4 @@ else
 	NO_COLOR=$'%{\e[0m%}'
 fi
 
+autoload -Uz vcs_info; vcs_info;

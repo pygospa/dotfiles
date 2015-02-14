@@ -10,6 +10,16 @@
 # own!
 
 
+# Determine which prompt symbol to use (according to what kind of directory one
+# is in)
+
+prompt_char() {
+    git branch >/dev/null 2>/dev/null && echo '±' && return
+    hg root >/dev/null 2>/dev/null && echo '☿' && return
+    svn info >/dev/null 2>/dev/null && echo '○' && return
+    echo '$'
+}
+
 # This functions will open the remote remote repository of the current local 
 # directory in the browser if it is pointing to github or bitbucket.
 #
