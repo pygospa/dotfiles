@@ -31,6 +31,3 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
-[submodule "zsh-vcs-prompt"]
-	path = zsh-vcs-prompt
-	url = git@github.com:yonchu/zsh-vcs-prompt.git
