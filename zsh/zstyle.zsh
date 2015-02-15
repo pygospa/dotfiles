@@ -1,29 +1,29 @@
-zstyle ':vcs_info:*' enable hg git svn
-zstyle ':vcs_info:(hg*|git*):*' get-revision true
-zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
-
-#zstyle ':vcs_info:(hg*|git*)' formats "(%s) %7.7i %c%u %b%m " # hash changes branch misc
-#zstyle ':vcs_info:(hg*|git*)' actionformats "(%s|${white}%a${gray}) %7.7i %c%u %b%m "
-#zstyle ':vcs_info:hg*:*' branchformat "%b" # only show branch
+#zstyle ':vcs_info:*' enable hg git svn
+#zstyle ':vcs_info:(hg*|git*):*' get-revision true
+#zstyle ':vcs_info:(hg*|git*):*' check-for-changes true
 #
-#zstyle ':vcs_info:(hg*|git*):*' stagedstr "${green}S${gray}"
-#zstyle ':vcs_info:(hg*|git*):*' unstagedstr "${red}U${gray}"
+##zstyle ':vcs_info:(hg*|git*)' formats "(%s) %7.7i %c%u %b%m " # hash changes branch misc
+##zstyle ':vcs_info:(hg*|git*)' actionformats "(%s|${white}%a${gray}) %7.7i %c%u %b%m "
+##zstyle ':vcs_info:hg*:*' branchformat "%b" # only show branch
+##
+##zstyle ':vcs_info:(hg*|git*):*' stagedstr "${green}S${gray}"
+##zstyle ':vcs_info:(hg*|git*):*' unstagedstr "${red}U${gray}"
+##
+##zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash git-untracked
 #
-#zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash git-untracked
-
-
-if [[ "$TERM" == dumb ]] ; then
-    zstyle ':vcs_info:*' actionformats "(%s%)-[%b|%a] " "zsh: %r"
-    zstyle ':vcs_info:*' formats       "(%s%)-[%b] "    "zsh: %r"
-else
-    # these are the same, just with a lot of colors:
-    zstyle ':vcs_info:*' actionformats "${MAGENTA}(${NO_COLOR}%s${MAGENTA})${YELLOW}-${MAGENTA}[${GREEN}%b${YELLOW}|${RED}%a${MAGENTA}]${NO_COLOR} " \
-	                                       "zsh: %r"
-    zstyle ':vcs_info:*' formats       "${MAGENTA}(${NO_COLOR}%s${MAGENTA})${NO_COLOR}-${RED}%7.7i${NO_COLOR} %c%u: %b ${MAGENTA}[${GREEN}%b${MAGENTA}]${NO_COLOR}%} %c%u %m" \
-	                                       "zsh: %r"
-    zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat "%b${RED}:${YELLOW}%r"
-fi
-
+#
+#if [[ "$TERM" == dumb ]] ; then
+#    zstyle ':vcs_info:*' actionformats "(%s%)-[%b|%a] " "zsh: %r"
+#    zstyle ':vcs_info:*' formats       "(%s%)-[%b] "    "zsh: %r"
+#else
+#    # these are the same, just with a lot of colors:
+#    zstyle ':vcs_info:*' actionformats "${MAGENTA}(${NO_COLOR}%s${MAGENTA})${YELLOW}-${MAGENTA}[${GREEN}%b${YELLOW}|${RED}%a${MAGENTA}]${NO_COLOR} " \
+#	                                       "zsh: %r"
+#    zstyle ':vcs_info:*' formats       "${MAGENTA}(${NO_COLOR}%s${MAGENTA})${NO_COLOR}-${RED}%7.7i${NO_COLOR} %c%u: %b ${MAGENTA}[${GREEN}%b${MAGENTA}]${NO_COLOR}%} %c%u %m" \
+#	                                       "zsh: %r"
+#    zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat "%b${RED}:${YELLOW}%r"
+#fi
+#
 ###########
 
 #zstyle ':vcs_info:git*' formats "(%s) %7.7i %c%u %b%m"
