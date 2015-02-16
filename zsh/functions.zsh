@@ -4,10 +4,6 @@
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Lates Version		github.com/pygospa/dotfiles
-#
-# Thanks to Christian Schneider, Michael Prokop and the Grml developers
-# for sharing their configurations wich has been a great basis to work on my
-# own!
 
 
 # Determine which prompt symbol to use (according to what kind of directory one

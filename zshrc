@@ -9,10 +9,7 @@
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Lates Version		github.com/pygospa/dotfiles
-#
-# Thanks to Christian Schneider, Michael Prokop, ...
-# for sharing their configurations wich has been a great basis to work on my
-# own!
+ 
 if [[ -f ~/dot/zsh/autoload.zsh ]]; then 
 	source ~/dot/zsh/autoload.zsh
 else
