@@ -172,4 +172,17 @@ desire. If you like my stuff, I'd be glad if you refer to my
 [blog](http://pygospa.wordpress.com). For furter information on the license, 
 see [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
+## Acknowledgment
+
+Last but not least I would like to thank all those people who constantly share
+their Dotfiles (and did so even before ti was cool to do so on GitHub). They
+have been a great help in many occasions and a constant source of inspiration. I
+cannot remember all the people whose dotfiles I've consulted over the last 1,5
+decades - if you find your distinctive work in this repository and want to be
+named, please feel free to contact me. I would especially like to point out:
+
+  - [Christian 'strcat' Schneider](http://strcat.de/)
+  - [Michael Prokop](http://michael-prokop.at/)
+  - [Steve Losh](http://stevelosh.com/)
+  - [yonchu](http://yonchu.hatenablog.com/)
 
