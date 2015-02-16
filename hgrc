@@ -39,7 +39,8 @@ graphlog=
 keyword=
 # shwoing a progress bar, when prcessing a large chunk of files
 progress=
-
+# Adding Steve Losh' hg prompt (http://stevelosh.com/projects/hg-prompt/)
+prompt = /Users/pygospa/slab/hg-prompt/prompt.py
 
 # <--- Settings for the hgext.gpg= hook --->
 [gpg]
