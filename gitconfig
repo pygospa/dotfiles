@@ -1,5 +1,6 @@
-; Author:	Kannan Thambiah <pygospa@gmail.com>
-; Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
+; Author:		Kannan Thambiah <pygospa@gmail.com>
+; Copyright:		CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
+; Lates Version:        github.com/pygospa/dotfiles
 
 [alias]
 	; FUNCTIONS
@@ -60,6 +61,8 @@
 [mergetool "threesome"]
 	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
 	trustExitCode = true
+[push]
+	default = simple
 [user]
 	email = pygospa@gmail.com
 	name = Kannan Thambiah
