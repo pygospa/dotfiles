@@ -1,11 +1,5 @@
 # Welcome to my dotfiles
 
-## Moved from Bitbucket
-
-I've finally decided to move most of my coding stuff to GitHub. As a
-consequence, here are my dotfiles, that where originally hosted at
-[Bitbucket](https://bitbucket.org/pygospa/dotfiles) 
-
 ## BE CAREFUL NOT TO OVERWRITE YOUR FILES!
 
 Before running the install script, check whats included in the root directory
