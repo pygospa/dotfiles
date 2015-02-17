@@ -182,6 +182,7 @@ decades - if you find your distinctive work in this repository and want to be
 named, please feel free to contact me. I would especially like to point out:
 
   - [Christian 'strcat' Schneider](http://strcat.de/)
+  - [Grml's ZSH Page](http://grml.org/zsh/)
   - [Michael Prokop](http://michael-prokop.at/)
   - [Steve Losh](http://stevelosh.com/)
   - [yonchu](http://yonchu.hatenablog.com/)
