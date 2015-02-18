@@ -3391,7 +3391,7 @@ gith() {
 #export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
 
 alias g='git'
-alias vi='/usr/bin/vim'
+alias vi=`which vim`
 export PATH=/usr/lib/ccache:$PATH
 export CCACHE_PREFIX=icecc
 export MARS_DEV_ROOT=/home/kth/mars_git
