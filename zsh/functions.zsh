@@ -58,4 +58,30 @@ gith() {
 	fi
 }
 
+# Most awesome function to have in your zshrc!
+# Thx to anon (http://stackoverflow.com/questions/171563/whats-in-your-zshrc/904023#904023)
+function mandelbrot {
+   local lines columns colour a b p q i pnew
+   ((columns=COLUMNS-1, lines=LINES-1, colour=0))
+   for ((b=-1.5; b<=1.5; b+=3.0/lines)) do
+       for ((a=-2.0; a<=1; a+=3.0/columns)) do
+           for ((p=0.0, q=0.0, i=0; p*p+q*q < 4 && i < 32; i++)) do
+               ((pnew=p*p-q*q+a, q=2*p*q+b, p=pnew))
+           done
+           ((colour=(i/4)%8))
+            echo -n "\\e[4${colour}m "
+        done
+        echo
+    done
+}
 
+# If there's an env.sh file in the directory you're changing into, it gets
+# sourced. Ideal if you e.g. work with different instances of ROCK
+# (http://rock-robotics.org/stable/)
+function autoload_env {
+	if [[ -f "$PWD/env.sh" ]]; then
+		source "$PWD/env.sh"
+		echo -e "\033[0;31m ! Autosourced $PWD/env.sh ! \033[0m"
+	fi
+}
+chpwd_functions=( "${chpwd_functions[@]}" autoload_env )
