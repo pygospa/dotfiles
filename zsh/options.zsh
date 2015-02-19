@@ -27,10 +27,88 @@ setopt noposix_cd
 setopt pushd_ignore_dups
 
 # Exchange meanings of '+' and '-' when given  with number to specify directory
-set nopushed_minus
+setopt nopushed_minus
 
 # Do not print directory stack after pushd or popd
-set pushd_silent
+setopt pushd_silent
 
 # Have pushd with no arguments act like 'pushd $HOME'
-set nopushd_to_home
+setopt nopushd_to_home
+
+
+
+### 
+### Completion
+###
+
+
+
+
+### 
+### Expansion and Globbing
+###
+
+# Don't error out when unset parameters are used
+setopt unset
+
+
+
+###
+### History
+###
+
+# Have all zsh sessions append their history list to the history file instead
+# of replacing it.
+setopt append_history
+
+# Never used csh shell before, so no idea why, how and if I need this or would
+# miss it
+setopt nobang_hist
+
+# instead of just the command, save ': <start time>:<elapsed
+# seconds>;<command>'
+setopt extended_history
+
+# Clobbering = overwriting, using pipes. If clobbering is unset, something like
+# echo 'foo' > bar is not permitted when bar exist.
+# This setting allows to clobber from histfile (clobbering commands will be
+# saved as "echo 'foo' >| bar" and can be executed, even if clobbering is
+# not permitted
+setopt hist_allow_clobber
+
+# If available use systems fcntl calls that provide better preformance when
+# locking history file for writing
+setopt hist_fcntl_lock
+
+# When set, commands already in history file will be removed from history and
+# added on top
+setopt nohist_ignore_all_dups
+
+# Wehn set, commands already in histroy file will not be added again
+setopt nohist_ignore_dups
+
+# When scrolling through list of used commands, ignore duplicates
+setopt hist_find_no_dups
+
+# When file needs trimming to add new commands, remove oldest dups before
+# unique entries
+setopt hist_expire_dups_first
+
+# If command is preceeded with a space, it's not logged into history
+setopt hist_ignore_space
+
+# If set, function definitions are not saved into history file
+setopt nohist_no_functions
+
+
+
+
+
+### 
+### Job Control
+###
+
+# report the status of backgrounds jobs immediately
+setopt notify
+
+
