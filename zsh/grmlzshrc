@@ -31,12 +31,6 @@ function zrcautoload() {
     fi
     return 0
 }
-#
-# in order to use #, ~ and ^ for filename generation grep word
-# *~(*.gz|*.bz|*.bz2|*.zip|*.Z) -> searches for word not in compressed files
-# don't forget to quote '^', '~' and '#'!
-setopt extended_glob
-
 # try to avoid the 'zsh: no matches found...'
 setopt nonomatch
 

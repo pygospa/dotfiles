@@ -51,6 +51,12 @@ setopt nopushd_to_home
 # Don't error out when unset parameters are used
 setopt unset
 
+# in order to use #, ~ and ^ for filename generation grep word
+# *~(*.gz|*.bz|*.bz2|*.zip|*.Z) -> searches for word not in compressed files
+# don't forget to quote '^', '~' and '#'!
+setopt extended_glob
+
+ 
 
 
 ###
@@ -99,6 +105,10 @@ setopt hist_ignore_space
 
 # If set, function definitions are not saved into history file
 setopt nohist_no_functions
+
+# Import new commands form history file from other zsh-sessions (REQUIRES
+# append_history)
+setopt share_history
 
 
 
