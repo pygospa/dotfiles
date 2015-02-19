@@ -22,18 +22,17 @@ else
 	printf "Note: ~/.zsh/functions.zsh is unavailable"
 fi
 
+if [ -f ~/dot/zsh/options.zsh ]; then
+	source ~/dot/zsh/options.zsh
+else
+	print "Note: ~/.zsh/options.zsh is unavailable"
+fi
+
 if [ -f ~/dot/zsh/zstyle.zsh ]; then
 	source ~/dot/zsh/zstyle.zsh
 else
 	printf "Note: ~/.zsh/zstyle.zsh is unavailable"
 fi
-
-
-#if [ -f ~/dot/zsh/options.zsh ]; then
-#	source ~/dot/zsh/options.zsh
-#else
-#	print "Note: ~/.zsh/options.zsh is unavailable"
-#fi
 
 if [ -f ~/dot/zsh/prompt.zsh ]; then
 	source ~/dot/zsh/prompt.zsh 
