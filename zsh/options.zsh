@@ -14,26 +14,26 @@ setopt cdable_vars
 # setting this, for link /foo/bar pointing to /baz/qux, cd /foo/bar/.. will
 # set working directory to /baz. Unset it will set it to /foo
 # HOWEVER, cd /foo/bar will set working directory to /foo/bar
-setopt nochase_dots
+setopt no_chase_dots
 
 # As chase_dots, but setting this will lead cd /foo/bar to working directory
 # /baz/qux
-setopt nochase_links
+setopt no_chase_links
 
 # Remove the restrictions by POSIX on cd
-setopt noposix_cd
+setopt no_posix_cd
 
 # Don't push multiple copies of same directory onto dir stack
 setopt pushd_ignore_dups
 
 # Exchange meanings of '+' and '-' when given  with number to specify directory
-setopt nopushed_minus
+setopt no_pushed_minus
 
 # Do not print directory stack after pushd or popd
 setopt pushd_silent
 
 # Have pushd with no arguments act like 'pushd $HOME'
-setopt nopushd_to_home
+setopt no_pushd_to_home
 
 
 
@@ -69,7 +69,7 @@ setopt append_history
 
 # Never used csh shell before, so no idea why, how and if I need this or would
 # miss it
-setopt nobang_hist
+setopt no_bang_hist
 
 # instead of just the command, save ': <start time>:<elapsed
 # seconds>;<command>'
@@ -88,10 +88,10 @@ setopt hist_fcntl_lock
 
 # When set, commands already in history file will be removed from history and
 # added on top
-setopt nohist_ignore_all_dups
+setopt no_hist_ignore_all_dups
 
 # Wehn set, commands already in histroy file will not be added again
-setopt nohist_ignore_dups
+setopt no_hist_ignore_dups
 
 # When scrolling through list of used commands, ignore duplicates
 setopt hist_find_no_dups
@@ -104,7 +104,7 @@ setopt hist_expire_dups_first
 setopt hist_ignore_space
 
 # If set, function definitions are not saved into history file
-setopt nohist_no_functions
+setopt no_hist_no_functions
 
 # Import new commands form history file from other zsh-sessions (REQUIRES
 # append_history)
@@ -121,7 +121,7 @@ setopt share_history
 setopt check_jobs
 
 # Don't send SIGHUP to background processes when shell exits.
-setopt nohup
+setopt no_hup
 
 # Jobs in long format (i.e. display PID as well when suspending process)
 setopt long_list_jobs
@@ -130,4 +130,11 @@ setopt long_list_jobs
 setopt notify
 
 # Make job control more posix conform
-setopt noposix_jobs
+setopt no_posix_jobs
+
+###
+### Zle
+###
+
+# I HATE beeping!
+setopt no_beep
