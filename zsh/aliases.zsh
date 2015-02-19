@@ -36,6 +36,11 @@ else
 	alias ls='ls -b -CF'
 fi
 
+# Grep should be colorful
+if [[ "$TERM" != dumb ]]; then
+	alias grep='grep '${grep_options:+"${grep_options[*]}"}
+fi
+
 # print current directory + subdirectories as a tree
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 

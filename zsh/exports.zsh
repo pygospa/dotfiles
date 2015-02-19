@@ -50,20 +50,28 @@ elif [[ `uname -s` == FreeBSD ]]; then
         ls_options=( -G )
 fi
 
+# grep colors
+typeset -ga grep_options
+
+if grep --help 2> /dev/null | grep -q GNU || [[ `uname -s` == FreeBSD ]]; then
+	grep_options=( --color=auto )
+fi
+
 
 # PATH 
 # ~/bin -> /usr/local/bin -> /usr/bin -> /bin -> /usr/sbin -> /sbin -> /
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-# Mac keeps path information in /etc/paths.d to automatically create path
-# entries for new installed software. As we rewrite the path, we add them
-# manually
-for file in /etc/paths.d/*; do
-	new="$(<$file)"
-	export PATH="$PATH:$new"
-done
-
+# Are we running OS X?
 if [[ `uname -s` == Darwin ]]; then 
+	# Mac keeps path information in /etc/paths.d to automatically create path
+	# entries for new installed software. As we rewrite the path, we add them
+	# manually
+	for file in /etc/paths.d/*; do
+		new="$(<$file)"
+		export PATH="$PATH:$new"
+	done
+
 	# Use Firefox as default browser on OS X, if available
 	if [[ -x /Applications/Firefox.app/Contents/MacOS/firefox ]]; then
 		export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
