@@ -102,13 +102,22 @@ setopt nohist_no_functions
 
 
 
-
-
 ### 
 ### Job Control
 ###
 
+# Report status of background/suspended jobs before exiting; second try will
+# exit shell (use especially with nohup!)
+setopt check_jobs
+
+# Don't send SIGHUP to background processes when shell exits.
+setopt nohup
+
+# Jobs in long format (i.e. display PID as well when suspending process)
+setopt long_list_jobs
+
 # report the status of backgrounds jobs immediately
 setopt notify
 
-
+# Make job control more posix conform
+setopt noposix_jobs
