@@ -37,8 +37,6 @@ function zrcautoload() {
 # don't forget to quote '^', '~' and '#'!
 setopt extended_glob
 
-# display PID when suspending processes as well
-
 # try to avoid the 'zsh: no matches found...'
 setopt nonomatch
 
@@ -60,22 +58,7 @@ NOCOR=${NOCOR:-0}
 NOMENU=${NOMENU:-0}
 NOPRECMD=${NOPRECMD:-0}
 COMMAND_NOT_FOUND=${COMMAND_NOT_FOUND:-0}
-GRML_ZSH_CNF_HANDLER=${GRML_ZSH_CNF_HANDLER:-/usr/share/command-not-found/command-not-found}
-BATTERY=${BATTERY:-0}
-GRMLSMALL_SPECIFIC=${GRMLSMALL_SPECIFIC:-1}
 ZSH_NO_DEFAULT_LOCALE=${ZSH_NO_DEFAULT_LOCALE:-0}
-
-typeset -ga ls_options
-typeset -ga grep_options
-if ls --help 2> /dev/null | grep -q GNU; then
-    ls_options=( --color=auto )
-elif [[ $OSTYPE == freebsd* ]]; then
-    ls_options=( -G )
-fi
-if grep --help 2> /dev/null | grep -q GNU || \
-   [[ $OSTYPE == freebsd* ]]; then
-    grep_options=( --color=auto )
-fi
 
 # utility functions
 # this function checks if a command exists and returns either true
@@ -2672,28 +2655,6 @@ allulimit() {
     ulimit -n unlimited
     ulimit -s unlimited
     ulimit -t unlimited
-}
-
-#f5# Change the xterm title from within GNU-screen
-xtrename() {
-    emulate -L zsh
-    if [[ $1 != "-f" ]] ; then
-        if [[ -z ${DISPLAY} ]] ; then
-            printf 'xtrename only makes sense in X11.\n'
-            return 1
-        fi
-    else
-        shift
-    fi
-    if [[ -z $1 ]] ; then
-        printf 'usage: xtrename [-f] "title for xterm"\n'
-        printf '  renames the title of xterm from _within_ screen.\n'
-        printf '  also works without screen.\n'
-        printf '  will not work if DISPLAY is unset, use -f to override.\n'
-        return 0
-    fi
-    print -n "\eP\e]0;${1}\C-G\e\\"
-    return 0
 }
 
 # Create small urls via http://goo.gl using curl(1).
