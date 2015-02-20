@@ -38,23 +38,35 @@ bitb() {
 }
 
 gith() {
+	# Get remote origin
 	ghpath="$(git config --get remote.origin.url)"
 
-	if [ -z $ghpath ]; then
+	# If remote origin does not contain 'github' try getting remote github
+	if [[ -z "$(echo $ghpath | grep github)" ]]; then
+		ghpath="$(git config --get remote.github.url)"
+	fi
+
+	# If remote origin was empty or neither remote origin nor remote github
+	# contain a url with 'github' in it, there's probably no remote github
+	# repository
+	if [ -z $ghpath ] || [[ -z `echo $ghpath | grep github` ]]; then
 		echo "No GitHub path found!"
 		exit 1;
 	fi
 
+	# Else turn the ssh github link into an https github link
 	ghpath="${ghpath/git\@github\.com\:/https://github.com/}"
 	ghurl="${ghpath/\.git//tree/}"
 	branch="$(git symbolic-ref HEAD 2>/dev/null)" || branch="(unnamed branch)"
 	branch=${branch##refs/heads/}
 	ghurl=$ghurl$branch
 
+	# If on OS X just use the command 'open' to open it in standard browser
 	if [[ `uname -s` == Darwin ]]; then
 		open $ghurl
+	# Else use the $BROWSER variable
 	elif [[ `uname -s` == Linux ]]; then
-		[[ -n $bburl ]] && $BROWSER $bburl || echo "No BitBucket path found!"
+		[[ -n $bburl ]] && $BROWSER $bburl || echo "No GitHub path found!"
 	fi
 }
 
