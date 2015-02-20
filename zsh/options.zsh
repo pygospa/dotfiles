@@ -27,7 +27,7 @@ setopt no_posix_cd
 setopt pushd_ignore_dups
 
 # Exchange meanings of '+' and '-' when given  with number to specify directory
-setopt no_pushed_minus
+setopt no_pushd_minus
 
 # Do not print directory stack after pushd or popd
 setopt pushd_silent
@@ -40,6 +40,16 @@ setopt no_pushd_to_home
 ### 
 ### Completion
 ###
+
+# Completion in middle of word will move cursor to end of word
+setopt always_to_end
+
+# Complete in word (to both directions) not only at end of word
+setopt complete_in_word
+
+# Hash entire command path before execution - slow on first, but faster ever
+# after
+setopt hash_list_all
 
 
 
@@ -106,10 +116,37 @@ setopt hist_ignore_space
 # If set, function definitions are not saved into history file
 setopt no_hist_no_functions
 
+# Remove extra blanks form each command line being added to histroy
+setopt hist_reduce_blanks
+
+# Don't execute the history, just expand it so user can verify it first.
+setopt hist_verify
+
 # Import new commands form history file from other zsh-sessions (REQUIRES
 # append_history)
 setopt share_history
 
+
+
+### 
+### Input/output
+###
+
+# When spelling mistake on command, offer correction
+setopt correct
+
+# When spelling mistake on argument, offer correction
+setopt correct_all
+
+# In command line, treat lines starting with '#' as comment, not as part of
+# command name
+setopt interactive_comments
+
+# Always search the path, never hash commands
+setopt no_hash_cmds
+
+# Wait 10 seconds and ignore answers till then, when rm *
+setopt rm_star_wait
 
 
 ### 
@@ -131,6 +168,32 @@ setopt notify
 
 # Make job control more posix conform
 setopt no_posix_jobs
+
+
+
+### 
+### Prompting
+### 
+
+# Only show the right prompt on the current prompt line and remove it from
+# previous ones
+setopt transient_rprompt
+
+
+
+###
+### Scripts and Functions
+###
+
+# Implicite tees and cats on multiple redirections. This allows for something like this:
+# 	cat file1 file2 | mail -s 'all results' joe@foo.net
+# to be written like this
+#	mail -s 'all results' joe@foo.net <file1 <file2
+# or write into many files
+#	echo 'Hello world' >a >b	
+setopt multios
+
+
 
 ###
 ### Zle
