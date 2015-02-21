@@ -90,10 +90,10 @@ function mandelbrot {
 # If there's an env.sh file in the directory you're changing into, it gets
 # sourced. Ideal if you e.g. work with different instances of ROCK
 # (http://rock-robotics.org/stable/)
-function autoload_env {
-	if [[ -f "$PWD/env.sh" ]]; then
+function autosource {
+	if [[ -s "$PWD/env.sh" ]] && [[ -r "$PWD/env.sh" ]]; then
 		source "$PWD/env.sh"
 		echo -e "\033[0;31m ! Autosourced $PWD/env.sh ! \033[0m"
 	fi
 }
-chpwd_functions=( "${chpwd_functions[@]}" autoload_env )
+chpwd_functions=( "${chpwd_functions[@]}" autosource )
