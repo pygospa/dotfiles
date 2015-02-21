@@ -34,13 +34,6 @@ function zrcautoload() {
 # try to avoid the 'zsh: no matches found...'
 setopt nonomatch
 
-# whenever a command completion is attempted, make sure the entire command path
-# is hashed first.
-setopt hash_list_all
-
-# not just at the end
-setopt completeinword
-
 # * shouldn't match dotfiles. ever.
 setopt noglobdots
 
