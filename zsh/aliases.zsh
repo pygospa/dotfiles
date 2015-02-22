@@ -23,44 +23,45 @@ if [[ "$TERM" != dumb ]]; then
 	# -A = Almost all (ignoring . and .. )
 	# -l = Long format
 	# -h = human readable size
-	alias l='ls -lF '${ls_options:+"${ls_options[*]}"}	
-	alias la='ls -la '${ls_options:+"${ls_options[*]}"}
-	alias lh='ls -hAl '${ls_options:+"${ls_options[*]}"}
-	alias ll='ls -l '${ls_options:+"${ls_options[*]}"}
-	alias ls='ls -b -CF '${ls_options:+"${ls_options[*]}"}
+	alias l=' ls -lF '${ls_options:+"${ls_options[*]}"}	
+	alias la=' ls -la '${ls_options:+"${ls_options[*]}"}
+	alias lh=' ls -hAl '${ls_options:+"${ls_options[*]}"}
+	alias ll=' ls -l '${ls_options:+"${ls_options[*]}"}
+	alias ls=' ls -b -CF '${ls_options:+"${ls_options[*]}"}
 else
-	alias l='ls -lF'
-	alias la='ls -la'
-	alias lh='ls -hAl'
-	alias ll='ls -l'
-	alias ls='ls -b -CF'
+	alias l=' ls -lF'
+	alias la=' ls -la'
+	alias lh=' ls -hAl'
+	alias ll=' ls -l'
+	alias ls=' ls -b -CF'
 fi
 
 # Grep should be colorful
 if [[ "$TERM" != dumb ]]; then
-	alias grep='grep '${grep_options:+"${grep_options[*]}"}
+	alias grep=' grep '${grep_options:+"${grep_options[*]}"}
 fi
 
 # print current directory + subdirectories as a tree
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias tree=" ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 # six levels of shortcuts for cd
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-alias .......='cd ../../../../../..'
+alias cd=' cd'
+alias ..=' cd ..'
+alias ...=' cd ../..'
+alias ....=' cd ../../..'
+alias .....=' cd ../../../..'
+alias ......=' cd ../../../../..'
+alias .......=' cd ../../../../../..'
 
 # aliases for du
-alias dh='du -hsc *'
+alias dh=' du -hsc *'
 
 # Sort the files according to size
 if [[ `uname -s` == Linux ]]; then
-	alias dhs='du -hsc * | sort -h'
+	alias dhs=' du -hsc * | sort -h'
 # OS X doesn't know human-readable sort, so here's a workaround for that
 elif [[ `uname -s` == Darwin ]]; then
-	alias dhs='du -sckx * | sort -nr | awk '\''
+	alias dhs=' du -sckx * | sort -nr | awk '\''
 	function human(x) {
 		s="kMGTEPYZ";
 		while (x>=1000 && length(s)>1){
@@ -85,6 +86,8 @@ if [[ -x `which vimpager` ]]; then
 	alias less=$PAGER
 	alias zless=$PAGER
 fi
+
+# Don't use vimpager for git though!
 
 # --------------------------------------------------------------------------- #
 #			Version Controll Systems			      #
