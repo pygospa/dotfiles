@@ -5,6 +5,15 @@
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	github.com/pygospa/dotfiles
 
+# Some settings that are controlled via variables:
+# History
+HISTFILE=${HOME}/.zsh_history
+# Number of lines to keep in history of the active session
+HISTSIZE=10000
+# Number of lines to persistantly save to histfile
+SAVEHIST=10000
+
+
 # Set the shell variable
 export SHELL='/bin/zsh'
 
