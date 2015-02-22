@@ -41,6 +41,13 @@ else
 	export PAGER=${PAGER:-more}
 fi
 
+# However, we don't want Git to use the standard pager (this will open a new
+# vim instance on easy tasks that I want to run on less, such as display git
+# diff)
+if [[ -x `which git` ]]; then 
+	export GIT_PAGER=`which less`
+fi
+
 # ls colors
 # (dircolors will populate LS_COLORS)
 if [[ -x `which dircolors` ]]; then
