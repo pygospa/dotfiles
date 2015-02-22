@@ -87,7 +87,7 @@ if [[ -x `which vimpager` ]]; then
 	alias zless=$PAGER
 fi
 
-# Don't use vimpager for git though!
+
 
 # --------------------------------------------------------------------------- #
 #			Version Controll Systems			      #
@@ -114,14 +114,14 @@ fi
 if [[ `uname -s` == Darwin ]]; then
 
 	# Toggle Finder to show hidden files
-	alias show_hidden='defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'
-	alias hide_hidden='defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
+	alias show_hidden=' defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'
+	alias hide_hidden=' defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
 
 	# Set easy to use commands for starting and stoping postgresql if
 	# available on system
 	if [[ -x `which pg_ctl` ]]; then
-		alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-		alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+		alias pg-start=' pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+		alias pg-stop=' pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 	fi
 
 fi
