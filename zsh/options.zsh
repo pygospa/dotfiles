@@ -172,9 +172,6 @@ setopt hist_expire_dups_first
 # If command is preceeded with a space, it's not logged into history
 setopt hist_ignore_space
 
-# Add commands as they are typed in, and not after shell exits!
-setopt inc_append_history
-
 # If set, function definitions are not saved into history file
 setopt no_hist_no_functions
 
@@ -183,6 +180,9 @@ setopt hist_reduce_blanks
 
 # Don't execute the history, just expand it so user can verify it first.
 setopt hist_verify
+
+# Add commands as they are typed in, and not after shell exits!
+setopt inc_append_history
 
 # Import new commands form history file from other zsh-sessions (REQUIRES
 # append_history)
