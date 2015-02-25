@@ -13,6 +13,8 @@ HISTSIZE=10000
 # Number of lines to persistantly save to histfile
 SAVEHIST=10000
 
+# set the terminal property
+export COLORTERM="yes"
 
 # Set the shell variable
 export SHELL='/bin/zsh'

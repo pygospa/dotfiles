@@ -146,6 +146,19 @@ mkcd() {
     builtin cd "$1"
 }
 
+# grep for running process, like: 'any vim'
+any() {
+    emulate -L zsh
+    unsetopt KSH_ARRAYS
+    if [[ -z "$1" ]] ; then
+        echo "any - grep for process(es) by keyword" >&2
+        echo "Usage: any <keyword>" >&2 ; return 1
+    else
+        ps xauwww | grep -i "${grep_options[@]}" "[${1[1]}]${1[2,-1]}"
+    fi
+}
+
+
 # cd to directory and list files
 cdls() {
     emulate -L zsh
