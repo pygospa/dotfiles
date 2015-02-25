@@ -132,6 +132,43 @@ function zu() {
     return 1
 }
 
+# Create Directoy and \kbd{cd} to it
+mkcd() {
+    if (( ARGC != 1 )); then
+        printf 'usage: mkcd <new-directory>\n'
+        return 1;
+    fi
+    if [[ ! -d "$1" ]]; then
+        command mkdir -p "$1"
+    else
+        printf '`%s'\'' already exists: cd-ing.\n' "$1"
+    fi
+    builtin cd "$1"
+}
+
+# cd to directory and list files
+cdls() {
+    emulate -L zsh
+    cd $1 && ls -a
+}
+
+# List files which have been accessed within the last {\it n} days, {\it n} defaults to 1
+accessed() {
+    emulate -L zsh
+    print -l -- *(a-${1:-1})
+}
+
+# List files which have been changed within the last {\it n} days, {\it n} defaults to 1
+changed() {
+    emulate -L zsh
+    print -l -- *(c-${1:-1})
+}
+
+# List files which have been modified within the last {\it n} days, {\it n} defaults to 1
+modified() {
+    emulate -L zsh
+    print -l -- *(m-${1:-1})
+}
 
 # If there's an env.sh file in the directory you're changing into, it gets
 # sourced. Ideal if you e.g. work with different instances of ROCK
@@ -143,3 +180,4 @@ function autosource {
 	fi
 }
 chpwd_functions=( "${chpwd_functions[@]}" autosource )
+
