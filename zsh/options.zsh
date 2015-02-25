@@ -106,7 +106,7 @@ setopt equals
 setopt extended_glob
 
 # Do not require leading '.' in filename to be matched explicitly
-setopt glob_dots
+setopt no_glob_dots
 
 # If pattern for filename generation has no match, delete pattern from argument
 # list and go on instead of exiting with an error
