@@ -87,6 +87,52 @@ function mandelbrot {
     done
 }
 
+# Create small urls via http://goo.gle using curl(1).
+# API reference: https://code.google.com/apis/urlshortener
+function zu() {
+    emulate -L zsh
+    setopt extended_glob
+
+    if [[ -z $1 ]]; then
+        print "USAGE: zurl <URL>"
+        return 1
+    fi
+
+    local PN url prog api json contenttype item
+    local -a data
+    PN=$0
+    url=$1
+
+    # Prepend 'http://' to given URL where necessary for later output.
+    if [[ ${url} != http(s|)://* ]]; then
+        url='http://'${url}
+    fi
+
+    if [[ -x `which curl` ]]; then
+        prog=curl
+    else
+        print "curl is not available, but mandatory for ${PN}. Aborting."
+        return 1
+    fi
+    api='https://www.googleapis.com/urlshortener/v1/url'
+    contenttype="Content-Type: application/json"
+    json="{\"longUrl\": \"${url}\"}"
+    data=(${(f)"$($prog --silent -H ${contenttype} -d ${json} $api)"})
+    # Parse the response
+    for item in "${data[@]}"; do
+        case "$item" in
+            ' '#'"id":'*)
+                item=${item#*: \"}
+                item=${item%\",*}
+                printf '%s\n' "$item"
+                return 0
+                ;;
+        esac
+    done
+    return 1
+}
+
+
 # If there's an env.sh file in the directory you're changing into, it gets
 # sourced. Ideal if you e.g. work with different instances of ROCK
 # (http://rock-robotics.org/stable/)
