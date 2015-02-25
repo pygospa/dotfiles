@@ -8,26 +8,22 @@
 
 autoload -U compinit && compinit -u || print 'compinit not available!'
 
-# Load colors package and set colors (according to if it is usable or not
-if autoload -U colors && colors 2>/dev/null ; then
-	BLUE="%{${fg[blue]}%}"
-	RED="%{${fg_bold[red]}%}"
-	GREEN="%{${fg[green]}%}"
-	CYAN="%{${fg[cyan]}%}"
-	MAGENTA="%{${fg[magenta]}%}"
-	YELLOW="%{${fg[yellow]}%}"
-	WHITE="%{${fg[white]}%}"
-	NO_COLOR="%{${reset_color}%}"
-else
-	print 'colors not available!'
-	BLUE=$'%{\e[1;34m%}'
-	RED=$'%{\e[1;31m%}'
-	GREEN=$'%{\e[1;32m%}'
-	CYAN=$'%{\e[1;36m%}'
-	WHITE=$'%{\e[1;37m%}'
-	MAGENTA=$'%{\e[1;35m%}'
-	YELLOW=$'%{\e[1;33m%}'
-	NO_COLOR=$'%{\e[0m%}'
-fi
 
 autoload -Uz vcs_info; vcs_info;
+
+autoload -U zmv
+autoload -U zed
+
+
+# Load a few more functions and tie them to widgets, so they can be bound:
+autoload -U insert-file && zle -N insert-file
+autoload -U edit-command-line && zle -N edit-command-line
+autoload -U insert-unicode-char && zle -N insert-unicode-char
+
+if autoload -U history-search-end; then
+    zle -N history-beginning-search-backward-end history-search-end
+    zle -N history-beginning-search-forward-end  history-search-end
+fi
+zle -C hist-complete complete-word _generic
+zstyle ':completion:hist-complete:*' completer _history
+

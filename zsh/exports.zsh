@@ -13,9 +13,6 @@ HISTSIZE=10000
 # Number of lines to persistantly save to histfile
 SAVEHIST=10000
 
-# set the terminal property
-export COLORTERM="yes"
-
 # Set the shell variable
 export SHELL='/bin/zsh'
 
@@ -27,21 +24,14 @@ else
 fi
 
 # Set the Pager variable
-if [[ -x `which vimpager` ]]; then
-	export PAGER=${PAGER:-vimpager}
-elif [[ -x `which less` ]]; then
-	export PAGER=${PAGER:-less}
-	# Use colors in less
-	export LESS_TERMCAP_mb=$'\E[01;31m'
-	export LESS_TERMCAP_md=$'\E[01;31m'
-	export LESS_TERMCAP_me=$'\E[0m'
-	export LESS_TERMCAP_se=$'\E[0m'
-	export LESS_TERMCAP_so=$'\E[01;44;33m'
-	export LESS_TERMCAP_ue=$'\E[0m'
-	export LESS_TERMCAP_us=$'\E[01;32m'
-else
-	export PAGER=${PAGER:-more}
-fi
+#if [[ -x `which vimpager` ]]; then
+#	export PAGER=${PAGER:-vimpager}
+#elif [[ -x `which less` ]]; then
+#	export PAGER=${PAGER:-less}
+#	# Use colors in less
+#else
+#	export PAGER=${PAGER:-more}
+#fi
 
 # However, we don't want Git to use the standard pager (this will open a new
 # vim instance on easy tasks that I want to run on less, such as display git
@@ -49,32 +39,6 @@ fi
 if [[ -x `which git` ]]; then 
 	export GIT_PAGER=`which less`
 fi
-
-# ls colors
-# (dircolors will populate LS_COLORS)
-if [[ -x `which dircolors` ]]; then
-        eval $(dircolors -b)
-fi
-
-if [[ `uname -s` == Darwin || `uname -s` == FreeBSD ]]; then
-	export CLICOLOR=1;
-fi
- 
-typeset -ga ls_options
-
-if ls --help 2> /dev/null | grep -q GNU; then
-        ls_options=( --color=auto )
-elif [[ `uname -s` == FreeBSD ]]; then
-        ls_options=( -G )
-fi
-
-# grep colors
-typeset -ga grep_options
-
-if grep --help 2> /dev/null | grep -q GNU || [[ `uname -s` == FreeBSD ]]; then
-	grep_options=( --color=auto )
-fi
-
 
 # PATH 
 # ~/bin -> /usr/local/bin -> /usr/bin -> /bin -> /usr/sbin -> /sbin -> /

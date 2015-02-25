@@ -9,7 +9,16 @@
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Lates Version		github.com/pygospa/dotfiles
- 
+
+
+# File containing color settings
+if [ -f ~/dot/zsh/colors.zsh ]; then
+	source ~/dot/zsh/colors.zsh
+else
+	printf "Note ~/.zsh/colors.zsh is unavailable"
+fi
+
+
 if [[ -f ~/dot/zsh/autoload.zsh ]]; then 
 	source ~/dot/zsh/autoload.zsh
 else
@@ -56,5 +65,21 @@ if [ -f ~/dot/zsh-vcs-prompt/zshrc.sh ]; then
 	ZSH_VCS_PROMPT_ENABLE_CACHING='true'
 else
 	printf "Note: ~/.zsh-vc-prompt/zshrc.sh is unavailable"
+fi
+
+if [[ `uname -s` == Darwin ]]; then
+	if [ -f ~/dot/zsh/darwin.zsh ]; then
+		source ~/dot/zsh/darwin.zsh
+	else
+		printf "Note: Running on OS X, but ~/.zsh/darwin.zsh is unavailable"
+	fi
+fi
+
+if [[ `uname -n` == eisdrache ]]; then
+	if [ -f ~/dot/zsh/eisdrache.zsh ]; then
+		source ~/dot/zsh/eisdrache.zsh
+	else
+		printf "Note: Running on eisdrache, but ~/.zsh/eisdrache.zsh is unavailable"
+	fi
 fi
 

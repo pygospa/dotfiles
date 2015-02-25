@@ -1,18 +1,11 @@
-# File			~/.zsh/aliases.zsh
+# File			~/.zsh/eisdrache.zsh
 #
-# Purpose		Aliases I like to use
-#			This file tests for certain executables, and if it
-#			finds them, aliases I like to use for these tools are
-#			created.
+# Purpose		System/host independant aliases I like to use
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
-# Lates Version		github.com/pygospa/dotfiles
-
-
-
-# --------------------------------------------------------------------------- #
-#			System						      #
-# --------------------------------------------------------------------------- #
+# Latest Version	https://github.com/pygospa/dotfiles
+# License		CC BY-SA 4.0, if applicable and compatible to software
+#			license
 
 # ls aliases with and without color
 if [[ "$TERM" != dumb ]]; then
@@ -38,12 +31,12 @@ if [[ "$TERM" != dumb ]]; then
 	alias lss='ls -l *(s,S,t)'${ls_options:+"${ls_options[*]}"}
 	alias lw=' ls -ld *(R,W,X.^ND/)'${ls_options:+"${ls_options[*]}"}
 
-	alias big='ls -flh *(.OL[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias new='ls -rtlh *(D.om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias newdir='ls -rthdl *(/om[1,10]) .*(D/om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias old='ls -rtlh *(D.Om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias olddir='ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias small='ls -Srl *(.oL[1,10])'${ls_options:+"${ls_options[*]}"}
+	alias big=' ls -flh *(.OL[1,10])'${ls_options:+"${ls_options[*]}"}
+	alias new=' ls -rtlh *(D.om[1,10])'${ls_options:+"${ls_options[*]}"}
+	alias newdir=' ls -rthdl *(/om[1,10]) .*(D/om[1,10])'${ls_options:+"${ls_options[*]}"}
+	alias old=' ls -rtlh *(D.Om[1,10])'${ls_options:+"${ls_options[*]}"}
+	alias olddir=' ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])'${ls_options:+"${ls_options[*]}"}
+	alias small=' ls -Srl *(.oL[1,10])'${ls_options:+"${ls_options[*]}"}
 
 else
 	alias ls=' ls -b -CF'		# ls always with escapes, columns and type postfix
@@ -57,20 +50,20 @@ else
 	alias ll=' ls -l *(@)'		# Only links
 	alias lsd=' ls -d *(/)'         # Only directories
 	alias lse=' ls -d *(/^F)'	# Only empty directories
-	alias lss='ls -l *(s,S,t)'	# Only with setgid/setuid/sticky
+	alias lss=' ls -l *(s,S,t)'	# Only with setgid/setuid/sticky
 	alias lw=' ls -ld *(R,W,X.^ND/)' # Only Worldfiles
 
-	alias big='ls -flh *(.OL[1,10])' # 10 biggest files
-	alias new='ls -rtlh *(D.om[1,10])' # 10 newest files + 10 newest directories
-	alias newdir='ls -rthdl *(/om[1,10]) .*(D/om[1,10])'
-	alias old='ls -rtlh *(D.Om[1,10])' # 10 oldest files + 10 oldest directories
-	alias olddir='ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])'
-	alias small='ls -Srl *(.oL[1,10])' # 10 smallest files
+	alias big=' ls -flh *(.OL[1,10])' # 10 biggest files
+	alias new=' ls -rtlh *(D.om[1,10])' # 10 newest files + 10 newest directories
+	alias newdir=' ls -rthdl *(/om[1,10]) .*(D/om[1,10])'
+	alias old=' ls -rtlh *(D.Om[1,10])' # 10 oldest files + 10 oldest directories
+	alias olddir=' ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])'
+	alias small=' ls -Srl *(.oL[1,10])' # 10 smallest files
 fi
 
 # Grep should be colorful
 if [[ "$TERM" != dumb ]]; then
-	alias grep=' grep '${grep_options:+"${grep_options[*]}"}
+	alias grep='grep'${grep_options:+"${grep_options[*]}"}
 fi
 
 # print current directory + subdirectories as a tree
@@ -119,8 +112,6 @@ if [[ -x `which vimpager` ]]; then
 	alias zless=$PAGER
 fi
 
-
-
 # --------------------------------------------------------------------------- #
 #			Version Controll Systems			      #
 # --------------------------------------------------------------------------- #
@@ -128,32 +119,4 @@ fi
 # I am a lazy bum
 if [[ -x `which git` ]]; then
 	alias g='git'
-fi
-
-# --------------------------------------------------------------------------- #
-#			System Specific					      #
-# --------------------------------------------------------------------------- #
-
-# On my Gentoo Linux run 'eisdrache' machine
-if [[ `uname -n` == eisdrache ]]; then
-	# Start mplayer with surround sound activated
-	alias m51='mplayer -ao alsa:device=plug=surround51 -channels 6'
-	# Start TV on mplayer with names for channels
-	alias tv='mplayer -tv driver=v4l2:chanlist=europe-west:channels=E6-ard,E8-zdf,E7-ndr,E10-sat1,SE18-rtl,E12-rtl2,E11-pro7,SE9-kabel1,SE10-vox,SE17-br,SE11-3sat,SE15-mdr,SE6-arte,SE14-n24,SE8-phoenix,SE7-mtv,SE12-viva,22-dasvierte,S22-dmax,S23-superrtl,SE16-kika,E9-kieltv,SE13-sport1,SE20-9live,S21-eurosport,S35-qvc,21-dr1:alsa:adevice=hw.1,0:amode=1:audiorate=32000:forceaudio:immediatemode=0:volume=100:norm=PAL:tdevice=/dev/vbi0 -vo gl2'
-fi
-
-# On Macs in general
-if [[ `uname -s` == Darwin ]]; then
-
-	# Toggle Finder to show hidden files
-	alias show_hidden=' defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'
-	alias hide_hidden=' defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
-
-	# Set easy to use commands for starting and stoping postgresql if
-	# available on system
-	if [[ -x `which pg_ctl` ]]; then
-		alias pg-start=' pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-		alias pg-stop=' pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-	fi
-
 fi
