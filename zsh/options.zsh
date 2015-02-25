@@ -80,7 +80,7 @@ setopt list_beep
 
 # instead of fixed column size for all colums, use individual sizes to make
 # completion list smaller (i.e. occupying less lines)
-setopt list_packed
+setopt no_list_packed
 
 # When listing files that are possible completions, show type of file with
 # trailing identifying mark
