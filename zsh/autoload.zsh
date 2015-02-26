@@ -6,7 +6,6 @@
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Lates Version		github.com/pygospa/dotfiles
 
-autoload -U compinit && compinit -u || print 'compinit not available!'
 
 
 autoload -Uz vcs_info; vcs_info;

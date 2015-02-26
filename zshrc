@@ -25,6 +25,43 @@ else
 	printf "Note ~/.zsh/completion.zsh is unavailable"
 fi
 
+# File containing history settings
+if [ -f ~/dot/zsh/history.zsh ]; then
+	source ~/dot/zsh/history.zsh
+else
+	printf "Note ~/.zsh/history.zsh is unavailable"
+fi
+
+# File containing the prompt settings
+if [ -f ~/dot/zsh/prompt.zsh ]; then
+	source ~/dot/zsh/prompt.zsh 
+else
+	print "Note: ~/.zsh/prompt.zsh is unavailable"
+fi
+
+# Files to source, if it's a Mac OS X
+if [[ `uname -s` == Darwin ]]; then
+	if [ -f ~/dot/zsh/darwin.zsh ]; then
+		source ~/dot/zsh/darwin.zsh
+	else
+		printf "Note: Running on OS X, but ~/.zsh/darwin.zsh is unavailable"
+	fi
+fi
+
+# Files to source if it's my home PC 'eisdrache'
+if [[ `uname -n` == eisdrache ]]; then
+	if [ -f ~/dot/zsh/eisdrache.zsh ]; then
+		source ~/dot/zsh/eisdrache.zsh
+	else
+		printf "Note: Running on eisdrache, but ~/.zsh/eisdrache.zsh is unavailable"
+	fi
+fi
+
+
+
+
+
+
 
 if [[ -f ~/dot/zsh/autoload.zsh ]]; then 
 	source ~/dot/zsh/autoload.zsh
@@ -50,11 +87,6 @@ else
 	printf "Note: ~/.zsh/zstyle.zsh is unavailable"
 fi
 
-if [ -f ~/dot/zsh/prompt.zsh ]; then
-	source ~/dot/zsh/prompt.zsh 
-else
-	print "Note: ~/.zsh/prompt.zsh is unavailable"
-fi
 if [ -f ~/dot/zsh/exports.zsh ]; then
 	source ~/dot/zsh/exports.zsh
 else
@@ -67,28 +99,4 @@ else
 	print "Note: ~/.zsh/aliases.zsh is unavailable"
 fi
 
-if [ -f ~/dot/zsh-vcs-prompt/zshrc.sh ]; then
-	source ~/dot/zsh-vcs-prompt/zshrc.sh
-	ZSH_VCS_PROMPT_ENABLE_CACHING='true'
-else
-	printf "Note: ~/.zsh-vc-prompt/zshrc.sh is unavailable"
-fi
-
-# Files to source, if it's a Mac OS X
-if [[ `uname -s` == Darwin ]]; then
-	if [ -f ~/dot/zsh/darwin.zsh ]; then
-		source ~/dot/zsh/darwin.zsh
-	else
-		printf "Note: Running on OS X, but ~/.zsh/darwin.zsh is unavailable"
-	fi
-fi
-
-# Files to source if it's my home PC 'eisdrache'
-if [[ `uname -n` == eisdrache ]]; then
-	if [ -f ~/dot/zsh/eisdrache.zsh ]; then
-		source ~/dot/zsh/eisdrache.zsh
-	else
-		printf "Note: Running on eisdrache, but ~/.zsh/eisdrache.zsh is unavailable"
-	fi
-fi
 

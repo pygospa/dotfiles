@@ -245,4 +245,3 @@ _force_rehash() {
 
 # see upgrade function in this file
 compdef _hosts upgrade
-
