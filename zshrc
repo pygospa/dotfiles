@@ -18,6 +18,13 @@ else
 	printf "Note ~/.zsh/colors.zsh is unavailable"
 fi
 
+# File containing completion settings
+if [ -f ~/dot/zsh/completion.zsh ]; then
+	source ~/dot/zsh/completion.zsh
+else
+	printf "Note ~/.zsh/completion.zsh is unavailable"
+fi
+
 
 if [[ -f ~/dot/zsh/autoload.zsh ]]; then 
 	source ~/dot/zsh/autoload.zsh
@@ -67,6 +74,7 @@ else
 	printf "Note: ~/.zsh-vc-prompt/zshrc.sh is unavailable"
 fi
 
+# Files to source, if it's a Mac OS X
 if [[ `uname -s` == Darwin ]]; then
 	if [ -f ~/dot/zsh/darwin.zsh ]; then
 		source ~/dot/zsh/darwin.zsh
@@ -75,6 +83,7 @@ if [[ `uname -s` == Darwin ]]; then
 	fi
 fi
 
+# Files to source if it's my home PC 'eisdrache'
 if [[ `uname -n` == eisdrache ]]; then
 	if [ -f ~/dot/zsh/eisdrache.zsh ]; then
 		source ~/dot/zsh/eisdrache.zsh
