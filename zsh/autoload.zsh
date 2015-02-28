@@ -5,6 +5,8 @@
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Lates Version		github.com/pygospa/dotfiles
+# License		CC BY-SA 4.0, if applicable and compatible to software
+#			license
 
 
 
