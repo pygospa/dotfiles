@@ -1,6 +1,6 @@
-# File			~/.zsh/eisdrache.zsh
+# File			~/.zsh/aliases.zsh
 #
-# Purpose		System/host independant aliases I like to use
+# Purpose		System independant (i.e. UNIX systme) aliases I like to use
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	https://github.com/pygospa/dotfiles

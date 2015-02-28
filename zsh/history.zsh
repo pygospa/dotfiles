@@ -1,7 +1,7 @@
-# File			~/.zsh/completion.zsh
+# File			~/.zsh/history.zsh
 #
-# Purpose		This file contains all settings and stylings for zsh
-#			completion system
+# Purpose		This file contains all settings describing the 
+#			behaviour of the shell history
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	https://github.com/pygospa/dotfiles
@@ -11,10 +11,27 @@
 
 
 # --------------------------------------------------------------------------- #
+#			Variables					      #
+# --------------------------------------------------------------------------- #
+
+# History
+HISTFILE=${HOME}/.zsh_history
+# Number of lines to keep in history of the active session
+HISTSIZE=10000
+# Number of lines to persistantly save to histfile
+SAVEHIST=10000
+
+
+
+# --------------------------------------------------------------------------- #
 #			Modules						      #
 # --------------------------------------------------------------------------- #
 
-
+if autoload -U history-search-end; then
+    zle -N history-beginning-search-backward-end history-search-end
+    zle -N history-beginning-search-forward-end  history-search-end
+fi
+zle -C hist-complete complete-word _generic
 
 
 
@@ -90,11 +107,12 @@ setopt share_history
 
 
 
-
-
 # --------------------------------------------------------------------------- #
 #			Styling						      #
 # --------------------------------------------------------------------------- #
+
+zstyle ':completion:hist-complete:*' completer _history
+
 
 
 # --------------------------------------------------------------------------- #
@@ -108,5 +126,6 @@ bindkey "^[[B"		history-beginning-search-forward
 
 # Complete cmd with separate words extracted from history using 'arrow right'
 bindkey "^[[C"		hist-complete
+
 
 
