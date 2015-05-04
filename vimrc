@@ -20,8 +20,15 @@ set clipboard=unnamed
 set nocompatible
 
 " Colors
-colorscheme molokai		" Use a nice color scheme (needs to be present in ~/.vim/colors/
-let g:rehash256 = 1
+syntax enable
+#set background=dark		" We plan to use a drak background. This setting will choose proper coloring
+set background=light
+colorscheme solarized
+let g:solarized_termcolors=256
+
+
+"colorscheme molokai		" Use a nice color scheme (needs to be present in ~/.vim/colors/
+"let g:rehash256 = 1
 " Legacy Color Schemes
 "colorscheme wombat
 "colorscheme vimbrant
@@ -62,7 +69,6 @@ set backspace=indent,eol,start
 
 scriptencoding utf-8		"Set the encoding for the script
 
-set background=dark		" We plan to use a drak background. This setting will choose proper coloring
 set encoding=utf-8		" We want to produce utf-8 documents
 set filetype=on			" We want vim to inspect the files it is editing
 set hidden			" We want to switch between buffers, even if they are unsaved!
