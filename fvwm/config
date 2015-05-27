@@ -1,0 +1,249 @@
+
+#         //                                            \\ 
+#         *                 menu commands                *
+#         \\                                            //
+
+
+
+#         /*  Syntax: DestroyMenu [recreate] <Menue>    *\
+#         *   Löscht ein Menue, so dass Referenzen zu    *
+#         *   diesem ungueltig werden. Nuetlich um ein   *
+#         *   Menue waehrend des Betriebes von fvwm zu   *
+#         *   aendern. Ein Menue kann dann mit dem Be-   *
+#         *   fehl "AddToMenu" wieder aufgebaut werden.  *
+#         *   Die Option "recreate" verhindert das Lö-   *
+#         *   schen des gesammten Menues; es löscht nur  *
+#         *   die Menue-Gegenstaende [mitsammt den       *
+#         \*  Titeln]                                   */
+
+
+
+#         /*  Syntax: AddToMenu <Menue-Name>            *\
+#         *                     [<Eintr.Name> <Befehl>]  *
+#         *   Erstellt ein Menue, oder fuegt diesem et-  *
+#         *   was hinzu.                                 *
+#         *   Ein typisches Menue sieht Beispielhaft so  *
+#         *   aus:                                       *
+#         *                                              *
+#         *      AddToMenu FvwmRoot "Menü Titel" Title   *
+#         *       + Xterm     Exec  exec xterm -e tcsh   *
+#         *       + ""        Nop                        *
+#         *       + Rxvt      Exec  exec rxvt            *
+#         *         ...                                  *
+#         *                                              *
+#         *   Seperatoren werden ueber ein leeren Ein-   *
+#         *   tragsnamen ("") und dem Befehl "Nop" re-   *
+#         *   alisiert.                                  *
+#         *   Aufgerufen wird das Menue ueber ein Key-   *
+#         *   oder Mousebinding, wie folgt:              *
+#         *                                              *
+#         *      Mouse 1 R A Menu <Menu-Name>            *
+
+Style "*"	BorderWidth 0, HandleWidth 1
+
+Mouse 1 R A Menu ProgrammMenu
+Mouse 3 T A Close
+#Mouse 2 R A Menu FvwmMenu
+#Mouse 3 R A Menu HomeDir
+
+AddToMenu FvwmMenu "     FVWM²     " Title
+ + "Edit ~/.fvwm2rc"     Exec gvim ${HOME}/.fvwm2rc
+ + "FvwmConsole"         FvwmConsole
+ + ""                    Nop
+ + "Refresh Screen"      Refresh
+ + "Restart FVWM²"       Restart
+ + "Exit FVWM²"          Quit
+ + "Max" all%menu/window-iconify.xpm%"
+
+
+AddToMenu ProgrammMenu "    <- (¯`·._ Wanderdrache _.·'¯) ->   " Title
+ + "aterm"              Exec exec aterm -ls
+ + ""                   Nop
+ + "Terminal Emulators" Popup Terminals
+ + ""                   Nop
+ + "Mount"              PopUp Mount
+ + ""                   Nop
+ + "OpenOffice.org"     Popup Office
+ + "Internet"           Popup Internet
+ + "Multimedia"         Popup Multimedia
+ + ""                   Nop
+ + "FVWM²"              Popup FvwmMenu
+
+
+AddToMenu Terminals     "     Terminal Emulators     " Title
+ + "Aterm"              Exec exec aterm -ls
+ + "Xterm" 		Exec exec xterm
+
+AddToMenu Mount "     Mount     " Title
+ + "mount DVD"          Exec exec xterm -e mount /dev/dvd && exit
+ + "umount DVD"         Exec exec xterm -e umount /dev/dvd && exit
+ + ""                   Nop
+ + "mount CD-ROM"       Exec exec xterm -e mount /mnt/cdrom && exit
+ + "umount CD-ROM"      Exec exec xterm -e umount /mnt/cdrom && exit
+ + ""                   Nop
+ + "mount Floppy"       Exec exec xterm -e mount /mnt/floppy && exit
+ + "umount Floppy"      Exec exec xterm -e umount /mnt/floppy && exit
+
+AddToMenu Office "     OpenOffice.org     " Title
+ + "OOo Writer"        Exec exec oowriter
+ + "OOo Calc"          Exec exec oocalc
+ + "OOo Impress"       Exec exec ooimpress
+ + "OOo Draw"          Exec exec oodraw
+ + ""                  Nop
+ + "OOo Printer Administration"     Exec exec oopadmin
+ + "OOo Setup"         Exec exec oosetup
+
+AddToMenu Internet "     Internet     " Title
+ + "Firefox"           Exec exec firefox -P default
+ + "Irssi"             Exec exec aterm -e irssi
+ + "XChat2"            Exec exec xchat-2
+ + "CenterICQ"         Exec exec aterm -e centericq
+ + "PSI"               Exec exec psi
+ + "aMule"             Exec exec amule
+
+AddToMenu Multimedia "     Multimedia     " Title
+ + "mplayer"           Exec exec gmplayer
+ + "Play DVD"          Exec exec gmplayer dvd:// -vo vx
+ + "Play SVCD"         Exec exec gmplayer
+ + "tvtime"            Exec exec tvtime
+ + ""                  Nop
+ + "orpheus"           Exec exec aterm -e orpheus -xt
+ + "Beep-Meida-Player" Exec exec beep-media-player
+ + "XMMS"              Exec exec xmms
+ + ""                  Nop
+ + "gimp2"             Exec exec gimp-2.0
+ + ""                  Nop
+  
+AddToMenu Games "       Games        " Title
+ + "Tuxracher"         Exec exec tuxracer
+ + "Nethack"           Exec exec aterm -e nethack
+ + "xtris"             Exec exec xtris
+
+Style "XMMS_Player" NoTitle
+
+
+
+
+#DestroyMenu HomeDir
+#AddToMenu HomeDir "     /home/kannan/     " Title
+# + DynamicPopUpAction PipeRead 'fvwm_make_browse_menu.sh /home/kannan/'
+
+
+
+#         //                                            \\ 
+#         *   commands controlling the virtual desktop   *
+#         \\                                            //
+
+
+
+#         /*  Syntax: DesktopName <DeskNr.> <Name>      *\
+#         *   Definiert einen Namen fuer die Dektops,    *
+#         *   welche von Modulen und Programmen ge-      *
+#         \*  nutzt werden koennen.                     */
+
+DesktopName 0 Desktop
+
+
+#         /*  Syntax: DeskTopSize <Hor.Anz>x<Vert.Anz>  *\
+#         *   Zerteielt den virtuellen Desktop in Pages  * 
+#         *   wobei jede Page einem Monitorausschnitt    *
+#         \*  entspricht.                               */
+
+DeskTopSize 3x3
+
+
+#         /*  Syntax: EdgeResistance <MilliSek> <Pixel> *\
+#         *   Gibt an, wie leicht es ist, auf eine an-   * 
+#         *   dere Page zu wechseln. Die erste Zahl      *
+#         *   gibt an, wie viele Millisekunden der Maus- *
+#         *   zeiger auf dem Rand ruhen muss, bevor auf  *
+#         *   die naechste Page gewechselt wird.         *
+#         *   Die zweite Uahl gibt an, wie viele Pixel   *
+#         *   ein Fenster ueber den Rand geschoben wer-  *
+#         *   den muss, damit es sich teilweise auf der  *
+#         *   naechsten Page befindet.                   *
+#         *   Wenn der erste Wert 10000 betraegt, ist    *
+#         \*  diese Bewegung unmoeglich.                */
+
+EdgeResistance 200 150
+
+
+#         /*  Syntax: EdgeScropp <Hor[p]> <Vert[p]>     *\
+#         *   Gibt in Prozent an, umwieviel der Monitor  *
+#         *   die naechste Page anzeigt, wenn die Maus   *
+#         *   ueber den Rand geht. Wird ein 'p* ange-    *
+#         *   haengt, wird die Zahl als Pixelwert aufge- *
+#         *   fasst.                                     *
+#         *   'EdgeScroll 0 0' schaltet das Page-        *
+#         *   scrolling aus. Wird der Wert mit 1000 Mul- *
+#         *   tipliziert angegeben, kommt man vom letzen *
+#         \*  Page einer Zeile/Spalte wieder zum ersten.*/
+
+EdgeScroll 100000 100000
+
+
+#         /*  Syntax: EdgeThickness <0|1|2>             *\
+#         *   Pagescrolling wird über kleine Fenster     *
+#         *   realisiert, welche sich am Rand des Mo-    *
+#         *   nitors befinden und nur auf Mausbewegungen *
+#         *   warten. EdgeThickness bestimmt die dicke   *
+#         *   dieser Fenster. Ist der Wert auf 0 gesetzt,*
+#         *   ist kein Scrollen moeglich. 1 ist der      *
+#         *   besere Wert, funktioniert aber nicht auf   *
+#         *   jedem Rechner. 2 ist Standart             */
+
+EdgeThickness 1
+
+
+AddToFunc InitFunction
++ "I" Module FvwmBanner
+
+
+AddToFunc StartFunction
+#+ I Exec fvwm-root --retain-pixmap ${HOME}/bilder/wallpapers/linux_inside-B-nova-blau-glas-gluehen.png
+#+ I Exec fvwm-root --retain-pixmap ${HOME}/bilder/wallpapers/schaddie-paper.png
++ I Exec fvwm-root --retain-pixmap ${HOME}/bilder/wallpapers/in_use/pedie29.png
++ I Exec xscreensaver &
+
+CleanupColorsets
+Colorset 0 fg green3, bg #bebebe, Translucent black 50
+#Colorset 1 fg black, bg #bebebe, Translucent black 50
+Colorset 1 fg #cd00cd, bg #bebebe, Translucent black 50
+
+## Highlight the selected entry, Regular colours, Highlighted entry colours
+
+#
+MenuStyle * HilightBackOff
+#MenuStyle * HilightBack, Hilight3DOff, MenuColorset 0, ActiveColorset 1
+MenuStyle * ActiveFore, Hilight3DOff, MenuColorset 0, ActiveColorset 1
+## Border width, Number of underlines for title, Full-length separators, Solid submenu indicators, ?
+MenuStyle * BorderWidth 1, TitleUnderlines2, SeparatorsShort, TrianglesSolid, Animation
+## Menu font, Entry layout
+
+MenuStyle * Font "Shadow=0 1 SE:xftfont -misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-iso8859-15", ItemFormat "%s%.2|%.5i%.5l%.5i%2.3>%2|"
+
+## ALT ## 
+#MenuStyle * Font "Shadow=0 1 SE:xft:Bitstream Vera Sans Mono:style=Roman:size=10", ItemFormat "%s%.2|%.5i%.5l%.5i%2.3>%2|"
+
+## Offset, delay for popup submenus
+MenuStyle * PopupOffset 0 100, PopupDelay 300
+
+
+#DefaultFont "xftfont -misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-iso8859-15"
+DefaultFont "-mixc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+
+ColormapFocus FollowsFocus
+
+## Titlebar:
+Colorset 7 fg green, bg white, sh #bebebe, RootTransparent Buffer, Tint black 45
+Colorset 8 fg white, bg white, sh #bebebe, RootTransparent Buffer, Tint black 45 
+
+DestroyDecor DefaultDecor
+AddToDecor DefaultDecor
++ TitleStyle RightJustified Height 14
++ TitleStyle InActive ( Colorset 7 -- Flat ) Active (Colorset 7 -- Flat )
+Style * HilightFore green
+
+
+Style * UseDecor DefaultDecor
+
