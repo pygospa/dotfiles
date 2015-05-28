@@ -1,3 +1,58 @@
+#
+#
+#
+#
+#          /* * * * * * * * * * * * * * * * * * * * *\
+#          *      file:     ~/.fvwm2rc               *
+#          *      author:   Kannan Thambiah          *
+#          *      date:     08.10.2004               *
+#          *      kontakt:  ByteBreaker@gmx.net      *
+#          *                                         *
+#          *   notice:                               *
+#          *   =======                               *
+#          *   Bitte beim nutzen dieser Datei die    *
+#          *   Kommentare unveraendert lassen. Zu-   *
+#          *   saetze und Aenderungen koennen ge-    *
+#          *   macht werden, diese dann aber bitte   *
+#          *   als solche Kennzeichnen, z.B. mit     *
+#          *   anderen Kommentierstilen.             *
+#          *   Ich bitte bei Aenderungen auch mir    *
+#          *   eine Kopie zukommen zu lassen.        *
+#          *                                Danke!   *
+#          *                                         *
+#          *   typographic conventions:              *
+#          *   ========================              *
+#          *   Die Syntaxbeschreibung der einzelnen  *
+#          *   Befehle ist wie folgt zu lesen:       *
+#          *   1.) Als erstes erscheint der Befehl   *
+#          *       wie er in der Konfiguraitons-     *
+#          *       datei zu stehen hat.              *
+#          *   2.) Die Begriffe in spitzen Klammern  *
+#          *       werden durch eigene Werte ersetzt.*
+#          *       Der Begriff in der Klammer ist so *
+#          *       gewaehlt, dass er Auskunft ueber  *
+#          *       den Wert gibt, der uebergeben     *
+#          *       wird                              *
+#          *   3.) Begriffe in eckigen Klammern be-  *
+#          *       inhalten optionale Befehle und    *
+#          *       Werte. Ist der eingeklammerte     *
+#          *       Begriff noch einmal in Spitzen    *
+#          *       Klammern eingeklammert, so wird   *
+#          *       er, wie unter 2.) beschrieben,    *
+#          *       behandelt. Ansonsten wird bei     *
+#          *       Bedarf ohne Klammern unveraendert *
+#          *       hinzugefuegt, oder, wenn kein     *
+#          *       Bedarf ganz weggelassen.          *
+#          *                                         *
+#          *   Eine Komplette Beschreibung dieser    *
+#          *   Datei findet sich am Dateiende.       *
+#          *   Viel Spass,                           *
+#          *                                  Kannan *
+#          \* * * * * * * * * * * * * * * * * * * * */
+
+
+
+
 
 #         //                                            \\ 
 #         *                 menu commands                *
@@ -42,10 +97,10 @@
 Style "*"	BorderWidth 0, HandleWidth 1
 
 Mouse 1 R A Menu ProgrammMenu
-Mouse 3 T A Close
 #Mouse 2 R A Menu FvwmMenu
 #Mouse 3 R A Menu HomeDir
 
+DestroyMenu FvwmMenu
 AddToMenu FvwmMenu "     FVWM²     " Title
  + "Edit ~/.fvwm2rc"     Exec gvim ${HOME}/.fvwm2rc
  + "FvwmConsole"         FvwmConsole
@@ -53,12 +108,10 @@ AddToMenu FvwmMenu "     FVWM²     " Title
  + "Refresh Screen"      Refresh
  + "Restart FVWM²"       Restart
  + "Exit FVWM²"          Quit
- + "Max" all%menu/window-iconify.xpm%"
 
 
-AddToMenu ProgrammMenu "    <- (¯`·._ Wanderdrache _.·'¯) ->   " Title
- + "aterm"              Exec exec aterm -ls
- + ""                   Nop
+Destroy ProgrammMenu
+AddToMenu ProgrammMenu "     <- (¯`·._ Eisdrache _.·'¯) ->     " Title
  + "Terminal Emulators" Popup Terminals
  + ""                   Nop
  + "Mount"              PopUp Mount
@@ -70,10 +123,12 @@ AddToMenu ProgrammMenu "    <- (¯`·._ Wanderdrache _.·'¯) ->   " Title
  + "FVWM²"              Popup FvwmMenu
 
 
+Destroy Terminals
 AddToMenu Terminals     "     Terminal Emulators     " Title
- + "Aterm"              Exec exec aterm -ls
+ + "Aterm"              Exec exec aterm
  + "Xterm" 		Exec exec xterm
 
+Destroy Mount
 AddToMenu Mount "     Mount     " Title
  + "mount DVD"          Exec exec xterm -e mount /dev/dvd && exit
  + "umount DVD"         Exec exec xterm -e umount /dev/dvd && exit
@@ -84,6 +139,7 @@ AddToMenu Mount "     Mount     " Title
  + "mount Floppy"       Exec exec xterm -e mount /mnt/floppy && exit
  + "umount Floppy"      Exec exec xterm -e umount /mnt/floppy && exit
 
+Destroy Office
 AddToMenu Office "     OpenOffice.org     " Title
  + "OOo Writer"        Exec exec oowriter
  + "OOo Calc"          Exec exec oocalc
@@ -93,31 +149,25 @@ AddToMenu Office "     OpenOffice.org     " Title
  + "OOo Printer Administration"     Exec exec oopadmin
  + "OOo Setup"         Exec exec oosetup
 
+Destroy Internet
 AddToMenu Internet "     Internet     " Title
  + "Firefox"           Exec exec firefox -P default
- + "Irssi"             Exec exec aterm -e irssi
  + "XChat2"            Exec exec xchat-2
  + "CenterICQ"         Exec exec aterm -e centericq
- + "PSI"               Exec exec psi
- + "aMule"             Exec exec amule
+ + "XMule"             Exec exec xmule
 
+Destroy Multimedia
 AddToMenu Multimedia "     Multimedia     " Title
  + "mplayer"           Exec exec gmplayer
  + "Play DVD"          Exec exec gmplayer dvd:// -vo vx
  + "Play SVCD"         Exec exec gmplayer
- + "tvtime"            Exec exec tvtime
  + ""                  Nop
- + "orpheus"           Exec exec aterm -e orpheus -xt
- + "Beep-Meida-Player" Exec exec beep-media-player
  + "XMMS"              Exec exec xmms
  + ""                  Nop
  + "gimp2"             Exec exec gimp-2.0
  + ""                  Nop
+ + "xawtv"             Exec exec xawtv -noxv-video
   
-AddToMenu Games "       Games        " Title
- + "Tuxracher"         Exec exec tuxracer
- + "Nethack"           Exec exec aterm -e nethack
- + "xtris"             Exec exec xtris
 
 Style "XMMS_Player" NoTitle
 
@@ -195,55 +245,87 @@ EdgeScroll 100000 100000
 EdgeThickness 1
 
 
-AddToFunc InitFunction
-+ "I" Module FvwmBanner
 
-
+DestroyFunc StartFunction
 AddToFunc StartFunction
-#+ I Exec fvwm-root --retain-pixmap ${HOME}/bilder/wallpapers/linux_inside-B-nova-blau-glas-gluehen.png
-#+ I Exec fvwm-root --retain-pixmap ${HOME}/bilder/wallpapers/schaddie-paper.png
-+ I Exec fvwm-root --retain-pixmap ${HOME}/bilder/wallpapers/in_use/pedie29.png
-+ I Exec xscreensaver &
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/Bilder/Wallpapers/fluorescence6.png
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Mist_Valley___wallpaper_by_li_bra.png
++ I Exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Angelic_Solice.png
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Hunting_for_the_Fallens.png
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Discover_the_Secret.png
 
 CleanupColorsets
-Colorset 0 fg green3, bg #bebebe, Translucent black 50
-#Colorset 1 fg black, bg #bebebe, Translucent black 50
-Colorset 1 fg #cd00cd, bg #bebebe, Translucent black 50
+Colorset 0 fg white, bg #122744, Translucent #122744 40
+Colorset 1 fg black, bg #3e3e3e
 
 ## Highlight the selected entry, Regular colours, Highlighted entry colours
-
-#
-MenuStyle * HilightBackOff
-#MenuStyle * HilightBack, Hilight3DOff, MenuColorset 0, ActiveColorset 1
-MenuStyle * ActiveFore, Hilight3DOff, MenuColorset 0, ActiveColorset 1
+MenuStyle * HilightBack, Hilight3DOff, MenuColorset 0, ActiveColorset 1
 ## Border width, Number of underlines for title, Full-length separators, Solid submenu indicators, ?
 MenuStyle * BorderWidth 1, TitleUnderlines2, SeparatorsShort, TrianglesSolid, Animation
 ## Menu font, Entry layout
-
-MenuStyle * Font "Shadow=0 1 SE:xftfont -misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-iso8859-15", ItemFormat "%s%.2|%.5i%.5l%.5i%2.3>%2|"
-
-## ALT ## 
-#MenuStyle * Font "Shadow=0 1 SE:xft:Bitstream Vera Sans Mono:style=Roman:size=10", ItemFormat "%s%.2|%.5i%.5l%.5i%2.3>%2|"
-
+MenuStyle * Font "Shadow=0 1 SE:xft:Bitstream Vera Sans Mono:style=Roman:size=10", ItemFormat "%s%.2|%.5i%.5l%.5i%2.3>%2|"
 ## Offset, delay for popup submenus
 MenuStyle * PopupOffset 0 100, PopupDelay 300
 
 
-#DefaultFont "xftfont -misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-iso8859-15"
-DefaultFont "-mixc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+DefaultFont "xft:Bitstream Vera Sans Mono:style=Roman:size=10"
 
 ColormapFocus FollowsFocus
 
-## Titlebar:
-Colorset 7 fg green, bg white, sh #bebebe, RootTransparent Buffer, Tint black 45
-Colorset 8 fg white, bg white, sh #bebebe, RootTransparent Buffer, Tint black 45 
-
-DestroyDecor DefaultDecor
-AddToDecor DefaultDecor
-+ TitleStyle RightJustified Height 14
-+ TitleStyle InActive ( Colorset 7 -- Flat ) Active (Colorset 7 -- Flat )
-Style * HilightFore green
 
 
-Style * UseDecor DefaultDecor
+
+
+#          /* * * * * * * * * * * * * * * * * * * * *\
+#          *      File:     ~/.fvwm2rc               *
+#          *      Author:   Kannan Thambiah          *
+#          *      Stand:    08.10.2004               *
+#          *      Kontakt:  ByteBreaker@gmx.net      *
+#          *                                         *
+#          *   Purpose:                              *
+#          *   ========                              *
+#          *   Diese ausgiebig kommentierte Konfigu- *
+#          *   ration wurde geschrieben um das Ein-  *
+#          *   richten von fvwm2rc ohne weitere      *
+#          *   Literatur so einfach wie moeglich zu  *
+#          *   gestalten.                            *
+#          *                                         *
+#          *   Disclaimer:                           *
+#          *   ===========                           *
+#          *   Ich gebe weder Garantie auf Richtig-  *
+#          *   heit, noch auf Vollstaendigkeit.      *
+#          *                                         *
+#          *   Notice:                               *
+#          *   =======                               *
+#          *   Bitte beim nutzen dieser Datei die    *
+#          *   Kommentare unveraendert lassen. Zu-   *
+#          *   saetze und Aenderungen koennen ge-    *
+#          *   macht werden, diese dann aber bitte   *
+#          *   als solche Kennzeichnen, z.B. mit     *
+#          *   anderen Kommentierstilen.             *
+#          *   Ich bitte bei Aenderungen auch mir    *
+#          *   eine Kopie zukommen zu lassen.        *
+#          *                                Danke!   *
+#          *                                         *
+#          *   Source:                               *
+#          *   =======                               *
+#          *   http://kannan.homelinux.com           *
+#          *                                         *
+#          *   Links:                                *
+#          *   ======                                *
+#          *   http://www.fvwm.org                   *
+#          *   http://wiki.warwickcompsoc.co.uk/     *
+#          *      bin/view/UWLUG/FVWM                *
+#          *   http://forums.gentoo.org/             *
+#          *      viewtopic.php?t=80517              *
+#          *   http://dev.gentoo.org/~taviso/        *
+#          *      fvwm2rc.html                       *
+#          *                                         *
+#          *   Powered by:                           *
+#          *   ===========                           *
+#          *    + fvwm 2.5.10                        *
+#          *    + VIM 6.3.25                         *
+#          *    + Gentoo Linux 2004.2                *
+#          *                              Enjoy it!  *
+#          \* * * * * * * * * * * * * * * * * * * * */
 
