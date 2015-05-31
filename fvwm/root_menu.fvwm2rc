@@ -27,6 +27,7 @@ Read submenus/mount_menu.conf
 Read submenus/multimedia_menu.conf
 Read submenus/office_menu.conf
 Read submenus/terminals_menu.conf
+#Read quakelike_term.conf
 
 # create root menu
 DestroyMenu RootMenu

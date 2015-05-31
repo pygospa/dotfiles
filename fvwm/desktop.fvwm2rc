@@ -29,8 +29,8 @@
 # Copyright:		CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
 # Latest Version:	github.com/pygospa/dotfiles	
 
-DesktopSize 3x3
 DesktopName 0 Desktop
+DesktopSize 3x3
 
 EdgeResistance 200
 Style * EdgeMoveDelay 200
@@ -38,7 +38,12 @@ Style * EdgeMoveResistance 150
 EdgeScroll 100000 100000
 EdgeThickness 1
 
-AddToFunc StartFunction
-+ I Exec fvwm-root --retain-pixmap ${HOME}/pics/wallpapers/try_it.png
 
+
+#AddToFunc InitFunction
+#+ "I" Module FvwmBanner
+
+AddToFunc StartFunction
++ I Exec fvwm-root --retain-pixmap ${HOME}/pics/wallpapers/cyborg.png
+#+ I Exec xscreensaver &
 
