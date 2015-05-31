@@ -75,3 +75,25 @@
 !! white dark/light
 *color7:                S_base2
 *color15:               S_base3
+
+
+!!
+!------------------------------------------------------------------------------
+! urxvt Settings
+
+URxvt.saveLines: 1000
+URxvt.scrollBar: false
+URxvt.foreground: white
+URxvt.background: black
+URxvt.secondaryScroll: true
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+URxvt.tabbed.saveLines: 1000
+URxvt.tabbed.scrollBar: false
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 1
+URxvt.tabbed.secondaryScroll: true
+
