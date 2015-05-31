@@ -1,11 +1,11 @@
 Style * BorderWidth 0, HandleWidth 1
+Style * TitleAtLeft
+Style * Colorset 1, HilightColorset 2
 
 DestroyDecor DefaultDecor
 AddToDecor DefaultDecor
-+ TitleStyle RightJustified Height 14
-+ TitleStyle Inactive (Colorset 7 -- flat) Active (Colorset 8 -- flat)
-+ BorderStyle Inactive (Colorset 7 -- flat) Active (Colorset 8 flat)
++ TitleStyle RightJustified Height 18 -- flat
++ TitleStyle Inactive (Colorset 1 -- flat) Active (Colorset 2 -- flat)
++ BorderStyle Inactive (Colorset 10 -- flat) Active (Colorset 11 -- flat)
 
-Style * HilightFore #0276fd
 Style * UseDecor DefaultDecor
-Style * TitleAtLeft
