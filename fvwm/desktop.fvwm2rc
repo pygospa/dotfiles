@@ -1,4 +1,4 @@
-# File			~/.fvwm/desktop.conf
+# File			~/.fvwm/desktop.fvwm2rc
 #
 # Purpose		All desktop settings go in here
 #			- DesktopSize <hor_cnt>x<vert_cnt>

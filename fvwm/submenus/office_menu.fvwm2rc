@@ -1,4 +1,4 @@
-# File                  ~/.fvwm/submenus/office_menu.conf
+# File                  ~/.fvwm/submenus/office_menu.fvwm2rc
 #
 # Purpose               OpenOffice.org programs
 #                       resetting or restarting fvwm2 as well as opening the fvwm console

@@ -1,4 +1,4 @@
-# File                  ~/.fvwm/submenus/internet_menu.conf
+# File                  ~/.fvwm/submenus/internet_menu.fvwfvwm2rc
 #
 # Purpose               contains links to all internet applications
 #                       Creating a new menu is done by adding itmes to its name:

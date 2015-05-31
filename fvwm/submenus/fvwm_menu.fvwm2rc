@@ -1,4 +1,4 @@
-# File                  ~/.fvwm/submenus/fvwm_menu.conf
+# File                  ~/.fvwm/submenus/fvwm_menu.fvwm2rc
 #
 # Purpose               contains all important fvwm2 commands such as closing, 
 #                       resetting or restarting fvwm2 as well as opening the fvwm console

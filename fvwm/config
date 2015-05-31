@@ -8,8 +8,40 @@
 # Copyright:		CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
 # Latest Version:	github.com/pygospa/dotfiles	
 
-Read desktop.conf
-Read mouse.conf
-Read root_menu.conf
-Read colors.conf
-Read window.conf
+Read desktop.fvwm2rc
+Read mouse.fvwm2rc
+Read root_menu.fvwm2rc
+Read colors.fvwm2rc
+Read window.fvwm2rc
+
+
+
+
+DestroyFunc StartFunction
+AddToFunc StartFunction
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/Bilder/Wallpapers/fluorescence6.png
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Mist_Valley___wallpaper_by_li_bra.png
++ I Exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Angelic_Solice.png
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Hunting_for_the_Fallens.png
+#+ I Exec exec fvwm-root --retain-pixmap ${HOME}/devianArt/eng/Discover_the_Secret.png
+
+CleanupColorsets
+Colorset 0 fg white, bg #122744, Translucent #122744 40
+Colorset 1 fg black, bg #3e3e3e
+
+## Highlight the selected entry, Regular colours, Highlighted entry colours
+MenuStyle * HilightBack, Hilight3DOff, MenuColorset 0, ActiveColorset 1
+## Border width, Number of underlines for title, Full-length separators, Solid submenu indicators, ?
+MenuStyle * BorderWidth 1, TitleUnderlines2, SeparatorsShort, TrianglesSolid, Animation
+## Menu font, Entry layout
+MenuStyle * Font "Shadow=0 1 SE:xft:Bitstream Vera Sans Mono:style=Roman:size=10", ItemFormat "%s%.2|%.5i%.5l%.5i%2.3>%2|"
+## Offset, delay for popup submenus
+MenuStyle * PopupOffset 0 100, PopupDelay 300
+
+
+DefaultFont "xft:Bitstream Vera Sans Mono:style=Roman:size=10"
+
+ColormapFocus FollowsFocus
+
+
+

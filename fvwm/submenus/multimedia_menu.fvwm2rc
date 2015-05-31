@@ -1,4 +1,4 @@
-# File                  ~/.fvwm/submenus/multimedia_menu.conf
+# File                  ~/.fvwm/submenus/multimedia_menu.fvwm2rc
 #
 # Purpose               contains all programs that have to do with media,
 #			both displaying and manipulating

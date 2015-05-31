@@ -1,4 +1,4 @@
-# File                  ~/.fvwm/submenus/terminals_menu.conf
+# File                  ~/.fvwm/submenus/terminals_menu.fvwm2rc
 #
 # Purpose               contains different terminal emulators
 #                       Creating a new menu is done by adding itmes to its name:

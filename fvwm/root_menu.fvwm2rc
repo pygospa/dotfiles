@@ -1,4 +1,4 @@
-# File			~/.fvwm/root_menu.conf
+# File			~/.fvwm/root_menu.fvwm2rc
 #
 # Purpose		sets up the root menu for fvwm2
 #			To create a dynamic menu, it first has to be destroyed,
@@ -21,13 +21,13 @@
 
 
 # Read in submenus
-Read submenus/fvwm_menu.conf
-Read submenus/internet_menu.conf
-Read submenus/mount_menu.conf
-Read submenus/multimedia_menu.conf
-Read submenus/office_menu.conf
-Read submenus/terminals_menu.conf
-#Read quakelike_term.conf
+Read submenus/fvwm_menu.fvwm2rc
+Read submenus/internet_menu.fvwm2rc
+Read submenus/mount_menu.fvwm2rc
+Read submenus/multimedia_menu.fvwm2rc
+Read submenus/office_menu.fvwm2rc
+Read submenus/terminals_menu.fvwm2rc
+#Read quakelike_term.fvwm2rc
 
 # create root menu
 DestroyMenu RootMenu

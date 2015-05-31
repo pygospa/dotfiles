@@ -1,4 +1,4 @@
-# File                  ~/.fvwm/submenus/mount_menu.conf
+# File                  ~/.fvwm/submenus/mount_menu.fvwm2rc
 #
 # Purpose               menu containing mount commands for all commonly known, 
 #			exchangable media drives (such as DVD and BluRay)
