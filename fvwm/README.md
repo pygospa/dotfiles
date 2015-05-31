@@ -85,3 +85,6 @@ taskbar will listen to this.
 One can also resize windows manually by dragging their borders or corners 
 (which however are really thin)
 
+# Screenshot
+
+![Screenshot of my fvwm configuration](./screenshot.png)
