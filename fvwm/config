@@ -11,5 +11,5 @@
 Read desktop.conf
 Read mouse.conf
 Read root_menu.conf
-#Read keyboard.conf
-
+Read colors.conf
+Read window.conf
