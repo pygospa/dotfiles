@@ -85,6 +85,12 @@ taskbar will listen to this.
 One can also resize windows manually by dragging their borders or corners 
 (which however are really thin)
 
+## Visual Feedback
+
+The currently focussed window has a different color title bar and the edges will
+turn form black to a color (I occasionally change this to fit my background -
+currently it's blue).
+
 # Screenshot
 
 ![Screenshot of my fvwm configuration](./screenshot.png)
