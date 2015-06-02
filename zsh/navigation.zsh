@@ -1,11 +1,12 @@
-# File			~/.zsh/eisdrache.zsh
+# File			~/.zsh/navigation.zsh
 #
-# Purpose		System/host independant aliases I like to use
+# Purpose		navigation related settings and aliases
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	https://github.com/pygospa/dotfiles
 # License		CC BY-SA 4.0, if applicable and compatible to software
 #			license
+
 
 # ls aliases with and without color
 if [[ "$TERM" != dumb ]]; then
@@ -97,26 +98,4 @@ elif [[ `uname -s` == Darwin ]]; then
 	{gsub(/^[0-9]+/, human($1)); print}'\'''
 fi
 
-# --------------------------------------------------------------------------- #
-#			Editor, Pager, etc.				      #
-# --------------------------------------------------------------------------- #
 
-# vi should point to vim
-if [[ -x `which vim` ]]; then
-	alias vi=`which vim`
-fi
-
-# Set less and zless to point to vimpager, if vimpager is installed
-if [[ -x `which vimpager` ]]; then
-	alias less=$PAGER
-	alias zless=$PAGER
-fi
-
-# --------------------------------------------------------------------------- #
-#			Version Controll Systems			      #
-# --------------------------------------------------------------------------- #
-
-# I am a lazy bum
-if [[ -x `which git` ]]; then
-	alias g='git'
-fi
