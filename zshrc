@@ -78,6 +78,16 @@ if [[ `uname -n` == eisdrache ]]; then
 	fi
 fi
 
+# File to source if it's my new home PC 'ancalagon'
+if [[ `uname -n` == ancalagon ]]; then
+	if [ -f ~/dot/zsh/ancalagon.zsh ]; then
+		source ~/dot/zsh/ancalagon.zsh
+	else
+		printf "Note: Running on ancalagon, but ~/.zsh/ancalagon.zsh is unavailable\n"
+	fi
+fi
+
+
 
 
 
