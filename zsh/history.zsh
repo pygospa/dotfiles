@@ -11,6 +11,23 @@
 
 
 # --------------------------------------------------------------------------- #
+#			Variabels					      #
+# --------------------------------------------------------------------------- #
+
+# Where to save history
+HISTFILE=${HOME}/.zsh_history
+
+# Number of lines to keep in history of the active session
+HISTSIZE=10000
+
+# Number of lines to persistantly save to histfile
+SAVEHIST=10000
+
+
+
+
+
+# --------------------------------------------------------------------------- #
 #			Modules						      #
 # --------------------------------------------------------------------------- #
 
