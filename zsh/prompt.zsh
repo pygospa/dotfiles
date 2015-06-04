@@ -54,7 +54,8 @@ if (( EUID == 0 )) || [[ `whoami` == eru ]]; then
 else
 	# Normal user
 	setopt prompt_subst
-	PS1='${BLUE}%n${NO_COLOR}@%m %0~ $(vcs_super_info) $(prompt_char) '
+	#PS1='${BLUE}%n${NO_COLOR}@%m %0~ $(vcs_super_info) $(prompt_char) '
+	PS1='${BLUE}%n${NC}${MAGENTA}@${NC}${CYAN}%m${NC}${GREEN} %0~${NC} $(vcs_super_info) ${MAGENTA}$(prompt_char) ${NC}'
 fi
 
 # Secondary prompt - printed when the shell needs more information to complete

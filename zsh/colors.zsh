@@ -12,14 +12,17 @@ if [[ "$TERM" != dumb ]]; then
 
 	# We've got zsh color module?
 	if autoload -U colors && colors 2>/dev/null ; then
-		BLUE="%{${fg[blue]}%}"
-		RED="%{${fg_bold[red]}%}"
-		GREEN="%{${fg[green]}%}"
-		CYAN="%{${fg[cyan]}%}"
-		MAGENTA="%{${fg[magenta]}%}"
+		# Using the solarized color settings in Xressources
 		YELLOW="%{${fg[yellow]}%}"
+		ORANGE="%{${fg_bold[red]}%}"
+		RED="%{${fg[red]}%}"
+		MAGENTA="%{${fg[magenta]}%}"
+		VIOLET="%{${fg_bold[magenta]}%}"
+		BLUE="%{${fg[blue]}%}"
+		CYAN="%{${fg[cyan]}%}"
+		GREEN="%{${fg[green]}%}"
 		WHITE="%{${fg[white]}%}"
-		NO_COLOR="%{${reset_color}%}"
+		NC="%{${reset_color}%}"
 
 		# Use ANSI escape codes
 	elif [[ "$TERM" != dumb ]]; then
