@@ -64,7 +64,7 @@ fi
 
 # Grep should be colorful
 if [[ "$TERM" != dumb ]]; then
-	alias grep='grep'${grep_options:+"${grep_options[*]}"}
+	alias grep='grep '${grep_options:+"${grep_options[*]}"}
 fi
 
 # print current directory + subdirectories as a tree
