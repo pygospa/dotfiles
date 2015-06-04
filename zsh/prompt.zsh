@@ -13,12 +13,12 @@
 #			Source						      #
 # --------------------------------------------------------------------------- #
 
-
 if [ -f ~/dot/zsh-vcs-prompt/zshrc.sh ]; then
 	source ~/dot/zsh-vcs-prompt/zshrc.sh
 else
 	printf "Note: ~/.zsh-vc-prompt/zshrc.sh is unavailable"
 fi
+
 
 
 # --------------------------------------------------------------------------- #
@@ -37,8 +37,6 @@ setopt transient_rprompt
 #    $ echo -n foo
 #    foo$ ls
 setopt prompt_cr
-
-
 
 
 
