@@ -13,6 +13,7 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 filetype plugin indent on	"We want vim to automatically load plugins
 
+
 " vim should us an unnamed clipboard (OS X hack for vim and tmux)
 set clipboard=unnamed
 
@@ -20,9 +21,13 @@ set clipboard=unnamed
 set nocompatible
 
 " Colors
-colorscheme molokai		" Use a nice color scheme (needs to be present in ~/.vim/colors/
-let g:rehash256 = 1
+set background=dark
+colorscheme solarized
+call togglebg#map("<F5>")
+
 " Legacy Color Schemes
+"colorscheme molokai		" Use a nice color scheme (needs to be present in ~/.vim/colors/
+"let g:rehash256 = 1
 "colorscheme wombat
 "colorscheme vimbrant
 "colorscheme jellybeans		" Use a nice color scheme 
