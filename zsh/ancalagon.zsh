@@ -1,4 +1,4 @@
-File			~/.zsh/ancalagon.zsh
+#File			~/.zsh/ancalagon.zsh
 #
 # Purpose		This file contains host specific settings for my home
 #			PC running Gentoo Linux
@@ -10,3 +10,7 @@ File			~/.zsh/ancalagon.zsh
 
 # Start mplayer with sound output on headphones
 alias mplayer_hf='mplayer -ao alsa:device=hw=0,0'
+
+export PATH="$PATH:/opt/cuda/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib4"
+
