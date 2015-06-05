@@ -21,6 +21,7 @@ set clipboard=unnamed
 set nocompatible
 
 " Colors
+syntax enable
 set background=dark
 colorscheme solarized
 call togglebg#map("<F5>")
@@ -67,7 +68,6 @@ set backspace=indent,eol,start
 
 scriptencoding utf-8		"Set the encoding for the script
 
-set background=dark		" We plan to use a drak background. This setting will choose proper coloring
 set encoding=utf-8		" We want to produce utf-8 documents
 set filetype=on			" We want vim to inspect the files it is editing
 set hidden			" We want to switch between buffers, even if they are unsaved!
