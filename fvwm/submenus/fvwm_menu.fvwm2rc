@@ -1,0 +1,21 @@
+# File                  ~/.fvwm/submenus/fvwm_menu.fvwm2rc
+#
+# Purpose               contains all important fvwm2 commands such as closing, 
+#                       resetting or restarting fvwm2 as well as opening the fvwm console
+#                       Creating a new menu is done by adding itmes to its name:
+#                           AddToMenu <MenuName> <String> <Action>
+#                       <String>: Menu item name to display. "" is a line
+#                       <Action>: Built in fvwm2 command or Exec <script> or Nop
+#                                 for no operation
+#                       
+# Author:               Kannan Thambiah <pygospa@gmail.com>
+# Copyright:            CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
+# Latest Version:       github.com/pygospa/dotfiles     
+
+AddToMenu FvwmMenu "     FVWM²     " Title
+ + "FvwmConsole"         FvwmConsole
+ + "Refresh Screen"      Refresh
+ + "Restart FVWM²"       Restart
+ + "Exit FVWM²"          Quit
+
+

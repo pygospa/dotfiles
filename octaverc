@@ -1,0 +1,6 @@
+PS1(">> ")
+PS2("   ")
+edit author "Kannan Thambiah"
+edit email "<kannan.thambiah@gmail.com>"
+
+

@@ -1,0 +1,110 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512,SHA1
+
+
+
+# Transition note, Aug 2nd, 2014
+
+After 5 years of using my GPG key, it's time to replace it with a new one. The
+old used a 1024-bit DSA key, which uses SHA-1; you may know that this algorithm
+has been broken. Todays recommendations point to RSA with at least 3072 bit,
+which is why I've created a RSA key with 4096 bits.
+
+My old key will still be active till Oct. 31st, 2014 - I've edited it, to
+expire after that time, and I will actively revoke it before that date. I'd
+appreciated it, if you use the time to switch to the new key.
+
+If you signed the old one and it is applicable with your policy, please also
+sign my new key - this is highly appreciated.
+
+My old key was:
+
+    pub   1024D/402CB18E 2009-05-19 [expires: 2014-10-31]
+          Key fingerprint = FFCF AF08 F714 F6C6 1436  8C47 4ACA 6F31 402C B18E
+    uid                  Kannan Thambiah (Primary private address) <kannan.thambiah@gmail.com>
+    uid                  pygospa (Online address) <pygospa@gmail.com>
+    uid                  Kannan Thambiah (University department mail) <kth@informatik.uni-kiel.de>
+    uid                  Kannan Thambiah <kth@informatik.uni-kiel.de>
+    uid                  [jpeg image of size 8657]
+
+The new key, I'm transitioning to:
+
+    pub   4096R/6ADBD5B7 2014-08-01 [expires: 2016-07-31]
+          Key fingerprint = F057 A0D6 CAC6 2E12 75EF  9E24 7C43 853E 6ADB D5B7
+    uid                  Kannan Thambiah <kannan.thambiah@gmail.com>
+    uid                  pygospa <pygospa@gmail.com>
+    uid                  [jpeg image of size 81784]
+
+I've left out university and department UIDs, because they will expire after
+Sept. 30th. I also updated the photo UID to show a more recent picture that was
+taken last year. Photo UIDs might be stripped by key servers, so if you want to
+have it, use the key I exported and uploaded onto my blogs webspace.
+
+    1. wget -q -O- http://pygospa.wordpress.com/
+    2. gpg --recv-key 6ADBD5B7
+
+You are free to use any key server, but I've uploaded it to the SKS-Key servers
+and it might take some time till it's replicated with all servers. If it's not
+available on your preferred server, please use that, buy issuing:
+
+    gpg --keyserver pool.sks-keyservers.net --recv-key 6ADBD5B7
+
+With my old key you can assure that these lines are  genuine by checking the
+signatures on it; both my old and my new key will produce a valid signature to
+assure you that these two keys belong together.
+
+    gpg --verify gpg-transition-note.txt
+    gpg --check-sigs 6ADBD5B7
+
+If you trusted my old key, you now know that my new key should be genuine as
+well. So if you signed the old one you can safely sign this key without
+re-checking my identity. If you are still in doubt feel free to contact me on
+any secure channel of your choice.
+
+If you decide to sign my key:
+
+    gpg --sign-key 6ADBD5B7
+
+You'll then need to send it back to me. There are two ways - choose your
+desired one: 
+
+    1. Easiest for you: Just re-upload the key after signing it:
+        
+	gpg --keyserver pool.sks-keyservers.net --send-key 6ADBD5B7
+
+    2. Send it to me via mail. Again, two possibilities:
+
+      a. Create an attachment for me:
+
+          gpg --armor --export 6ADBD5B7 > 6ADBD5B7-signed.key
+
+      b. On *NIX-Systems with configured CLI mail tool, just issue:
+
+          gpg --armor --export 6ADBD5B7 | mail -s 'I signed your new key' pygospa@gmail.com
+
+If you have any further question, feel free to contact me. I'm sorry for any
+inconvenience this might cause you.
+
+Sincerely,
+
+    Kannan Thambiah,
+    2014-08-02
+
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCgAGBQJT4M//AAoJEHxDhT5q29W3D8UQAKSNBrdfCMOai+4nq/S25d7p
+tcV4Tb2ROxzQYuup5sY4v3ZfRh7TZUYVEaUgiJaUYGN/cX2KwMo98zthl/rgVVLJ
+cStyzMJzJmIQxXIZ9G5LQnoeTQYnj5g9ZKin3q3IpJH2VS0OpEDfzMuOwBlztPr5
+NN6HcO2tB+XnEADiu6u92DKEF9qBx1QwlpHmJeUsR1OnouscNvwv/6lN2lGn1s79
+hZLTfFi9TbVUvqEduM/pa0qiJHOTNDGVUCRiv6gPBliv0xh3a0mk2t9w3apkaVhK
++rMmIIhLYzt+ImeRfC3x09xSqaqsDDsgTlp5YOS+Y4hGx//G9yxvAJs2OpC374sC
+whmo67ORRQgwCLumF/a92eOkdYRx85G1IYte7jDJw5ZsR8LJK2RTrenwMLjGyDVj
+86N3CiAqFqlOi4G05itb19VaODo+WN29A7OQ4UddnSlCqtUpQgAmeq14h7bWsS4F
+F/zFA2o1hlE24YTiKKZJonQng2HS4E5S5ArH1+46bfIAaFoAEHhVVN8NySO3WWGK
+tHyjprz0/0QAntO0GcGsIc+iL7MmivrNAW4qazV0vWknJwgnk/ZGtRJGWxUNbSJo
+Mswc7ogZ6chRnni2KeQOF22eAGUktDWeEklusO3IgYVzWurtib3SlBkQAy7V8TYg
+WDPYLvpU+MABjqM6jg0hiEYEARECAAYFAlPgz/8ACgkQSspvMUAssY4ZRgCfQiqD
+kP4KWPlP11ZcUVUZQnfvYkwAniIO/clf3qxY0Peu3wCkB9Coy0pI
+=9cqa
+-----END PGP SIGNATURE-----

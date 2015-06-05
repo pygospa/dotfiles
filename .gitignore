@@ -1,1 +1,16 @@
 .DS_Store
+=======
+# OS X 
+.DS_Store
+
+# vim 
+.*.swp
+
+# GPG 
+*.gpg
+*.gpg~
+*.gpg.lock
+.*.lalaith.local.*
+random_seed
+gnupg/profile.jpg
+

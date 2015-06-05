@@ -1,0 +1,19 @@
+# File			~/.fvwm/windows.fvwm2rc
+#
+# Purpose		Define look and feel of windows
+#
+# Author:		Kannan Thambiah <pygospa@gmail.com>
+# Copyright:		CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
+# Latest Version:	github.com/pygospa/dotfiles	
+
+Style * BorderWidth 0, HandleWidth 1
+Style * TitleAtLeft
+Style * Colorset 1, HilightColorset 2
+
+DestroyDecor DefaultDecor
+AddToDecor DefaultDecor
++ TitleStyle RightJustified Height 18 -- flat
++ TitleStyle Inactive (Colorset 1 -- flat) Active (Colorset 2 -- flat)
++ BorderStyle Inactive (Colorset 10 -- flat) Active (Colorset 11 -- flat)
+
+Style * UseDecor DefaultDecor

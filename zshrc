@@ -115,4 +115,3 @@ if [ -f ~/dot/zsh/zstyle.zsh ]; then
 else
 	printf "Note: ~/.zsh/zstyle.zsh is unavailable\n"
 fi
-
