@@ -95,4 +95,6 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 0
 URxvt.tabbed.tab-bg: 1
 URxvt.tabbed.secondaryScroll: true
-URxvt.font: -xos4-terminus-medium-r-normal-*-*-120-*-*-*-*-iso10646-*
+URxvt.font: -xos4-terminus-medium-r-normal-*-*-140-*-*-*-*-iso10646-*
+URxvt.urgentOnBell: true
+
