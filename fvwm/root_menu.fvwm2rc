@@ -27,6 +27,7 @@ Read submenus/mount_menu.fvwm2rc
 Read submenus/multimedia_menu.fvwm2rc
 Read submenus/office_menu.fvwm2rc
 Read submenus/terminals_menu.fvwm2rc
+Read submenus/game_menu.fvwm2rc
 #Read quakelike_term.fvwm2rc
 
 # create root menu
@@ -40,6 +41,7 @@ PipeRead 'echo "+ \'$(date \"+%a, %d.%m.%Y - %H:%M\")\' Nop"'
  + "OpenOffice.org"     Popup Office
  + "Internet"           Popup Internet
  + "Multimedia"         Popup Multimedia
+ + "Games"		Popup Games
  + ""                   Nop
  + "FVWM²"              Popup FvwmMenu
 
