@@ -14,6 +14,20 @@
 
 
 # --------------------------------------------------------------------------- #
+#			 Modules					      #
+# --------------------------------------------------------------------------- #
+
+autoload -U zmv
+autoload -U zed
+
+# Load a few more functions and tie them to widgets, so they can be bound:
+autoload -U insert-file && zle -N insert-file
+autoload -U edit-command-line && zle -N edit-command-line
+autoload -U insert-unicode-char && zle -N insert-unicode-char
+
+
+
+# --------------------------------------------------------------------------- #
 #			 Aliases					      #
 # --------------------------------------------------------------------------- #
 
