@@ -54,10 +54,10 @@ else
 fi
 
 # File containing GIT/Mercurial settings
-if [ -f ~/dot/zsh/versioncontrol.zsh ]; then
-	source ~/dot/zsh/versioncontrol.zsh
+if [ -f ~/dot/zsh/dvcs.zsh ]; then
+	source ~/dot/zsh/dvcs.zsh
 else
-	print "Note: ~/.zsh/versioncontrol.zsh is unavailable\n"
+	print "Note: ~/.zsh/dvcs.zsh is unavailable\n"
 fi
 
 # Files to source, if it's a Mac OS X

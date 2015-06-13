@@ -31,9 +31,6 @@
 [submodule "vim/bundle/youCompleteMe"]
 	path = vim/bundle/youCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
-[submodule "zsh-vcs-prompt"]
-	path = zsh-vcs-prompt
-	url = git@github.com:pygospa/zsh-vcs-prompt.git
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
 	url = git@github.com:tomtom/tlib_vim.git
