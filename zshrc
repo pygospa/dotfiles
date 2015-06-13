@@ -19,10 +19,10 @@ else
 	printf "Note ~/.zsh/keys.zsh is unavailable\n"
 fi
 
-if [ -f ~/dot/zsh/env_vars.zsh ]; then
-	source ~/dot/zsh/env_vars.zsh
+if [ -f ~/dot/zsh/envvars.zsh ]; then
+	source ~/dot/zsh/envvars.zsh
 else
-	printf "Note ~/.zsh/env_vars.zsh\n"
+	printf "Note ~/.zsh/envvars.zsh\n"
 fi
 
 # File containing file system navigation tool settings
