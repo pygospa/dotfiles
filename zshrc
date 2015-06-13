@@ -12,6 +12,13 @@
 
 # File containing machine independant environment variables and aliases and
 # aliases
+
+if [ -f ~/dot/zsh/keys.zsh ]; then
+	source ~/dot/zsh/keys.zsh
+else
+	printf "Note ~/.zsh/keys.zsh is unavailable\n"
+fi
+
 if [ -f ~/dot/zsh/env_vars.zsh ]; then
 	source ~/dot/zsh/env_vars.zsh
 else

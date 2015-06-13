@@ -119,12 +119,8 @@ setopt share_history
 # --------------------------------------------------------------------------- #
 
 # Search histroy forward for entry beginning with typed text using 'arrow up'
-bindkey "^[[A"		history-beginning-search-backward
+bindkey "${key[Up]}"	history-beginning-search-backward
+
 # Search history backward for entry beginning with typed text using 'arrow down'
-bindkey "^[[B"		history-beginning-search-forward
-
-# Complete cmd with separate words extracted from history using 'arrow right'
-bindkey "^[[C"		hist-complete
-
-
+bindkey "${key[Down]}"	history-beginning-search-forward
 
