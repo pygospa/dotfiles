@@ -34,10 +34,10 @@ fi
 
 # File system navigation tool settings and aliases for easier navigation and
 # getting directory information 
-if [ -f ~/dot/zsh/userinterface.zsh ]; then
-	source ~/dot/zsh/userinterface.zsh
+if [ -f ~/dot/zsh/ui.zsh ]; then
+	source ~/dot/zsh/ui.zsh
 else
-	printf "Note ~/.zsh/userinterface.zsh\n"
+	printf "Note ~/.zsh/ui.zsh\n"
 fi
 
 # Completion settings
