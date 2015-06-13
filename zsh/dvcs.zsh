@@ -9,13 +9,13 @@
 # Lates Version		github.com/pygospa/dotfiles
 
 
-# Git pager
-if [[ -x `which git` ]]; then 
-	export GIT_PAGER=less
+# Git pager should always be less, and not vimpager!
+if [[ -x `which -p git` ]]; then 
+	export GIT_PAGER=`which -p less`
 fi
 
 # I am a lazy bum
-if [[ -x `which git` ]]; then
+if [[ -x `which -p git` ]]; then
 	alias g='git'
 fi
 

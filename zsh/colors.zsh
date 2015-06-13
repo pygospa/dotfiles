@@ -63,12 +63,12 @@ if [[ "$TERM" != dumb ]]; then
 	fi
 
 	# (dircolors will populate LS_COLORS)
-	if [[ -x `which dircolors` ]]; then
+	if [[ -x `which -p dircolors` ]]; then
 		eval $(dircolors -b)
 	fi
 
 	# Set colors in less
-	if [[ -x `which less` ]]; then
+	if [[ -x `which -p less` ]]; then
 		export LESS_TERMCAP_mb=$'\E[01;32m'	# green		mark blinking
 		export LESS_TERMCAP_md=$'\E[01;36m'	# cyan		mark bold
 		export LESS_TERMCAP_me=$'\E[0m'		# no color	mark end (of blinking bold)
