@@ -10,57 +10,58 @@
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Lates Version		github.com/pygospa/dotfiles
 
-# File containing machine independant environment variables and aliases and
-# aliases
-
+# Keyboard settings, so that function keys work independantly from the term
+# (needed as zsh does not use /etc/inputrc)
 if [ -f ~/dot/zsh/keys.zsh ]; then
 	source ~/dot/zsh/keys.zsh
 else
 	printf "Note ~/.zsh/keys.zsh is unavailable\n"
 fi
 
+# Environment variables, such as $PATH, $EDITOR, $PAGER, etc.
 if [ -f ~/dot/zsh/envvars.zsh ]; then
 	source ~/dot/zsh/envvars.zsh
 else
 	printf "Note ~/.zsh/envvars.zsh\n"
 fi
 
-# File containing file system navigation tool settings
-if [ -f ~/dot/zsh/navigation.zsh ]; then
-	source ~/dot/zsh/navigation.zsh
-else
-	printf "Note ~/.zsh/navigation.zsh\n"
-fi
-
-# File containing color settings
+# Color settings
 if [ -f ~/dot/zsh/colors.zsh ]; then
 	source ~/dot/zsh/colors.zsh
 else
 	printf "Note ~/.zsh/colors.zsh is unavailable\n"
 fi
 
-# File containing completion settings
+# File system navigation tool settings and aliases for easier navigation and
+# getting directory information 
+if [ -f ~/dot/zsh/userinterface.zsh ]; then
+	source ~/dot/zsh/userinterface.zsh
+else
+	printf "Note ~/.zsh/userinterface.zsh\n"
+fi
+
+# Completion settings
 if [ -f ~/dot/zsh/completion.zsh ]; then
 	source ~/dot/zsh/completion.zsh
 else
 	printf "Note ~/.zsh/completion.zsh is unavailable\n"
 fi
 
-# File containing history settings
+# History settings
 if [ -f ~/dot/zsh/history.zsh ]; then
 	source ~/dot/zsh/history.zsh
 else
 	printf "Note ~/.zsh/history.zsh is unavailable\n"
 fi
 
-# File containing the prompt settings
+# System Prompt Settings
 if [ -f ~/dot/zsh/prompt.zsh ]; then
 	source ~/dot/zsh/prompt.zsh 
 else
 	print "Note: ~/.zsh/prompt.zsh is unavailable\n"
 fi
 
-# File containing GIT/Mercurial settings
+# GIT/Mercurial settings
 if [ -f ~/dot/zsh/dvcs.zsh ]; then
 	source ~/dot/zsh/dvcs.zsh
 else
@@ -76,7 +77,7 @@ if [[ `uname -s` == Darwin ]]; then
 	fi
 fi
 
-# Files to source if it's my home PC 'eisdrache'
+# Files to source if it's my old home PC 'eisdrache'
 if [[ `uname -n` == eisdrache ]]; then
 	if [ -f ~/dot/zsh/eisdrache.zsh ]; then
 		source ~/dot/zsh/eisdrache.zsh
