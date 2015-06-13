@@ -11,7 +11,7 @@
 
 # Git pager
 if [[ -x `which git` ]]; then 
-	export GIT_PAGER="`which less`"
+	export GIT_PAGER=less
 fi
 
 # I am a lazy bum
