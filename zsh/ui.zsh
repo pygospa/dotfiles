@@ -262,3 +262,134 @@ setopt no_posix_jobs
 
 
 
+
+# --------------------------------------------------------------------------- #
+#			Auxilliary functions				      #
+# --------------------------------------------------------------------------- #
+
+
+# Create small urls via http://goo.gle using curl(1).
+# API reference: https://code.google.com/apis/urlshortener
+function zu() {
+    emulate -L zsh
+    setopt extended_glob
+
+    if [[ -z $1 ]]; then
+        print "USAGE: zurl <URL>"
+        return 1
+    fi
+
+    local PN url prog api json contenttype item
+    local -a data
+    PN=$0
+    url=$1
+
+    # Prepend 'http://' to given URL where necessary for later output.
+    if [[ ${url} != http(s|)://* ]]; then
+        url='http://'${url}
+    fi
+
+    if [[ -x `which curl` ]]; then
+        prog=curl
+    else
+        print "curl is not available, but mandatory for ${PN}. Aborting."
+        return 1
+    fi
+    api='https://www.googleapis.com/urlshortener/v1/url'
+    contenttype="Content-Type: application/json"
+    json="{\"longUrl\": \"${url}\"}"
+    data=(${(f)"$($prog --silent -H ${contenttype} -d ${json} $api)"})
+    # Parse the response
+    for item in "${data[@]}"; do
+        case "$item" in
+            ' '#'"id":'*)
+                item=${item#*: \"}
+                item=${item%\",*}
+                printf '%s\n' "$item"
+                return 0
+                ;;
+        esac
+    done
+    return 1
+}
+
+# Create Directoy and \kbd{cd} to it
+mkcd() {
+    if (( ARGC != 1 )); then
+        printf 'usage: mkcd <new-directory>\n'
+        return 1;
+    fi
+    if [[ ! -d "$1" ]]; then
+        command mkdir -p "$1"
+    else
+        printf '`%s'\'' already exists: cd-ing.\n' "$1"
+    fi
+    builtin cd "$1"
+}
+
+# grep for running process, like: 'any vim'
+any() {
+    emulate -L zsh
+    unsetopt KSH_ARRAYS
+    if [[ -z "$1" ]] ; then
+        echo "any - grep for process(es) by keyword" >&2
+        echo "Usage: any <process_name>" >&2 ; return 1
+    else
+        ps xauwww | grep -i "${grep_options[@]}" "[${1[1]}]${1[2,-1]}"
+    fi
+}
+
+# cd to directory and list files
+cdls() {
+    emulate -L zsh
+    cd $1 && ls -a
+}
+
+# List files which have been accessed within the last {\it n} days, {\it n} defaults to 1
+accessed() {
+    emulate -L zsh
+    print -l -- *(a-${1:-1})
+}
+
+# List files which have been changed within the last {\it n} days, {\it n} defaults to 1
+changed() {
+    emulate -L zsh
+    print -l -- *(c-${1:-1})
+}
+
+# List files which have been modified within the last {\it n} days, {\it n} defaults to 1
+modified() {
+    emulate -L zsh
+    print -l -- *(m-${1:-1})
+}
+
+# If there's an env.sh file in the directory you're changing into, it gets
+# sourced. Ideal if you e.g. work with different instances of ROCK
+# (http://rock-robotics.org/stable/)
+function autosource {
+	if [[ -s "$PWD/env.sh" ]] && [[ -r "$PWD/env.sh" ]]; then
+		source "$PWD/env.sh"
+		echo -e "\033[0;31m ! Autosourced $PWD/env.sh ! \033[0m"
+	fi
+}
+chpwd_functions=( "${chpwd_functions[@]}" autosource )
+
+
+
+# Most awesome function to have in your zshrc!
+# Thx to anon (http://stackoverflow.com/questions/171563/whats-in-your-zshrc/904023#904023)
+function mandelbrot {
+   local lines columns colour a b p q i pnew
+   ((columns=COLUMNS-1, lines=LINES-1, colour=0))
+   for ((b=-1.5; b<=1.5; b+=3.0/lines)) do
+       for ((a=-2.0; a<=1; a+=3.0/columns)) do
+           for ((p=0.0, q=0.0, i=0; p*p+q*q < 4 && i < 32; i++)) do
+               ((pnew=p*p-q*q+a, q=2*p*q+b, p=pnew))
+           done
+           ((colour=(i/4)%8))
+            echo -n "\\e[4${colour}m "
+        done
+        echo
+    done
+}
+

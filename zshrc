@@ -10,6 +10,12 @@
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Lates Version		github.com/pygospa/dotfiles
 
+
+
+# --------------------------------------------------------------------------- #
+#			Machine INDEPENDANT configuration files		      #
+# --------------------------------------------------------------------------- #
+
 # Keyboard settings, so that function keys work independantly from the term
 # (needed as zsh does not use /etc/inputrc)
 if [ -f ~/dot/zsh/keys.zsh ]; then
@@ -68,6 +74,13 @@ else
 	print "Note: ~/.zsh/dvcs.zsh is unavailable\n"
 fi
 
+
+
+# --------------------------------------------------------------------------- #
+#			Machine DEPENDANT configuration files		      #
+# --------------------------------------------------------------------------- #
+
+
 # Files to source, if it's a Mac OS X
 if [[ `uname -s` == Darwin ]]; then
 	if [ -f ~/dot/zsh/darwin.zsh ]; then
@@ -93,28 +106,5 @@ if [[ `uname -n` == ancalagon ]]; then
 	else
 		printf "Note: Running on ancalagon, but ~/.zsh/ancalagon.zsh is unavailable\n"
 	fi
-fi
-
-
-
-
-
-
-if [[ -f ~/dot/zsh/autoload.zsh ]]; then 
-	source ~/dot/zsh/autoload.zsh
-else
-	printf "Note ~/.zsh/autoload.zsh is unavailable\n"
-fi
-
-if [ -f ~/dot/zsh/functions.zsh ]; then
-	source ~/dot/zsh/functions.zsh
-else
-	printf "Note: ~/.zsh/functions.zsh is unavailable\n"
-fi
-
-if [ -f ~/dot/zsh/options.zsh ]; then
-	source ~/dot/zsh/options.zsh
-else
-	print "Note: ~/.zsh/options.zsh is unavailable\n"
 fi
 

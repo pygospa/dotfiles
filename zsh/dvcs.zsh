@@ -40,6 +40,68 @@ fi
 
 
 
+# --------------------------------------------------------------------------- #
+#			Auxilliary functions				      #
+# --------------------------------------------------------------------------- #
+
+# This functions will open the remote remote repository of the current local 
+# directory in the browser if it is pointing to github or bitbucket.
+#
+# OS X has 'open' command for opening different files with the associated
+# program directly from CLI.
+# Linux does not have open but different other possiblities:
+# - $BROWSER (if that variable is set)
+# - /path/to/browser
+# - xdg-open (if that is installed)
+
+bitb() {
+	bbpath="$(hg paths 2>/dev/null | grep 'bitbucket.org' | head -1)"
+	bburl="$(echo $bbpath | sed -e's|.*\(bitbucket.org.*\)|http://\1|')"
+
+	if [[ `uname -s` == Darwin ]]; then
+		[[ -n $bburl ]] && open $bburl || echo "No BitBucket path found!"
+	elif [[ `uname -s` == Linux ]]; then
+		[[ -n $bburl ]] && $BROWSER $bburl || echo "No BitBucket path found!"
+	fi
+}
+
+gith() {
+	# Get remote origin
+	ghpath="$(git config --get remote.origin.url)"
+
+	# If remote origin does not contain 'github' try getting remote github
+	if [[ -z "$(echo $ghpath | grep github)" ]]; then
+		ghpath="$(git config --get remote.github.url)"
+	fi
+
+	# If remote origin was empty or neither remote origin nor remote github
+	# contain a url with 'github' in it, there's probably no remote github
+	# repository
+	if [ -z $ghpath ] || [[ -z `echo $ghpath | grep github` ]]; then
+		echo "No GitHub path found!"
+		exit 1;
+	fi
+
+	# Else turn the ssh github link into an https github link
+	ghpath="${ghpath/git\@github\.com\:/https://github.com/}"
+	ghurl="${ghpath/\.git//tree/}"
+	branch="$(git symbolic-ref HEAD 2>/dev/null)" || branch="(unnamed branch)"
+	branch=${branch##refs/heads/}
+	ghurl=$ghurl$branch
+
+	# If on OS X just use the command 'open' to open it in standard browser
+	if [[ `uname -s` == Darwin ]]; then
+		open $ghurl
+		# Else use the $BROWSER variable
+	elif [[ `uname -s` == Linux ]]; then
+		[[ -n $bburl ]] && $BROWSER $bburl || echo "No GitHub path found!"
+	fi
+}
+
+
+
+
+
 ###############################################################################
 #                                                                             #
 # This part is based on the excelent work of yonchu                           #
