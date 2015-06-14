@@ -1,6 +1,6 @@
 # VIM 
 
-## Some vim vs emacs rant? ;)
+## Why VIM?
 
 When I was getting started with using Linux, I spent a long time reading
 articles people that I admired (Hackers) posted online. One of them said to
