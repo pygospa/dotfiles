@@ -43,24 +43,24 @@ if [[ "$TERM" != dumb ]]; then
 	# -h = human readable size
 	alias ls=' ls -b -CF '${ls_options:+"${ls_options[*]}"}
 
-	alias l=' ls -l'${ls_options:+"${ls_options[*]}"}
-	alias lh=' ls -hAl'${ls_options:+"${ls_options[*]}"}
+	alias l=' ls -l '${ls_options:+"${ls_options[*]}"}
+	alias lh=' ls -hAl '${ls_options:+"${ls_options[*]}"}
 	alias la=' ls -la '${ls_options:+"${ls_options[*]}"}
-	alias lad=' ls -d .*(/)'${ls_options:+"${ls_options[*]}"}
-	alias laf=' ls -a .*(.)'${ls_options:+"${ls_options[*]}"}
-	alias le=' ls -l *(*)'${ls_options:+"${ls_options[*]}"}
-	alias ll=' ls -l *(@)'${ls_options:+"${ls_options[*]}"}
-	alias lsd=' ls -d *(/)'${ls_options:+"${ls_options[*]}"}
-	alias lse=' ls -d *(/^F)'${ls_options:+"${ls_options[*]}"}
-	alias lss='ls -l *(s,S,t)'${ls_options:+"${ls_options[*]}"}
-	alias lw=' ls -ld *(R,W,X.^ND/)'${ls_options:+"${ls_options[*]}"}
+	alias lad=' ls -d .*(/) '${ls_options:+"${ls_options[*]}"}
+	alias laf=' ls -a .*(.) '${ls_options:+"${ls_options[*]}"}
+	alias le=' ls -l *(*) '${ls_options:+"${ls_options[*]}"}
+	alias ll=' ls -l *(@) '${ls_options:+"${ls_options[*]}"}
+	alias lsd=' ls -d *(/) '${ls_options:+"${ls_options[*]}"}
+	alias lse=' ls -d *(/^F) '${ls_options:+"${ls_options[*]}"}
+	alias lss='ls -l *(s,S,t) '${ls_options:+"${ls_options[*]}"}
+	alias lw=' ls -ld *(R,W,X.^ND/) '${ls_options:+"${ls_options[*]}"}
 
-	alias big=' ls -flh *(.OL[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias new=' ls -rtlh *(D.om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias newdir=' ls -rthdl *(/om[1,10]) .*(D/om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias old=' ls -rtlh *(D.Om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias olddir=' ls -rthdl *(/Om[1,10]) .*(D/Om[1,10])'${ls_options:+"${ls_options[*]}"}
-	alias small=' ls -Srl *(.oL[1,10])'${ls_options:+"${ls_options[*]}"}
+	alias big=' ls -flh *(.OL[1,10]) '${ls_options:+"${ls_options[*]}"}
+	alias new=' ls -rtlh *(D.om[1,10]) '${ls_options:+"${ls_options[*]}"}
+	alias newdir=' ls -rthdl *(/om[1,10]) .*(D/om[1,10]) '${ls_options:+"${ls_options[*]}"}
+	alias old=' ls -rtlh *(D.Om[1,10]) '${ls_options:+"${ls_options[*]}"}
+	alias olddir=' ls -rthdl *(/Om[1,10]) .*(D/Om[1,10]) '${ls_options:+"${ls_options[*]}"}
+	alias small=' ls -Srl *(.oL[1,10]) '${ls_options:+"${ls_options[*]}"}
 
 else
 	alias ls=' ls -b -CF'		# ls always with escapes, columns and type postfix
