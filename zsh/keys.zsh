@@ -27,7 +27,7 @@ if [[ ${ret} -ne 0 ]]; then
     ret=$?
 fi
 if [[ ${ret} -eq 0 ]] ; then
-    printf 'sourcing keyfile'
+#    printf 'sourcing keyfile'
     source "${keyfile}"
 else
     printf 'Failed to setup keys using zkbd.\n'
