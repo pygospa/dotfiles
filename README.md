@@ -1,25 +1,18 @@
 # Welcome to my dotfiles
 
-## BE CAREFUL NOT TO OVERWRITE YOUR FILES!
+## Your dotfiles are save
 
-Before running the install script, check whats included in the root directory
-of the repository. Any files that you already have will be overwritten, so
-check if you didn't change any of your configs to make sure not to loose
-anything.
+I have added two scripts for easy installing and uninstalling while keeping your
+files save. Now, none of your dotfiles in home are overridden - they are all 
+backuped by moving them into ~/dot/backup
 
-Only the `README.md`, `install.sh` and the `ousted` subdirectory are ignored.
-If you just want single files, link them by hand. If you want to use most of my
-files, just open your favorite editor and edit the `install.sh` script to
-exclude anything you don't want. 
+Only after all your files are moved to that backup path, are the new files
+linked to your home directory. This way, no file of yours gets lost and you can
+easily revert the changes. To further simplify this, an uninstall script is also
+included. This will remove all links to the ~/dot directory and move all your
+dotfiles back to your home directory.
 
-To do so, locate the line 
-
-	EXCL=(install.sh ousted readme.md)
-
-and add any files you want to left out, for instance, if you have your own
-tmux.conf you want to keep, the file line should look like this:
-
-	EXCL=(install.sh ousted readme.md tmux.conf)
+So now everything is saved.
 
 ## Best Practice
 
@@ -38,6 +31,27 @@ Just do:
 
 	git clone https://github.com/pygospa/dotfiles.git ~/dot
 	cd ~/dot
+
+Before running the install script, check whats included in the root directory
+of the repository. Any files that you might want to keep, can be commented out.
+
+Only the `README.md`, `install.sh` and the `ousted` subdirectory are ignored by
+default.
+If you just want single configs, link them by hand. If you want to use most of my
+files, just open your favorite editor and edit the `install.sh` script to
+exclude anything you don't want. 
+
+To do so, locate the line 
+
+	EXCL=(backup install.sh ousted README.md)
+
+and add any files you want to left out, for instance, if you have your own
+tmux.conf you want to keep, the file line should look like this:
+
+	EXCL=(backup install.sh ousted README.md tmux.conf)
+
+Once you are finished configuring the install script, run it via:
+
 	./install.sh
 
 The Install script will link all files you find in the repository to your home
@@ -51,6 +65,38 @@ you'll find this in your home directory when executing `ls -ahl`
 	.vim@ -> ~/dot/vim
 	.vimrc@ -> ~/dot/vimrc
 	.zshrc@ -> ~/dot/zshrc
+
+This list is not complete but only shows some examples.
+All dotfiles that already existed can be found by navigating to:
+
+	dot/backup
+
+You can test my configs, by installing everything, and easiyl replace every
+config with the one you had, by moving it back from the `dot/backup` directory,
+e.g.
+
+	mv dot/backup/.vimrc ~/.vimrc
+
+Be aware, to move and not copy it out of `dot/backup`, otherwise it will be
+overridden again, once you use the `uninstall.sh` script. If during the
+installation time and the uninstalling you made any changes to e.g. `.vimrc`
+that `.vimrc` at your home directory will be overridden by the one in backup.
+
+## How to deinstall everything
+
+Using the uninstall script I provided, it is easy to clean up everything again.
+Simply run
+
+	cd ~/dot
+	./uninstall.sh
+
+Only dotfiles that exist at your home directory and that link to a path
+containing the name of my dotfile direcotry in their path will be removed.
+
+So any file you replaced after installation is save. The deinstall will also put
+back all the dotfiles that where in your directory before you installed my
+dotfiles, thus you can simply get back to the state you where in, before
+installing my dotfiles.
 
 ## How to use my fvwm setup
 
