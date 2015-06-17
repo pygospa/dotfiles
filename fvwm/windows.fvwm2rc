@@ -1,7 +1,9 @@
 # File			~/.fvwm/windows.fvwm2rc
 #
 # Purpose		Define look and feel of windows
-#
+#			
+#			- DefaultColorset 
+#				For windows such as the GeometryWindow
 #			- BorderWidth <pix>, HandleWidth <pix>
 #				Set the border of a window, and the width of the
 #				"handle" to grap the border
@@ -28,6 +30,8 @@
 # Author:		Kannan Thambiah <pygospa@gmail.com>
 # Copyright:		CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
 # Latest Version:	github.com/pygospa/dotfiles	
+
+DefaultColorset 1
 
 Style * BorderWidth 0, HandleWidth 1
 Style * TitleAtLeft
