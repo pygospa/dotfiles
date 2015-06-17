@@ -46,9 +46,6 @@ EdgeThickness 1
 
 EwmhBaseStruts 0 120 0 0
 
-#AddToFunc InitFunction
-#+ "I" Module FvwmBanner
-
 AddToFunc StartFunction
 + I Exec fvwm-root --retain-pixmap ${HOME}/pics/wallpapers/cyborg.png
 #+ I Exec xscreensaver &
