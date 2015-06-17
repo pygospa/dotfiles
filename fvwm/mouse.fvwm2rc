@@ -45,6 +45,9 @@ Mouse 2 R A WindowList Root NoGeometry
 Mouse 3 R A Exec urxvt
 
 # On window title bar
-Mouse 3 T A Destroy 
 Mouse 2 T A Maximize
+Mouse 3 T A shade-or-destroy
+AddToFunc shade-or-destroy
++ D Destroy
++ C WindowShade
 
