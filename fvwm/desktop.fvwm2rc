@@ -2,6 +2,7 @@
 #
 # Purpose		All desktop settings go in here
 #			- DesktopSize <hor_cnt>x<vert_cnt>
+#				hor_cnt and vert_cnt = No. of pages on desktop
 #				From row to cube, anything's possible
 #			- DesktopName <No> <Name>
 #				Other modules and programs might use these names
@@ -21,6 +22,11 @@
 #				0 means no edge around the screen, i.e. no
 #				scrolling possible. 2 is default, 1 is best but
 #				does not work on all machines.
+#			- EwmhBaseStruts left right top bottom
+#			        left,right,top,bottom = no of pixel
+#			        define a band at the edge of the screen as
+#			        reserved space, i.e. when maximizing windows
+#			        (standard 0 0 0 0)
 #			- AddToFunc StartFunc
 #			  + I Exec fvwm-root --retain-pixmap <path-to-pic>
 #			        Allows for setting a wallpaper
@@ -38,7 +44,7 @@ Style * EdgeMoveResistance 150
 EdgeScroll 100000 100000
 EdgeThickness 1
 
-
+EwmhBaseStruts 0 120 0 0
 
 #AddToFunc InitFunction
 #+ "I" Module FvwmBanner
