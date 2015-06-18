@@ -12,5 +12,6 @@ Read desktop.fvwm2rc
 Read colors.fvwm2rc
 Read menus.fvwm2rc
 Read windows.fvwm2rc
+Read iconify.fvwm2rc
 Read root_menu.fvwm2rc
 Read mouse.fvwm2rc
