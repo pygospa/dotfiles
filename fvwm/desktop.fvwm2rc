@@ -48,5 +48,6 @@ EwmhBaseStruts 0 120 0 0
 
 AddToFunc StartFunction
 + I Exec fvwm-root --retain-pixmap ${HOME}/pics/wallpapers/cyborg.png
++ I Exec xclock &
 #+ I Exec xscreensaver &
 

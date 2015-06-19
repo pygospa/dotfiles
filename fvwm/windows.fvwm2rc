@@ -46,3 +46,6 @@ AddToDecor DefaultDecor
 + BorderStyle Inactive (Colorset 10 -- flat) Active (Colorset 11 -- flat)
 
 Style * UseDecor DefaultDecor
+
+# Special windows
+Style "xclock" !Title
