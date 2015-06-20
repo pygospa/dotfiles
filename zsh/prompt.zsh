@@ -35,7 +35,7 @@ ZSH_VCS_PROMPT_ENABLE_CACHING='true'
 
 # Primary prompt - different for root and eru (my administrative user)
 if (( EUID == 0 )) || [[ `whoami` == eru ]]; then 
-	PS1="${RED}%n${NO_COLOR}@%m %0d # "
+	PS1="${RED}%n${NC} %0d ${RED}#${NC} "
 else
 	# Normal user
 	setopt prompt_subst
@@ -46,7 +46,7 @@ fi
 # Secondary prompt - printed when the shell needs more information to complete
 # a command (e.g. when linebreaking a string, or loop, etc.)
 PS2="${GREEN}"'%_'"
-"'`->'"${NO_COLOR} "
+"'`->'"${NC} "
 
 # Tertiary prompt - used within select loop
 PS3="Choice: "

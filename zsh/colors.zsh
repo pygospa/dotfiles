@@ -38,7 +38,7 @@ if [[ "$TERM" != dumb ]]; then
 		CYAN=$'%{\e[1;36m%}'
 		GREEN=$'%{\e[1;32m%}'
 		WHITE=$'%{\e[1;37m%}'
-		NO_COLOR=$'%{\e[0m%}'
+		NC=$'%{\e[0m%}'
 	fi
 
 	# Set system variables to show color capabilities
