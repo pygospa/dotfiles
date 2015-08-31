@@ -4,7 +4,12 @@
 
 # Dotfilepath and files to exclude
 DFP=$( (cd -P $(dirname $0) && pwd) )
-EXCL=(install.sh ousted README.md)
+
+if [[ `uname -s` == Darwin ]]; then
+  EXCL=(asoundrc fvwm install.sh ousted README.md xinitrc Xresources)
+else 
+  EXCL=(install.sh ousted README.md)
+fi
 
 for F in *; do 
   if ! [[ ${EXCL[*]} =~ "$F" ]]; then
