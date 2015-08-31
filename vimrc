@@ -140,7 +140,8 @@ if has("autocmd")
 
 	autocmd FileType tex setlocal ts=4 sts=4 sw=4 noexpandtab
 
-	autocmd FileType cpp setlocal ts=2 sts=2 sw=2 noexpandtab	" According to MIP workgroup @ CAU
+	autocmd FileType cpp setlocal ts=2 sts=2 sw=2 noexpandtab	" According to MIP workgroup @ CAU + googles style guide
+	autocmd FileType cuda setlocal ts=2 sts=2 sw=2 noexpandtab
 	autocmd FileType c setlocal ts=4 sts=4 sw=4 noexpandtab		" According to Linux Kernel Coding styles 
 
 
