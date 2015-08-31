@@ -1,0 +1,64 @@
+# File			~/.fvwm/iconify.fvwm2rc
+#
+# Purpose		Create a thumbnail from windows before iconify them and
+#			use it as icon for the iconified window
+#
+#			For this file to work, the tools xwd and convert need to
+#			be installed; regarding on the distribution, it's all
+#			part of ImageMagick or needs to be installed separately.
+#
+# Author:		With minor alterations, this is the great work of taviso,
+#			whose website is unfortunately down now, for a long time.
+#			One site to find them (with excellent explainations):
+#			http://zensites.net/fvwm/guide/advanced_functions.html
+# Copied+altered:	Kannan Thambiah <pygospa@gmail.com>
+#
+# Latest Version:	github.com/pygospa/dotfiles	
+
+# Set variables to the directories needed for this (your directory where all
+# your configs reside)
+SetEnv fvwm_tmp $[FVWM_USERDIR]/tmp
+SetEnv fvwm_icon $[FVWM_USERDIR]/icons
+
+# This function creates the Thumbnails right before iconifying the window, and
+# sets the thumbnail as picture for the icon
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I Raise
++ I SetEnv Icon-$[w.id] $[w.iconfile]
++ I ThisWindow (!Shaded Iconifiable !Iconic) PipeRead \
+    "xwd -silent -id $[w.id] | convert -resize 150 -frame 1x1 \
+    -mattecolor black -quality 0 xwd:- png:$[fvwm_tmp]/icon.tmp.$[w.id].png \
+    && echo Nop"
++ I TestRc (Match) Test (f $[fvwm_icon]/$[w.iconfile], f $[fvwm_tmp]/icon.tmp.$[w.id].png) \
+    PipeRead "composite -geometry +2+4 \
+    $[fvwm_icon]/$[w.iconfile] $[fvwm_tmp]/icon.tmp.$[w.id].png \
+    $[fvwm_tmp]/icon.tmp.$[w.id].png && \
+    echo WindowStyle IconOverride, Icon $[fvwm_tmp]/icon.tmp.$[w.id].png || echo Nop"
++ I TestRc (NoMatch) WindowStyle IconOverride, Icon $[fvwm_tmp]/icon.tmp.$[w.id].png
++ I Iconify
+
+# This function destroys the thumbnail, so it's always up to date
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I PipeRead "echo WindowStyle Icon \\$\\[Icon-$[w.id]\\]"
++ I UnsetEnv Icon-$[w.id]
++ I Exec rm -f $[fvwm_tmp]/icon.tmp.$[w.id].png
+
+# This makes sure that whenever something is deiconfied, the thumbs get 
+# destroyed
+DestroyModuleConfig FvwmEvent: *
+*FvwmEvent: deiconify DeThumbnail
+
+# Fixes the Restart problem. This needs to be added to the restart function:
+DestroyFunc ReThumbnail
+AddToFunc   ReThumbnail
++ I Iconify
++ I Thumbnail
+
+DestroyFunc RestartFunction
+AddToFunc RestartFunction
++ I All (Iconic) ReThumbnail
+
+# Icons should not have a title!
+Style * !IconTitle

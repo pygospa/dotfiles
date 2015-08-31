@@ -6,13 +6,20 @@
 DFP=$( (cd -P $(dirname $0) && pwd) )
 
 if [[ `uname -s` == Darwin ]]; then
-  EXCL=(asoundrc fvwm install.sh ousted README.md xinitrc Xresources)
+  EXCL=(asoundrc backup fvwm install.sh ousted README.md xinitrc Xresources)
 else 
-  EXCL=(install.sh ousted README.md)
+  EXCL=(backup install.sh ousted README.md)
 fi
 
+# Create backup directory inside dotfilepath
+mkdir $DFP/backup
+
+# Create symbolic link to configs and save pre-existing dotfiles into DFP/backup
 for F in *; do 
   if ! [[ ${EXCL[*]} =~ "$F" ]]; then
+    if [[ -f ~/.$F ]]; then
+      mv ~/.$F $DFP/backup/.$F
+    fi
     ln -sf $DFP/$F ~/.$F
   fi
 done

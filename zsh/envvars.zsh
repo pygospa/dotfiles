@@ -43,3 +43,10 @@ else
 	export PAGER=`which -p more`
 fi
 
+###### RVM ######
+# Ruby version manager settings
+
+if [[ -d "$HOME/.rvm/bin" ]]; then
+	export PATH="$PATH:$HOME/.rvm/bin"
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+fi
