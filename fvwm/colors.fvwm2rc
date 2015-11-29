@@ -34,9 +34,9 @@
 CleanupColorsets
 
 # Inactive window: light blue title with black border
-Colorset 1 fg #b9d3ee, bg #000000, sh #bebebe
+Colorset 1 fg #b9d3ee, bg #002b36, sh #bebebe
 # Active window: strong blue title and border
-Colorset 2 fg #0276fd, hi #0276fd, bg #000000, sh #bebebe
+Colorset 2 fg #0276fd, hi #0276fd, bg #002b36, sh #bebebe
 # Inactive Menu entry: white on dark grey blue
 Colorset 3 fg #b9d3ee, bg #122744, Translucent #122744 40
 # Active Menu entry: strong blue on dark grey blue
