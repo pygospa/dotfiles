@@ -34,6 +34,9 @@ Read submenus/game_menu.fvwm2rc
 DestroyMenu RootMenu
 AddToMenu RootMenu "      <- (¯`·._ ancalagon _.·'¯) ->     " Title
 PipeRead 'echo "+ \'$(date \"+%a, %d.%m.%Y - %H:%M\")\' Nop"'
+ + ""                   Nop
+ + "Firefox"           Exec exec firefox -P default
+ + ""                   Nop
  + "Terminal Emulators" Popup Terminals
  + ""                   Nop
  + "Mount"              PopUp Mount
