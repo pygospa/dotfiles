@@ -12,4 +12,4 @@ MenuStyle * ActiveFore, Hilight3DOff, MenuColorset 3, ActiveColorset 4
 MenuStyle * BorderWidth 1, TitleUnderlines2, SeparatorsShort, TrianglesSolid, Animation
 MenuStyle * Font "Shadow=0 1 SE:xftfont -misc-fixed-medium-r-semicondensed--12-110-75-75-c-60-iso8859-15", ItemFormat "%s%.2|%.5i%.5l%.5i%2.3>%2|"
 MenuStyle * PopupOffset 0 100, PopupDelay 300
-DefaultFont "-mixc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1"
+DefaultFont "-misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1"
