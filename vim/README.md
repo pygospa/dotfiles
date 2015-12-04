@@ -1,4 +1,4 @@
-# VIM 
+# VIM
 
 ## Why VIM?
 
@@ -16,9 +16,9 @@ enormous plugin capabilities was still pretty packed as editor, therefore large
 and not preinstalled.
 
 That is the only reason why I learned to use [vim](https://en.wikipedia.org/wiki/Vim_(text_editor))
-instead of emacs. Over the time I became so fluent that nowadays, when on an emacs, 
-everthing takes hours, and half the time I try to figure out how to revert something 
-in emacs because of my fingers being faster than my mind in typing in vim commands 
+instead of emacs. Over the time I became so fluent that nowadays, when on an emacs,
+everthing takes hours, and half the time I try to figure out how to revert something
+in emacs because of my fingers being faster than my mind in typing in vim commands
 that do totally different things in emacs.
 
 If you are an emacs guy, good for you. If you haven't decided yet, I'll
@@ -36,7 +36,7 @@ If you decided to use my vim setup, I use `pathogen` to organize my plugins. Thi
 includes being able to install new plugins as git submodules. You don't have to
 keep up with that, you can simply clone your desired additional plugins as
 normal repositories into ~/.vim/bundle/ but then you'll loose the ability to
-keep your directory under version control. 
+keep your directory under version control.
 
 After doing the three steps described at "How to install everything" you'll
 need to issue the following commands:
@@ -76,6 +76,38 @@ the following:
 
 	cd dot
 	git submodule foreach git pull origin master
+
+
+## Using YouCompleteMe
+
+`YouCompleteMe` is a neat plugin that allows for text completion that shows up
+authomatically to autocomplete your typings. If you ever plan to use vim for
+programming, you'll absolutely love and want this. It has additional feature for
+certain languages, such as providing help for different completion suggestions.
+
+However `YouCompleteMe` needs some extra care. It actually relies on a bunch of
+libraries from other locations, so once you've cloned my repository, and ran
+`git submodule init` you will need to switch into the `YouCompleteMe`-Directory
+and activate the submodules that are nested into the `YouCompleteMe`-Submodule
+as well:
+
+	cd dot/vim/bundle/YouCompleteMe
+	git submodule update --init --recursive
+
+The plugin relies on a C-written library, so to being able to use it, you'll
+also need to compile it, for which you need CMake and a C-Compiler on your
+systme. The Installation works as follows:
+
+	./install.py --clang-completer
+
+YMC might break once in a while so whenever you see errors when starting vim,
+that contain the word YMC, just head back to this directory and rebuild (or
+update and rebuild). This is sometimes tedious, but believe me, YMC is
+uberawesome.
+
+See [their website](https://github.com/Valloric/YouCompleteMe) for more
+information.
+
 
 ### A small note on vundle and NeoBundle, etc.
 

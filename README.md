@@ -3,7 +3,7 @@
 ## Your dotfiles are save
 
 I have added two scripts for easy installing and uninstalling while keeping your
-files save. Now, none of your dotfiles in home are overridden - they are all 
+files save. Now, none of your dotfiles in home are overridden - they are all
 backuped by moving them into ~/dot/backup
 
 Only after all your files are moved to that backup path, are the new files
@@ -39,9 +39,9 @@ Only the `README.md`, `install.sh` and the `ousted` subdirectory are ignored by
 default.
 If you just want single configs, link them by hand. If you want to use most of my
 files, just open your favorite editor and edit the `install.sh` script to
-exclude anything you don't want. 
+exclude anything you don't want.
 
-To do so, locate the line 
+To do so, locate the line
 
 	EXCL=(backup install.sh ousted README.md)
 
@@ -106,10 +106,10 @@ and how to use the window manager, you'll find a dedicated
 
 ## How to use my vim setup
 
-If you decide to use my vim setup, I use `pathogen` to organize my plugins. 
+If you decide to use my vim setup, I use `pathogen` to organize my plugins.
 These are addes as git submodules, so there are some steps to take until
 everything runs. I know some of you might think that `pathogen` is depricated
-and shouldn't be used in favor of more recent vim plugin bundlers. 
+and shouldn't be used in favor of more recent vim plugin bundlers.
 
 I will elaborate on this and why I believe `pathogen` is still the best choice
 (at least for this setup), as well as showing you in greater detail how to get
@@ -140,7 +140,7 @@ software I've configured with these dotfiles, all my works in this repository
 fall under Creative Commons Attribution-ShareAlike 4.0 International License.
 This means that you can use and republish any file and modify them to your
 desire. If you like my stuff, I'd be glad if you refer to my
-[blog](http://pygospa.wordpress.com). For furter information on the license, 
+[blog](http://pygospa.wordpress.com). For furter information on the license,
 see [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Acknowledgment
