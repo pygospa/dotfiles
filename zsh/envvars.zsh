@@ -15,11 +15,14 @@
 # Set the shell variable
 export SHELL='/bin/zsh'
 
+# Set newsserver
+export NNTPSERVER='nyx.informatik.uni-bremen.de'
+
 ###### PATH ######
 
 # Preceed path with ~/bin - a folder I alway create and where I keep software
 # and scripts that I developed myself and that should be in path (temporarily).
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/Cellar/python/2.7.9/bin:$PATH"
 
 ###### EDITOR ######
 
