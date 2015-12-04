@@ -39,6 +39,7 @@
 	subi = submodule init
 	t = !sh -c 'git to --author=$1' -
 	tm = !git t \"\"`git me`\"\"
+	wc = whatchanged
 	who = !git shortlog | grep -E '^[^ ]'
 	y = !sh -c 'git ye --author=$1' -
 	ym = !git y \"\"`git me`\"\"
