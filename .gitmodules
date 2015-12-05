@@ -80,3 +80,6 @@
 [submodule "vim/bundle/TaskList.vim"]
 	path = vim/bundle/TaskList.vim
 	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
