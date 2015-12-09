@@ -96,6 +96,14 @@ syntax on			" Switching on syntax highlighting
 syntax sync fromstart		" Start with correct syntax (may be slow)
 
 
+" Show me a line at the 80th character each row
+if(exists('+colorcolumn'))
+	set colorcolumn=80,120
+	highlight ColorColumn ctermbg=16
+endif
+
+
+
 " Persisten undo is a neat feature
 set undodir=~/.vim/undodir
 set undofile
