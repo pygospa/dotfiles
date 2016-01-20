@@ -14,7 +14,7 @@ fvwm)
 	;;
 *)
 	echo 'standard'
-	exec ck-launch-session dbus-launch --sh-syntax --exit-with-session fvwm
+	exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome
 	;;
 esac
 
