@@ -56,4 +56,6 @@ command! firebug :emenu Ansicht.Firebug
 
 
 " Colors
-hi CmdLine color:white !important; background: black !important
+colorscheme solarized-dark
+"hi CmdLine color:white !important; background: black !important
+

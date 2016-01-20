@@ -9,6 +9,9 @@ let g:instant_markdown_autostart = 0
 "
 let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do script \"y sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp\""'
 
+" Global auto-complete file for small temporary projects
+let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
+
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 filetype plugin indent on	"We want vim to automatically load plugins
@@ -39,8 +42,12 @@ call togglebg#map("<F5>")
 let mapleader=","		" We want to use the comma as map leader
 
 " Spelling - who really uses ]s and [s ?!
+map sp :set spell!<cr>
 map <leader>sn ]s
 map <leader>sp [s
+
+"Show nonprintables (returns, tabs)
+map <leader>l :set list!<cr>
 
 map nt :NERDTreeToggle<cr>
 map be :BufExplorer
@@ -49,8 +56,26 @@ map tb :TagbarToggle<cr>
 "Open Tagbar (if not already open) and jump into it (leaving focus on
 "previous splitscreen)
 map tj :TagbarOpen fj<cr>
-map sp :set spell!<cr>
-map <leader>l :set list!
+
+
+"""" Shamelessly stolen from Jonas Kubal (https://github.com/geratheon/dotvim/blob/master/vimrc)
+
+" easy window movement
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+
+" easy movement movement
+ nnoremap J 5j
+ nnoremap K 5k
+
+ " easy buffer movement
+nnoremap L :bnext<CR>
+nnoremap H :bprevious<CR>
+
+"""" </stolen>
+
 
 "Deactivate arrow keys (I want to _learn_ to navigate with hjkl
 no <down> <Nop>
@@ -94,6 +119,11 @@ set clipboard=unnamed		" Shares the clipboard with the OS. Now yy, D, P copy to 
 set listchars=tab:▸\ ,eol:¬	" We want ▸ as Tab character and ¬ as end of line character (instead of ^I and $
 syntax on			" Switching on syntax highlighting
 syntax sync fromstart		" Start with correct syntax (may be slow)
+
+" dirs
+set directory=$HOME/.vimfiles/swaps//
+set backupdir=$HOME/.vimfiles/backups//
+set directory=$HOME/.vimfiles/undos//
 
 
 " Show me a line at the 80th character each row

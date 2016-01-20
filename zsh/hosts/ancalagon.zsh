@@ -8,6 +8,8 @@
 # License		CC BY-SA 4.0, if applicable and compatible to software
 #			license
 
+alias open='xdg-open'
+
 # Start mplayer with sound output on headphones
 alias mplayer_hf='mplayer -ao alsa:device=hw=0,0'
 
