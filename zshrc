@@ -19,7 +19,7 @@
 # Keyboard settings, so that function keys work independantly from the term
 # (needed as zsh does not use /etc/inputrc)
 if [ -f ~/.zsh/keys.zsh ]; then
-	source ~/.zsh/keys.zsh
+#	source ~/.zsh/keys.zsh
 else
 	printf "Note ~/.zsh/keys.zsh is unavailable\n"
 fi
