@@ -1,7 +1,13 @@
 pcm.!default {
-    type plug
-    slave {
-	pcm "hdmi2"
-    }
+	type plug
+	slave {
+		pcm "analog"
+	}
 }
 
+#pcm.!default {
+#	type plug
+#	slave {
+#		pcm "hdmi2"
+#	}
+#}
