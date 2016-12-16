@@ -1,6 +1,6 @@
 # File			~/.zsh/darwin.zsh
 #
-# Purpose		This file contains system specific settings for Mac OS X 
+# Purpose		This file contains system specific settings for macOS
 #			operating systems
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
@@ -28,6 +28,8 @@ if [[ -x /Applications/Firefox.app/Contents/MacOS/firefox ]]; then
 	export BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
 fi
 
+# Java home
+export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
 
 
 # --------------------------------------------------------------------------- #
@@ -37,6 +39,9 @@ fi
 # Toggle Finder to show hidden files
 alias show_hidden=' defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'
 alias hide_hidden=' defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
+
+# Shorthand for compiling C++11 on macOS using xcodes clang
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 
 # Set easy to use commands for starting and stoping postgresql if
 # available on system
