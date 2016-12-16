@@ -19,3 +19,19 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Windows Stuff
+Desktop.ini
+Thumbs.db
+
+# Python
+*.pyc
+venv
+
+# C++
+*.out
+
+# Application specific files
+venf
+node_modules
+.sass-cache
