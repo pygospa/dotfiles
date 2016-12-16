@@ -1,4 +1,4 @@
-# File			~/.zshrc 
+# File			~/.zshrc
 #
 # Purpose		main configuration file for the Z-Shell
 #			This file tests and sources sub-config files, if
@@ -39,7 +39,7 @@ else
 fi
 
 # File system navigation tool settings and aliases for easier navigation and
-# getting directory information 
+# getting directory information
 if [ -f ~/.zsh/ui.zsh ]; then
 	source ~/.zsh/ui.zsh
 else
@@ -62,7 +62,7 @@ fi
 
 # System Prompt Settings
 if [ -f ~/.zsh/prompt.zsh ]; then
-	source ~/.zsh/prompt.zsh 
+	source ~/.zsh/prompt.zsh
 else
 	print "Note: ~/.zsh/prompt.zsh is unavailable\n"
 fi
@@ -74,6 +74,9 @@ else
 	print "Note: ~/.zsh/dvcs.zsh is unavailable\n"
 fi
 
+# Python settings
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 
 
 # --------------------------------------------------------------------------- #
@@ -81,7 +84,7 @@ fi
 # --------------------------------------------------------------------------- #
 
 
-# Files to source, if it's a Mac OS X
+# Files to source, if it is a macOS device
 if [[ `uname -s` == Darwin ]]; then
 	if [ -f ~/.zsh/hosts/darwin.zsh ]; then
 		source ~/.zsh/hosts/darwin.zsh
