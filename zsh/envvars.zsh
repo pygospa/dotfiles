@@ -46,7 +46,15 @@ else
 	export PAGER=`which -p more`
 fi
 
-###### RVM ######
+###### Programming ######
+
+# Go
+export GOPATH=$HOME/slab/ws/go
+export GOBIN=$HOME/slab/ws/go/bin
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 # Ruby version manager settings
 
 if [[ -d "$HOME/.rvm/bin" ]]; then
