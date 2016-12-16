@@ -90,6 +90,11 @@ if [[ "$TERM" != dumb ]]; then
 	alias grep='grep '${grep_options:+"${grep_options[*]}"}
 fi
 
+# diff should be colorful
+if [[ `command -v colordiff` ]]; then
+	alias diff='colordiff'
+fi
+
 # print current directory + subdirectories as a tree
 alias tree=" ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
