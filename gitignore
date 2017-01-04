@@ -35,3 +35,7 @@ venv
 venf
 node_modules
 .sass-cache
+
+# TeX
+*.log
+*.aux
