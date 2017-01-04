@@ -37,9 +37,12 @@ call togglebg#map("<F5>")
 "colorscheme jellybeans		" Use a nice color scheme
 				" Scheme needs to be present in
 				" ~/.vim/colors/jellybeans.rc
-
+				"
 "My mappings
 let mapleader=","		" We want to use the comma as map leader
+
+" jj
+:imap jj <Esc>
 
 " Spelling - who really uses ]s and [s ?!
 map sp :set spell!<cr>
@@ -190,8 +193,6 @@ endif
 " <---- Recognize .markdown files even when they use the .md extension ---->
 au BufRead,BufNewFile *.md set filetype=markdown
 
-
-
 "Use German as default spelling language
 set spelllang=de_de
 
@@ -210,4 +211,23 @@ set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%=%1*%y%*%*\              " file type
 set statusline+=%10((%l,%c)%)\            " line and column
 set statusline+=%P                        " percentage of file
+
+" vimwiki "
+au BufRead,BufNewFile *.wiki set filetype=vimwiki
+
+" ToggleCalendar "
+function! ToggleCalendar()
+	execute ":Calendar"
+	if exists("g:calendar_open")
+		if g:calendar_open == 1
+			execute "q"
+			unlet g:calendar_open
+		else
+			g:calendar_open = 1
+		end
+	else
+		let g:calendar_open = 1
+	end
+endfunction
+:autocmd FileType vimwiki map c :call ToggleCalendar()
 
