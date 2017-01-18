@@ -15,11 +15,12 @@ and installed as standard editor on any Unix, while emachs, despite it's
 enormous plugin capabilities was still pretty packed as editor, therefore large
 and not preinstalled.
 
-That is the only reason why I learned to use [vim](https://en.wikipedia.org/wiki/Vim_(text_editor))
-instead of emacs. Over the time I became so fluent that nowadays, when on an emacs,
-everthing takes hours, and half the time I try to figure out how to revert something
-in emacs because of my fingers being faster than my mind in typing in vim commands
-that do totally different things in emacs.
+That is the only reason why I learned to use
+[vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) instead of emacs. Over
+the time I became so fluent that nowadays, when on an emacs, everthing takes
+hours, and half the time I try to figure out how to revert something in emacs
+because of my fingers being faster than my mind in typing in vim commands that
+do totally different things in emacs.
 
 If you are an emacs guy, good for you. If you haven't decided yet, I'll
 encourage you to try out vim for a lightweight, yet enormously powerful editor
@@ -32,10 +33,10 @@ text - you just need to embrace the power.
 
 ## How to install the vim configuration
 
-If you decided to use my vim setup, I use `pathogen` to organize my plugins. This
-includes being able to install new plugins as git submodules. You don't have to
-keep up with that, you can simply clone your desired additional plugins as
-normal repositories into ~/.vim/bundle/ but then you'll loose the ability to
+If you decided to use my vim setup, I use `pathogen` to organize my plugins.
+This includes being able to install new plugins as git submodules. You don't 
+have to keep up with that, you can simply clone your desired additional plugins
+as normal repositories into ~/.vim/bundle/ but then you'll loose the ability to
 keep your directory under version control.
 
 After doing the three steps described at "How to install everything" you'll

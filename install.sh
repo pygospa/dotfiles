@@ -35,3 +35,7 @@ for file in *; do
   fi
 done
 
+# Create the vimfiles directory for vim
+mkdir -p $HOME/tmp/vim/swaps
+mkdir -p $HOME/tmp/vim/backups
+mkdir -p $HOME/tmp/vim/undos
