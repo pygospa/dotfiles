@@ -20,7 +20,7 @@ fvwm)
 *)
 	echo 'standard'
 	exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3
-# vor verbose output in a logfile just append this to previous line
+# for a verbose output in a logfile just append this to previous line
 #	-V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 	;;
 esac
