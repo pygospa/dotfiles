@@ -1,24 +1,31 @@
 #!/bin/sh
-# Author:	Kannan Thambiah <pygospa@gmail.com>
-# Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
+#
+# Creates a backup of existing dotfiles and symlinks these dotfiles to home
+# Copyright (c) 2017, Kannan Thambiah <pygospa@gmail.com>
+# Licensed under the MIT license
+# Latest version: https://github.com/pygospa/dotfiles
+
 
 # Dotfilepath and files to exclude
 DFP=$( (cd -P $(dirname $0) && pwd) )
 
+# If we are on a macOS powered machine, exclude typical Linux only software
 if [[ `uname -s` == Darwin ]]; then
-  EXCL=(asoundrc backup fvwm install.sh ousted README.md xinitrc Xresources)
-else 
-  EXCL=(backup install.sh ousted README.md)
+  EXCL=( asound backup install.sh LICENSE ousted README.md uninstall.sh xinitrc Xresources )
+# If we are on a non macOS powered Unix machine, exclude only the repository stuff
+else
+  EXCL=( backup install.sh LICENSE ousted README.md uninstall.sh )
 fi
 
-# Create backup directory inside dotfilepath
-mkdir $DFP/backup
+# Create a backup directory inside the dotfile path
+mkdir -p $DFP/backup
 
-# Create symbolic link to configs and save pre-existing dotfiles into DFP/backup
+# Copy pre-existing dotfiles that would be overwritten into $DFP/backup
+# then symlink all the dotfiles
 for F in *; do 
   if ! [[ ${EXCL[*]} =~ "$F" ]]; then
     if [[ -f ~/.$F ]]; then
-      mv ~/.$F $DFP/backup/.$F
+      mv ~/.$F $DFP/backup/$F
     fi
     ln -sf $DFP/$F ~/.$F
   fi

@@ -1,5 +1,14 @@
 # Welcome to my dotfiles
 
+By cloning this repository you get all my configuration files from different
+UNIX machines and are free to use them or to modify them to your needs.
+
+In this README I suppose that you cloned this repository into a directory named
+  
+	~/dot
+
+even though this repository is named `dotfiles` to be easily found by others.
+
 ## Your dotfiles are save
 
 I have added two scripts for easy installing and uninstalling while keeping your
@@ -33,10 +42,11 @@ Just do:
 	cd ~/dot
 
 Before running the install script, check whats included in the root directory
-of the repository. Any files that you might want to keep, can be commented out.
+of the repository. Any files that you might want to keep, can be excluded (see
+below).
 
-Only the `README.md`, `install.sh` and the `ousted` subdirectory are ignored by
-default.
+Only the `README.md`, `install.sh`, `LICENSE`, `ousted` and `uninstall.sh` are
+ignored by default (plus additional software on macOS that is not needed).
 If you just want single configs, link them by hand. If you want to use most of my
 files, just open your favorite editor and edit the `install.sh` script to
 exclude anything you don't want.
@@ -129,27 +139,26 @@ them to your home directory if you like (but they are not maintained anymore).
 ## Contact
 
 If you have any questions or suggestions, just contact me. You'll find my mail
-address at my github profile, which is probably the best way to reach me. I use
-GPG, and prefer encrypted mails; you can find my public key on keyservers,
-searching for 1024D/402CB18E.
+address at my github profile, which is probably the best way to reach me.
 
 ## License
 
-If not stated differently and if applicable by law and the licenses of the
-software I've configured with these dotfiles, all my works in this repository
-fall under Creative Commons Attribution-ShareAlike 4.0 International License.
-This means that you can use and republish any file and modify them to your
-desire. If you like my stuff, I'd be glad if you refer to my
-[blog](http://pygospa.wordpress.com). For furter information on the license,
-see [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
+Configuration files are a gray area when it comes to copyright and licensing.
+All configs are handwritten by me, and partly inspired by others but mainly 
+compiled by heavily relying on man files and documentation provided by the
+distributor of the used softare.
+
+As for the script files that are written by me you will find a coypright notice
+in the files. You are allowed to use them as stated in the MIT License file that
+you will find in this repository.
 
 ## Acknowledgment
 
 Last but not least I would like to thank all those people who constantly share
 their Dotfiles (and did so even before ti was cool to do so on GitHub). They
 have been a great help in many occasions and a constant source of inspiration. I
-cannot remember all the people whose dotfiles I've consulted over the last 1,5
-decades - if you find your distinctive work in this repository and want to be
+cannot remember all the people whose dotfiles I've consulted over the last 15
+years - if you find your distinctive work in this repository and want to be
 named, please feel free to contact me. I would especially like to point out:
 
   - [Christian 'strcat' Schneider](http://strcat.de/)

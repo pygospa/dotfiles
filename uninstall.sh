@@ -1,6 +1,10 @@
 #!/bin/sh
-# Author:	Kannan Thambiah <pygospa@gmail.com>
-# Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
+#
+# Remove created symlinks to these dotfiles and copy back originals from backup
+# Copyright (c) 2017, Kannan Thambiah <pygospa@gmail.com>
+# Licensed under the MIT license
+# Latest version: https://github.com/pygospa/dotfiles
+
 
 # Dotfilepath and files to exclude
 DFP=$( (cd -P $(dirname $0) && pwd) )
