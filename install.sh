@@ -23,12 +23,15 @@ mkdir -p $DFP/backup
 
 # Copy pre-existing dotfiles that would be overwritten into $DFP/backup
 # then symlink all the dotfiles
-for F in *; do 
-  if ! [[ ${EXCL[*]} =~ "$F" ]]; then
-    if [[ -f ~/.$F ]]; then
-      mv ~/.$F $DFP/backup/$F
+for file in *; do
+  if ! [[ ${EXCL[*]} =~ "$file" ]]; then
+    if [[ -f ~/.$file || -d ~/.$file ]]; then
+      echo ""
+      echo "mv ~/.$file $DFP/backup/$file"
+      mv ~/.$file $DFP/backup/$file
     fi
-    ln -sf $DFP/$F ~/.$F
+    echo "ln -sf $DFP/$file ~/.$file"
+    ln -sf $DFP/$file ~/.$file
   fi
 done
 
