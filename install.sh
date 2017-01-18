@@ -11,7 +11,8 @@ DFP=$( (cd -P $(dirname $0) && pwd) )
 
 # If we are on a macOS powered machine, exclude typical Linux only software
 if [[ `uname -s` == Darwin ]]; then
-  EXCL=( asound backup install.sh LICENSE ousted README.md uninstall.sh xinitrc Xresources )
+  EXCL=( asound backup config/user-dirs.dirs install.sh LICENSE mutt muttrc\
+	  ousted README.md uninstall.sh xinitrc Xresources )
 # If we are on a non macOS powered Unix machine, exclude only the repository stuff
 else
   EXCL=( backup install.sh LICENSE ousted README.md uninstall.sh )
