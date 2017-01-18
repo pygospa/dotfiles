@@ -1,29 +1,24 @@
-# File		~/.muttrc
+# Purpose		main configuration file for mutt
+#			Subfiles:
+#			- .mutt/colors
+#			- .mutt/headers
+#			- .mutt/signature
 #
-# Purpose	main configuration file for mutt
-#		Subfiles:
-#		- .mutt/colors
-#		- .mutt/headers
-#		- .mutt/signature
+# Author		Kannan Thambiah <pygospa@gmail.com>
+# Latest Version	https://github.com/pygospa/dotfiles
+
+
+
+#------------------------------------------------------------------------------
+# files   				      
 #
-# Author:	Kannan Thambiah <pygospa@gmail.com>
-# Latest vers	github.com/pygospa/dotfiles
-# Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
-
-
-
-# --------------------------------------------------------------------------- #
-#   				     files   				      #
-# --------------------------------------------------------------------------- #
-
 source ~/.mutt/colors
 source ~/.mutt/headers
 source ~/.mutt/sidebar
 
-# --------------------------------------------------------------------------- #
-#   				   addressing				      #
-# --------------------------------------------------------------------------- #
-
+#------------------------------------------------------------------------------ 
+# addressing
+#
 # Overwrite information from /etc/resolve.conf
 set hostname="ancalagon.arda"
 
@@ -46,10 +41,9 @@ set reverse_realname="yes"
 set use_domain="yes"
 
 
-# --------------------------------------------------------------------------- #
-#   				   attachments				      #
-# --------------------------------------------------------------------------- #
-
+#------------------------------------------------------------------------------
+# attachments
+#
 # How to print out attachments. Here's what this format string does:
 # I    1 <no description>           [text/plain, 8bit, iso-8859-1, 0,2K]
 # I    2 noICQ.png                              [image/png, base64, 96K]
@@ -80,3 +74,4 @@ set attach_sep="\n"
 
 # when processing attachments, process them separately or as one big file?
 set attach_split="yes"
+

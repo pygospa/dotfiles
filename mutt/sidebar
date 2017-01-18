@@ -1,41 +1,22 @@
-# File		~/.mutt/sidebar
+# Purpose		configuration file for the sidebar
 #
-# Purpose	configuration file for the sidebar
+# Author		Kannan Thambiah <pygospa@gmail.com>
+# Latest version	https://github.com/pygospa/dotfiles
+
+
+#------------------------------------------------------------------------------
+# settings
 #
-# Author:	Kannan Thambiah <pygospa@gmail.com>
-# Latest vers	github.com/pygospa/dotfiles
-# Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
-
-
-
-# --------------------------------------------------------------------------- #
-#   				    settings				      #
-# --------------------------------------------------------------------------- #
-
-# Width of sidebar
 set sidebar_width=35
-
-# Wheter or not to show the sidbar 
 set sidebar_visible=no
-
-# Specifies the delimiter between the sidebar and other screens
 set sidebar_delim=' | '
-
-# Should sidebar folders be sorted alphabetically?
 set sidebar_sort=yes
-
-# which mailboxes to list in the sidebar?
 mailboxes ="kannan/Inbox" ="pygospa/Inbox" ="uhb/Inbox"
 
 
 
-# --------------------------------------------------------------------------- #
-#   				  keybindings				      #
-# --------------------------------------------------------------------------- #
-
-
-# ctrl-n, ctrl-p to select next/previous folder
-# ctrl-o to open selected folder
+#------------------------------------------------------------------------------ 
+# keybindings
 #
 bind index,pager CP sidebar-prev
 bind index,pager CN sidebar-next
@@ -43,10 +24,9 @@ bind index,pager CO sidebar-open
 
 
 
-# --------------------------------------------------------------------------- #
-#   				    macros				      #
-# --------------------------------------------------------------------------- #
-
+#------------------------------------------------------------------------------ 
+# macros
+#
 # Toggle sidebar via b
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'

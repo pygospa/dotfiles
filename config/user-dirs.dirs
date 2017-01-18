@@ -1,6 +1,15 @@
+# Author		Kannan Thambiah <pygospa@gmail.com>
+# Latest version	https://github.com/pygospa/dotfiles
+
+#------------------------------------------------------------------------------
+# Set directories you want freedesk.org applications to use
+#
 XDG_DOCUMENTS_DIR="$HOME/docs"
 XDG_DOWNLOAD_DIR="$HOME/tmp/downl"
 
+#------------------------------------------------------------------------------
+# Set everything else to $HOME so it does not get created (i.e. Desktop, Music)
+#
 XDG_DESKTOP_DIR="$HOME"
 XDG_MUSIC_DIR="$HOME"
 XDG_PICTURES_DIR="$HOME"

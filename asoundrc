@@ -1,3 +1,9 @@
+# Author		Kannan Thambiah <pygospa@gmail.com>
+# Latest version	https://github.com/pygospa/dotfiles
+
+#------------------------------------------------------------------------------
+# Analog device, i.e. using the audio jack
+#
 pcm.!default {
 	type plug
 	slave {
@@ -5,6 +11,9 @@ pcm.!default {
 	}
 }
 
+#------------------------------------------------------------------------------
+# Digital device, i.e. using the hdmi output
+#
 #pcm.!default {
 #	type plug
 #	slave {

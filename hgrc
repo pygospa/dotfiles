@@ -1,36 +1,41 @@
-# Author:	Kannan Thambiah <pygospa@gmail.com>
-# Copyright:	CC BY-SA 4.0 <http://creativecommons.org/licenses/by-sa/4.0>
+# Author		Kannan Thambiah <pygospa@gmail.com>
+# Lates version         https://github.com/pygospa/dotfiles
 
-# <--- user interface settings --->
-[ui]
-# As shown in commits
-username = Kannan Thambiah <pygospa@gmail.com>
-# Enable Compression to speed up mercurial stuff over ssh
-ssh = ssh -C  
-# <--- diff tool for merging --->
-merge = vimdiff
+# -----------------------------------------------------------------------------
+# aliases - Template can be found at: https://bitbucket.org/pygospa/mercurial-cli-templates/
+#
+# - slog: short logs
+#	containing only revision and first line of description. Very usefull in
+#	addition with Unix tools, e.g.
+#		* Number of changesets		hg slog | wc -l
+#		* Number of merges		hg slog --only-merges | wc -l
+#       	* Number of commits by ...      hg slog --user pygospa | wc -l
+#		* Commits of last x days	hg slog --date -3 | wc -l
+#       	* Commits since ...		hg slog --date '>Feb 1' | wc -l
+#       	* No-message commits by ...	hg slog --no-message --user pygospa --date '>Mar 1' | wc -l
+# - nlog: nice logs
+#	colorful and with all relevant information
+# - sglog: short graph log
+# - dlog:  short log with absolute date instead of relative time span
+[alias]
+slog = log --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.slog
+nlog = log --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.nlog
+sglog = glog --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.sglog
+dlog = log --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.dlog
 
+# -----------------------------------------------------------------------------
+# core settings
+#
 [defaults]
-# Make mercurial to detect 
+# Make mercurial to detect renames automatically
 addremove = --similarity 100
 
-[merge-tools]
-vimdiff.executalbe = vim
-vimdiff.args = -d $base $local $output $other +close +close
-
-
-# <--- Settings for using HTTPS --->
-[web]
-# On OS X:
-cacerts = /etc/hg-dummy-cert.pem
-# On Linux:
-# cacerts = /etc/ssl/certs/ca-certificates.crt
-
-
-# <--- Mercurial comes with some neat extensions --->
+# -----------------------------------------------------------------------------
+# extensions settings
+#
 [extensions]
 # allows us to sign files with gpg using 'hg sign', check sigs with 'hg
-# sigcheck REVISION' and list signs with 'hg sigs' 
+# sigcheck REVISION' and list signs with 'hg sigs'
 hgext.gpg=
 # gives us neat ascii-graphs displaing log as tree, using 'hg log -G'
 graphlog=
@@ -42,44 +47,43 @@ progress=
 # Adding Steve Losh' hg prompt (http://stevelosh.com/projects/hg-prompt/)
 prompt = /Users/pygospa/slab/hg-prompt/prompt.py
 
-# <--- Settings for the hgext.gpg= hook --->
+# -----------------------------------------------------------------------------
+# hgext.gpg= hook settings
+#
 [gpg]
 # path to the gpg tool
 cmd=/usr/local/bin/gpg
 # Standard Signing key
 key=402CB18E
 
-
-# <--- Setting for the keyword= hook --->
-
+# -----------------------------------------------------------------------------
+# keyword= hook settings
+#
 # All files
 [keyword]
 * =
 
-# <--- Nice to have Aliases --->
-[alias]
-# Templates for aliases can be found at:
-#     https://bitbucket.org/pygospa/mercurial-cli-templates/
+# -----------------------------------------------------------------------------
+# merge-tool settings
+#
+[merge-tools]
+vimdiff.executalbe = vim
+vimdiff.args = -d $base $local $output $other +close +close
 
-# Short logs containing only revision and first line of description. Very
-# usefull in addition with Unix tools, e.g.
-#	* Number of changesets		hg slog | wc -l 
-#	* Number of merges		hg slog --only-merges | wc -l
-#       * Number of commits by ...      hg slog --user pygospa | wc -l
-#	* Commits of last x days	hg slog --date -3 | wc -l
-#       * Commits since ...		hg slog --date '>Feb 1' | wc -l
-#       * No-message commits by ...	hg slog --no-message --user pygospa --date '>Mar 1' | wc -l
+# -----------------------------------------------------------------------------
+# user interface
+#
+[ui]
+username = Kannan Thambiah <pygospa@gmail.com>
+ssh = ssh -C
+merge = vimdiff
 
-slog = log --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.slog
-
-# Nice logs displaying logs colorful and with all relevant information. Ideal
-# for reviewing log of a certain changeset
-nlog = log --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.nlog
-
-# Short graphlog with colors
-sglog = glog --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.sglog
-
-# Short log with absolute date instead of relative time span
-dlog = log --style=/Users/pygospa/.hg/mercurial-cli-templates/map-cmdline.dlog
-
+# -----------------------------------------------------------------------------
+# HTTPS settings
+#
+[web]
+# On OS X:
+# cacerts = /etc/hg-dummy-cert.pem
+# On Linux:
+cacerts = /etc/ssl/certs/ca-certificates.crt
 
