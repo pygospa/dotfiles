@@ -1,31 +1,19 @@
-# File			~/.zsh/completion.zsh
-#
 # Purpose		This file contains all settings and stylings for zsh
 #			completion system
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	https://github.com/pygospa/dotfiles
-# License		CC BY-SA 4.0, if applicable and compatible to software
-#			license
 
 
-
-# --------------------------------------------------------------------------- #
-#			Modules						      #
-# --------------------------------------------------------------------------- #
-
-
+#------------------------------------------------------------------------------
+# Modules
+#
 autoload -U compinit && compinit -u || print 'compinit not available!'
 
 
-
-# --------------------------------------------------------------------------- #
-#			Settings					      #
-# --------------------------------------------------------------------------- #
-
-
-### Completion
-
+#------------------------------------------------------------------------------
+# General Settings
+#
 # Completion in middle of word will move cursor to end of word
 setopt always_to_end
 
@@ -67,8 +55,9 @@ setopt no_list_packed
 setopt list_types
 
 
-
-### Expansion and Globbing
+#------------------------------------------------------------------------------
+# Expansion and Globbing
+#
 
 # Use '=' expansion, to extend '=cmd' to the path of the cmd
 # e.g.
@@ -90,15 +79,14 @@ setopt no_glob_dots
 # If pattern for filename generation has no match, delete pattern from argument
 # list and go on instead of exiting with an error
 setopt null_glob
- 
+
 # Don't error out when unset parameters are used
 setopt unset
 
 
-
-# --------------------------------------------------------------------------- #
-#			Styling						      #
-# --------------------------------------------------------------------------- #
+#------------------------------------------------------------------------------
+# Styling
+#
 
 # allow one error for every three characters typed in approximate completer
 zstyle ':completion:*:approximate:'    max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )'
@@ -236,7 +224,7 @@ for compcom in cp deborphan df feh fetchipac head hnb ipacsum mv \
 	pal stow tail uname ; do
 	[[ -z ${_comps[$compcom]} ]] && compdef _gnu_generic ${compcom}
 done; unset compcom
-    
+
 # run rehash on completion so new installed program are found automatically:
 _force_rehash() {
 	(( CURRENT == 1 )) && rehash

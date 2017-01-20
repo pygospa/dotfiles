@@ -1,50 +1,38 @@
-# File			~/.zsh/versioncontrol.zsh
-#
 # Purpose		I consider version control system to be one of the most
 #			important tool invented - especially for computer
 #			scientists and developers - and I use them every day,
 #			so I am pretty particular about how they should work
-# 
+#
 # Author		Kannan Thambiah <pygospa@gmail.com>
-# Lates Version		github.com/pygospa/dotfiles
+# Latest Version	https://github.com/pygospa/dotfiles
 
 
-
-# --------------------------------------------------------------------------- #
-#			Modules						      #
-# --------------------------------------------------------------------------- #
-
+#------------------------------------------------------------------------------
+# Modules
+#
 autoload -Uz vcs_info; vcs_info;
 
 
-
-# --------------------------------------------------------------------------- #
-#			Variabels					      #
-# --------------------------------------------------------------------------- #
-
-# Git pager should always be less, and not vimpager!
-if [[ -x `which -p git` ]]; then 
+#------------------------------------------------------------------------------
+# Variables
+#
+if [[ -x `which -p git` ]]; then	# Always use less not vimpager for git
 	export GIT_PAGER=`which -p less`
 fi
 
 
-
-# --------------------------------------------------------------------------- #
-#			Aliases						      #
-# --------------------------------------------------------------------------- #
-
-# I am a lazy bum
-if [[ -x `which -p git` ]]; then
+#------------------------------------------------------------------------------
+# Aliases
+#
+if [[ -x `which -p git` ]]; then	# I am a lazy bum
 	alias g='git'
 fi
 
 
-
-# --------------------------------------------------------------------------- #
-#			Auxilliary functions				      #
-# --------------------------------------------------------------------------- #
-
-# This functions will open the remote remote repository of the current local 
+#------------------------------------------------------------------------------
+# Auxiliary functions
+#
+# This functions will open the remote remote repository of the current local
 # directory in the browser if it is pointing to github or bitbucket.
 #
 # OS X has 'open' command for opening different files with the associated
@@ -97,8 +85,6 @@ gith() {
 		[[ -n $bburl ]] && $BROWSER $bburl || echo "No GitHub path found!"
 	fi
 }
-
-
 
 
 
@@ -478,7 +464,6 @@ function _zsh_vcs_prompt_update_vcs_status() {
 }
 
 function _zsh_vcs_prompt_microsec2datetime() {
-    local elapse=$1
     local mc=$(($elapse % 1000000))
     local elapse_sec=$(($elapse / 1000000))
     local hh=$(($elapse_sec / 3600))

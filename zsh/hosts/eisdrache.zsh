@@ -1,13 +1,13 @@
-# File			~/.zsh/eisdrache.zsh
-#
-# Purpose		This file contains host specific settings for my home pc running 
-#			Gentoo Linux
+# Purpose		This file contains host specific settings for my former
+#			home pc running Gentoo Linux
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	https://github.com/pygospa/dotfiles
-# License		CC BY-SA 4.0, if applicable and compatible to software
-#			license
 
+
+#------------------------------------------------------------------------------
+# Aliases
+#
 # Start mplayer with surround sound activated
 alias m51='mplayer -ao alsa:device=plug=surround51 -channels 6'
 

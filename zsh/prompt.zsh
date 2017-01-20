@@ -8,9 +8,9 @@
 #			license
 
 
-# --------------------------------------------------------------------------- #
-#			Settings					      #
-# --------------------------------------------------------------------------- #
+#------------------------------------------------------------------------------
+# Settings
+#
 
 # Only show the right prompt on the current prompt line and remove it from
 # previous ones
@@ -26,15 +26,13 @@ setopt transient_rprompt
 setopt prompt_cr
 
 
-
-# --------------------------------------------------------------------------- #
-#			System Varialbes				      #
-# --------------------------------------------------------------------------- #
-
+#------------------------------------------------------------------------------
+# System Varialbes
+#
 ZSH_VCS_PROMPT_ENABLE_CACHING='true'
 
 # Primary prompt - different for root and eru (my administrative user)
-if (( EUID == 0 )) || [[ `whoami` == eru ]]; then 
+if (( EUID == 0 )) || [[ `whoami` == eru ]]; then
 	PS1="${RED}%n${NC} %0d ${RED}#${NC} "
 else
 	# Normal user
@@ -56,9 +54,9 @@ PS4='+%N:%i:%_> '
 
 
 
-# --------------------------------------------------------------------------- #
-#			Auxilliary functions				      #
-# --------------------------------------------------------------------------- #
+#------------------------------------------------------------------------------
+# Auxiliary Function
+#
 
 # Use precmd hook is executed every time before the prompt is printed
 precmd() {

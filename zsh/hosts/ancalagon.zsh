@@ -1,21 +1,21 @@
-#File			~/.zsh/ancalagon.zsh
-#
 # Purpose		This file contains host specific settings for my home
 #			PC running Gentoo Linux
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	https://github.com/pygospa/dotfiles
-# License		CC BY-SA 4.0, if applicable and compatible to software
-#			license
 
-alias open='xdg-open'
 
-# Start mplayer with sound output on headphones
-alias mplayer_hf='mplayer -ao alsa:device=hw=0,0'
+#------------------------------------------------------------------------------
+# Aliases
+#
+alias open='xdg-open'		# I'm used to macOS' open so here we go
+alias mplayer_hf='mplayer -ao alsa:device=hw=0,0' # mplayer /w sound on headphones
+alias urxvt='urxvtc'		# use the speed-up urxvt demon client system
 
-# Make use of the speed up urxvt demon and client system
-alias urxvt='urxvtc'
 
-export PATH="$PATH:/opt/cuda/bin"
+
+#------------------------------------------------------------------------------
+# System variables
+#
+export PATH="$PATH:/opt/cuda/bin"	# Cuda variables
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib4"
-

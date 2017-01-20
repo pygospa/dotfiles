@@ -1,25 +1,21 @@
-# File			~/.zshrc
-#
 # Purpose		main configuration file for the Z-Shell
-#			This file tests and sources sub-config files, if
-#			available and notifies user, if not available.
-#			"Explicite is better than implicite" - so everything is
-#			configured explicitly (e.g. building the Path, etc.).
-#			Keep that in mind!
-#
+# 			Tests and sources sub-config files if available or
+# 			notifies user if not available.
+# 			"Explicite is better than implicite" - so everything is
+# 			configured explicitly (e.g. Path, etc).
+# 			Keep that in mind!
 # Author		Kannan Thambiah <pygospa@gmail.com>
-# Lates Version		github.com/pygospa/dotfiles
+# Latest Version	https://github.com/pygospa/dotfiles
 
 
-
-# --------------------------------------------------------------------------- #
-#			Machine INDEPENDANT configuration files		      #
-# --------------------------------------------------------------------------- #
+#------------------------------------------------------------------------------
+# Machine INDEPENDANT configuration files
+#
 
 # Keyboard settings, so that function keys work independantly from the term
 # (needed as zsh does not use /etc/inputrc)
 if [ -f ~/.zsh/keys.zsh ]; then
-#	source ~/.zsh/keys.zsh
+	source ~/.zsh/keys.zsh
 else
 	printf "Note ~/.zsh/keys.zsh is unavailable\n"
 fi
@@ -28,7 +24,7 @@ fi
 if [ -f ~/.zsh/envvars.zsh ]; then
 	source ~/.zsh/envvars.zsh
 else
-	printf "Note ~/.zsh/envvars.zsh\n"
+	printf "Note ~/.zsh/envvars.zsh is unavailable!\n"
 fi
 
 # Color settings
@@ -36,6 +32,13 @@ if [ -f ~/.zsh/colors.zsh ]; then
 	source ~/.zsh/colors.zsh
 else
 	printf "Note ~/.zsh/colors.zsh is unavailable\n"
+fi
+
+# System Prompt Settings
+if [ -f ~/.zsh/prompt.zsh ]; then
+	source ~/.zsh/prompt.zsh
+else
+	print "Note: ~/.zsh/prompt.zsh is unavailable\n"
 fi
 
 # File system navigation tool settings and aliases for easier navigation and
@@ -60,13 +63,6 @@ else
 	printf "Note ~/.zsh/history.zsh is unavailable\n"
 fi
 
-# System Prompt Settings
-if [ -f ~/.zsh/prompt.zsh ]; then
-	source ~/.zsh/prompt.zsh
-else
-	print "Note: ~/.zsh/prompt.zsh is unavailable\n"
-fi
-
 # GIT/Mercurial settings
 if [ -f ~/.zsh/dvcs.zsh ]; then
 	source ~/.zsh/dvcs.zsh
@@ -74,17 +70,12 @@ else
 	print "Note: ~/.zsh/dvcs.zsh is unavailable\n"
 fi
 
-# Python settings
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
+#------------------------------------------------------------------------------
+# Machine DEPENDANT configuration files
+#
 
-
-# --------------------------------------------------------------------------- #
-#			Machine DEPENDANT configuration files		      #
-# --------------------------------------------------------------------------- #
-
-
-# Files to source, if it is a macOS device
+# File to source, if it is a macOS device
 if [[ `uname -s` == Darwin ]]; then
 	if [ -f ~/.zsh/hosts/darwin.zsh ]; then
 		source ~/.zsh/hosts/darwin.zsh
@@ -112,10 +103,19 @@ if [[ `uname -n` == ancalagon ]]; then
 fi
 
 
+#------------------------------------------------------------------------------
+# Load custom executable functions
+#
+for function in ~/.zsh/functions/*; do
+	source $function
+done
 
-# --------------------------------------------------------------------------- #
-#			Software settings				      #
-# --------------------------------------------------------------------------- #
 
-
-eval `keychain --eval id_rsa`
+#------------------------------------------------------------------------------
+# Software settings
+#
+#
+## Python settings
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+#
+#eval `keychain --eval id_rsa`

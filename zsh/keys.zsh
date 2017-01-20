@@ -1,5 +1,3 @@
-# File			~/.zsh/keys.zsh
-#
 # Purpose		Setup keyboard
 #			zsh does not read /etc/inputrc which normally tells the
 #			shell what commands are sent by the terminal emulator
@@ -7,7 +5,7 @@
 #			As it is cumbersome to 
 #
 # Author		Kannan Thambiah <pygospa@gmail.com>
-# Lates Version		github.com/pygospa/dotfiles
+# Lates Version		https://github.com/pygospa/dotfiles
 
 
 autoload -Uz zkbd

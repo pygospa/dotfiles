@@ -10,34 +10,17 @@
 
 
 
-# --------------------------------------------------------------------------- #
-#			Variabels					      #
-# --------------------------------------------------------------------------- #
-
-# Where to save history
-HISTFILE=${HOME}/.zsh_history
-
-# Number of lines to keep in history of the active session
-HISTSIZE=10000
-
-# Number of lines to persistantly save to histfile
-SAVEHIST=10000
+#------------------------------------------------------------------------------
+# Variabels
+#
+HISTFILE=${HOME}/.zsh_history	# Where to save history
+HISTSIZE=100000			# No. of lines in history of active session
+SAVEHIST=100000			# No. of lines persistantly saved to histfile
 
 
-
-
-
-# --------------------------------------------------------------------------- #
-#			Modules						      #
-# --------------------------------------------------------------------------- #
-
-
-
-
-
-# --------------------------------------------------------------------------- #
-#			Settings					      #
-# --------------------------------------------------------------------------- #
+#------------------------------------------------------------------------------
+# Settings
+#
 
 # Have all zsh sessions append their history list to the history file instead
 # of replacing it.
@@ -107,16 +90,9 @@ setopt share_history
 
 
 
-
-
-# --------------------------------------------------------------------------- #
-#			Styling						      #
-# --------------------------------------------------------------------------- #
-
-
-# --------------------------------------------------------------------------- #
-#			Keybindings					      #
-# --------------------------------------------------------------------------- #
+#------------------------------------------------------------------------------ 
+# Key bindings
+#
 
 # Search histroy forward for entry beginning with typed text using 'arrow up'
 bindkey "${key[Up]}"	history-beginning-search-backward
