@@ -85,10 +85,11 @@ URxvt.tabbed.tab-fg: 0
 URxvt.tabbed.tab-bg: 1
 URxvt.tabbed.secondaryScroll: true
 URxvt.font: xft:Source Code Pro:pixelsize=12:antialias=true:hinting=true
+!URxvt.font: xft:Consolas:style=Regular:pixelsize=14:antialiasing=true:hinting=true
 URxvt.urgentOnBell: false
 
 !------------------------------------------------------------------------------
-! Old fonts I've tried:
+! Old fonts I have tried:
 !
 !URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:\
 !            hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:\
