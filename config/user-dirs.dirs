@@ -4,15 +4,15 @@
 #------------------------------------------------------------------------------
 # Set directories you want freedesk.org applications to use
 #
-XDG_DOCUMENTS_DIR="$HOME/docs"
-XDG_DOWNLOAD_DIR="$HOME/tmp/downl"
+XDG_DOCUMENTS_DIR="/home/pygospa/docs"
+XDG_DOWNLOAD_DIR="/home/pygospa/tmp/downl"
 
 #------------------------------------------------------------------------------
-# Set everything else to $HOME so it does not get created (i.e. Desktop, Music)
+# Set everything else to /home/pygospa so it does not get created (i.e. Desktop, Music)
 #
-XDG_DESKTOP_DIR="$HOME"
-XDG_MUSIC_DIR="$HOME"
-XDG_PICTURES_DIR="$HOME"
-XDG_PUBLICSHARE_DIR="$HOME"
-XDG_TEMPLATE_DIR="$HOME"
-XDG_VIDEOS_DIR="$HOME"
+XDG_DESKTOP_DIR="/home/pygospa"
+XDG_MUSIC_DIR="/home/pygospa"
+XDG_PICTURES_DIR="/home/pygospa"
+XDG_PUBLICSHARE_DIR="/home/pygospa"
+XDG_TEMPLATE_DIR="/home/pygospa"
+XDG_VIDEOS_DIR="/home/pygospa"
