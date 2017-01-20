@@ -85,7 +85,7 @@ URxvt.tabbed.tab-fg: 0
 URxvt.tabbed.tab-bg: 1
 URxvt.tabbed.secondaryScroll: true
 URxvt.font: xft:Source Code Pro:pixelsize=12:antialias=true:hinting=true
-!URxvt.font: xft:Consolas:style=Regular:pixelsize=14:antialiasing=true:hinting=true
+!URxvt.font: xft:Consolas:style=Regular:pixelsize=12:antialiasing=true:hinting=true
 URxvt.urgentOnBell: false
 
 !------------------------------------------------------------------------------

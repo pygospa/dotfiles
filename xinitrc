@@ -2,6 +2,9 @@
 # Latest version	https://github.com/pygospa/dotfiles
 
 
+# Set DPI (can be calculated using https://www.sven.de/dpi/)
+xrandr --dpi 81.59
+
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D7 &
 urxvtd -f
