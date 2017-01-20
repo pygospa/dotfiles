@@ -29,7 +29,7 @@ fi
 # Pager
 #
 if [[ -x `which -p vimpager` ]]; then
-	export PAGER=`which -p vimpager` 
+	export PAGER=`which -p vimpager`
 elif [[ -x `which -p less` ]]; then
 	export PAGER=`which -p less`
 else

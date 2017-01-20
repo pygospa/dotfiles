@@ -33,7 +33,7 @@ ZSH_VCS_PROMPT_ENABLE_CACHING='true'
 
 # Primary prompt - different for root and eru (my administrative user)
 if (( EUID == 0 )) || [[ `whoami` == eru ]]; then
-	PS1="${RED}%n${NC} %0d ${RED}#${NC} "
+	PS1="${ORANGE}%n@$%m${NC} ${BWHITE}%0d${NC} ${RED}#${NC} "
 else
 	# Normal user
 	setopt prompt_subst

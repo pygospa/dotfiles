@@ -28,6 +28,7 @@ if [[ "$TERM" != dumb ]]; then
 		CYAN="%{${fg[cyan]}%}"
 		GREEN="%{${fg[green]}%}"
 		WHITE="%{${fg[white]}%}"
+		BWHITE="%{${fg_bold[white]}%}"
 		NC="%{${reset_color}%}"
 
 	#----------------------------------------------------------------------
