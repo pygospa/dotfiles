@@ -70,6 +70,14 @@ else
 	print "Note: ~/.zsh/dvcs.zsh is unavailable\n"
 fi
 
+# Title settings
+if [ -f ~/.zsh/dvcs.zsh ]; then
+	source ~/.zsh/title.zsh
+else
+	print "Note: ~/.zsh/title.zsh is unavailable\n"
+fi
+
+
 
 #------------------------------------------------------------------------------
 # Machine DEPENDANT configuration files
