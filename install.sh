@@ -66,4 +66,3 @@ for file in *; do
     ln -sf $DFP/$file ~/.$file
   fi
 done
-
