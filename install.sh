@@ -32,7 +32,8 @@ mkdir -p $DFP/backup
 
 # Do we need directories for the Z-Shell?
 if ! [[ ${EXCL[*]} =~ "zsh" ]]; then
-	mkdir -p $DFP/zsh/zkbd
+	mkdir -p $DFP/zkbd
+	echo "mkdir $DFP/zkbd"
 fi
 
 # Do we need directories for vim?
@@ -40,11 +41,15 @@ if ! [[ ${EXCL[*]} =~ "vim" ]]; then
 	mkdir -p $HOME/tmp/vim/swaps
 	mkdir -p $HOME/tmp/vim/backups
 	mkdir -p $HOME/tmp/vim/undos
+	echo "mkdir $HOME/tmp/vim/swaps"
+	echo "mkdir $HOME/tmp/vim/backups"
+	echo "mkdir $HOME/tmp/vim/undos"
 fi
 
 # Do we need directories for i3?
 if ! [[ ${EXCL[*]} =~ "vim" ]]; then
 	mkdir -p $HOME/tmp/shots
+	echo "mkdir -p $HOME/tmp/shots"
 fi
 
 

@@ -34,17 +34,17 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 	key[Right]=${terminfo[knp]}
 
 # If we cannot use terminfo fall back to zkbd querying the user to insert a
-# number of keys and saving them to a term-vendor-ostype file under .zsh/zkbd
+# number of keys and saving them to a term-vendor-ostype file under .zkbd
 else
 	autoload -Uz zkbd
 
 	function zkbd_file() {
-		[[ -f ~/.zsh/zkbd/${TERM}-${VENDOR}-${OSTYPE} ]] && printf '%s' ~/".zsh/zkbd/${TERM}-${VENDOR}-${OSTYPE}" && return 0
-		[[ -f ~/.zsh/zkbd/${TERM}-${DISPLAY}          ]] && printf '%s' ~/".zsh/zkbd/${TERM}-${DISPLAY}"          && return 0
+		[[ -f ~/.zkbd/${TERM}-${VENDOR}-${OSTYPE} ]] && printf '%s' ~/".zkbd/${TERM}-${VENDOR}-${OSTYPE}" && return 0
+		[[ -f ~/.zkbd/${TERM}-${DISPLAY}          ]] && printf '%s' ~/".zkbd/${TERM}-${DISPLAY}"          && return 0
 		return 1
 	}
 
-	[[ ! -d ~/.zsh/zkbd ]] && mkdir ~/.zsh/zkbd
+	[[ ! -d ~/.zkbd ]] && mkdir ~/.zkbd
 	keyfile=$(zkbd_file)
 	ret=$?
 	if [[ ${ret} -ne 0 ]]; then
