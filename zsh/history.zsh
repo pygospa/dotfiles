@@ -94,12 +94,9 @@ setopt share_history
 # Key bindings
 #
 
+# Search histroy forward for entry beginning with typed text using 'arrow up'
+bindkey "${key[Up]}"	history-beginning-search-backward
 
-if [[ `uname -s` != Darwin ]]; then
-	# Search histroy forward for entry beginning with typed text using 'arrow up'
-	bindkey "${key[Up]}"	history-beginning-search-backward
-
-	# Search history backward for entry beginning with typed text using 'arrow down'
-	bindkey "${key[Down]}"	history-beginning-search-forward
-fi
+# Search history backward for entry beginning with typed text using 'arrow down'
+bindkey "${key[Down]}"	history-beginning-search-forward
 
