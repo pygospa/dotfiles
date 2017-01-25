@@ -1,18 +1,21 @@
 .DS_Store
 =======
-# OS X 
+# OS X
 .DS_Store
 
-# vim 
+# vim
 .*.swp
 
-# GPG 
+# GPG
 *.gpg
 *.gpg~
 *.gpg.lock
 .*.lalaith.local.*
 random_seed
 gnupg/profile.jpg
+
+# Python
+*.py[cod]
 
 # Backup file
 backup/*
