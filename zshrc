@@ -122,8 +122,17 @@ done
 #------------------------------------------------------------------------------
 # Software settings
 #
-#
+
+# Use funtoos keychain application to manage ssh-agents and gpg-agents
+if [[ -x `which -p keychain` ]]; then
+	# if on macOS, use '--inherit any' to inherit any ssh key passphrases
+	# stored in macOS Keychain app. Omit if not wanted/needed
+	if [[ `uname -s` == Darwin ]]; then
+		eval `keychain --eval id_rsa --inherit any id_rsa` # + GPG key
+	fi
+	eval `keychain --eval id_rsa` # + GPG key
+fi
+
 ## Python settings
 #if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 #
-#eval `keychain --eval id_rsa`
