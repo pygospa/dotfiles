@@ -3,6 +3,8 @@
 #			scientists and developers - and I use them every day,
 #			so I am pretty particular about how they should work
 #
+#
+# Based heavily on	よんちゅ <http://yonchu.hatenablog.com/>
 # Author		Kannan Thambiah <pygospa@gmail.com>
 # Latest Version	https://github.com/pygospa/dotfiles
 
@@ -129,11 +131,11 @@ export ZSH_VCS_PROMPT_MERGE_BRANCH
 ## Symbols.
 ZSH_VCS_PROMPT_AHEAD_SIGIL=${ZSH_VCS_PROMPT_AHEAD_SIGIL:-' ↑'}
 ZSH_VCS_PROMPT_BEHIND_SIGIL=${ZSH_VCS_PROMPT_BEHIND_SIGIL:-' ↓'}
-ZSH_VCS_PROMPT_STAGED_SIGIL=${ZSH_VCS_PROMPT_STAGED_SIGIL:-' +'}
-ZSH_VCS_PROMPT_CONFLICTS_SIGIL=${ZSH_VCS_PROMPT_CONFLICTS_SIGIL:-' x'}
+ZSH_VCS_PROMPT_STAGED_SIGIL=${ZSH_VCS_PROMPT_STAGED_SIGIL:-' ✚'}
+ZSH_VCS_PROMPT_CONFLICTS_SIGIL=${ZSH_VCS_PROMPT_CONFLICTS_SIGIL:-' ✖'}
 ZSH_VCS_PROMPT_UNSTAGED_SIGIL=${ZSH_VCS_PROMPT_UNSTAGED_SIGIL:-' ●'}
 ZSH_VCS_PROMPT_UNTRACKED_SIGIL=${ZSH_VCS_PROMPT_UNTRACKED_SIGIL:-' …'}
-ZSH_VCS_PROMPT_STASHED_SIGIL=${ZSH_VCS_PROMPT_STASHED_SIGIL:-' *'}
+ZSH_VCS_PROMPT_STASHED_SIGIL=${ZSH_VCS_PROMPT_STASHED_SIGIL:-' ⚑'}
 ZSH_VCS_PROMPT_CLEAN_SIGIL=${ZSH_VCS_PROMPT_CLEAN_SIGIL:-' ✔' }
 
 ## Hide count if set 'true'.
@@ -190,21 +192,21 @@ else
     # No action.
     if [ -z "$ZSH_VCS_PROMPT_GIT_FORMATS" ]; then
         # Branch name
-        ZSH_VCS_PROMPT_GIT_FORMATS="${MAGENTA}[${YELLOW}#b${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS="${MAGENTA}[${YELLOW}#b${NC}"
         # Ahead and Behind
-        ZSH_VCS_PROMPT_GIT_FORMATS+="${GREEN}#c${RED}#d${MAGENTA} |${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS+="${GREEN}#c${RED}#d${MAGENTA} |${NC}"
         # Staged
-        ZSH_VCS_PROMPT_GIT_FORMATS+="${GREEN}#e${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS+="${GREEN}#e${NC}"
         # Conflicts
-        ZSH_VCS_PROMPT_GIT_FORMATS+="${RED}#f${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS+="${RED}#f${NC}"
         # Unstaged
-        ZSH_VCS_PROMPT_GIT_FORMATS+="${RED}#g${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS+="${ORANGE}#g${NC}"
         # Untracked
-        ZSH_VCS_PROMPT_GIT_FORMATS+="${RED}#h${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS+="${VIOLET}#h${NC}"
         # Stashed
-        ZSH_VCS_PROMPT_GIT_FORMATS+="${CYAN}#i${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS+="${CYAN}#i${NC}"
         # Clean
-        ZSH_VCS_PROMPT_GIT_FORMATS+="${GREEN}#j${MAGENTA}]${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_FORMATS+="${GREEN}#j${MAGENTA}]${NC}"
     fi
     # No action using python.
     if [ -z "$ZSH_VCS_PROMPT_GIT_FORMATS_USING_PYTHON" ]; then
@@ -215,23 +217,23 @@ else
     if [ -z "$ZSH_VCS_PROMPT_GIT_ACTION_FORMATS" ]; then
         # VCS name
         # Branch name
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${MAGENTA}[${YELLOW}#b${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${MAGENTA}[${YELLOW}#b${NC}"
         # Action
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${RED}#a${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${RED}#a${NC}"
         # Ahead and Behind
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${GREEN}#c${RED}#d${MAGENTA} |${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${GREEN}#c${RED}#d${MAGENTA} |${NC}"
         # Staged
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${GREEN}#e${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${GREEN}#e${NC}"
         # Conflicts
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${RED}#f${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${RED}#f${NC}"
         # Unstaged
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${RED}#g${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${ORANGE}#g${NC}"
         # Untracked
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${RED}#h${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${VIOLET}#h${NC}"
         # Stashed
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${CYAN}#i${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${CYAN}#i${NC}"
         # Clean
-        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${GREEN}#j${MAGENTA}]${NO_COLOR}"
+        ZSH_VCS_PROMPT_GIT_ACTION_FORMATS+="${GREEN}#j${MAGENTA}]${NC}"
     fi
 
     ## Other vcs.
@@ -240,7 +242,7 @@ else
         # VCS name
 #        ZSH_VCS_PROMPT_VCS_FORMATS='(%{%B%F{yellow}%}#s%{%f%b%})'
         # Branch name
-        ZSH_VCS_PROMPT_VCS_FORMATS+="${MAGENTA}[${YELLOW}#b${MAGENTA}]${NO_COLOR}"
+        ZSH_VCS_PROMPT_VCS_FORMATS+="${MAGENTA}[${YELLOW}#b${MAGENTA}]${NC}"
     fi
     # Action.
     if [ -z "$ZSH_VCS_PROMPT_VCS_ACTION_FORMATS" ]; then
@@ -249,7 +251,7 @@ else
         # Branch name
         ZSH_VCS_PROMPT_VCS_ACTION_FORMATS+="${MAGENTA}[${YELLOW}#b"
         # Action
-        ZSH_VCS_PROMPT_VCS_ACTION_FORMATS+="${MAGENTA}:${RED}#a${MAGENTA}]${NO_COLOR}"
+        ZSH_VCS_PROMPT_VCS_ACTION_FORMATS+="${MAGENTA}:${RED}#a${MAGENTA}]${NC}"
     fi
 
     ## Initialize.
