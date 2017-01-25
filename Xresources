@@ -87,6 +87,7 @@ URxvt.tabbed.secondaryScroll: true
 URxvt.font: xft:Source Code Pro:pixelsize=12:antialias=true:hinting=true, \
             xft:DejaVu Sans:pixelsize=11:antialias=true:hinting=true, \
             xft:Unifont:pixelsize=8:antialias=true:hinting=true
+URxvt.letterSpace: 0.75
 URxvt.urgentOnBell: false
 
 !------------------------------------------------------------------------------
