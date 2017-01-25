@@ -111,7 +111,7 @@ gith() {
 #   2:Output error to stderr.
 #   1:Output error to the file (ZSH_VCS_PROMPT_DIR/zsh-vcs-prompt.log).
 #   O/W:Suppress all errors.
-ZSH_VCS_PROMPT_LOGGING_LEVEL=${ZSH_VCS_PROMPT_LOGGING_LEVEL:-''}
+ZSH_VCS_PROMPT_LOGGING_LEVEL=${ZSH_VCS_PROMPT_LOGGING_LEVEL:-'2'}
 
 ## Threshold micro sec to logging running time of zsh-vcs-prompt.
 #  If not set, don't print and measure running time.
@@ -136,7 +136,7 @@ ZSH_VCS_PROMPT_CONFLICTS_SIGIL=${ZSH_VCS_PROMPT_CONFLICTS_SIGIL:-' ✖'}
 ZSH_VCS_PROMPT_UNSTAGED_SIGIL=${ZSH_VCS_PROMPT_UNSTAGED_SIGIL:-' ●'}
 ZSH_VCS_PROMPT_UNTRACKED_SIGIL=${ZSH_VCS_PROMPT_UNTRACKED_SIGIL:-' …'}
 ZSH_VCS_PROMPT_STASHED_SIGIL=${ZSH_VCS_PROMPT_STASHED_SIGIL:-' ⚑'}
-ZSH_VCS_PROMPT_CLEAN_SIGIL=${ZSH_VCS_PROMPT_CLEAN_SIGIL:-' ✔' }
+ZSH_VCS_PROMPT_CLEAN_SIGIL=${ZSH_VCS_PROMPT_CLEAN_SIGIL:-' ✔'}
 
 ## Hide count if set 'true'.
 ZSH_VCS_PROMPT_HIDE_COUNT=${ZSH_VCS_PROMPT_HIDE_COUNT:-'false'}
