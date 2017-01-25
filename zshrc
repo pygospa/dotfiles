@@ -129,8 +129,9 @@ if [[ -x `which -p keychain` ]]; then
 	# stored in macOS Keychain app. Omit if not wanted/needed
 	if [[ `uname -s` == Darwin ]]; then
 		eval `keychain --eval id_rsa --inherit any id_rsa` # + GPG key
+	else
+		eval `keychain --eval id_rsa` # + GPG key
 	fi
-	eval `keychain --eval id_rsa` # + GPG key
 fi
 
 ## Python settings
