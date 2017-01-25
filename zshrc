@@ -128,9 +128,9 @@ if [[ -x `which -p keychain` ]]; then
 	# if on macOS, use '--inherit any' to inherit any ssh key passphrases
 	# stored in macOS Keychain app. Omit if not wanted/needed
 	if [[ `uname -s` == Darwin ]]; then
-		eval `keychain --eval id_rsa --inherit any id_rsa` # + GPG key
+		eval `keychain --eval id_rsa --inherit any --noask --timeout 60 id_rsa` # + GPG key
 	else
-		eval `keychain --eval id_rsa` # + GPG key
+		eval `keychain --eval --noask --timeout 60 id_rsa` # + GPG key
 	fi
 fi
 
