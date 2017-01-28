@@ -85,7 +85,7 @@ bar {
 	colors {
 		background $base03
 		statusline $base00
-		separator  $green
+		separator  $magenta
 
 		# Type              border   background font
 		focused_workspace   $base01  $base02    $base2

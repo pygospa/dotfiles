@@ -12,7 +12,6 @@
 require 'json'
 
 json = {}
-
 t_work = 70;
 t_warn = 80;
 t_crit = 90;
@@ -30,7 +29,7 @@ else
 end
 
 json["full_text"] = "#{cpu_usage.round(2)}%"
-json["color"] = color
+json["color"] = color unless color.nil?
 json["min_width"] = "100.00%"
 
 puts JSON.generate(json)
