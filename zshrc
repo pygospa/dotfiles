@@ -88,7 +88,8 @@ if [[ `uname -s` == Darwin ]]; then
 	if [ -f ~/.zsh/hosts/darwin.zsh ]; then
 		source ~/.zsh/hosts/darwin.zsh
 	else
-		printf "Note: Running on OS X, but ~/.zsh/darwin.zsh is unavailable\n"
+		printf "Note: Running on OS X, but ~/.zsh/darwin.zsh is \
+			unavailable\n"
 	fi
 fi
 
@@ -97,7 +98,8 @@ if [[ `uname -n` == eisdrache ]]; then
 	if [ -f ~/.zsh/hosts/eisdrache.zsh ]; then
 		source ~/.zsh/hosts/eisdrache.zsh
 	else
-		printf "Note: Running on eisdrache, but ~/.zsh/eisdrache.zsh is unavailable\n"
+		printf "Note: Running on eisdrache, but ~/.zsh/eisdrache.zsh \
+			is unavailable\n"
 	fi
 fi
 
@@ -106,7 +108,8 @@ if [[ `uname -n` == ancalagon ]]; then
 	if [ -f ~/.zsh/hosts/ancalagon.zsh ]; then
 		source ~/.zsh/hosts/ancalagon.zsh
 	else
-		printf "Note: Running on ancalagon, but ~/.zsh/ancalagon.zsh is unavailable\n"
+		printf "Note: Running on ancalagon, but ~/.zsh/ancalagon.zsh \
+			is unavailable\n"
 	fi
 fi
 
@@ -127,10 +130,17 @@ done
 if [[ -x `which -p keychain` ]]; then
 	# if on macOS, use '--inherit any' to inherit any ssh key passphrases
 	# stored in macOS Keychain app. Omit if not wanted/needed
-	if [[ `uname -s` == Darwin ]]; then
+	if [[ `uname -n` == nienor ]]; then
+		# Laptop; could be stolen, or people gain access in an unwary
+		# second. Therefore short cache time for key passwords
 		eval `keychain --eval --inherit any --timeout 60 id_rsa` # + GPG key
+	elif [[ `uname -n` == ancalagon ]]; then
+		# My home pc; no one else has physical acces to it, so it is
+		# save to keep keys in cache longer
+		eval `keychain --eval --timeout 300 id_rsa` # + GPG key
 	else
-		eval `keychain --eval --timeout 60 id_rsa` # + GPG key
+		# What other PCs are there?!
+		eval `keychain --eval --timeout 15 id_rsa` # + GPG key
 	fi
 fi
 
