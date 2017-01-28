@@ -76,9 +76,10 @@ bindsym $alt+Tab exec rofi -show window		# list windows to switch to
 # Bar
 #
 bar {
-	status_command i3status			  # use i3statusbr
+	#status_command i3status			  # use i3statusbr
+	status_command i3blocks -c ~/.i3/i3blocks.conf # use i3blocks
 	position top				  # display bar at top
-	font pango:Source Code Pro 12, Awesome 12 # fonts to use
+	font pango:Source Code Pro 12, Awesome 10 # fonts to use
 	strip_workspace_numbers yes		  # Don't show workspace numbers
 
 	colors {
