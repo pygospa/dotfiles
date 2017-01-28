@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-#
 # Creates a JSON object compatible to i3bar input protocol to use with i3blocks
 # See: http://i3wm.org/docs/i3bar-protocol.html
 # See: https://github.com/vivien/i3blocks/wiki/Writing-Your-Own-Blocklet
@@ -11,13 +10,23 @@
 
 require 'json'
 
+#------------------------------------------------------------------------------
+# Getting the informatio
+#
 json = {}
 t_work = 70;
 t_warn = 80;
 t_crit = 90;
 
-cpu_usage = 100.00 - `mpstat 1 1 2>&1 | awk '{print $NF}' | tail -1`.chomp().to_f()
+cpu_usage = 100.00 - `mpstat 1 1 2>&1 | awk '{print $NF}' | tail -1`.chomp.to_f
+no_of_cpus = `nproc`.to_i
+cpu_freq = `cat /proc/cpuinfo | grep 'model name' | tail -1 | awk '{print $NF}'`.chomp
 
+
+
+#------------------------------------------------------------------------------
+# Coloring
+#
 if cpu_usage > t_crit
   color = "#dc322f"
 elsif cpu_usage > t_warn
@@ -28,8 +37,14 @@ else
   color = nil
 end
 
-json["full_text"] = "#{cpu_usage.round(2)}%"
+
+
+#------------------------------------------------------------------------------
+# Building the JSON object
+#
+json["full_text"] = "#{no_of_cpus}x#{cpu_freq} (#{cpu_usage.round(2)}%)"
+json["short_text"] = "#{cpu_usage.round(2)}%"
 json["color"] = color unless color.nil?
-json["min_width"] = "100.00%"
+json["min_width"] = " #{no_of_cpus}x#{cpu_freq} (99.99%)"
 
 puts JSON.generate(json)
