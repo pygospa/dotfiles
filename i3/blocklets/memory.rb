@@ -21,30 +21,36 @@ require_relative 'blocklet_helper'
 #
 json = {}
 threshold = { high: 90, medium: 80, low: 70 }
+k2g = 1.0 / 1024 / 1024
 
+
+
+#------------------------------------------------------------------------------
+# Grab memoriy information from /proc/meminfo
+#
+memtotal = `cat /proc/meminfo | grep 'MemTotal' | awk '{print $2}'`.chomp.to_f
 memfree = `cat /proc/meminfo | grep 'MemFree' | awk '{print $2}'`.chomp.to_f
 buffers = `cat /proc/meminfo | grep 'Buffers' | awk '{print $2}'`.chomp.to_f
 cached = `cat /proc/meminfo | grep 'Cached' | awk '{print $2}'`.chomp.to_f
 
-memory_total = (`cat /proc/meminfo | grep 'MemTotal' | awk '{print $2}'`.chomp.to_f / 1024 / 1024).round(1)
-memory_used = (memory_total - (memfree + buffers + cached) / 1024 / 1024).round(1)
+
+#------------------------------------------------------------------------------
+# Make them printable
+#
+memory_total = (memtotal * k2g).round(1)
+memory_used = (memory_total - (memfree + buffers + cached) * k2g).round(1)
 memory_percentage = (memory_used / memory_total * 100).round(1)
 
 
 
 #------------------------------------------------------------------------------
-# Coloring
-#
-color = BlockletHelper.getColor(memory_percentage, threshold)
-
-
-#------------------------------------------------------------------------------
 # Building the JSON object
 #
-json["full_text"] = "#{memory_used.round(2)}G/#{memory_total.round(2)}G (#{memory_percentage.round(2)}%)"
-json["short_text"] = "#{memory_percentage.round(2)}%"
-json["color"] = color unless color.nil?
-json["min_width"] = " #{memory_total.round(2)}G/#{memory_total.round(2)}G (99.99%)"
+color = BlockletHelper.getColor(memory_percentage, threshold)
+json[:full_text] = "#{memory_used}G/#{memory_total}G (#{memory_percentage}%)"
+json[:short_text] = "#{memory_percentage}%"
+json[:color] = color unless color.nil?
+json[:min_width] = " #{memory_total}G/#{memory_total}G (99.99%)"
 
 puts JSON.generate(json)
 
