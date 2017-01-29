@@ -28,10 +28,11 @@ k2g = 1.0 / 1024 / 1024
 #------------------------------------------------------------------------------
 # Grab memoriy information from /proc/meminfo
 #
-memtotal = `cat /proc/meminfo | grep 'MemTotal' | awk '{print $2}'`.chomp.to_f
-memfree = `cat /proc/meminfo | grep 'MemFree' | awk '{print $2}'`.chomp.to_f
-buffers = `cat /proc/meminfo | grep 'Buffers' | awk '{print $2}'`.chomp.to_f
-cached = `cat /proc/meminfo | grep 'Cached' | awk '{print $2}'`.chomp.to_f
+meminfo = `cat /proc/meminfo`.lines
+memtotal = meminfo.grep(/MemTotal/)[0].split[1].to_f
+memfree = meminfo.grep(/MemFree/)[0].split[1].to_f
+buffers = meminfo.grep(/Buffers/)[0].split[1].to_f
+cached = meminfo.grep(/Cached/)[0].split[1].to_f
 
 
 #------------------------------------------------------------------------------

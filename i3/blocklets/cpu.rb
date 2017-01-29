@@ -21,10 +21,12 @@ require_relative 'blocklet_helper'
 blocklet = {}
 threshold = { high: 90, medium: 80, low: 70}
 
-cpu_usage = 100.00 - `mpstat 1 1 2>&1 | awk '{print $NF}' | tail -1`.chomp.to_f
-no_of_cores = `cat /proc/cpuinfo | grep processor | wc -l`.chomp
-cpu_freq = `cat /proc/cpuinfo | grep 'model name' | tail -1 | awk '{print $NF}'`.chomp
+cpuinfo = `cat /proc/cpuinfo`.lines
+cpu_idle = `mpstat 1 1 2>&1`.split[-1].to_f
 
+cpu_usage = 100 - cpu_idle
+no_of_cores = cpuinfo.grep(/processor/).size
+cpu_freq = cpuinfo.grep(/model name/).last.split.last
 
 
 #------------------------------------------------------------------------------
