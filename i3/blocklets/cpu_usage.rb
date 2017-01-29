@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 # Creates a JSON object compatible to i3bar input protocol to use with i3blocks
+# containing number of cores, frequency and current workload (as percentage);
+# changes output color to orange and red when under high/very high load.
+#
 # See: http://i3wm.org/docs/i3bar-protocol.html
 # See: https://github.com/vivien/i3blocks/wiki/Writing-Your-Own-Blocklet
 # Inspired by: https://github.com/vivien/i3blocks/blob/master/scripts/cpu_usage
@@ -14,9 +17,9 @@ require 'json'
 # Getting the informatio
 #
 json = {}
-t_work = 70;
-t_warn = 80;
-t_crit = 90;
+work = 70
+warn = 80
+crit = 90
 
 cpu_usage = 100.00 - `mpstat 1 1 2>&1 | awk '{print $NF}' | tail -1`.chomp.to_f
 no_of_cpus = `nproc`.to_i
@@ -27,11 +30,11 @@ cpu_freq = `cat /proc/cpuinfo | grep 'model name' | tail -1 | awk '{print $NF}'`
 #------------------------------------------------------------------------------
 # Coloring
 #
-if cpu_usage > t_crit
+if cpu_usage > crit
   color = "#dc322f"
-elsif cpu_usage > t_warn
+elsif cpu_usage > warn
   color = "#cb4b16"
-elsif cpu_usage > t_work
+elsif cpu_usage > work
   color = "#b58900"
 else
   color = nil
