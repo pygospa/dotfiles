@@ -38,10 +38,9 @@ percentage = df[4].to_f
 # Building the JSON object
 #
 color = BlockletHelper.getColor(percentage, threshold)
-json[:full_text] = "#{free}G[#{total}G] (#{percentage}%)"
-json[:short_text] = "#{free}G"
+json[:full_text] = "#{free}G"
+json[:min_width] = " #{total}G"
 json[:color] = color unless color.nil?
-json[:min_width] = " #{total}G[#{total}G] (99.99%)"
 
 puts JSON.generate(json)
 
