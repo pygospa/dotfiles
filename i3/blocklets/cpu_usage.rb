@@ -12,14 +12,13 @@
 # Latest version: https://github.com/pygospa/dotfiles
 
 require 'json'
+require_relative 'blocklet_helper'
 
 #------------------------------------------------------------------------------
 # Getting the informatio
 #
 json = {}
-work = 70
-warn = 80
-crit = 90
+threshold = { high: 90, medium: 80, low: 70}
 
 cpu_usage = 100.00 - `mpstat 1 1 2>&1 | awk '{print $NF}' | tail -1`.chomp.to_f
 no_of_cpus = `nproc`.to_i
@@ -30,16 +29,7 @@ cpu_freq = `cat /proc/cpuinfo | grep 'model name' | tail -1 | awk '{print $NF}'`
 #------------------------------------------------------------------------------
 # Coloring
 #
-if cpu_usage > crit
-  color = "#dc322f"
-elsif cpu_usage > warn
-  color = "#cb4b16"
-elsif cpu_usage > work
-  color = "#b58900"
-else
-  color = nil
-end
-
+color = BlockletHelper.getColor(cpu_usage, threshold)
 
 
 #------------------------------------------------------------------------------

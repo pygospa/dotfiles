@@ -12,6 +12,7 @@
 # Latest version: https://github.com/pygospa/dotfiles
 
 require 'json'
+require_relative 'blocklet_helper'
 
 
 
@@ -19,9 +20,7 @@ require 'json'
 # Getting the informatio
 #
 json = {}
-work = 70
-warn = 80
-crit = 90
+threshold = { high: 90, medium: 80, low: 70 }
 
 memfree = `cat /proc/meminfo | grep 'MemFree' | awk '{print $2}'`.chomp.to_f
 buffers = `cat /proc/meminfo | grep 'Buffers' | awk '{print $2}'`.chomp.to_f
@@ -36,16 +35,7 @@ memory_percentage = (memory_used / memory_total * 100).round(1)
 #------------------------------------------------------------------------------
 # Coloring
 #
-if memory_percentage > crit
-  color = "#dc322f"
-elsif memory_percentage > warn
-  color = "#cb4b16"
-elsif memory_percentage > work
-  color = "#b58900"
-else
-  color = nil
-end
-
+color = BlockletHelper.getColor(memory_percentage, threshold)
 
 
 #------------------------------------------------------------------------------
