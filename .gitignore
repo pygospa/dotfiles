@@ -26,3 +26,7 @@ pentadactyl/info
 # Things I did not create and therefore should not be distributing
 fonts
 i3/wp
+
+# Ranger
+config/ranger/bookmarks
+config/ranger/history
