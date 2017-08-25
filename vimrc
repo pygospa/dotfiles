@@ -227,6 +227,13 @@ let g:slimv_swank_cmd = '!osascript -e "tell application \"Terminal\" to do scri
 "
 let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 
+"------------------------------------------------------------------------------
+" vimwiki syntax highlighting settings
+"
+let wiki = {}
+let wiki.path = '~/vimwiki'
+let wiki.nested_syntaxes = {'c': 'c', 'c++': 'cpp', 'css': 'css', 'haskell': 'hasekll', 'html': 'html', 'java': 'java', 'javascript': 'javascript', 'python': 'python', 'ruby': 'ruby', 'tex': 'tex', 'xml': 'xml', 'yaml': 'yaml'}
+let g:vimwiki_list = [wiki]
 
 "------------------------------------------------------------------------------
 " Legacy Color Schemes
