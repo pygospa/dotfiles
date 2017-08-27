@@ -27,7 +27,7 @@ set hlfind
 set incfind
 
 " Path to start in (this is usefull when downloading stuff)
-cd ~/Downloads
+cd ~/tmp/downl
 
 
 " Bookmarks
