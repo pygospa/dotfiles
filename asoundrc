@@ -7,7 +7,7 @@
 pcm.!default {
 	type plug
 	slave {
-		pcm "analog"
+		pcm "logitech"
 	}
 }
 
