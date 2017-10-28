@@ -122,3 +122,6 @@
 	path = vim/bundle/youCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
 	ignore = dirty
+[submodule "vim/bundle/calendar-vim"]
+	path = vim/bundle/calendar-vim
+	url = git://github.com/mattn/calendar-vim
