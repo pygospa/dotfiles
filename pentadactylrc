@@ -46,11 +46,13 @@ set passkeys+='youtube.com':f<Esc><Space><Up><Down><Left><Right>0123456789<Retur
 set passkeys+='plus.google.com':?jknprlv/?<Left><Right>
 
 " Mappings
-nmap <M-d> <Nop>
-nmap <M-d> :delicious<CR>
+nmap <M-b> <Nop>
+nmap <M-b> :delicious<CR>
 
 " Commands
-command! delicious :open javascript:(function(e,t){var%20n=e.document;setTimeout(function(){function%20a(e){if(e.data==="destroy_bookmarklet"){var%20r=n.getElementById(t);if(r){n.body.removeChild(r);r=null}}}var%20t="DELI_bookmarklet_iframe",r=n.getElementById(t);if(r){return}var%20i="https://delicious.com/save?source=bookmarklet&",s=n.createElement("iframe");s.id=t;s.src=i+"url="+encodeURIComponent(e.location.href)+"&title="+encodeURIComponent(n.title)+"&note="+encodeURIComponent(""+(e.getSelection?e.getSelection():n.getSelection?n.getSelection():n.selection.createRange().text))+"&v=1.1";s.style.position="fixed";s.style.top="0";s.style.left="0";s.style.height="100%25";s.style.width="100%25";s.style.zIndex="16777270";s.style.border="none";s.style.visibility="hidden";s.onload=function(){this.style.visibility="visible"};n.body.appendChild(s);var%20o=e.addEventListener?"addEventListener":"attachEvent";var%20u=o=="attachEvent"?"onmessage":"message";e[o](u,a,false)},1)})(window)
+command! bib :open https://www.bibsonomy.org/mybibsonomy
+command! biburl :open javascript:location.href='https://www.bibsonomy.org/ShowBookmarkEntry?url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(document.title)+'&extended='+encodeURIComponent(window.getSelection())
+command! bibpub :open javascript:location.href='https://www.bibsonomy.org/BibtexHandler?requTask=upload&url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(document.title)+'&selection='+encodeURIComponent(window.getSelection())
 command! valid :open javascript:void(location='http://validator.w3.org/check?uri='+escape(location))
 command! firebug :emenu Ansicht.Firebug
 
