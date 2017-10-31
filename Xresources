@@ -4,6 +4,7 @@
 !------------------------------------------------------------------------------
 ! Taken from Solarized color scheme: http://ethanschoonover.com/solarized
 !
+
 ! Common
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
@@ -127,9 +128,9 @@ XClock.input: false
 
 !------------------------------------------------------------------------------
 ! ROFI Color theme
-!
 ! purple.theme by Rasi (https://davedavenport.github.io/rofi/p05-Themes.html)
 !
+
 ! Use extended color scheme
 rofi.color-enabled: true
 ! Color scheme for normal row
