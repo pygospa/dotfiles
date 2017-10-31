@@ -1,7 +1,6 @@
 " Author		Kannan Thambiah <pygospa@gmail.com>
 " Latest version	https://github.com/pygospa/dotfiles
 
-
 "------------------------------------------------------------------------------
 " Pathogene plugin settings
 "
@@ -87,6 +86,7 @@ ino <down> <Nop>		" Deactivate arrow keys in insert mode
 ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
+nnoremap <space> za		" Toggle folds using space instead of za
 
 
 "------------------------------------------------------------------------------
@@ -207,6 +207,28 @@ function! ToggleCalendar()
 	end
 endfunction
 :autocmd FileType vimwiki map c :call ToggleCalendar()
+
+
+"------------------------------------------------------------------------------
+" Custom text for folded header line
+"
+function! MyFoldHeader()
+	" Get first line of fold
+	let firstline = getline(v:foldstart)
+
+	" Calculate some numbers for line filling
+	let nucolwidth = &fdc + &number * &numberwidth
+	let windowwidth = winwidth(0) - nucolwidth
+	let linecount = v:foldend - v:foldstart
+
+	" Construct the new header
+	let firstline = strpart(firstline, 0, windowwidth - 2 -len(linecount))
+	let fillcharcount = windowwidth - strdisplaywidth(firstline) - len(linecount) - 8
+	let header = ' » ' . firstline . repeat(" ",fillcharcount) . '[' . linecount . '] « '")
+	return header
+endfunction
+set foldtext=MyFoldHeader()
+
 
 
 "------------------------------------------------------------------------------
