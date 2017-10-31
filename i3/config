@@ -6,6 +6,7 @@
 #------------------------------------------------------------------------------
 # Define colors using solarized color scheme: http://ethanschoonover.com/solarized
 #
+
 # Common
 set $yellow  #b58900
 set $orange  #cb4b16
@@ -21,6 +22,7 @@ set $base03  #002b36
 set $base02  #073642
 set $base01  #586e75
 set $base00  #839496
+
 # base0 as variable will not work and screw up all $base0x settings
 set $baseX   #839496
 set $base1   #93a1a1
@@ -36,9 +38,6 @@ set $base3   #fdf6e3
 # Mod4 = Windows key, Mod1 = alt key
 set $win Mod4
 set $alt Mod1
-
-# Use alt/apple key as Mod key
-#set $win Mod1
 
 # Standard font
 font pango:Source Code Pro 12, Awesome 10
@@ -62,6 +61,8 @@ bindsym $win+Shift+r restart
 #bindsym $win+Shift+e exec "i3-msg exit"
 bindsym $win+Shift+e exit
 
+# Works only with i3-gaps
+gaps inner 8
 
 
 #------------------------------------------------------------------------------
@@ -76,16 +77,14 @@ bindsym $alt+Tab exec rofi -show window		# list windows to switch to
 # Bar
 #
 bar {
-	#status_command i3status			  # use i3statusbr
 	status_command i3blocks -c ~/.i3/i3blocks.conf # use i3blocks
-	position top				  # display bar at top
-	font pango:Source Code Pro 12, Awesome 10 # fonts to use
-	strip_workspace_numbers yes		  # Don't show workspace numbers
+	position top				       # display bar at top
+	font pango:Source Code Pro 12, Awesome 10      # fonts to use
+	strip_workspace_numbers yes		       # Don't show workspace no
 
 	colors {
 		background $base03
 		statusline $base00
-#		separator  $magenta
 
 		# Type              border   background font
 		focused_workspace   $base01  $base02    $base2
@@ -106,11 +105,11 @@ bar {
 set $cli 1: 
 set $web 2: 
 set $chat 3: 
-set $ide 4: 
-set $img 5: 
-set $vid 6: 
-set $game 7: 
-set $misc1 8: 
+set $trello 4: 
+set $ide 5: 
+set $img 6: 
+set $vid 7: 
+set $game 8: 
 set $misc2 9: 
 set $misc3 10: 
 
@@ -118,11 +117,11 @@ set $misc3 10: 
 bindsym $win+1 workspace $cli
 bindsym $win+2 workspace $web
 bindsym $win+3 workspace $chat
-bindsym $win+4 workspace $ide
-bindsym $win+5 workspace $img
-bindsym $win+6 workspace $vid
-bindsym $win+7 workspace $game
-bindsym $win+8 workspace $misc1
+bindsym $win+4 workspace $trello
+bindsym $win+5 workspace $ide
+bindsym $win+6 workspace $img
+bindsym $win+7 workspace $vid
+bindsym $win+8 workspace $game
 bindsym $win+9 workspace $misc2
 bindsym $win+0 workspace $misc3
 
@@ -130,19 +129,28 @@ bindsym $win+0 workspace $misc3
 bindsym $win+Shift+1 move container to workspace $cli
 bindsym $win+Shift+2 move container to workspace $web
 bindsym $win+Shift+3 move container to workspace $chat
-bindsym $win+Shift+4 move container to workspace $ide
-bindsym $win+Shift+5 move container to workspace $img
-bindsym $win+Shift+6 move container to workspace $vid
-bindsym $win+Shift+7 move container to workspace $game
-bindsym $win+Shift+8 move container to workspace $misc1
+bindsym $win+Shift+4 move container to workspace $trello
+bindsym $win+Shift+5 move container to workspace $ide
+bindsym $win+Shift+6 move container to workspace $img
+bindsym $win+Shift+7 move container to workspace $vid
+bindsym $win+Shift+8 move container to workspace $game
 bindsym $win+Shift+9 move container to workspace $misc2
 bindsym $win+Shift+0 move container to workspace $misc3
+
+# Assign applications to workspaces
+assign [class="URxvt"] $cli
+assign [class="Firefox"] $web
+assign [class="Slack"] $chat
+assign [class="TelegramDesktop"] $chat
+assign [class="Trello"] $trello
 
 # Applications in workspaces
 exec --no-startup-id i3-msg 'workspace $cli; exec urxvt'
 exec --no-startup-id i3-msg 'workspace $web; exec firefox'
+exec --no-startup-id i3-msg 'workspace $chat; exec slack'
 exec --no-startup-id i3-msg 'workspace $chat; exec telegram-desktop'
-
+exec --no-startup-id i3-msg 'workspace $trello; exec Trello'
+exec --no-startup-id redshift
 
 
 #------------------------------------------------------------------------------
