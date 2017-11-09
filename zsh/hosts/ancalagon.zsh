@@ -11,6 +11,7 @@
 alias open='xdg-open'		# I'm used to macOS' open so here we go
 alias mplayer_hf='mplayer -ao alsa:device=hw=0,0' # mplayer /w sound on headphones
 alias urxvt='urxvtc'		# use the speed-up urxvt demon client system
+alias U4Editor='/home/pygospa/repos/UnrealEngine/Engine/Binaries/Linux/UE4Editor -nocore'
 
 
 
