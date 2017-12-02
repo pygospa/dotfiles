@@ -187,6 +187,7 @@ if has("autocmd")
 	" Own stlyes
 	autocmd FileType javascript setlocal ts=4 sts=4 sw=4
 	autocmd FileType tex setlocal ts=4 sts=4 sw=4 noexpandtab
+	autocmd FileType zsh setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
 
