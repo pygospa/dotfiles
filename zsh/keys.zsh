@@ -28,10 +28,12 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 	key[Delete]=${terminfo[kdch1]}
 	key[Up]=${terminfo[kcuu1]}
 	key[Down]=${terminfo[kcud1]}
-	key[CtrlLeft]=${terminfo[kcub1]}
-	key[Left]=${terminfo[kcuf1]}
-	key[CtrlRight]=${terminfo[kpp]}
-	key[Right]=${terminfo[knp]}
+#	key[CtrlLeft]=${terminfo[kcub1]}
+	key[Left]=${terminfo[kcub1]}
+#	key[CtrlRight]=${terminfo[kpp]}
+	key[Right]=${terminfo[kcuf1]}
+    key[PageUp]=${terminfo[kpp]}
+    key[PageDown]=${terminfo[knp]}
 
 # If we cannot use terminfo fall back to zkbd querying the user to insert a
 # number of keys and saving them to a term-vendor-ostype file under .zkbd
