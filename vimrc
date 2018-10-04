@@ -230,7 +230,15 @@ function! MyFoldHeader()
 endfunction
 set foldtext=MyFoldHeader()
 
+"------------------------------------------------------------------------------
+" CtrlP plugin settings
+"
+let g:ctrlp_cmd = 'CtrlPMixed'
 
+"------------------------------------------------------------------------------
+" javacomplete2 plugin settings
+"
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 "------------------------------------------------------------------------------
 " Markdown rendering plugin settings
