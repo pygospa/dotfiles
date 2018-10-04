@@ -126,3 +126,12 @@
 [submodule "vim/bundle/calendar-vim"]
 	path = vim/bundle/calendar-vim
 	url = git://github.com/mattn/calendar-vim
+[submodule "vim/bundle/vim-javacomplete2"]
+	path = vim/bundle/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2
+[submodule "vim/bundle/vim-freemarker"]
+	path = vim/bundle/vim-freemarker
+	url = https://github.com/andreshazard/vim-freemarker.git
+[submodule "vim/bundle/vim-pug"]
+	path = vim/bundle/vim-pug
+	url = https://github.com/digitaltoad/vim-pug.git
