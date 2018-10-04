@@ -34,3 +34,5 @@ i3/wp
 config/ranger/bookmarks
 config/ranger/history
 
+# Files containing private info not to be committed
+zsh/hosts/stephen-hawking.zsh

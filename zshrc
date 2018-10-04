@@ -113,6 +113,16 @@ if [[ `uname -n` == ancalagon ]]; then
 	fi
 fi
 
+# File to source if it's my work laptop 'stephen-hawking'
+if [[ `uname -n` == stephen-hawking ]]; then
+	if [ -f ~/.zsh/hosts/stephen-hawking.zsh ]; then
+		source ~/.zsh/hosts/stephen-hawking.zsh
+	else
+		printf "Note: Running on stephen-hawking, but ~/.zsh/stephen-hawking.zsh \
+			is unavailable\n"
+	fi
+fi
+
 
 #------------------------------------------------------------------------------
 # Load custom executable functions
