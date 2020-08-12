@@ -71,7 +71,7 @@ else
 fi
 
 # Title settings
-if [ -f ~/.zsh/dvcs.zsh ]; then
+if [ -f ~/.zsh/title.zsh ]; then
 	source ~/.zsh/title.zsh
 else
 	print "Note: ~/.zsh/title.zsh is unavailable\n"
@@ -151,6 +151,15 @@ if [[ -x `which -p keychain` ]]; then
 	else
 		# What other PCs are there?!
 		eval `keychain --eval --timeout 15 id_rsa` # + GPG key
+	fi
+fi
+
+# Load nvm file if available
+if [[ `command -v nvm` == nvm ]]; then
+	if [ -f ~/.zsh/nvm.zsh ]; then
+		source ~/.zsh/nvm.zsh
+	else
+		printf "Note: nvm is installed, but ~/.zsh/nvm.zsh is unavailable\n"
 	fi
 fi
 
