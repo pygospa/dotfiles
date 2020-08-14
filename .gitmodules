@@ -75,7 +75,7 @@
 	url = https://github.com/SirVer/ultisnips.git
 	ignore = dirty
 [submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/pack/themes/start/vim-colors-solarized
+	path = vim/pack/themes/opt/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 	ignore = dirty
 [submodule "vim/bundle/vim-fugitive"]
@@ -138,10 +138,10 @@
 	path = vim/pack/plugins/start/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc
 [submodule "vim/pack/themes/start/molokai"]
-	path = vim/pack/themes/start/molokai
+	path = vim/pack/themes/opt/molokai
 	url = https://github.com/tomasr/molokai
 [submodule "vim/pack/themes/start/vim-wombat-scheme"]
-	path = vim/pack/themes/start/vim-wombat-scheme
+	path = vim/pack/themes/opt/vim-wombat-scheme
 	url = https://github.com/sheerun/vim-wombat-scheme
 [submodule "vim/pack/plugins/start/TaskList.vim"]
 	path = vim/pack/plugins/start/TaskList.vim

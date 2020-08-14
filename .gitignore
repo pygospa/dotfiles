@@ -6,6 +6,9 @@
 # vim
 .*.swp
 
+# some plugins don't use the doc folder inside their plugin folder :(
+vim/pack/doc
+
 # GPG
 *.gpg
 *.gpg~
