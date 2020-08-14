@@ -1,13 +1,6 @@
 " Author		Kannan Thambiah <pygospa@gmail.com>
 " Latest version	https://github.com/pygospa/dotfiles
 
-"------------------------------------------------------------------------------
-" Pathogene plugin settings
-"
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-filetype plugin indent on	"We want vim to automatically load plugins
-
 
 "------------------------------------------------------------------------------
 " General settings
@@ -44,6 +37,7 @@ syntax sync fromstart		" Start with correct syntax (may be slow)
 "------------------------------------------------------------------------------
 " Directories
 "
+set packpath+=$HOME/.vim/pack/
 set directory=$HOME/tmp/vim/swaps//
 set backupdir=$HOME/tmp/vim/backups//
 set directory=$HOME/tmp/vim/undos//
@@ -109,6 +103,7 @@ set statusline+=%P                        	" percentage of file
 "------------------------------------------------------------------------------
 " Colors
 "
+packadd vim-colors-solarized	" to also load togglebg autoload for key binding
 syntax enable
 set background=dark
 colorscheme solarized
@@ -278,5 +273,3 @@ let g:vimwiki_list = [wiki]
 				" Scheme needs to be present in
 				" ~/.vim/colors/jellybeans.rc
 				"
-
-
