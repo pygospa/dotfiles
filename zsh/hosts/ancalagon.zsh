@@ -6,7 +6,7 @@
 
 
 #------------------------------------------------------------------------------
-# Aliases
+# Program aliases
 #
 alias open='xdg-open'		# I'm used to macOS' open so here we go
 alias mplayer_hf='mplayer -ao alsa:device=hw=0,0' # mplayer /w sound on headphones
@@ -14,11 +14,17 @@ alias urxvt='urxvtc'		# use the speed-up urxvt demon client system
 alias U4Editor='/home/pygospa/repos/UnrealEngine/Engine/Binaries/Linux/UE4Editor -nocore'
 
 #------------------------------------------------------------------------------
+# Directory aliases
+#
+alias slab="cd $HOME/files/slab/"
+alias mino="cd $HOME/files/slab/mino4qs/"
+
+#------------------------------------------------------------------------------
 # neuland Aliases
 #
-alias cdunigro='cd ~/files/work/neuland/osecom/unigro'
-alias startunigro='cd ~/files/work/neuland/osecom/unigro/repo/docker-build/unigro && docker-compose up'
-alias cdfrankonia='~/files/work/neuland/osecom/frankonia'
+alias unigro="cd $HOME/files/work/neuland/osecom/unigro"
+alias startunigro="cd $HOME/files/work/neuland/osecom/unigro/repo/docker-build/unigro && docker-compose up"
+alias frankonia="cd $HOME/files/work/neuland/osecom/frankonia"
 
 #------------------------------------------------------------------------------
 # System variables

@@ -33,11 +33,14 @@ text - you just need to embrace the power.
 
 ## How to install the vim configuration
 
-If you decided to use my vim setup, I use `pathogen` to organize my plugins.
-This includes being able to install new plugins as git submodules. You don't 
+If you decided to use my vim setup, I use ~~pathogen~~
+[vim's built-in package](https://vimhelp.org/repeat.txt.html#packages)
+to organize my plugins.
+This includes being able to install new plugins as git submodules. You don't
 have to keep up with that, you can simply clone your desired additional plugins
-as normal repositories into ~/.vim/bundle/ but then you'll loose the ability to
-keep your directory under version control.
+as normal repositories into `~/.vim/pack/plugins/start/` or
+`~/.vim/pack/plugins/opt/` but then you'll loose the ability to keep your
+directory under version control.
 
 After doing the three steps described at "How to install everything" you'll
 need to issue the following commands:
@@ -52,18 +55,18 @@ you go: You have the current version of all plugins.
 If you want to change a plugins version, just go to the plugin and checkout the
 desired version, as you would normally do in git:
 
-	cd dot/vim/bundle/plugin-name
+	cd dot/vim/pack/plugins/*/plugin-name
 	git checkout v2.0
 
 If you want to update a single submodule repository (i.e. a certain plugin),
 do:
-	cd dot/vim/bundle/plugin-name
+	cd dot/vim/pack/plugins/*/plugin-name
 	git pull origin master
 
 If you want to add a plugin, just clone it as submodule:
 
 	cd dot
-	git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
+	git submodule add http://github.com/tpope/vim-fugitive.git vim/pack/plugins/start/fugitive
 	git commit -am "Add fugitive plugin to vim"
 
 If you want to remove a plugin, you'll issue the following commands:
@@ -110,7 +113,29 @@ See [their website](https://github.com/Valloric/YouCompleteMe) for more
 information.
 
 
-### A small note on vundle and NeoBundle, etc.
+### A small note on pathogen, vundle and NeoBundle, etc.
+
+**UPDATE:** Since Aug, 2020, I've moved from pathogen to vim8 package.
+Reasons are:
+
+  1. The workflow is identical to pathogen; only the directory structure has to
+     be slightly different (<YOURCHOICE>/*/start/<PLUGIN-DIRS>, as well as
+     <YOURCHOICE>/*/opt/<PLUGIN-DIRS>).
+  2. As this is nearly absolutely identical to pathogen, pathogen added
+     automatic backward-compatibility for vim < v8.0 (which I am not using)
+  3. As this is part of vim it is (or it should be) the standard way of
+     handeling things. Plug-ins make sense if they add functionality you really
+     need; pathogen doesn't anymore.
+  4. Removing unused plug-ins makes your system less brittle and more reactive!
+     Using vim8 package with pathogen as backup saved me 10ms startup time,
+     removing pathogen as plugin adds another 7ms. Nothing to be excited about,
+     but it shows how every plug-in adds some baggage to your system - keeping
+     the unused ones just adds up to this baggage.
+
+As my opinions on `vundle`, `NeoBundle` and newer representatives is still
+valid, and I would still recommend using `pathogen` over any other contender if
+you are stuck with an older vim version, here are my original thoughts before
+switching to
 
 In the past, more and more people switched from `pathogen` to `vundle` or
 `NeoBundle`. In the past, the main reason for doing so was, that git did not
@@ -141,7 +166,7 @@ help from grep and sed we can produce a list and append it to the vimrc file:
 	grep url .gitmodules | sed -e s/.*:// -e s/^/Plugin\ \'/ -e s/.git$/\'/ >> vimrc
 	echo "call vundle#end()\nfiletype plugin indent on" >> vimrc
 	git submodule deinit .
-	git rm vim/bundle/*
+	git rm -rf vim/pack
 	git commit -am "Remove submoduesl for vundle"
 
 This will set up all the required changes in the vimrc (lines 2-4) and then
