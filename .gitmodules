@@ -128,9 +128,6 @@
 [submodule "vim/bundle/vim-rails"]
 	path = vim/pack/plugins/start/vim-rails
 	url = https://github.com/tpope/vim-rails
-[submodule "vim/bundle/deoplete.nvim"]
-	path = vim/pack/plugins/start/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
 [submodule "vim/bundle/nvim-yarp"]
 	path = vim/pack/plugins/start/nvim-yarp
 	url = https://github.com/roxma/nvim-yarp
@@ -155,3 +152,10 @@
 [submodule "vim/pack/plugins/start/vimwiki"]
 	path = vim/pack/plugins/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki
+[submodule "vim/pack/plugins/coc.nvim"]
+	path = vim/pack/plugins/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+	branch = release
+[submodule "vim/pack/plugins/start/vim-healthcheck"]
+	path = vim/pack/plugins/start/vim-healthcheck
+	url = https://github.com/rhysd/vim-healthcheck
