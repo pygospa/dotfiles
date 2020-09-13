@@ -1,0 +1,37 @@
+---
+- name: Install vim
+  import_tasks: apt.yaml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Create directory ~/tmp/vim/backups
+  file:
+    path: "{{ansible_env.HOME}}/tmp/vim/backups"
+    state: directory
+
+- name: Create directory ~/tmp/vim/swaps
+  file:
+    path: "{{ansible_env.HOME}}/tmp/vim/swaps"
+    state: directory
+
+- name: Create directory ~/tmp/vim/undos
+  file:
+    path: "{{ansible_env.HOME}}/tmp/vim/undos"
+    state: directory
+
+- name: Backup existing ~/.vimrc to dot/backup/vimrc
+  command: mv "{{vimrc.dest}}" "{{vimrc.backup}}" creates="{{vimrc.backup}}" removes="{{vimrc.dest}}"
+
+- name: Link dot/vimrc to ~/.vimrc
+  file:
+    src: "{{vimrc.src}}"
+    dest: "{{vimrc.dest}}"
+    state: link
+
+- name: Backup existing ~/.vim to dot/backup/vim
+  command: mv "{{vim.dest}}" "{{vim.backup}}" creates="{{vim.backup}}" removes="{{vim.dest}}"
+
+- name: Link dot/vim to ~/.vim
+  file:
+    src: "{{vim.src}}"
+    dest: "{{vim.dest}}"
+    state: link

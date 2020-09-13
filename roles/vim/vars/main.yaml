@@ -1,0 +1,10 @@
+---
+vimrc:
+  src: "{{ansible_env.PWD}}/vimrc"
+  dest: "{{ansible_env.HOME}}/.vimrc"
+  backup: "{{ansible_env.PWD}}/backup/vimrc"
+
+vim:
+  src: "{{ansible_env.PWD}}/vim"
+  dest: "{{ansible_env.HOME}}/.vim"
+  backup: "{{ansible_env.PWD}}/backup/vim"
