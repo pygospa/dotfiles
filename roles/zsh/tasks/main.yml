@@ -1,0 +1,34 @@
+---
+- name: Install zsh
+  import_tasks: apt.yml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Make it the default shell
+  become: yes
+  user:
+    name: "{{ansible_env.USER}}"
+    shell: /bin/zsh
+
+- name: Link dot/zshrc to ~/.zshrc
+  file:
+    src: "{{ansible_env.PWD}}/zshrc"
+    dest: "{{ansible_env.HOME}}/.zshrc"
+    state: link
+
+- name: Link dot/zsh to ~/.zsh
+  file:
+    src: "{{ansible_env.PWD}}/zsh"
+    dest: "{{ansible_env.HOME}}/.zsh"
+    state: link
+
+- name: Link dot/zlogin to ~/.zlogin
+  file:
+    src: "{{ansible_env.PWD}}/zlogin"
+    dest: "{{ansible_env.HOME}}/.zlogin"
+    state: link
+
+- name: Link dot/zkbd to ~/.zkbd
+  file:
+    src: "{{ansible_env.PWD}}/zkbd"
+    dest: "{{ansible_env.HOME}}/.zkbd"
+    state: link

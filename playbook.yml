@@ -1,0 +1,7 @@
+---
+- name: NIX system setup
+  hosts: localhost
+  connection: local
+  roles:
+    - tmux
+    - zsh
