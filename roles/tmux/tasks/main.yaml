@@ -1,6 +1,6 @@
 ---
 - name: Install tmux
-  import_tasks: apt.yml
+  import_tasks: apt.yaml
   when: ansible_facts['os_family']|lower == 'debian'
 
 - name: Link dot/tmux.conf to ~/.tmux.conf

@@ -1,6 +1,6 @@
 ---
 - name: Install zsh
-  import_tasks: apt.yml
+  import_tasks: apt.yaml
   when: ansible_facts['os_family']|lower == 'debian'
 
 - name: Make it the default shell
