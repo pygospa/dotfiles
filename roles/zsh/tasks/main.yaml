@@ -9,26 +9,38 @@
     name: "{{ansible_env.USER}}"
     shell: /bin/zsh
 
+- name: Backup existing ~/.zshrc to dot/backup/zshrc
+  command: mv "{{zshrc.dest}}" "{{zshrc.backup}}" creates="{{zshrc.backup}}" removes="{{zshrc.dest}}"
+
 - name: Link dot/zshrc to ~/.zshrc
   file:
-    src: "{{ansible_env.PWD}}/zshrc"
-    dest: "{{ansible_env.HOME}}/.zshrc"
+    src: "{{zshrc.src}}"
+    dest: "{{zshrc.dest}}"
     state: link
+
+- name: Backup existing ~/.zsh to dot/backup/zsh
+  command: mv "{{zsh.dest}}" "{{zsh.backup}}" creates="{{zsh.backup}}" removes="{{zsh.dest}}"
 
 - name: Link dot/zsh to ~/.zsh
   file:
-    src: "{{ansible_env.PWD}}/zsh"
-    dest: "{{ansible_env.HOME}}/.zsh"
+    src: "{{zsh.src}}"
+    dest: "{{zsh.dest}}"
     state: link
+
+- name: Backup existing ~/.zlogin to dot/backup/zlogin
+  command: mv "{{zlogin.dest}}" "{{zlogin.backup}}" creates="{{zlogin.backup}}" removes="{{zlogin.dest}}"
 
 - name: Link dot/zlogin to ~/.zlogin
   file:
-    src: "{{ansible_env.PWD}}/zlogin"
-    dest: "{{ansible_env.HOME}}/.zlogin"
+    src: "{{zlogin.src}}"
+    dest: "{{zlogin.dest}}"
     state: link
+
+- name: Backup existing ~/.zkbd to dot/backup/zkbd
+  command: mv "{{zkbd.dest}}" "{{zkbd.backup}}" creates="{{zkbd.backup}}" removes="{{zkbd.dest}}"
 
 - name: Link dot/zkbd to ~/.zkbd
   file:
-    src: "{{ansible_env.PWD}}/zkbd"
-    dest: "{{ansible_env.HOME}}/.zkbd"
+    src: "{{zkbd.src}}"
+    dest: "{{zkbd.dest}}"
     state: link

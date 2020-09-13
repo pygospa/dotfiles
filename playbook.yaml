@@ -3,5 +3,6 @@
   hosts: localhost
   connection: local
   roles:
+    - directory-setup
     - tmux
     - zsh

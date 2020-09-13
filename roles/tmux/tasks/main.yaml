@@ -3,10 +3,13 @@
   import_tasks: apt.yaml
   when: ansible_facts['os_family']|lower == 'debian'
 
+- name: Backup existing ~/.tmux.conf to dot/backup/tmux.conf
+  command: mv "{{tmux_conf.dest}}" "{{tmux_conf.backup}}" creates="{{tmux_conf.backup}}" removes="{{tmux_conf.dest}}"
+
 - name: Link dot/tmux.conf to ~/.tmux.conf
   file:
-    src: "{{ansible_env.PWD}}/tmux.conf"
-    dest: "{{ansible_env.HOME}}/.tmux.conf"
+    src: "{{tmux_conf.src}}"
+    dest: "{{tmux_conf.dest}}"
     state: link
 
 

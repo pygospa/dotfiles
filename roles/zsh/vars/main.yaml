@@ -1,0 +1,20 @@
+---
+zshrc:
+  src: "{{ansible_env.PWD}}/zshrc"
+  dest: "{{ansible_env.HOME}}/.zshrc"
+  backup: "{{ansible_env.PWD}}/backup/zshrc"
+
+zsh:
+  src: "{{ansible_env.PWD}}/zsh"
+  dest: "{{ansible_env.HOME}}/.zsh"
+  backup: "{{ansible_env.PWD}}/backup/zsh"
+
+zlogin:
+  src: "{{ansible_env.PWD}}/zlogin"
+  dest: "{{ansible_env.HOME}}/.zlogin"
+  backup: "{{ansible_env.PWD}}/backup/zlogin"
+
+zkbd:
+  src: "{{ansible_env.PWD}}/zkbd"
+  dest: "{{ansible_env.HOME}}/.zkbd"
+  backup: "{{ansible_env.PWD}}/backup/zkbd"

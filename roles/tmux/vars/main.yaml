@@ -1,0 +1,5 @@
+---
+tmux_conf:
+  src: "{{ansible_env.PWD}}/tmux.conf"
+  dest: "{{ansible_env.HOME}}/.tmux.conf"
+  backup: "{{ansible_env.PWD}}/backup/tmux.conf"
