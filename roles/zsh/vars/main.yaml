@@ -18,3 +18,21 @@ zkbd:
   src: "{{ansible_env.PWD}}/zkbd"
   dest: "{{ansible_env.HOME}}/.zkbd"
   backup: "{{ansible_env.PWD}}/backup/zkbd"
+
+backup_files:
+  - "{{zshrc.backup}}"
+  - "{{zsh.backup}}"
+  - "{{zlogin.backup}}"
+  - "{{zkbd.backup}}"
+
+src_files:
+  - "{{zshrc.src}}"
+  - "{{zsh.src}}"
+  - "{{zlogin.src}}"
+  - "{{zkbd.src}}"
+
+dest_files:
+  - "{{zshrc.dest}}"
+  - "{{zsh.dest}}"
+  - "{{zlogin.dest}}"
+  - "{{zkbd.dest}}"

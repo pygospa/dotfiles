@@ -8,3 +8,20 @@ vim:
   src: "{{ansible_env.PWD}}/vim"
   dest: "{{ansible_env.HOME}}/.vim"
   backup: "{{ansible_env.PWD}}/backup/vim"
+
+vim_dirs:
+  - "{{ ansible_env.HOME }}/tmp/vim/backups"
+  - "{{ ansible_env.HOME }}/tmp/vim/swaps"
+  - "{{ ansible_env.HOME }}/tmp/vim/undos"
+
+backup_files:
+  - "{{ vim.backup }}"
+  - "{{ vimrc.backup }}"
+
+dest_files:
+  - "{{ vim.dest }}"
+  - "{{ vimrc.dest }}"
+
+src_files:
+  - "{{ vim.src }}"
+  - "{{ vimrc.src }}"

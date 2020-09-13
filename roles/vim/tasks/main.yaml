@@ -3,35 +3,20 @@
   import_tasks: apt.yaml
   when: ansible_facts['os_family']|lower == 'debian'
 
-- name: Create directory ~/tmp/vim/backups
+- name: Create directories in ~/tmp/vim/*
   file:
-    path: "{{ansible_env.HOME}}/tmp/vim/backups"
+    path: "{{ item }}"
     state: directory
+  loop: "{{ vim_dirs }}"
 
-- name: Create directory ~/tmp/vim/swaps
+- name: Backup existing dotfiles from to dot/backup/
+  command: mv "{{item.0}}" "{{item.1}}" creates="{{item.1}}" removes="{{item.0}}"
+  loop: "{{ dest_files | zip(backup_files) | list }}"
+
+- name: Link dotfile from dot/ to ~
   file:
-    path: "{{ansible_env.HOME}}/tmp/vim/swaps"
-    state: directory
-
-- name: Create directory ~/tmp/vim/undos
-  file:
-    path: "{{ansible_env.HOME}}/tmp/vim/undos"
-    state: directory
-
-- name: Backup existing ~/.vimrc to dot/backup/vimrc
-  command: mv "{{vimrc.dest}}" "{{vimrc.backup}}" creates="{{vimrc.backup}}" removes="{{vimrc.dest}}"
-
-- name: Link dot/vimrc to ~/.vimrc
-  file:
-    src: "{{vimrc.src}}"
-    dest: "{{vimrc.dest}}"
+    src: "{{item.0}}"
+    dest: "{{item.1}}"
     state: link
+  loop: "{{ src_files | zip(dest_files) | list}}"
 
-- name: Backup existing ~/.vim to dot/backup/vim
-  command: mv "{{vim.dest}}" "{{vim.backup}}" creates="{{vim.backup}}" removes="{{vim.dest}}"
-
-- name: Link dot/vim to ~/.vim
-  file:
-    src: "{{vim.src}}"
-    dest: "{{vim.dest}}"
-    state: link
