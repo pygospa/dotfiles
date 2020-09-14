@@ -11,6 +11,12 @@
 
 
 #------------------------------------------------------------------------------
+# Alias
+#
+alias history="history 1"  # Show complete history, not just recent one
+
+
+#------------------------------------------------------------------------------
 # Variabels
 #
 HISTFILE=${HOME}/.zsh_history	# Where to save history
