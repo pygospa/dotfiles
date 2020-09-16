@@ -1,0 +1,51 @@
+---
+- name: Uninstall snaps
+  become: yes
+  snap:
+    name:
+      - snap-store
+      - gtk-common-themes
+      - gnome-3-34-1804
+      - core18
+    state: absent
+
+- name: Find mountes snap devices
+  find:
+    path: "{{ item }}"
+    file_type: directory
+  register: mounts
+  loop:
+    - /snap/core/
+    - /snap/core18/
+    - /snap/snapd/
+
+      #- name: debug
+      #  debug:
+      #    msg: "{{ item.path }}"
+      #  when: item | length>0
+      #  loop: "{{mounts.results | map(attribute='files') | list | flatten }}"
+
+- name: Unmount snap devices
+  become: yes
+  mount:
+    path: "{{ item.path }}"
+    state: unmounted
+  loop: "{{ mounts.results | map(attribute='files') | list | flatten }}"
+
+- name: purge snapd
+  become: yes
+  apt:
+    name: snapd
+    state: absent
+
+- name: remove snap directories
+  become: yes
+  become_user: root
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - ~/snap
+    - /snap
+    - /var/snap
+    - /var/lib/snapd

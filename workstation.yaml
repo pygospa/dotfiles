@@ -3,6 +3,8 @@
   hosts: localhost
   connection: local
   roles:
+    - unsnap-ubuntu
+    - update-package-repo
     - directory-setup
     - tmux
     - vim
