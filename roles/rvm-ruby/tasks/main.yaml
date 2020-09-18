@@ -1,0 +1,14 @@
+---
+- name: Install rvm
+  import_tasks: apt.yaml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Source shell config
+  import_tasks: zsh.yaml
+  when: ansible_env.SHELL == '/usr/bin/zsh'
+
+- name: Upgrade rvm version
+  command: rvm get stable
+
+- name: Install latest Ruby version
+  command: rvm install ruby-head

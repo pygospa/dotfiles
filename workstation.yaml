@@ -10,3 +10,4 @@
     - tmux
     - vim
     - zsh
+    - rvm-ruby # Has to be after zsh!
