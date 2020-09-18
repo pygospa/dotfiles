@@ -6,7 +6,9 @@
     #- unsnap-ubuntu
     - update-package-repo
     - directory-setup
+    - additional-codecs
     - chromium
+    - locate
     - tmux
     - vim
     - zsh

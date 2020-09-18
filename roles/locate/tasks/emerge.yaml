@@ -1,0 +1,7 @@
+---
+- name: Install locate via emerge
+  become: yes
+  portage:
+    package: sys-apps/mlocate
+    state: present
+    sync: yes
