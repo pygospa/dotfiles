@@ -1,0 +1,30 @@
+---
+- name: Link needed files to appropriate paths
+  become: yes
+  file:
+    src: "{{ item.file }}"
+    dest: "{{ item.path }}"
+    state: link
+  loop:
+    - { file: "{{ansible_env.PWD}}/debian.list", path: '/etc/apt/sources.list.d/debian.list' }
+    - { file: "{{ansible_env.PWD}}/chromium.pref", path: '/etc/apt/preferences.d/chromium.pref' }
+
+- name: Add Debian signing keys to apt
+  become: yes
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: "{{item}}"
+  loop:
+    - "DCC9EFBF77E11517"
+    - "648ACFD622F3D138"
+    - "AA8E81B4331F7F50"
+    - "112695A0E562B32A"
+
+- name: Install Chromium
+  become: yes
+  apt:
+    pkg:
+      - chromium-sandbox
+      - chromium
+    state: latest
+    update_cache: yes
