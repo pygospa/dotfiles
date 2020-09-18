@@ -10,6 +10,7 @@
     - chromium
     - java-jdk
     - java-openjdk
+    - java-build-automation
     - locate
     - spotify
     - tmux
