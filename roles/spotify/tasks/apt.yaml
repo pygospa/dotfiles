@@ -2,7 +2,7 @@
 - name: Link spotify.list to /etc/apt/sources.list.d
   become: yes
   file:
-    src: "{{ ansible_env.PWD }}/spotify.list"
+    src: "{{ ansible_env.PWD }}/apt/spotify.list"
     dest: "/etc/apt/sources.list.d/spotify.list"
     state: link
 

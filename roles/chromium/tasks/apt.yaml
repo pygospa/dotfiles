@@ -6,8 +6,8 @@
     dest: "{{ item.path }}"
     state: link
   loop:
-    - { file: "{{ansible_env.PWD}}/debian.list", path: '/etc/apt/sources.list.d/debian.list' }
-    - { file: "{{ansible_env.PWD}}/chromium.pref", path: '/etc/apt/preferences.d/chromium.pref' }
+    - { file: "{{ansible_env.PWD}}/apt/debian.list", path: '/etc/apt/sources.list.d/debian.list' }
+    - { file: "{{ansible_env.PWD}}/apt/chromium.pref", path: '/etc/apt/preferences.d/chromium.pref' }
 
 - name: Add Debian signing keys to apt
   become: yes

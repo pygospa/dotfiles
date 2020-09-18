@@ -8,6 +8,7 @@
     - directory-setup
     - additional-codecs
     - chromium
+    - java-openjdk
     - locate
     - spotify
     - tmux
