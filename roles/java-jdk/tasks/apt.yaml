@@ -1,0 +1,42 @@
+---
+- name: Find all downloaded Oracle JDKs
+  find:
+    path: "{{ ansible_env.HOME }}/files/sw/linux/java/"
+    patterns: '*.deb'
+  register: javadebs
+
+- name: Find Java JDK versions in javadebs
+  set_fact:
+    regexresult: "{{ item.path | regex_replace(regexp, '\\1')}}"
+  vars:
+    regexp: '.*jdk-(.*)_linux-x64_bin.deb'
+  loop: "{{ javadebs.files }}"
+  register: versionresults
+
+- name: Put Java JDK versions into list
+  set_fact: javaversions="{{versionresults.results | map(attribute='ansible_facts.regexresult') | list}}"
+
+- name: Install Java JDK 11, 14 and 15 via from Oracle via apt
+  become: yes
+  apt:
+    deb: "{{ item.path }}"
+  loop: "{{ javadebs.files }}"
+
+- name: Install java to update-alternatives
+  become: yes
+  alternatives:
+    name: java
+    link: /usr/bin/java
+    path: "/usr/lib/jvm/jdk-{{item}}/bin/java"
+    priority: 1
+  loop: "{{ javaversions }}"
+
+- name: Install javac to update-alternatives
+  become: yes
+  alternatives:
+    name: javac
+    link: /usr/bin/javac
+    path: "/usr/lib/jvm/jdk-{{item}}/bin/javac"
+    priority: 1
+  loop: "{{ javaversions }}"
+

@@ -19,12 +19,6 @@
     - /snap/core18/
     - /snap/snapd/
 
-      #- name: debug
-      #  debug:
-      #    msg: "{{ item.path }}"
-      #  when: item | length>0
-      #  loop: "{{mounts.results | map(attribute='files') | list | flatten }}"
-
 - name: Unmount snap devices
   become: yes
   mount:
