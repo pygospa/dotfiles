@@ -14,6 +14,7 @@
   apt_key:
     keyserver: keyserver.ubuntu.com
     id: "{{item}}"
+    state: present
   loop:
     - "DCC9EFBF77E11517"
     - "648ACFD622F3D138"

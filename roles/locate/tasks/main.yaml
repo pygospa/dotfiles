@@ -2,7 +2,7 @@
 - name: Install locate
   import_tasks: apt.yaml
   when: ansible_facts['os_family']|lower == 'debian'
-- import_task: emerge.yaml
+- import_tasks: emerge.yaml
   when: ansible_facts['os_family']|lower == 'gentoo'
 
 - name: Update mlocate.db database
