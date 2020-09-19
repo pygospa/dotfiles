@@ -1,0 +1,42 @@
+---
+- name: Install docker and docker-compose via apt
+  become: yes
+  apt:
+    pkg:
+      - docker.io
+      - docker-compose
+    state: latest
+    update_cache: yes
+
+- name: Enable docker server
+  become: yes
+  shell: systemctl enable --now docker
+
+- name: Add current user to docker group
+  become: yes
+  user:
+    name: "{{ ansible_env.USER }}"
+    groups: docker
+    append: yes
+
+- name: Download install script for dry
+  get_url:
+    url: https://moncho.github.io/dry/dryup.sh
+    dest: "{{ ansible_env.HOME }}/tmp/dryup.sh"
+    mode: '0755'
+
+- name: Run install script for dry
+  become: yes
+  shell: "{{ ansible_env.HOME }}/tmp/dryup.sh"
+
+- name: Remove install script
+  file:
+    path: "{{ ansible_env.HOME }}/tmp/dryup.sh"
+    state: absent
+
+- name: Make dry executable
+  become: yes
+  file:
+    path: /usr/local/bin/dry
+    mode: '0755'
+

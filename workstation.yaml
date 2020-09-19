@@ -7,13 +7,18 @@
     - update-package-repo
     - directory-setup
     - additional-codecs
+    - blender
     - chromium
+    - docker
+    - gimp
     - java-jdk
     - java-openjdk
     - java-build-automation
     #- locate
     - nodejs
+    - shotwell
     - spotify
+    - telegram
     - tmux
     - vim
     - zsh

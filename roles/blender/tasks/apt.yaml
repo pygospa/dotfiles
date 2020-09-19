@@ -1,0 +1,7 @@
+---
+- name: Install Blender via apt
+  become: yes
+  apt:
+    name: blender
+    state: latest
+    update_cache: yes

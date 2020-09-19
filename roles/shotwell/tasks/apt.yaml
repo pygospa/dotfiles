@@ -1,0 +1,7 @@
+---
+- name: Install Shotwell via apt
+  become: yes
+  apt:
+    name: shotwell
+    state: latest
+    update_cache: yes
