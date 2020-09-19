@@ -11,7 +11,8 @@
     - java-jdk
     - java-openjdk
     - java-build-automation
-    - locate
+    #- locate
+    - nodejs
     - spotify
     - tmux
     - vim
