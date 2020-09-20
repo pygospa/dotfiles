@@ -1,0 +1,5 @@
+---
+files:
+  - { src: "{{ ansible_env.PWD }}/rvmrc", dest: "{{ ansible_env.HOME }}/.rvmrc", backup: "{{ ansible_env.PWD }}/backup/rvmrc" }
+  - { src: "{{ ansible_env.PWD }}/gemrc", dest: "{{ ansible_env.HOME }}/.gemrc", backup: "{{ ansible_env.PWD }}/backup/gemrc" }
+

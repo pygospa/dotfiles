@@ -7,8 +7,22 @@
   import_tasks: zsh.yaml
   when: ansible_env.SHELL == '/usr/bin/zsh'
 
-- name: Upgrade rvm version
+- name: Upgrade rvm version and install latest Ruby version
   command: rvm get stable
 
 - name: Install latest Ruby version
   command: rvm install ruby-head
+
+- name: Backup existing dotfiles from ~ to dot/backup
+  command:
+    cmd: mv "{{ item.dest }}"  "{{ item.backup }}"
+    creates: "{{ item.backup }}"
+    removes: "{{ item.dest }}"
+  loop: "{{ files }}"
+
+- name: Link rvmrc/gemrc to home directory
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop: "{{ files }}"
