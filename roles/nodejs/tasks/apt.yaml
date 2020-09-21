@@ -2,15 +2,15 @@
 - name: Get Debian install script for nvm
   get_url:
     url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
-    dest: "{{ansible_env.HOME}}/tmp/install.sh"
+    dest: "{{ installscript }}"
     mode: '0755'
 
 - name: Run install script for nvm
-  shell: "{{ansible_env.HOME}}/tmp/install.sh"
+  shell: "{{ installscript }}"
 
 - name: Remove install script
   file:
-    path: "{{ansible_env.HOME}}/tmp/install.sh"
+    path: "{{ installscript }}"
     state: absent
 
 - name: Source nvm files and install and install lts & latest nodejs & npm
