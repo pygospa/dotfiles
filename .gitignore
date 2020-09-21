@@ -22,6 +22,7 @@ gnupg/profile.jpg
 
 # Backup file
 backup/*
+backup.*.zip
 
 # Pentadactyl
 pentadactyl/info

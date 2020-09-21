@@ -1,0 +1,7 @@
+---
+- name: Compress dot/backup into dot/backup.<timestamp>.zip
+  archive:
+    path: "{{ ansible_env.PWD }}/backup"
+    dest: "{{ ansible_env.PWD }}/backup.{{ ansible_date_time.epoch }}.zip"
+    remove: yes
+    format: zip

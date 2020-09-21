@@ -1,0 +1,13 @@
+---
+- name: Install VLC via apt
+  become: yes
+  apt:
+    pkg:
+      - vlc
+      - vlc-plugin-fluidsynth # MIDI support
+      - libxvidcore4          # MPEG-4
+      - libfaac0              # AAC
+      - gvfs-fuse             # Password protected samba shares
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
