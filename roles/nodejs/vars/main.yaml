@@ -1,0 +1,2 @@
+---
+installscript: "{{ ansible_env.HOME }}/tmp/install.sh"
