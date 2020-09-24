@@ -17,6 +17,7 @@
     #- locate
     - network-manager-openvpn
     - nodejs
+    - octave
     - screenfetch
     - shotwell
     - spotify
