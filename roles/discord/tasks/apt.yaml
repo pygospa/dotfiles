@@ -1,0 +1,18 @@
+---
+- name: Install discord dependencies via apt
+  become: yes
+  apt:
+    pkg:
+      - libatomic1
+      - libgconf-2-4
+      - libc++1
+      - gconf2-common
+      - libc++abi1
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install discrod from discord.com via apt
+  become: yes
+  apt:
+    deb: "{{ ansible_env.HOME }}/files/sw/linux/discord/discord-0.0.12.deb"
