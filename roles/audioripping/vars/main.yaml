@@ -1,0 +1,5 @@
+---
+abcde:
+  src: "{{ansible_env.PWD}}/abcde.conf"
+  dest: "{{ansible_env.HOME}}/.abcde.conf"
+  backup: "{{ansible_env.PWD}}/backup/abcde.conf"

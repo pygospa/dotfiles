@@ -1,0 +1,13 @@
+---
+- name: Install abcde, opus and id3
+  import_tasks: apt.yaml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Backup existing dotfiles from ~ dot/backup/
+  command: mv "{{abcde.dest}}" "{{abcde.backup}}" creates="{{abcde.backup}}" removes="{{abcde.dest}}"
+
+- name: Link dotfile from dot/ to ~
+  file:
+    src: "{{abcde.src}}"
+    dest: "{{abcde.dest}}"
+    state: link

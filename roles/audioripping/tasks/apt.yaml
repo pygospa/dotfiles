@@ -1,0 +1,15 @@
+---
+- name: Install abcde, opus and id3 via apt
+  become: yes
+  apt:
+    pkg:
+      - abcde
+      - flac
+      - id3
+      - id3v2
+      - lame
+      - libopus0
+      - opus-tools
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
