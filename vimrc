@@ -175,7 +175,7 @@ if has("autocmd")
 	autocmd FileType java setlocal ts=4 sts=4 sw=4 noexpandtab " oracle/sun
 	autocmd FileType java setlocal ts=2 sts=2 sw=4 expandtab   " google
 	" python.org
-	autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+	autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab shiftround
 	" GitHubs style guide
 	autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType eruby setlocal ts=2 sts=2 sw=2 expandtab
