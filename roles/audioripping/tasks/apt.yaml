@@ -4,6 +4,7 @@
   apt:
     pkg:
       - abcde
+      - cdrdao
       - flac
       - id3
       - id3v2
