@@ -1,0 +1,16 @@
+---
+- name: Extract tar.gz to /opt
+  become: yes
+  unarchive:
+    src: "{{ ansible_env.HOME }}/files/sw/linux/portfolio-performance/PortfolioPerformance-0.49.2-linux.gtk.x86_64.tar.gz"
+    dest: "/opt/"
+
+- name: Link portfolio-performance.desktop to ~/.local/share/applications/
+  file:
+    src: "{{ ansible_env.PWD }}/xdg-desktop-files/portfolio-performance.desktop"
+    dest: "{{ ansible_env.HOME }}/.local/share/applications/portfolio-performance.desktop"
+    state: link
+
+- name: Refresh desktop database
+  become: yes
+  command: update-desktop-database
