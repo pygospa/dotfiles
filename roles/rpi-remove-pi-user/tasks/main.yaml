@@ -1,0 +1,7 @@
+---
+- name: Remove standard pi:raspberry user from thorin
+  become: yes
+  user:
+    name: pi
+    state: absent
+    remove: yes

@@ -1,0 +1,8 @@
+---
+- name: Raspberry Pi NAS setup
+  hosts: thorin
+  roles:
+    - rpi-remove-pi-user
+    - update-package-repo
+    - thorin-disks
+    - thorin-samba

@@ -1,0 +1,19 @@
+---
+mount_dirs:
+  - "/media/audio01"
+  - "/media/backup01"
+  - "/media/movies01"
+  - "/media/series01"
+  - "/media/series02"
+  - "/media/series03"
+  - "/srv/git"
+
+fstab_lines:
+  - "/dev/disk/by-uuid/314c7ad4-d711-4798-8171-ec19e6d05dac /media/audio01  ext4 sync,auto 0 0"
+  - "/dev/disk/by-uuid/a7c9d734-68b9-4d47-be8a-094154392afd /media/backup01 ext4 sync,auto 0 0"
+  - "/dev/disk/by-uuid/98a49b3f-01b4-4915-9135-9c455e744699 /media/movies01 ext4 sync,auto 0 0"
+  - "/dev/disk/by-uuid/29bc0c61-a59c-4bb1-9b49-a20724871632 /media/series01 ext4 sync,auto 0 0"
+  - "/dev/disk/by-uuid/162dd8e1-fb7d-4549-9420-e807a2d16829 /media/series02 ext4 sync,auto 0 0"
+  - "/dev/disk/by-uuid/b6203d51-f28b-4a96-b1ff-ac0a3ed01ba5 /media/series03 ext4 sync,auto 0 0"
+  - ""
+  - "/dev/disk/by-uuid/570B-918E /srv/git exfat uid=997,gid=997,sync,auto,nosuid,rw,nouser,fmask=0002,dmask=0002 0 0"
