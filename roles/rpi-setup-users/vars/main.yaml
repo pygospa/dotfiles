@@ -1,0 +1,12 @@
+---
+users:
+  - username: "{{ vault_user1 }}"
+    password: "{{ vault_password1 }}"
+    salt: "{{ vault_salt1 }}"
+    groups: "{{ admin_user }}"
+  - username: "{{ vault_user2 }}"
+    password: "{{ vault_password2 }}"
+    groups: "{{ admin_user }}"
+    salt: "{{ vault_salt2 }}"
+
+admin_user: "adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi"

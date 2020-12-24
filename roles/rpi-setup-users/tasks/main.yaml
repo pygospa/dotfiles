@@ -1,0 +1,37 @@
+---
+- include_vars: vault.yaml
+
+- name: Create users
+  become: yes
+  user:
+    name: "{{ item.username }}"
+    password: "{{ item.password | password_hash('sha512', item.salt) }}"
+    groups: "{{ item.groups }}"
+  with_items: "{{ users }}"
+
+- name: Get user running this deploy
+  local_action: command whoami
+  register: user_running_deploy
+
+- name: Create .ssh directory for user running this deploy
+  become: yes
+  file:
+    path: "/home/{{ item.username }}/.ssh"
+    owner: "{{ item.username }}"
+    group: "{{ item.username }}"
+    mode: 0700
+    state: directory
+  with_items: "{{ users }}"
+  when: item.username == user_running_deploy.stdout
+
+- name: Insert public key into .ssh/authorized_keys file for user running this deploy
+  become: yes
+  lineinfile:
+    path: "/home/{{ item.username }}/.ssh/authorized_keys"
+    line: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    owner: "{{ item.username }}"
+    group: "{{ item.username }}"
+    mode: 0600
+    create: yes
+  with_items: "{{ users }}"
+  when: item.username == user_running_deploy.stdout

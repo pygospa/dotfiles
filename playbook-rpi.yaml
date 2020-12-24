@@ -1,0 +1,9 @@
+---
+- name: Initial Raspberry Pi setup
+  hosts: "{{ rpis }}"
+  roles:
+    - rpi-expand-filesystem
+    - rpi-update-raspi-config
+    - rpi-setup-boot-options
+    - rpi-setup-locales
+    - rpi-setup-users

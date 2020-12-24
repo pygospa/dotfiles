@@ -1,0 +1,29 @@
+---
+- name: Change timezone to German time
+  become: yes
+  shell: "raspi-config nonint do_change_timezone Europe/Berlin"
+
+- name: Copy locale.gen to pi
+  become: yes
+  copy:
+    src: "{{ playbook_dir }}/locale.gen"
+    dest: "/etc/locale.gen"
+    mode: '0644'
+    owner: root
+    group: root
+
+- name: Generate locales
+  become: yes
+  shell: locale-gen
+
+- name: Change locale to US.UTF-8
+  become: yes
+  shell: "raspi-config nonint do_change_locale en_US.UTF-8"
+
+- name: Change Keyboard layout to DE
+  become: yes
+  shell: "raspi-config nonint do_configure_keyboard de"
+
+- name: Change Wifi country
+  become: yes
+  shell: "raspi-config nonint do_wifi_country DE"
