@@ -4,5 +4,7 @@
   roles:
     - rpi-remove-pi-user
     - update-package-repo
+    - thorin-setup
     - thorin-disks
     - thorin-samba
+    - reboot

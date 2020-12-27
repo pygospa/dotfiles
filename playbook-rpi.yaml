@@ -7,3 +7,4 @@
     - rpi-setup-boot-options
     - rpi-setup-locales
     - rpi-setup-users
+    - reboot

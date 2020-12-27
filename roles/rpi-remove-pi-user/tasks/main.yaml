@@ -1,4 +1,10 @@
 ---
+- name: Kill all processes of pi user
+  become: yes
+  shell: killall --user pi
+  register: killall
+  failed_when: killall.rc not in [0, 1]
+
 - name: Remove standard pi:raspberry user from thorin
   become: yes
   user:
