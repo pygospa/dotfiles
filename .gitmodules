@@ -2,160 +2,23 @@
 	path = vim/bundle/a.vim
 	url = https://github.com/vim-scripts/a.vim.git
 	ignore = dirty
-[submodule "vim/bundle/addon-mw-utils"]
-	path = vim/pack/plugins/start/addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-	ignore = dirty
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/pack/plugins/start/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-	ignore = dirty
-[submodule "vim/bundle/delimitMate"]
-	path = vim/pack/plugins/start/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
-	ignore = dirty
-[submodule "vim/bundle/easymotion"]
-	path = vim/pack/plugins/start/easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
-	ignore = dirty
-[submodule "vim/bundle/emmet"]
-	path = vim/pack/plugins/start/emmet
-	url = https://github.com/mattn/emmet-vim.git
-	ignore = dirty
-[submodule "vim/bundle/mru"]
-	path = vim/pack/plugins/start/mru
-	url = https://github.com/yegappan/mru.git
-	ignore = dirty
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/pack/plugins/start/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-	ignore = dirty
-[submodule "vim/bundle/nerdtree"]
-	path = vim/pack/plugins/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-	ignore = dirty
-[submodule "vim/bundle/repeat"]
-	path = vim/pack/plugins/start/repeat
-	url = https://github.com/tpope/vim-repeat.git
-	ignore = dirty
-[submodule "vim/bundle/slimv"]
-	path = vim/pack/plugins/start/slimv
-	url = https://github.com/kovisoft/slimv.git
-	ignore = dirty
-[submodule "vim/bundle/snippets"]
-	path = vim/pack/plugins/start/snippets
-	url = https://github.com/honza/vim-snippets.git
-	ignore = dirty
-[submodule "vim/bundle/surround"]
-	path = vim/pack/plugins/start/surround
-	url = https://github.com/tpope/vim-surround.git
-	ignore = dirty
-[submodule "vim/bundle/syntastic"]
-	path = vim/pack/plugins/start/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-	ignore = dirty
-[submodule "vim/bundle/tabular"]
-	path = vim/pack/plugins/start/tabular
-	url = https://github.com/godlygeek/tabular.git
-	ignore = dirty
-[submodule "vim/bundle/tagbar"]
-	path = vim/pack/plugins/start/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-	ignore = dirty
 [submodule "vim/bundle/TaskList.vim"]
 	path = vim/bundle/TaskList.vim
 	url = https://github.com/vim-scripts/TaskList.vim.git
-	ignore = dirty
-[submodule "vim/bundle/tlib"]
-	path = vim/pack/plugins/start/tlib
-	url = https://github.com/tomtom/tlib_vim.git
 	ignore = dirty
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 	ignore = dirty
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/pack/themes/opt/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-	ignore = dirty
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-	ignore = dirty
-[submodule "vim/bundle/vim-gitgutter"]
-	path = vim/pack/plugins/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-	ignore = dirty
-[submodule "vim/bundle/vim-haml"]
-	path = vim/pack/plugins/start/vim-haml
-	url = https://github.com/tpope/vim-haml
-	ignore = dirty
-[submodule "vim/bundle/vim-opencl"]
-	path = vim/pack/plugins/start/vim-opencl
-	url = https://github.com/petRUShka/vim-opencl.git
-	ignore = dirty
-[submodule "vim/bundle/vim-trailing-whitespace"]
-	path = vim/pack/plugins/start/vim-trailing-whitespace
-	url = https://github.com/bronson/vim-trailing-whitespace.git
 	ignore = dirty
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
 	ignore = dirty
-[submodule "vim/bundle/xml"]
-	path = vim/pack/plugins/start/xml
-	url = https://github.com/othree/xml.vim.git
-	ignore = dirty
 [submodule "vim/bundle/youCompleteMe"]
 	path = vim/bundle/youCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
 	ignore = dirty
-[submodule "vim/bundle/calendar-vim"]
-	path = vim/pack/plugins/start/calendar-vim
-	url = git://github.com/mattn/calendar-vim
-[submodule "vim/bundle/vim-javacomplete2"]
-	path = vim/pack/plugins/start/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2
-[submodule "vim/bundle/vim-freemarker"]
-	path = vim/pack/plugins/start/vim-freemarker
-	url = https://github.com/andreshazard/vim-freemarker.git
-[submodule "vim/bundle/vim-pug"]
-	path = vim/pack/plugins/start/vim-pug
-	url = https://github.com/digitaltoad/vim-pug.git
-[submodule "vim/bundle/vim-ruby"]
-	path = vim/pack/plugins/start/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby
-[submodule "vim/bundle/vim-rails"]
-	path = vim/pack/plugins/start/vim-rails
-	url = https://github.com/tpope/vim-rails
-[submodule "vim/bundle/nvim-yarp"]
-	path = vim/pack/plugins/start/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp
-[submodule "vim/bundle/vim-hug-neovim-rpc"]
-	path = vim/pack/plugins/start/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc
-[submodule "vim/pack/themes/start/molokai"]
-	path = vim/pack/themes/opt/molokai
-	url = https://github.com/tomasr/molokai
-[submodule "vim/pack/themes/start/vim-wombat-scheme"]
-	path = vim/pack/themes/opt/vim-wombat-scheme
-	url = https://github.com/sheerun/vim-wombat-scheme
-[submodule "vim/pack/plugins/start/TaskList.vim"]
-	path = vim/pack/plugins/start/TaskList.vim
-	url = https://github.com/vim-scripts/TaskList.vim
-[submodule "vim/pack/plugins/start/a.vim"]
-	path = vim/pack/plugins/start/a.vim
-	url = https://github.com/vim-scripts/a.vim
-[submodule "vim/pack/plugins/start/vim-fugitive"]
-	path = vim/pack/plugins/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/pack/plugins/start/vimwiki"]
-	path = vim/pack/plugins/start/vimwiki
-	url = https://github.com/vimwiki/vimwiki
-[submodule "vim/pack/plugins/coc.nvim"]
-	path = vim/pack/plugins/start/coc.nvim
-	url = https://github.com/neoclide/coc.nvim
-	branch = release
-[submodule "vim/pack/plugins/start/vim-healthcheck"]
-	path = vim/pack/plugins/start/vim-healthcheck
-	url = https://github.com/rhysd/vim-healthcheck

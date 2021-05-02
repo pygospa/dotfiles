@@ -1,5 +1,0 @@
-# Author		Kannan Thambiah <pygospa@gmail.com>
-# Latest version	https://github.com/pygospa/dotfiles
-
-# If a gemset is to be used but does not exist, it will be automatically created
-rvm_gemset_create_on_use_flag=1
