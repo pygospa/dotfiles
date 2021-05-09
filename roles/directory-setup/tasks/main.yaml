@@ -1,0 +1,5 @@
+---
+- name: Create backup directory
+  file:
+    path: "{{ ansible_env.PWD }}/backup"
+    state: directory

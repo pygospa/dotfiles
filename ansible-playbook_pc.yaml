@@ -1,0 +1,10 @@
+---
+- name: NIX system setup
+  hosts: localhost
+  connection: local
+  roles:
+    - directory-setup
+    - update-package-repo
+    - update-cpu-microcode
+    - X11
+    - discord

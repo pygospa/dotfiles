@@ -1,0 +1,6 @@
+- name: "pacman -S discord"
+  become: yes
+  community.general.pacman:
+    name: discord
+    state: present
+    update_cache: yes

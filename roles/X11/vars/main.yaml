@@ -1,0 +1,10 @@
+---
+keyboard:
+  bkp: "{{ ansible_env.PWD }}/backup/00-keyboard.conf"
+  dest: "/etc/X11/xorg.conf.d/00-keyboard.conf"
+  src: "{{ ansible_env.PWD }}/etc/X11/xorg.conf.d/00-keyboard.conf"
+
+nvidia:
+  bkp: "{{ ansible_env.PWD }}/backup/20-nvidia.conf"
+  dest: "/etc/X11/xorg.conf.d/20-nvidia.conf"
+  src: "{{ ansible_env.PWD }}/etc/X11/xorg.conf.d/20-nvidia.conf"

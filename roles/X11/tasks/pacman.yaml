@@ -1,0 +1,29 @@
+---
+- name: Install Xorg
+  become: yes
+  community.general.pacman:
+    name:
+      - nvidia
+      - nvidia-settings
+      - xorg-apps
+      - xorg-server
+      - xorg-xinit
+    state: latest
+    update_cache: yes
+
+- name: Backup existing conf files
+  become: yes
+  command: mv "{{item.dest}}" "{{item.bkp}}" creates="{{item.bkp}}" removes="{{item.dest}}"
+  loop:
+    - { bkp: "{{ keyboard.bkp }}", dest: "{{ keyboard.dest }}" }
+    - { bkp: "{{ nvidia.bkp }}", dest: "{{ nvidia.dest }}" }
+
+- name: Link config files
+  become: yes
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop:
+    - { src: "{{ keyboard.src }}", dest: "{{ keyboard.dest }}" }
+    - { src: "{{ nvidia.src }}", dest: "{{ nvidia.dest }}" }

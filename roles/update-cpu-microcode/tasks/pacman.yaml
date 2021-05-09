@@ -1,0 +1,25 @@
+---
+- name: Install updated microcode
+  become: yes
+  community.general.pacman:
+    name:
+      - intel-ucode
+      - iucode-tool
+
+- name: Backup existing systemd uefi entry
+  become: yes
+  vars:
+    src_path: "/boot/loader/entries/arch.conf"
+    bkp_path: "{{ ansible_env.PWD }}/backup/arch.conf"
+  command: mv "{{ src_path }}" "{{ bkp_path }}" creates="{{ bkp_path }}" removes="{{ src_path }}"
+
+- name: Load updated microcode into the initrd using systemd
+  become: yes
+  vars:
+    conf_file: "/boot/loader/entries/arch.conf"
+  copy:
+    src: "{{ ansible_env.PWD }}/{{ conf_file }}"
+    dest: "{{ conf_file }}"
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
