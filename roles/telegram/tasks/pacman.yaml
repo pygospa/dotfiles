@@ -1,0 +1,6 @@
+- name: "pacman -S telegram-desktop"
+  become: yes
+  community.general.pacman:
+    name: telegram-desktop
+    state: latest
+    update_cache: yes

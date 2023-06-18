@@ -1,0 +1,362 @@
+# i3 config file (v4)
+#
+# Author		Kannan Thambiah <pygospa@gmail.com>
+# Latest Verstion	https://github.com/pygospa/dotfiles
+
+
+
+#------------------------------------------------------------------------------
+# Define colors using dracula color scheme: https://draculatheme.com
+# Color codes taken from: https://specs.draculatheme.com
+#
+
+# ANSI normal
+set $black    #21222c
+set $red      #ff5555
+set $green    #50fa7b
+set $yellow   #f1fa8c
+set $blue     #bd93f9
+set $magenta  #ff79c6
+set $cyan     #8be9fd
+set $white    #f8f8f2
+
+# ANSI bright
+set $bblack   #6272a4
+set $bred     #ff6e6e
+set $bgreen   #69ff94
+set $byellow  #ffffa5
+set $bblue    #d6acff
+set $bmagenta #ff92df
+set $bcyan    #a4ffff
+set $bwhite   #ffffff
+
+# standard
+set $background #282a36
+set $forefround $white
+set $selection  #44475a
+set $comment    $bblack
+set $orange	#ffb86c
+set $purple     $blue
+set $pink       $magenta
+
+
+
+#------------------------------------------------------------------------------
+# General settings
+#
+
+# Mod4 = Windows key, Mod1 = alt key
+set $win Mod4
+set $alt Mod1
+
+# Standard font
+font pango:Fira Code 10
+
+# Set wallpaper (using feh)
+#exec --no-startup-id feh --bg-scale /home/pygospa/files/wp/dragon-chinese-fantasy-art-51-4k.jpg
+#exec --no-startup-id feh --bg-scale /home/pygospa/files/wp/base.png
+exec --no-startup-id feh --bg-scale /home/pygospa/files/wp/3840x1600/wkw.natural20design.png
+
+# start a terminal
+bindsym $win+Return exec alacritty
+
+# kill focused window
+bindsym $win+Shift+q kill
+
+# kill application of next clicked window
+bindsym --release $win+Shift+w exec xkill
+
+# reload the configuration file
+bindsym $win+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $win+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $win+Shift+e exit
+
+# Button to press for mouse-floating-window interaction
+floating_modifier $win
+
+
+
+#------------------------------------------------------------------------------
+# Vim-like keybindings & arrow bindings
+#
+set $up k
+set $down j
+set $left h
+set $right l
+
+set $upArrow Up
+set $downArrow Down
+set $leftArrow Left
+set $rightArrow Right
+
+
+
+#------------------------------------------------------------------------------
+# Gaps
+#
+smart_gaps on
+gaps inner 6
+smart_borders on
+
+
+
+#------------------------------------------------------------------------------
+# Rofi (instead of dmenu)
+#
+bindsym $win+space exec rofi -show run 	# run menu
+bindsym $alt+Tab exec rofi -show window	# list wondows to switch to
+
+
+
+#------------------------------------------------------------------------------
+# Bar
+#
+bar {
+	status_command i3blocks -c ~/.config/i3blocks/config # use i3blocks
+	#status_command 2>/tmp/i3blocks.err i3blocks -vvv -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
+	position top				       	     # bar at top
+	font pango:Fira Code 8
+	strip_workspace_numbers yes		     # Don't show workspace no
+
+	colors {
+		background $background
+		statusline $blue
+
+		# Type              border      background  font
+		focused_workspace   $background $background $magenta
+		inactive_workspace  $background $background $blue
+		urgent_workspace    $red $red     $background
+	}
+}
+
+
+
+#------------------------------------------------------------------------------
+# Workspace settings
+#
+
+# define names for workspaces; instead of text I use font awesomes icons:
+# http://fontawesome.io/cheatsheet/
+set $cli 1: 
+set $chat 2: 
+set $web 3: 
+set $todo 4: 
+set $ide 5: 
+set $img 6: 
+set $vid 7: 
+set $money 8: 
+set $game 9: 
+set $misc 10: 
+
+# switch to workspace
+bindsym $win+1 workspace $cli
+bindsym $win+2 workspace $chat
+bindsym $win+3 workspace $web
+bindsym $win+4 workspace $todo
+bindsym $win+5 workspace $ide
+bindsym $win+6 workspace $img
+bindsym $win+7 workspace $vid
+bindsym $win+8 workspace $money
+bindsym $win+9 workspace $game
+bindsym $win+0 workspace $misc
+
+# move focused container to workspace
+bindsym $win+Shift+1 move container to workspace $cli
+bindsym $win+Shift+2 move container to workspace $chat
+bindsym $win+Shift+3 move container to workspace $web
+bindsym $win+Shift+4 move container to workspace $todo
+bindsym $win+Shift+5 move container to workspace $ide
+bindsym $win+Shift+6 move container to workspace $img
+bindsym $win+Shift+7 move container to workspace $vid
+bindsym $win+Shift+8 move container to workspace $money
+bindsym $win+Shift+9 move container to workspace $game
+bindsym $win+Shift+0 move container to workspace $misc
+
+# Assign applications to workspaces
+assign [class="Alacritty"] $cli
+assign [class="TelegramDesktop"] $chat
+assign [class="discord"] $chat
+assign [class="Enpass"] $web
+
+
+
+#------------------------------------------------------------------------------
+# Workspace layout
+#
+
+# split horizontally (i.e. vertical orientation) - hint from vim: split
+bindsym $win+s split v
+
+# split vertically (i.e. horizontal orientation) - hint from vim: vsplit
+bindsym $win+v split h
+
+# enter fullscreen mode for the focused container
+bindsym $win+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $alt+s layout stacking
+bindsym $alt+w layout tabbed
+bindsym $alt+e layout toggle split
+
+# toggle tiling / floating
+bindsym $alt+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $alt+space focus mode_toggle
+
+# focus the parent container
+bindsym $alt+a focus parent
+
+# focus the child container
+#bindsym $alt+d focus child
+
+
+
+#------------------------------------------------------------------------------
+# Window settings
+#
+
+# No title bar for individual windows
+for_window [class="^.*"] border pixel 2
+new_window 1pixel
+
+# set color for...       border      background text   indicator   child_border
+client.focused           $magenta    $magenta   $white $yellow    $magenta
+client.focused_inactive  $blue       $blue      $white $yellow    $blue
+client.unfocused         $blue       $blue      $white $yellow    $blue
+client.urgent            $red        $red       $white $yellow    $red
+client.placeholder	 $background $background $white $yellow    $background
+
+client.background        $white
+
+# resize window (you can also use the mouse for that
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym $leftArrow  resize shrink width 10 px or 10 ppt
+        bindsym $downArrow  resize grow height 10 px or 10 ppt
+        bindsym $UpArrow    resize shrink height 10 px or 10 ppt
+        bindsym $rightArrow resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or Mod1+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $win+r mode "resize"
+
+
+
+#------------------------------------------------------------------------------
+# Window movement
+#
+
+# change focus
+bindsym $win+$left focus left
+bindsym $win+$down focus down
+bindsym $win+$up focus up
+bindsym $win+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $win+$leftArrow focus left
+bindsym $win+$downArrow focus down
+bindsym $win+$upArrow focus up
+bindsym $win+$rightArrow focus right
+
+# move focused window
+bindsym $win+Shift+$left move left
+bindsym $win+Shift+$down move down
+bindsym $win+Shift+$up move up
+bindsym $win+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $win+Shift+$leftArrow move left
+bindsym $win+Shift+$downArrow move down
+bindsym $win+Shift+$upArrow move up
+bindsym $win+Shift+$rightArrow move right
+
+
+
+#------------------------------------------------------------------------------
+# Print screen
+#
+
+# print screen focused window
+bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/tmp/shots/'
+
+# print screen entire view
+bindsym $win+Print exec scrot '%Y%m%d_%H%M%S.png' -e 'mv $f ~/tmp/shots/'
+
+
+
+#------------------------------------------------------------------------------
+# Autostart
+#
+
+exec --no-startup-id fcitx5 -d
+exec --no-startup-id dunst
+exec --no-startup-id redshift
+ 
+# Applications in workspaces (last one shows first on startup
+exec --no-startup-id i3-msg 'workspace $web; exec enpass'
+exec --no-startup-id i3-msg 'workspace $chat; exec telegram-desktop'
+exec --no-startup-id i3-msg 'workspace $chat; exec discord'
+exec --no-startup-id i3-msg 'workspace $cli; exec alacritty'
+
+
+
+# 
+# 
+# #------------------------------------------------------------------------------
+# #------------------------------------------------------------------------------
+# #------------------------------------------------------------------------------
+# 
+# # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# # screen before suspend. Use loginctl lock-session to lock your screen.
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# 
+# # NetworkManager is the most popular way to manage wireless networks on Linux,
+# # and nm-applet is a desktop environment-independent system tray GUI for it.
+# exec --no-startup-id nm-applet
+# 
+# # Use pactl to adjust volume in PulseAudio.
+# set $refresh_i3status killall -SIGUSR1 i3status
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# 
+# # use Mouse+Mod1 to drag floating windows to their wanted position
+# floating_modifier Mod1
+# 
+# # start dmenu (a program launcher)
+# bindsym Mod1+d exec --no-startup-id dmenu_run
+# # A more modern dmenu replacement is rofi:
+# # bindsym Mod1+d exec "rofi -modi drun,run -show drun"
+# # There also is i3-dmenu-desktop which only displays applications shipping a
+# # .desktop file. It is a wrapper around dmenu, so you need that installed.
+# # bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
+# 
+# # move the currently focused window to the scratchpad
+# #
+# #
+# bindsym Mod1+Shift+minus move scratchpad
+# 
+# # Show the next scratchpad window or hide the focused scratchpad window.
+# # If there are multiple scratchpad windows, this command cycles through them.
+# bindsym Mod1+minus scratchpad show
+# 

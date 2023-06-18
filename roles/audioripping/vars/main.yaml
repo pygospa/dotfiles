@@ -1,0 +1,5 @@
+---
+abcde:
+  file: "{{ansible_env.HOME}}/.abcde.conf"
+  repo_path: "{{ansible_env.PWD}}/abcde.conf"
+  backup_path: "{{ansible_env.PWD}}/backup/abcde.conf"

@@ -1,0 +1,35 @@
+---
+- import_tasks: pacman.yaml
+  when: ansible_facts['os_family']|lower == 'archlinux'
+
+- name: Register existing config in ~/.config/alacritty/alacritty.yml
+  stat:
+    path: "{{ alacritty.file_path }}{{ alacritty.file_name }}"
+  register: config
+
+- name: Create backup path for existing config in ./backup/config/alacritty
+  file:
+    path: "{{ alacritty.backup_path }}"
+    state: directory
+  when: config.stat.exists and config.stat.islnk == False
+
+- name: Backup existing ~/.config/alacritty/alacritty.yml to ./backup/config/alacritty/alacritty.yml
+  command: mv "{{ alacritty.file_path }}{{ alacritty.file_name }}" "{{ alacritty.backup_path }}"
+  when: config.stat.exists and config.stat.islnk == False
+
+- name: Create config path
+  file:
+    path: "{{ alacritty.file_path }}"
+    state: directory
+
+- name: Link config files
+  file:
+    src: "{{ alacritty.repo_path }}{{ alacritty.file_name }}"
+    dest: "{{ alacritty.file_path }}{{ alacritty.file_name }}"
+    state: link
+
+- name: Link theme file
+  file:
+    src: "{{ theme.repo_path }}{{ theme.file_name }}"
+    dest: "{{ alacritty.file_path }}{{ theme.file_name }}"
+    state: link

@@ -1,0 +1,13 @@
+---
+- name: "pacman -S i3-gaps i3blocks i3lock i3status sysstat"
+  become: yes
+  community.general.pacman:
+    name:
+      - feh
+      - i3-gaps
+      - i3blocks
+      - i3lock
+      - i3status
+      - sysstat
+    state: latest
+    update_cache: yes

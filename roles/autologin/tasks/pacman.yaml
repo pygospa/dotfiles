@@ -1,0 +1,47 @@
+---
+- name: Register getty override.conf path
+  stat:
+    path: "{{ tty1.path }}"
+  register: override_path
+
+- name: Register getty override.conf file
+  stat:
+    path: "{{ tty1.file }}"
+  register: override_file
+
+- name: Create directory if not exists
+  become: yes
+  file:
+    path: "{{ tty1.path }}"
+    mode: 0755
+    group: root
+    owner: root
+    state: directory
+  when: override_path.stat.exists == false
+
+- name: Backup existing getty@tty1.service
+  become: yes
+  command: mv "{{ tty1.file }}" "{{ tty1.backup }}" creates="{{tty1.backup}}" removes="{{tty1.file}}"
+  when: override_file.stat.exists and override_file.stat.islnk == False
+
+- name: Link drop-in snippet for getty@tty1.service
+  become: yes
+  file:
+    src: "{{ tty1.repo }}"
+    dest: "{{ tty1.file }}"
+    state: link
+
+- name: Register existing ~/.profile
+  stat:
+    path: "{{ profile.file }}"
+  register: profile_file
+
+- name: Backup existing ~/.profile
+  command: mv "{{ profile.file }}" "{{ profile.backup }}" creates="{{profile.backup}}" removes="{{profile.file}}"
+  when: profile_file.stat.exists and profile_file.stat.islnk == False
+
+- name: Link dot/profile to ~/.profile
+  file:
+    src: "{{ profile.repo }}"
+    dest: "{{ profile.file }}"
+    state: link

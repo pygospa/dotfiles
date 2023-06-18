@@ -1,0 +1,11 @@
+---
+- name: Install ant, gradle and maven via pacman
+  become: yes
+  community.general.pacman:
+    name:
+      - ant
+      - gradle
+      - maven
+    state: latest
+    update_cache: yes
+

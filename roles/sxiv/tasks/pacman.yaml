@@ -1,0 +1,8 @@
+---
+- name: Install sxiv via pacman
+  become: yes
+  community.general.pacman:
+    name: sxiv
+    state: latest
+    update_cache: yes
+

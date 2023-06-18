@@ -1,0 +1,23 @@
+---
+- name: Clone/update AUR for jenv 
+  ansible.builtin.git:
+    repo: "https://aur.archlinux.org/jenv-git.git"
+    dest: "{{ aur.jenv }}"
+
+- name: Build jenv package
+  ansible.builtin.command: makepkg -f
+  args:
+    chdir: "{{ aur.jenv }}"
+
+- name: Install jenv using pacman
+  become: yes
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_fileglob:
+    - "{{ aur.jenv }}/*.zst"
+
+- name: Register installed JVMs/JDKs with jenv
+  ansible.builtin.command: "jenv add {{ item }}"
+  with_fileglob:
+    - "/usr/lib/jvm/java-*"

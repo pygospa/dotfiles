@@ -1,0 +1,10 @@
+---
+- name: Update raspi-config
+  become: yes
+  apt:
+    name: raspi-config
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+
+

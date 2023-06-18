@@ -1,0 +1,20 @@
+---
+- name: Install python and tools/libraries
+  become: yes
+  community.general.pacman:
+    name:
+      - python
+      - python-pipenv
+      - pyside2
+      - pyside2-tools
+      - python-pyqt5
+      - python-gobject
+      - python-wxpython
+      - python-jedi
+      - python-scipy
+      - python-matplotlib
+      - python-pandas
+      - python-numpy
+    state: present
+    update_cache: yes
+

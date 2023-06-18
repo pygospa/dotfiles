@@ -1,0 +1,32 @@
+---
+- name: Install japanese fonts via pacman
+  become: yes
+  community.general.pacman:
+    name:
+      - adobe-source-han-sans-jp-fonts
+      - adobe-source-han-serif-jp-fonts
+      - noto-fonts-cjk
+      - otf-ipafont
+      - ttf-hanazono
+      - ttf-sazanami
+    state: latest
+    update_cache: yes
+
+- name: Install input method framework (fcitx5) w/ configtool and qt/gtk support via pacman
+  become: yes
+  community.general.pacman:
+    name:
+      - fcitx5
+      - fcitx5-configtool
+      - fcitx5-qt
+      - fcitx5-gtk
+    state: latest
+    update_cache: yes
+
+- name: Install input method engine (mozc) via pacman
+  become: yes
+  community.general.pacman:
+    name:
+      - fcitx5-mozc
+    state: latest
+    update_cache: yes

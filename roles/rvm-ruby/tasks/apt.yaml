@@ -1,0 +1,21 @@
+---
+- name: Install software-properties-common for PPA repositories
+  become: yes
+  apt:
+    name: software-properties-common
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Add PPA for rvm
+  become: yes
+  apt_repository:
+    repo: ppa:rael-gc/rvm
+    state: present
+
+- name: Install rvm
+  become: yes
+  apt:
+    name: rvm
+    state: latest
+    update_cache: yes

@@ -1,0 +1,11 @@
+---
+- name: Install nvidia, opencl and opengl drivers
+  become: yes
+  community.general.pacman:
+    name:
+      - nvidia
+      - nvidia-utils
+      - nvidia-settings
+      - opencl-nvidia
+    state: present
+

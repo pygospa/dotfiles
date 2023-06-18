@@ -1,0 +1,23 @@
+---
+- name: Link spotify.list to /etc/apt/sources.list.d
+  become: yes
+  file:
+    src: "{{ ansible_env.PWD }}/apt/spotify.list"
+    dest: "/etc/apt/sources.list.d/spotify.list"
+    state: link
+
+- name: Add Spotify signing key to apt
+  become: yes
+  apt_key:
+    url: "{{ item }}"
+    state: present
+  loop:
+    - "https://download.spotify.com/debian/pubkey.gpg"
+    - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
+
+- name: Install Spotify via apt
+  become: yes
+  apt:
+    name: spotify-client
+    state: latest
+    update_cache: yes

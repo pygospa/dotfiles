@@ -1,0 +1,3 @@
+---
+aur:
+  mattermost: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/mattermost-desktop"

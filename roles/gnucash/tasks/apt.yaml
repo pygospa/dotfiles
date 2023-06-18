@@ -1,0 +1,14 @@
+---
+- name: Install GnuCash via apt
+  become: yes
+  apt:
+    pkg:
+      - gnucash
+      - libdbi1
+      - libdbd-pgsql
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+  environment:
+    LANG: de_DE.utf8
+    LANGUAGE: de_DE.utf8

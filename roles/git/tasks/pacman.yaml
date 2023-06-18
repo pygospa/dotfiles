@@ -1,0 +1,9 @@
+---
+- name: Install git
+  become: yes
+  community.general.pacman:
+    name:
+      - git
+    state: latest
+    update_cache: yes
+

@@ -1,0 +1,3 @@
+---
+aur:
+  enpass: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/enpass-bin"

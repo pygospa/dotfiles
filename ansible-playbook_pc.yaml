@@ -3,8 +3,52 @@
   hosts: localhost
   connection: local
   roles:
-    - directory-setup
+    #- directory-setup
     - update-package-repo
-    - update-cpu-microcode
-    - X11
-    - discord
+    #- update-cpu-microcode
+    #- gnu-build-system
+    #- X11
+    #- nvidia
+    #- alacritty
+    #- anki
+    #- audacity
+    #- audioripping
+    #- autologin
+    #- blender
+    #- chromium
+    #- darktable
+    - davinciresolve
+    #- digikam
+    #- discord
+    #- docker
+    #- fonts
+    #- enpass
+    #- gimp
+    #- git
+    #- gnucash
+    #- gnupg
+    #- i3
+    #- intellij-idea
+    #- japanese
+    #- java-openjdk
+    #- java-build-tools
+    #- java-jenv
+    - keychain
+    #- libreoffice
+    #- locate
+    #- nvm-nodejs
+    #- mattermost
+    #- mpv
+    #- octave
+    #- portfolio-performance
+    #- python
+    #- rofi
+    #- rvm-ruby
+    #- shotwell
+    #- spotify
+    #- sxiv
+    #- telegram
+    #- tmux
+    #- vim
+    #- vpn
+    #- zsh

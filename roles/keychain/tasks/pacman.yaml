@@ -1,0 +1,7 @@
+---
+- name: Install keychain via pacman (pacman -S keychain)
+  become: yes
+  community.general.pacman:
+    name: keychain
+    state: latest
+    update_cache: yes

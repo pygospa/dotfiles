@@ -1,0 +1,9 @@
+---
+- name: Install breeze-icons (non-KDE desktop) and Digikam via pacman
+  become: yes
+  community.general.pacman:
+    name:
+      - breeze-icons
+      - digikam
+    state: latest
+    update_cache: yes

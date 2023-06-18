@@ -1,0 +1,2 @@
+dry:
+  scriptpath: "{{ ansible_env.HOME }}//tmp/dryup.sh"

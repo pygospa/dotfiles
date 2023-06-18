@@ -1,0 +1,3 @@
+---
+aur:
+  davinci: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/davincireslove"

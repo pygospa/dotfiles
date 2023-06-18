@@ -1,0 +1,3 @@
+---
+aur:
+  spotify: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/spotify"

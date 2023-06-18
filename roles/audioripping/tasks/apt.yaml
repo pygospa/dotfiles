@@ -1,0 +1,16 @@
+---
+- name: Install abcde, cdrdao, flac, opus, lame and id3 via apt
+  become: yes
+  apt:
+    pkg:
+      - abcde
+      - cdrdao
+      - flac
+      - id3
+      - id3v2
+      - lame
+      - libopus0
+      - opus-tools
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600

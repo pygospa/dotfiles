@@ -1,0 +1,3 @@
+---
+- import_tasks: pacman.yaml
+  when: ansible_facts['os_family']|lower == 'archlinux'

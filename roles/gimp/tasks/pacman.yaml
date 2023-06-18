@@ -1,0 +1,7 @@
+---
+- name: Install gimp via pacman
+  become: yes
+  community.general.pacman:
+    name: gimp
+    state: latest
+    update_cache: yes

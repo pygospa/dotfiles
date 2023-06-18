@@ -1,0 +1,63 @@
+---
+- name: Install rvm
+  import_tasks: apt.yaml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Install rvm
+  import_tasks: pacman.yaml
+  when: ansible_facts['os_family']|lower == 'archlinux'
+
+- name: Source zsh config
+  import_tasks: zsh.yaml
+  when: ansible_env.SHELL == '/usr/bin/zsh'
+
+- name: Source bash config
+  import_tasks: bash.yaml
+  when: ansible_env.SHELL == '/usr/bin/bash' or ansible_env.SHELL == '/bin/bash'
+
+- name: Register existing gemrc
+  stat:
+    path: "{{ gemrc.file }}"
+  register: gemrc_file
+
+- name: Register existing rvmrc
+  stat:
+    path: "{{ rvmrc.file }}"
+  register: rvmrc_file
+
+- name: Backup existing gemrc
+  command:
+    cmd: mv "{{ gemrc.file }}" "{{ gemrc.backup }}"
+    creates: "{{ gemrc.backup }}"
+    removes: "{{ gemrc.file }}"
+  when: gemrc_file.stat.exists and gemrc_file.stat.islnk == False
+
+- name: Backup existing rvmrc
+  command:
+    cmd: mv "{{ rvmrc.file }}" "{{ rvmrc.backup }}"
+    creates: "{{ rvmrc.backup }}"
+    removes: "{{ rvmrc.file }}"
+  when: rvmrc_file.stat.exists and rvmrc_file.stat.islnk == False
+
+- name: Link rvmrc to home directory
+  file:
+    src: "{{ rvmrc.repo }}"
+    dest: "{{ rvmrc.file }}"
+    state: link
+    force: yes
+
+- name: Link gemrc to home directory
+  file:
+    src: "{{ gemrc.repo }}"
+    dest: "{{ gemrc.file }}"
+    state: link
+    force: yes
+
+- name: Upgrade rvm version and install latest Ruby version
+  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm get stable"
+
+- name: Install Ruby version 2.7
+  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm install ruby-2.7"
+
+- name: Set default
+  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm alias create default 2.7"

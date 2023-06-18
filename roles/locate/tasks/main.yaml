@@ -1,0 +1,13 @@
+---
+- import_tasks: apt.yaml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- import_tasks: emerge.yaml
+  when: ansible_facts['os_family']|lower == 'gentoo'
+
+- import_tasks: pacman.yaml
+  when: ansible_facts['os_family']|lower == 'archlinux'
+
+- name: Update [m|p]locate.db database
+  become: yes
+  command: updatedb

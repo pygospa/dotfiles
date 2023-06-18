@@ -1,0 +1,13 @@
+---
+- name: Install digiKam via apt
+  become: yes
+  apt:
+    install_recommends: no
+    pkg:
+      - digikam
+      - exiv2
+      - kipi-plugins
+      - graphicsmagick-imagemagick-compat
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600

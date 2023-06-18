@@ -1,0 +1,19 @@
+---
+- name: Install abcde, cdrdao, flac, opus, lame and id3 + needed dependecies via pacman
+  become: yes
+  community.general.pacman:
+    name:
+      - abcde
+      - cdparanoia
+      - cdrdao
+      - cdrtools
+      - flac
+      - glyr
+      - id3v2
+      - inetutils
+      - mp3info
+      - lame
+      - opus
+      - opus-tools
+    state: latest
+    update_cache: yes

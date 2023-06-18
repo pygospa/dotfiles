@@ -1,0 +1,3 @@
+---
+aur:
+  jenv: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/jenv-git"

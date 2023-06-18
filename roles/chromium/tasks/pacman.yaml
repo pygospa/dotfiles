@@ -1,0 +1,7 @@
+---
+- name: Install Chromium via pacman
+  become: yes
+  community.general.pacman:
+    name: chromium
+    state: latest
+    update_cache: yes

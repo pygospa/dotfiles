@@ -1,0 +1,10 @@
+---
+- name: Install openvpn & networkmanager-openvpn
+  become: yes
+  community.general.pacman:
+    name:
+      - openvpn
+      - networkmanager-openvpn
+    state: latest
+    update_cache: yes
+

@@ -1,0 +1,7 @@
+---
+- name: Install alacritty via pacman (pacman -S alacritty)
+  become: yes
+  community.general.pacman:
+    name: alacritty
+    state: latest
+    update_cache: yes

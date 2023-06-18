@@ -1,0 +1,35 @@
+---
+- include_vars: vault.yaml
+
+- name: Install samba
+  import_tasks: apt.yaml
+  when: ansible_facts['os_family']|lower == 'debian'
+
+- name: Copy samba config
+  become: yes
+  copy:
+    src: "{{ playbook_dir }}/smb.conf"
+    dest: "/etc/samba/smb.conf"
+    mode: '0644'
+    owner: root
+    group: root
+
+- name: Restart samba
+  become: yes
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: smbd
+
+- name: Create Samba users
+  become: yes
+  shell: >
+    (pdbedit --user={{ item.username }} 2>&1 > /dev/null)
+    || (echo '{{ item.password }}'; echo '{{ item.password }}')
+    | smbpasswd -s -a {{ item.username }}
+  register: smbpasswd
+  changed_when: "'Added user' in smbpasswd.stdout"
+  with_items: "{{ users }}"
+  loop_control:
+    label: "{{ item.username }}"
+

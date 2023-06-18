@@ -1,0 +1,15 @@
+---
+- name: Register existing config in ~/.config/i3/config
+  stat:
+    path: "{{ xdgi3config.file }}"
+  register: xdg_path
+
+- name: Create backup path for existing config in ./backup/config/i3
+  file:
+    path: "{{ xdgi3config.backup_path }}"
+    state: directory
+  when: xdg_path.stat.exists and xdg_path.stat.islnk == False
+
+- name: Backup existing config from ~/.config/i3/config to ./backup/config/i3/config
+  command: mv "{{ xdgi3config.file }}" "{{ xdgi3config.backup_file }}"
+  when: xdg_path.stat.exists and xdg_path.stat.islnk == False

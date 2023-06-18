@@ -1,0 +1,7 @@
+---
+- name: Install plocate via pacman
+  become: yes
+  community.general.pacman:
+    name: plocate
+    state: latest
+    update_cache: yes

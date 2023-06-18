@@ -1,0 +1,11 @@
+---
+tty1:
+  repo: "{{ansible_env.PWD}}/etc/systemd/system/getty.target.wants/getty@tty1.service"
+  file: "/etc/systemd/system/getty.target.wants/getty@tty1.service"
+  backup: "{{ansible_env.PWD}}/backup/getty@tty1.service"
+  path: "/etc/systemd/system/getty.target.wants"
+
+profile:
+  repo: "{{ansible_env.PWD}}/profile"
+  file: "{{ansible_env.HOME}}/.profile"
+  backup: "{{ansible_env.PWD}}/backup/profile"

@@ -10,7 +10,7 @@
   become: yes
   vars:
     src_path: "/boot/loader/entries/arch.conf"
-    bkp_path: "{{ ansible_env.PWD }}/backup/arch.conf"
+    bkp_path: "{{ ansible_env.PWD }}/backup/arch.conf-{{ date }}"
   command: mv "{{ src_path }}" "{{ bkp_path }}" creates="{{ bkp_path }}" removes="{{ src_path }}"
 
 - name: Load updated microcode into the initrd using systemd

@@ -1,0 +1,11 @@
+---
+- name: Install octave & gnuplot via apt
+  become: yes
+  apt:
+    pkg:
+      - octave
+      - octave-doc
+      - gnuplot
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
