@@ -4,7 +4,7 @@
     path: "{{ ansible_env.PWD }}/backup"
     state: directory
 
-- name: Create directory for AUR
+- name: Create tmp directory
   file:
-    path: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur"
+    path: "{{ ansible_env.PWD }}/tmp"
     state: directory

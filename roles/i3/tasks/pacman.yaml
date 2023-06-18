@@ -11,3 +11,15 @@
       - sysstat
     state: latest
     update_cache: yes
+
+- name: "paru -S xtitle"
+  become: yes
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: xtitle
+    use: paru
+    state: present
+    update_cache: yes
+
+- set_fact:
+    i3_installed: True

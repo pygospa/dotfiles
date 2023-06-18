@@ -24,3 +24,7 @@ i3blocklets:
   backup: "{{ ansible_env.PWD }}/backup/config/i3blocks/blocklets"
   repo: "{{ ansible_env.PWD }}/config/i3blocks/blocklets"
 
+xinitrc:
+  file: "{{ ansible_env.HOME }}/.xinitrc"
+  backup: "{{ ansible_env.PWD }}/backup/xinitrc"
+  repo: "{{ ansible_env.PWD }}/xinitrc"

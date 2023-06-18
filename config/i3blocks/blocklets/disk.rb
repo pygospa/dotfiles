@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# 
 # Creates a JSON object compatible to i3bar input protocol to use with i3blocks
 # containing total size, used size and percentage of given HDD.
 # HDD name must be grepable in df, so it is sufficient to provide the device
@@ -39,7 +40,7 @@ percentage = df[4].to_f
 #
 color = BlockletHelper.getColor(percentage, threshold)
 blocklet[:full_text] = " #{used}/#{total}GB (#{percentage}%)"
-blocklet[:min_width] = " #{total}G"
+blocklet[:min_width] = " #{total}G"
 blocklet[:color] = color unless color.nil?
 
 puts JSON.generate(blocklet)

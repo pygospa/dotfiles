@@ -53,11 +53,14 @@
     state: link
     force: yes
 
-- name: Upgrade rvm version and install latest Ruby version
+- name: Upgrade rvm version
   command: "{{ ansible_env.HOME }}/.rvm/bin/rvm get stable"
 
-- name: Install Ruby version 2.7
-  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm install ruby-2.7"
+- name: Get openssl from rvm
+  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm pkg install openssl"
 
-- name: Set default
-  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm alias create default 2.7"
+- name: Install latest stable Ruby version
+  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm install ruby --with-openssl-dir=$HOME/.rvm/usr"
+
+- name: Set latest stable Ruby version to default Ruby
+  command: "{{ ansible_env.HOME }}/.rvm/bin/rvm alias create default ruby"

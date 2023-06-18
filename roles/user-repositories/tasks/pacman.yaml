@@ -1,0 +1,41 @@
+---
+- name: Create the `aur_builder` user
+  become: yes
+  ansible.builtin.user:
+    name: aur_builder
+    create_home: yes
+    group: wheel
+
+- name: Allow the `aur_builder` user to run `sudo pacman` without a password
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/11-install-aur_builder
+    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    validate: 'visudo -cf %s'
+
+
+- name: Install dependencies for paru (pacman -S cargo)
+  become: yes
+  community.general.pacman:
+    name: cargo
+    state: latest
+    update_cache: yes
+
+- name: Clone/update AUR for paru
+  ansible.builtin.git:
+    repo: "https://aur.archlinux.org/paru.git"
+    dest: "{{ ansible_env.PWD }}/tmp/paru"
+
+- name: Build paru package
+  ansible.builtin.command: makepkg -f
+  args:
+    chdir: "{{ ansible_env.PWD }}/tmp/paru"
+
+- name: Install paru using pacman
+  become: yes
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+  with_fileglob:
+    - "{{ ansible_env.PWD }}/tmp/paru/*.zst"

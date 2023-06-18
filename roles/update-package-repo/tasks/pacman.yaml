@@ -1,4 +1,4 @@
-- name: "pacman -Syu"
+- name: "pacman -Syyuu"
   become: yes
   community.general.pacman:
     update_cache: yes

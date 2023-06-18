@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+#
 # Helper functions needed in every blocklet are sourced out into this module to
 # have DRY code.
 # Blocklets are scripts that create JSON objects compatible to i3bar input

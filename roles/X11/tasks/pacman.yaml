@@ -3,13 +3,17 @@
   become: yes
   community.general.pacman:
     name:
-      - nvidia
-      - nvidia-settings
       - xorg-apps
       - xorg-server
       - xorg-xinit
     state: latest
     update_cache: yes
+
+- name: Register existing conf files
+  become: yes
+  stat:
+    path: "{{ keyboard.dest }}"
+  register: xorg_conf
 
 - name: Backup existing conf files
   become: yes
@@ -17,6 +21,7 @@
   loop:
     - { bkp: "{{ keyboard.bkp }}", dest: "{{ keyboard.dest }}" }
     - { bkp: "{{ nvidia.bkp }}", dest: "{{ nvidia.dest }}" }
+  when: xorg_conf.stat.exists and xorg_conf.stat.islnk == False
 
 - name: Link config files
   become: yes

@@ -1,10 +1,3 @@
 ---
-- set_fact:
-    i3_installed: False
-
 - import_tasks: pacman.yaml
   when: ansible_facts['os_family']|lower == 'archlinux'
-
-- import_tasks: config.yaml
-  when: i3_installed
-

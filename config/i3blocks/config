@@ -67,21 +67,10 @@ command=ruby ~/.config/i3blocks/blocklets/nvidia_gpu.rb
 [separator]
 
 
-
-#[separator]
+#------------------------------------------------------------------------------
+# Harddisk-Icon (fa-hdd-o [&#xf0a0;]), used, available, percentage
+# Short: Harddisc-Icon, percentage
 #
-#
-#
-#
-#[bandwidth]
-#label=
-#instance=enp0s25
-#interval=1
-#min_width="IN 100K OUT 100K"
-#color=#268bd2
-#
-#[separator]
-
 [disk]
 label=/
 color=#8be9fd
@@ -100,6 +89,11 @@ command=ruby ~/.config/i3blocks/blocklets/disk.rb home
 
 [separator]
 
+
+#------------------------------------------------------------------------------
+# Calendar-Icon (fa-calendar [&#xf073;]), Mon 19.06.2023 13:26:19
+# Short: Harddisc-Icon, percentage
+#
 [date]
 label= 
 command=date '+%a %d.%m.%Y %T'

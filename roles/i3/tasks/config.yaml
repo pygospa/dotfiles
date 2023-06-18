@@ -1,0 +1,52 @@
+---
+- name: Backup any files in traditional path (i.e. ~/.i3/config)
+  import_tasks: backup_traditional.yaml
+
+- name: Backup any files in XDG conform config path (i.e. ~/.config/i3)
+  import_tasks: backup_xdg.yaml
+
+- name: Create directory for i3 config
+  file:
+    path: "{{ xdgi3config.file_path }}"
+    state: directory
+
+- name: Link i3 config file
+  file:
+    src: "{{ xdgi3config.repo_path }}"
+    dest: "{{ xdgi3config.file }}"
+    state: link
+
+- name: Backup any i3blocks config files existing in ~/.config/i3blocks
+  import_tasks: backup_i3blocks.yaml
+
+- name: Create directory for i3 config
+  file:
+    path: "{{ i3blocks.file_path }}"
+    state: directory
+
+- name: Link i3blocks config file
+  file:
+    src: "{{ i3blocks.repo }}"
+    dest: "{{ i3blocks.file }}"
+    state: link
+
+- name: Link blocklets
+  file:
+    src: "{{ i3blocklets.repo }}"
+    dest: "{{ i3blocklets.dir }}"
+    state: link
+
+- name: Register xinitrc
+  stat:
+    path: "{{ xinitrc.file }}"
+  register: xinitrc_file
+
+- name: Backup xinitrc if exists
+  command: mv "{{ xinitrc.file }}" "{{ xinitrc.backup }}"
+  when: xinitrc_file.stat.exists and xinitrc_file.stat.islnk == False
+
+- name: Link to dot/xinitrc
+  file:
+    src: "{{ xinitrc.repo }}"
+    dest: "{{ xinitrc.file }}"
+    state: link

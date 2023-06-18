@@ -1,7 +1,12 @@
 ---
-- name: Install alacritty via pacman (pacman -S alacritty)
+- name: Install alacritty and font via pacman (pacman -S alacritty hack-ttf)
   become: yes
   community.general.pacman:
-    name: alacritty
+    name:
+      - alacritty
+      - ttf-hack
     state: latest
     update_cache: yes
+
+- set_fact:
+    alacritty_installed: True

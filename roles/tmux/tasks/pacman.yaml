@@ -1,7 +1,19 @@
 ---
+- name: "paru -S urlview"
+  become: yes
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: urlview
+    use: paru
+    state: present
+    update_cache: yes
+
 - name: "pacman -S tmux"
   become: yes
   community.general.pacman:
     name: tmux
     state: latest
     update_cache: yes
+
+- set_fact:
+    tmux_installed: True
