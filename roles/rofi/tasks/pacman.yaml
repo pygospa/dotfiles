@@ -1,7 +1,0 @@
----
-- name: Install rofi via pacman (pacman -S rofi)
-  become: yes
-  community.general.pacman:
-    name: rofi
-    state: latest
-    update_cache: yes

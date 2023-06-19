@@ -13,9 +13,19 @@
     repo: ppa:rael-gc/rvm
     state: present
 
-- name: Install rvm
+- name: Install rvm and gnupg2
   become: yes
   apt:
     name: rvm
     state: latest
     update_cache: yes
+
+- name: Add current user to rvm group
+  become: yes
+  ansible.builtin.user:
+    user: "{{ lookup('env', 'USER') }}"
+    group: rvm
+
+- set_fact:
+    rvm_installed: True
+    rvm_bin: "/usr/share/rvm/bin/rvm"

@@ -36,6 +36,32 @@
     dest: "{{ i3blocklets.dir }}"
     state: link
 
+- name: Register existing config in ~/.config/rofi/config.rasi
+  stat:
+    path: "{{ rofi.file_path }}{{ rofi.file_name }}"
+  register: rofi_config 
+
+- name: Create backup path for existing config
+  file:
+    path: "{{ rofi.backup_path }}"
+    state: directory
+  when: rofi_config.stat.exists and rofi_config.stat.islnk == False
+
+- name: Backup existing rofi config files
+  command: mv "{{ rofi.file_path }}{{ rofi.file_name }}" "{{ rofi.backup_path }}"
+  when: rofi_config.stat.exists and rofi_config.stat.islnk == False
+
+- name: Create config path for rofi
+  file:
+    path: "{{ rofi.file_path }}"
+    state: directory
+
+- name: Link rofi config files
+  file:
+    src: "{{ rofi.repo_path }}{{ rofi.file_name }}"
+    dest: "{{ rofi.file_path }}{{ rofi.file_name }}"
+    state: link
+
 - name: Register xinitrc
   stat:
     path: "{{ xinitrc.file }}"

@@ -1,6 +1,0 @@
----
-rofi:
-  file_name: config.rasi
-  file_path: "{{ ansible_env.HOME }}/.config/rofi/"
-  backup_path: "{{ ansible_env.PWD }}/backup/config/rofi/"
-  repo_path: "{{ ansible_env.PWD }}/config/rofi/"

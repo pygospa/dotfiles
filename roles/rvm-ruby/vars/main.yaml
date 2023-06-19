@@ -9,7 +9,3 @@ rvmrc:
   backup: "{{ ansible_env.PWD }}/backup/rvmrc"
   repo: "{{ ansible_env.PWD }}/rvmrc"
 
-files:
-  - { src: "{{ rvmrc.repo }}", dest: "{{ rvmrc.file }}", backup: "{{ rvmrc.backup }}" }
-  - { src: "{{ gemrc.repo }}", dest: "{{ gemrc.file }}", backup: "{{ gemrc.backup }}" }
-
