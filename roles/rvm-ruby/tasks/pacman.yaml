@@ -4,4 +4,4 @@
 
 - set_fact:
     rvm_installed: True
-    rvm_bin: "{{ ansible_env.HOME }}/.rvm/bin/rvm"
+    rvm_path: "{{ ansible_env.HOME }}/.rvm"

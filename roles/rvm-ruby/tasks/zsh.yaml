@@ -1,3 +1,0 @@
----
-- name: Source the .zshrc file
-  shell: zsh "{{ ansible_env.HOME }}/.zshrc"

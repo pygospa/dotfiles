@@ -3,15 +3,7 @@
   command: gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
 - name: Upgrade rvm version
-  command: "{{ rvm_bin }} get stable"
-
-- name: Source zsh config
-  import_tasks: zsh.yaml
-  when: ansible_env.SHELL == '/usr/bin/zsh'
-
-- name: Source bash config
-  import_tasks: bash.yaml
-  when: ansible_env.SHELL == '/usr/bin/bash' or ansible_env.SHELL == '/bin/bash'
+  command: "{{ rvm_path }}/bin/rvm get stable"
 
 - name: Register existing rvmrc
   stat:
@@ -49,13 +41,10 @@
     - { src: "{{ gemrc.repo }}", dest: "{{ gemrc.file }}" }
 
 - name: Get openssl from rvm
-  command: "{{ rvm_bin }} pkg install openssl"
+  command: "{{ rvm_path }}/bin/rvm pkg install openssl"
 
 - name: Install latest stable Ruby version
-  command: "{{ rvm_bin }} install ruby --with-openssl-dir=$HOME/.rvm/usr"
+  command: "{{ rvm_path }}/bin/rvm install ruby --with-openssl-dir={{ rvm_path }}//usr"
 
 - name: Set latest stable Ruby version to default Ruby
-  command: "{{ rvm_bin }} alias create default ruby"
-
-
-
+  command: "{{ rvm_path }}/bin/rvm alias create default ruby"

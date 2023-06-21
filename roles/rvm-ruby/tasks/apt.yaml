@@ -28,4 +28,4 @@
 
 - set_fact:
     rvm_installed: True
-    rvm_bin: "/usr/share/rvm/bin/rvm"
+    rvm_path: "/usr/share/rvm"

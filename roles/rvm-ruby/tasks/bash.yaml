@@ -1,3 +1,0 @@
----
-- name: Source the .bash_profile file
-  shell: "bash {{ ansible_env.HOME }}/.bash_profile"
