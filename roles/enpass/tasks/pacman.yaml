@@ -1,18 +1,9 @@
 ---
-- name: Clone/update AUR for enpass 
-  ansible.builtin.git:
-    repo: "https://aur.archlinux.org/enpass-bin.git"
-    dest: "{{ aur.enpass }}"
-
-- name: Build enpass package
-  ansible.builtin.command: makepkg -f
-  args:
-    chdir: "{{ aur.enpass }}"
-
-- name: Install enpass using pacman
+- name: "paru -S enpass"
   become: yes
-  community.general.pacman:
-    name: "{{ item }}"
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: enpass
+    use: paru
     state: present
-  with_fileglob:
-    - "{{ aur.enpass }}/*.zst"
+    update_cache: yes
