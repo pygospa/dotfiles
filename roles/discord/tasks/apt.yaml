@@ -12,12 +12,12 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: Download discord from dircord.com to /tmp/discord.deb
+- name: Download discord from dircord.com to .dot/tmp/discord.deb
   get_url:
     url: https://discord.com/api/download?platform=linux&format=deb
-    dest: /tmp/discord.deb
+    dest: "{{ ansible_env.PWD }}/tmp/discord.deb"
 
 - name: Install /tmp/discrod.deb via apt
   become: yes
   apt:
-    deb: /tmp/discord.deb
+    deb: "{{ ansible_env.PWD }}/tmp/discord.deb"

@@ -1,0 +1,27 @@
+---
+- name: Add enpass to /etc/apt/sources.list.d/
+  become: yes
+  file:
+    src: "{{ ansible_env.PWD }}/etc/apt/sources.list.d/enpass.list"
+    dest: "/etc/apt/sources.list.d/enpass.list"
+    state: link
+
+- name: Get key from website
+  become: yes
+  ansible.builtin.get_url:
+    url: https://apt.enpass.io/keys/enpass-linux.key
+    dest: /etc/apt/trusted.gpg.d/enpass.asc
+
+- name: Get public key from keyserver
+  ansible.builtin.apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 6F7565879798C2FC
+
+- name: Install enpass via apt
+  become: yes
+  apt:
+    name:
+      - enpass
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
