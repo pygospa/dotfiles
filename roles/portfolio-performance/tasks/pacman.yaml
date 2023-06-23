@@ -1,18 +1,9 @@
 ---
-- name: Clone/update AUR for portfolio-performance
-  ansible.builtin.git:
-    repo: 'https://aur.archlinux.org/portfolio-performance-bin.git'
-    dest: "{{ aur.portfolio_performance }}"
-
-- name: Build portfolio-performance package
-  ansible.builtin.command: makepkg -f
-  args:
-    chdir: "{{ aur.portfolio_performance }}"
-
-- name: Install portfolio-performance using pacman
+- name: paru -S portfolio-performance
   become: yes
-  community.general.pacman:
-    name: "{{ item }}"
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: portfolio-performance-bin
+    use: paru
     state: present
-  with_fileglob:
-    - "{{ aur.portfolio_performance }}/*.zst"
+    update_cache: yes

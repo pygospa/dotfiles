@@ -2,18 +2,13 @@
 - name: Link spotify.list to /etc/apt/sources.list.d
   become: yes
   file:
-    src: "{{ ansible_env.PWD }}/apt/spotify.list"
+    src: "{{ ansible_env.PWD }}/etc/apt/sources.list.d/spotify.list"
     dest: "/etc/apt/sources.list.d/spotify.list"
     state: link
 
-- name: Add Spotify signing key to apt
+- name: Get spotify key
   become: yes
-  apt_key:
-    url: "{{ item }}"
-    state: present
-  loop:
-    - "https://download.spotify.com/debian/pubkey.gpg"
-    - "https://download.spotify.com/debian/pubkey_0D811D58.gpg"
+  shell: curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 
 - name: Install Spotify via apt
   become: yes

@@ -1,0 +1,11 @@
+---
+- name: Setup Mattermost repository on your system
+  become: yes
+  shell: curl -o- https://deb.packages.mattermost.com/setup-repo.sh | bash
+
+- name: Install Mattermost
+  become: yes
+  apt:
+    name: mattermost-desktop
+    state: latest
+    update_cache: yes

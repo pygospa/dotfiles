@@ -7,3 +7,6 @@
       - perl-finance-quote
     state: latest
     update_cache: yes
+  environment:
+    LANG: de_DE.utf8
+    LANGUAGE: de_DE.utf8

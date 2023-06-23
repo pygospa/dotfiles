@@ -1,8 +1,9 @@
 ---
-- name: Install Anki via pacman (pacman -S anki)
+- name: Install Anki via paru (paru -S anki)
   become: yes
-  community.general.pacman:
-    name:
-      - anki
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: anki
+    use: paru
     state: latest
     update_cache: yes

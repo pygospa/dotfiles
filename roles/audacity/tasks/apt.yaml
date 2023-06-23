@@ -1,0 +1,10 @@
+---
+- name: Install audacity and easytag
+  become: yes
+  apt:
+    name:
+      - audacity
+      - easytag
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600

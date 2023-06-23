@@ -1,18 +1,9 @@
 ---
-- name: Clone/update AUR for mattermost 
-  ansible.builtin.git:
-    repo: "https://aur.archlinux.org/mattermost-desktop.git"
-    dest: "{{ aur.mattermost }}"
-
-- name: Build mattermost package
-  ansible.builtin.command: makepkg -f
-  args:
-    chdir: "{{ aur.mattermost }}"
-
-- name: Install mattermost using pacman
+- name: paru -S mattermost
   become: yes
-  community.general.pacman:
-    name: "{{ item }}"
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: mattermost
+    use: paru
     state: present
-  with_fileglob:
-    - "{{ aur.mattermost }}/*.zst"
+    update_cache: yes

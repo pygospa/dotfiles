@@ -8,20 +8,11 @@
     name: libcurl-gnutls
     state: present
 
-- name: Clone/update AUR for spotify 
-  ansible.builtin.git:
-    repo: "https://aur.archlinux.org/spotify.git"
-    dest: "{{ aur.spotify }}"
-
-- name: Build spotify package
-  ansible.builtin.command: makepkg -f
-  args:
-    chdir: "{{ aur.spotify }}"
-
-- name: Install spotify using pacman
+- name: paru -S spotify
   become: yes
-  community.general.pacman:
-    name: "{{ item }}"
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: spotify
+    use: paru
     state: present
-  with_fileglob:
-    - "{{ aur.spotify }}/*.zst"
+    update_cache: yes
