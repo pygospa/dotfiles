@@ -104,8 +104,48 @@ which can be subsumized as a philosopy:
 
 ### Ansible
 
+I run a couple of devices with different OS; minimum:
+- 1 Thinkpad running Ubuntu Linux
+- 1 Macbook running macOS / Ubuntu (dual boot)
+- 1 Dektop PC running Arch Linux / Windows (dual boot)
+- a handfull of Raspberry Pis running (single boot): Arch, LibreELEC, Raspbian or Ubuntu
+
+Therefore my goal was to have a modular ansible setup,
+that I could run on all these devices,
+so it had to be as generic as possible,
+and allow me to change things with minimal effort
+where changes are necessary.
+
+This is how I solved this:
+The ansible playbook(s)
+will just consist of a list of roles,
+each role representing a (group of) **application(s)** that I use,
+or system configurations that I like to have.
+
+The jumpin point for each roles is `roles/<ROLENAME>/tasks/main.yaml`,
+and this file will further split up the job,
+by importing a list of tasks,
+which are bound to conditions:
+- A task to install the software, which meets the OS ansible is running on
+  (checked via `ansible_facts['os_family']`); this will include either:
+	- `/roles/<ROLENAME>/tasks/apt.yaml` for Debian/Ubuntu
+	- `/roles/<ROLENAME>/tasks/pacman.yaml` for Arch Linux
+	- `/roles/<ROLENAME>/tasks/brew.yaml` for macOS
+- A task to configure the software installed `roles/<ROLNAME>/tasks/config.yaml`,
+  if something gets installed
+  (checked via a boolean variable `<ROLENAME_installed>` set by the install tasks) 
+- If needed: `/roles/<ROLENAME>/vars/main.yaml` containing variables;
+  this will usually just contain the config files that need to be backed up and
+  how and where to link the config files in this repo
+
 
 ### Software I use
+
+The list of software can be found in the ansible playbook or by checking out the
+roles directory.
+
+Generally I try to use open source software wherever possible, and I tend to use
+CLI software and prefer those to GUI variants.
 
 
 ## History

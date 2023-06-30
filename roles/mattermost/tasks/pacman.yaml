@@ -7,3 +7,6 @@
     use: paru
     state: present
     update_cache: yes
+
+- set_fact:
+    mattermost_installed: False

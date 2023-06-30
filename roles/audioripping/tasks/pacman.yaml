@@ -1,5 +1,5 @@
 ---
-- name: Install abcde, cdrdao, flac, opus, lame and id3 + needed dependecies via pacman
+- name: Install beets, cdrdao, flac, opus, lame and id3 + needed dependecies via pacman
   become: yes
   community.general.pacman:
     name:
@@ -7,6 +7,7 @@
       - cdparanoia
       - cdrdao
       - cdrtools
+      - beets
       - flac
       - glyr
       - id3v2
@@ -16,4 +17,13 @@
       - opus
       - opus-tools
     state: latest
+    update_cache: yes
+
+- name: Install abcde via paru
+  become: yes
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: abcde
+    use: paru
+    state: present
     update_cache: yes

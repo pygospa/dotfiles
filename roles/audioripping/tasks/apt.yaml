@@ -4,10 +4,14 @@
   apt:
     pkg:
       - abcde
+      - cdparanoia
       - cdrdao
+      - beets
       - flac
+      - glyrc
       - id3
       - id3v2
+      - mp3info
       - lame
       - libopus0
       - opus-tools

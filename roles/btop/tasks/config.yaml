@@ -1,0 +1,43 @@
+---
+- name: Register existing btop config in ~/.config/btop
+  stat:
+    path: "{{ ansible_env.HOME }}/.config/btop/btop.conf"
+  register: existing_config
+
+- name: Register existing btop dracula.theme in ~/.config/btop/themes
+  stat:
+    path: "{{ ansible_env.HOME }}/.config/btop/themes/dracula.theme"
+  register: existing_theme
+
+- name: Create backup path for existing config
+  file:
+    path: "{{ ansible_env.PWD }}/backup/config/btop"
+    state: directory
+  when: existing_config.stat.exists and existing_config.stat.islnk == False
+
+- name: Create backup path for existing theme
+  file:
+    path: "{{ ansible_env.PWD }}/backup/config/themes"
+    state: directory
+  when: existing_theme.stat.exists and existing_theme.stat.islnk == False
+
+- name: Backup existing config
+  command: mv "{{ ansible_env.HOME}}/.config/btop/btop.conf" "{{ ansible_env.PWD }}/backup/config/btop/btop.conf"
+  when: existing_config.stat.exists and existing_config.stat.islnk == False
+
+- name: Backup existing theme
+  command: mv "{{ ansible_env.HOME}}/.config/btop/themes/dracula.theme" "{{ ansible_env.PWD }}/backup/config/btop/themes/dracula.theme"
+  when: existing_theme.stat.exists and existing_theme.stat.islnk == False
+
+- name: Link config file
+  file:
+    src: "{{ ansible_env.PWD }}/config/btop/btop.conf"
+    dest: "{{ ansible_env.HOME }}/.config/btop/btop.conf"
+    state: link
+
+- name: Link theme file
+  file:
+    src: "{{ ansible_env.PWD }}/config/btop/themes/dracula.theme"
+    dest: "{{ ansible_env.HOME }}/.config/btop/themes/dracula.theme"
+    state: link
+

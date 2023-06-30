@@ -1,7 +1,7 @@
 ---
-- name: Install mpv (better mplayer alternative)
+- name: Install hq (cli html processor)
   become: yes
   community.general.pacman:
-    name: mpv
+    name: hq
     state: latest
     update_cache: yes

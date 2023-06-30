@@ -1,6 +1,3 @@
 ---
 - import_tasks: pacman.yaml
   when: ansible_facts['os_family']|lower == 'archlinux'
-
-- import_tasks: apt.yaml
-  when: ansible_facts['os_family']|lower == 'debian'

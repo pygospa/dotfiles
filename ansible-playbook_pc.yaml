@@ -3,52 +3,60 @@
   hosts: localhost
   connection: local
   roles:
-    #- directory-setup
+    - directory-setup
     - update-package-repo
     #- update-cpu-microcode
-    #- gnu-build-system
-    #- X11
-    #- nvidia
-    #- alacritty
-    #- anki
-    #- audacity
-    #- audioripping
+    - gnu-build-system
+    - user-repositories
+    - X11
+    - nvidia
+    - alacritty
+    - anki
+    - audacity
+    - audioripping
     #- autologin
-    #- blender
-    #- chromium
+    - bat
+    - blender
+    - btop
+    - chromium
     #- darktable
-    - davinciresolve
+    #- davinciresolve
     #- digikam
-    #- discord
+    - discord
     #- docker
+    - duf
     #- fonts
-    #- enpass
-    #- gimp
+    - enpass
+    - gimp
     #- git
-    #- gnucash
-    #- gnupg
-    #- i3
+    - gnucash
+    #- gnupg # on ubuntu needed before rvm-ruby!
+    - hq
+    - i3
     #- intellij-idea
     #- japanese
     #- java-openjdk
     #- java-build-tools
     #- java-jenv
-    - keychain
-    #- libreoffice
+    - jq
+    #- keychain
+    - libreoffice
     #- locate
+    - mattermost
+    - mpv
+    - ncdu
     #- nvm-nodejs
-    #- mattermost
-    #- mpv
     #- octave
-    #- portfolio-performance
+    - portfolio-performance
     #- python
-    #- rofi
-    #- rvm-ruby
+    - rust
+    - rvm-ruby
     #- shotwell
-    #- spotify
+    - spotify
     #- sxiv
-    #- telegram
-    #- tmux
+    - telegram
+    - tmux
     #- vim
     #- vpn
     #- zsh
+    - qsv

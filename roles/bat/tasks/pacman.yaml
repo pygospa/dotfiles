@@ -1,7 +1,7 @@
 ---
-- name: Install mpv (better mplayer alternative)
+- name: Install bat (better cat)
   become: yes
   community.general.pacman:
-    name: mpv
+    name: bat
     state: latest
     update_cache: yes

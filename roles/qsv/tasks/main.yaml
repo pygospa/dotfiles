@@ -1,0 +1,4 @@
+---
+- name: Install qsv (cli csv processor) via rust cargo
+  command: cargo install qsv --locked --features feature_capable
+  when: ansible_facts['os_family']|lower == 'archlinux'

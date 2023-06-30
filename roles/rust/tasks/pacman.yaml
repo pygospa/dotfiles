@@ -1,7 +1,7 @@
 ---
-- name: Install mpv (better mplayer alternative)
+- name: Install rust
   become: yes
   community.general.pacman:
-    name: mpv
+    name: rust
     state: latest
     update_cache: yes

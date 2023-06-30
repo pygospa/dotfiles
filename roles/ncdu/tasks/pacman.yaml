@@ -1,7 +1,8 @@
 ---
-- name: Install mpv (better mplayer alternative)
+- name: Install ncdu (ncurses based interactive disk usage)
   become: yes
   community.general.pacman:
-    name: mpv
+    name: ncdu
     state: latest
     update_cache: yes
+

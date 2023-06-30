@@ -1,7 +1,7 @@
 ---
-- name: Install mpv (better mplayer alternative)
+- name: Install jq (cli json processor)
   become: yes
   community.general.pacman:
-    name: mpv
+    name: jq
     state: latest
     update_cache: yes
