@@ -1,0 +1,9 @@
+---
+- name: Rapid Photo Downloader (for transfering photos from photo devices, and renaming and backuping them)
+  become: yes
+  apt:
+    pkg:
+      - rapid-photo-downloader
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600

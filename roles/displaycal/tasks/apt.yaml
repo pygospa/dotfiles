@@ -1,0 +1,9 @@
+---
+- name: DisplayCal (for calibrating displays using spectro-/calorimeter hardware)
+  become: yes
+  apt:
+    pkg:
+      - displaycal
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600

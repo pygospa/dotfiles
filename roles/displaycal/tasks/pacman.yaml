@@ -1,0 +1,8 @@
+---
+- name: DisplayCal (for calibrating displays using spectro-/calorimeter hardware)
+  become: yes
+  community.general.pacman:
+    name:
+      - displaycal
+    state: latest
+    update_cache: yes

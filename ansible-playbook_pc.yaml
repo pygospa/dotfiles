@@ -9,7 +9,7 @@
     - gnu-build-system
     - user-repositories
     - X11
-    - nvidia
+    #- nvidia
     - alacritty
     - anki
     - audacity
@@ -19,10 +19,12 @@
     - blender
     - btop
     - chromium
-    #- darktable
+    - darktable
+    #- dbeaver
     #- davinciresolve
-    #- digikam
+    - digikam
     - discord
+    - displaycal
     #- docker
     - duf
     #- fonts
@@ -49,13 +51,15 @@
     #- octave
     - portfolio-performance
     #- python
+    - rapid-photo-downloader
     - rust
     - rvm-ruby
-    #- shotwell
+    - shotwell
     - spotify
     #- sxiv
     - telegram
     - tmux
+    #- unityhub
     #- vim
     #- vpn
     #- zsh
