@@ -123,6 +123,15 @@ if [[ `uname -n` == stephen-hawking ]]; then
 	fi
 fi
 
+# File to source if the OS is Ubuntu
+if [[ -n "$(uname -a | grep Ubuntu)" ]]; then
+    if [ -f ~/.zsh/hosts/ubuntu.zsh ]; then
+        source ~/.zsh/hosts/ubuntu.zsh ];
+    else
+        printf "Note: Running on Ubuntu, but ~/.zsh/ubuntu.zsh is unavailable\n"
+    fi
+fi
+
 
 #------------------------------------------------------------------------------
 # Load custom executable functions
