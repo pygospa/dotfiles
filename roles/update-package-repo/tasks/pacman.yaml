@@ -1,5 +1,0 @@
-- name: "pacman -Syyuu"
-  become: yes
-  community.general.pacman:
-    update_cache: yes
-    upgrade: yes

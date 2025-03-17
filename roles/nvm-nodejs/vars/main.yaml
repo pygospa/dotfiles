@@ -1,5 +1,0 @@
----
-installscript: "{{ ansible_env.HOME }}/tmp/install.sh"
-
-aur:
-  nvm: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/nvm"

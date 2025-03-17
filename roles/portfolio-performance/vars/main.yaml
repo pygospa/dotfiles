@@ -1,4 +1,0 @@
----
-aur:
-  portfolio_performance: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/portfolio-performance-bin"
-

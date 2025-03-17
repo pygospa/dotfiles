@@ -1,8 +1,0 @@
----
-- name: Install vim via apt
-  become: yes
-  apt:
-    name: vim
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600

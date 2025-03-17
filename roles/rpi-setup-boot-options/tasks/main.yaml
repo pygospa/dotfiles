@@ -1,9 +1,0 @@
----
-# B1 = cli, B2 = cli autologin, B3 = desktop, B4 = desktop autologin
-- name: Boot to CLI
-  become: yes
-  shell: "raspi-config nonint do_boot_behaviour B1"
-
-- name: Wait for Network at Boot
-  become: yes
-  shell: "raspi-config nonint do_boot_wait 0"

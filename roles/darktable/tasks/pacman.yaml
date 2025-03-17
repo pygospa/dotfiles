@@ -1,7 +1,0 @@
----
-- name: Install darktable via pacman
-  become: yes
-  community.general.pacman:
-    name: darktable
-    state: latest
-    update_cache: yes

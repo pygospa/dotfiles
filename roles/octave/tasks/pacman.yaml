@@ -1,7 +1,0 @@
----
-- name: Install octave via pacman
-  become: yes
-  community.general.pacman:
-    name: octave
-    state: latest
-    update_cache: yes

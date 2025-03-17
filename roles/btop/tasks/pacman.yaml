@@ -1,7 +1,0 @@
----
-- name: Install btop (besser top/htop alternative)
-  become: yes
-  community.general.pacman:
-    name: btop
-    state: latest
-    update_cache: yes

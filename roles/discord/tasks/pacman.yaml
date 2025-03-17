@@ -1,7 +1,0 @@
----
-- name: Install discord via pacman (pacman -S discord)
-  become: yes
-  community.general.pacman:
-    name: discord
-    state: latest
-    update_cache: yes

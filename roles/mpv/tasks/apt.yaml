@@ -1,8 +1,0 @@
----
-- name: Install mpv (better mplayer alternative)
-  become: yes
-  apt:
-    name: mpv
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600

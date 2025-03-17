@@ -1,9 +1,0 @@
----
-- set_fact:
-    alacritty_installed: False
-
-- import_tasks: pacman.yaml
-  when: ansible_facts['os_family']|lower == 'archlinux'
-
-- import_tasks: config.yaml
-  when: alacritty_installed

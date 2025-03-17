@@ -1,7 +1,0 @@
----
-- name: pacman -S vim
-  become: yes
-  community.general.pacman:
-    name: vim
-    state: latest
-    update_cache: yes

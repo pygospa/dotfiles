@@ -1,6 +1,0 @@
----
-tmux:
-  file_name: "tmux.conf"
-  file_path: "{{ ansible_env.HOME }}/.config/tmux/"
-  backup_path: "{{ ansible_env.PWD }}/backup/config/tmux/"
-  repo_path: "{{ ansible_env.PWD }}/config/tmux/"

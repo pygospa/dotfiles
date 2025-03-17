@@ -1,3 +1,0 @@
----
-aur:
-  intellij_idea_ue: "{{ ansible_env.HOME }}/files/sw/linux/arch/aur/intellij-idea-ultimate-edition"

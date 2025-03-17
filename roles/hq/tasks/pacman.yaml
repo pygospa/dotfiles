@@ -1,7 +1,0 @@
----
-- name: Install hq (cli html processor)
-  become: yes
-  community.general.pacman:
-    name: hq
-    state: latest
-    update_cache: yes

@@ -1,7 +1,0 @@
----
-- name: Install duf (better df alternative)
-  become: yes
-  community.general.pacman:
-    name: duf
-    state: latest
-    update_cache: yes

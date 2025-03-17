@@ -1,9 +1,0 @@
----
-- name: paru -S portfolio-performance
-  become: yes
-  become_user: aur_builder
-  kewlfft.aur.aur:
-    name: portfolio-performance-bin
-    use: paru
-    state: present
-    update_cache: yes

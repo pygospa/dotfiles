@@ -1,8 +1,0 @@
----
-- name: Install GNU Build System via apt (i.e. autotools, make, gettext, pkg-conf, gcc, diffuitls etc.)
-  become: yes
-  apt:
-    name: build-essential
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600

@@ -1,9 +1,0 @@
----
-- name: Install Anki via paru (paru -S anki)
-  become: yes
-  become_user: aur_builder
-  kewlfft.aur.aur:
-    name: anki
-    use: paru
-    state: latest
-    update_cache: yes

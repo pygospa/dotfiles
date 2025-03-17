@@ -1,8 +1,0 @@
----
-- name: Install ncdu (ncurses based interactive disk usage)
-  become: yes
-  apt:
-    name: ncdu
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600

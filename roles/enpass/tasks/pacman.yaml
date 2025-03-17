@@ -1,9 +1,0 @@
----
-- name: "paru -S enpass"
-  become: yes
-  become_user: aur_builder
-  kewlfft.aur.aur:
-    name: enpass
-    use: paru
-    state: present
-    update_cache: yes

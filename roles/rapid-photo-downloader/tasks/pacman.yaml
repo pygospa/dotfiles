@@ -1,8 +1,0 @@
----
-- name: Rapid Photo Downloader (for transfering photos from photo devices, and renaming and backuping them)
-  become: yes
-  community.general.pacman:
-    name:
-      - rapid-photo-downloader
-    state: latest
-    update_cache: yes

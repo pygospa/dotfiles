@@ -1,8 +1,0 @@
----
-- name: Install Telegram via apt
-  become: yes
-  apt:
-    name: telegram-desktop
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600

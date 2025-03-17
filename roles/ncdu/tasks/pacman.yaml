@@ -1,8 +1,0 @@
----
-- name: Install ncdu (ncurses based interactive disk usage)
-  become: yes
-  community.general.pacman:
-    name: ncdu
-    state: latest
-    update_cache: yes
-

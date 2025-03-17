@@ -1,7 +1,0 @@
----
-- name: Install audacity via pacman
-  become: yes
-  community.general.pacman:
-    name: audacity
-    state: latest
-    update_cache: yes

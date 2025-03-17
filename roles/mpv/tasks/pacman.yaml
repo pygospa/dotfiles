@@ -1,7 +1,0 @@
----
-- name: Install mpv (better mplayer alternative)
-  become: yes
-  community.general.pacman:
-    name: mpv
-    state: latest
-    update_cache: yes

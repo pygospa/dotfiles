@@ -1,7 +1,0 @@
----
-- name: Register existing config in ~/.config/Mattermost
-  stat:
-    path: "{{ ansible_env.HOME }}/.config/btop/btop.conf"
-  register: existing_config
-
-

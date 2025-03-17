@@ -1,5 +1,0 @@
-# Use Debian packages for Ubuntu where Ubuntu has none
-# https://askubuntu.com/questions/445487/what-debian-version-are-the-different-ubuntu-versions-based-on
-
-deb http://ftp.debian.org/debian buster main
-deb http://ftp.debian.org/debian buster-updates main

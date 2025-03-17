@@ -1,7 +1,0 @@
----
-- name: Install rvm
-  shell: curl -sSL https://get.rvm.io | bash -s stable
-
-- set_fact:
-    rvm_installed: True
-    rvm_path: "{{ ansible_env.HOME }}/.rvm"

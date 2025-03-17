@@ -1,9 +1,0 @@
-- name: Install zsh via pacman
-  become: yes
-  community.general.pacman:
-    name:
-      - zsh
-      - zsh-completions
-    state: latest
-    update_cache: yes
-

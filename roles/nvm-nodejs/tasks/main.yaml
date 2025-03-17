@@ -1,9 +1,0 @@
----
-- import_tasks: apt.yaml
-  when: ansible_facts['os_family']|lower == 'debian'
-
-- import_tasks: pacman.yaml
-  when: ansible_facts['os_family']|lower == 'archlinux'
-
-- name: Source nvm files and install and install lts & latest nodejs & npm
-  shell: export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install node && nvm install --lts && npm install --global gulp-cli

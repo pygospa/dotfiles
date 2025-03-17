@@ -1,7 +1,0 @@
----
-- name: Install rust
-  become: yes
-  community.general.pacman:
-    name: rust
-    state: latest
-    update_cache: yes

@@ -1,7 +1,0 @@
----
-- name: Install blender via pacman
-  become: yes
-  community.general.pacman:
-    name: blender
-    state: latest
-    update_cache: yes

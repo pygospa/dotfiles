@@ -1,7 +1,0 @@
----
-- name: Install jq (cli json processor)
-  become: yes
-  community.general.pacman:
-    name: jq
-    state: latest
-    update_cache: yes

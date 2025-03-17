@@ -1,8 +1,0 @@
----
-- name: Install GnuPG via pacman
-  become: yes
-  community.general.pacman:
-    name:
-      - gnupg
-    state: latest
-    update_cache: yes
