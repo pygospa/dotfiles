@@ -1,0 +1,12 @@
+---
+- name: Specific pi setup (for Thorin)
+  hosts: thorin
+  roles:
+    - rpi-remove-pi-user
+    - clone-dotfiles
+    - docker
+    - thorin-setup
+    - thorin-disks
+    - thorin-samba
+    - thorin-docker-services
+    - reboot

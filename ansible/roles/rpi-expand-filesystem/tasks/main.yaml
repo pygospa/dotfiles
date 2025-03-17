@@ -1,0 +1,4 @@
+---
+- name: Expand Filesystem
+  become: yes
+  shell: "raspi-config nonint do_expand_rootfs"

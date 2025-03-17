@@ -1,0 +1,21 @@
+---
+- name: Create directories
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop: "{{ mount_dirs }}"
+
+- name: Append to fstab
+  become: yes
+  lineinfile:
+    path: /etc/fstab
+    line: "{{ item }}"
+  loop: "{{ fstab_lines }}"
+
+- name: Install exfat
+  import_tasks: apt.yaml
+
+- name: Mount drives
+  command: mount -a
+  become: true

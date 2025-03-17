@@ -1,0 +1,11 @@
+---
+- name: Initial Raspberry Pi setup
+  hosts: thorin
+  roles:
+    - update-package-repo
+    - rpi-expand-filesystem
+    - rpi-update-raspi-config
+    - rpi-setup-boot-options
+    - rpi-setup-locales
+    - rpi-setup-users
+    - reboot

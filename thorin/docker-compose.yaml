@@ -1,0 +1,154 @@
+version: '3'
+
+services:
+  cadvisor:
+    container_name: cadvisor
+    image: gcr.io/cadvisor/cadvisor
+    ports:
+      - 8084:8080
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /var/disk/:/dev/disk:ro
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:stable
+    ports:
+      - 8123:8123
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+
+  homer:
+    container_name: homer
+    image: b4bz/homer
+    ports:
+      - 80:8080
+    user: 1001:1001
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/homer/assets:/www/assets
+
+  mariadb:
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    container_name: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASERD=nextcloud
+      - MYSQL_USER=nextcloud
+    image: tobi312/rpi-mariadb:10.6-alpine
+    ports: 
+      - 3306:3306
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/mariadb:/var/lib/mysql
+
+  nextcloud:
+    container_name: nextcloud
+    environment:
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MQSYL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=mariadb
+      - PHP_UPLOAD_LIMIT=10G
+      - PHP_MEMORY_LIMIT=512M
+    image: nextcloud
+    ports:
+      - 8181:80
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/nextcloud:/var/www/html
+
+  node-exporter:
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+      - '--path.rootfs=/rootfs'
+      - '--collector.systemd'
+      - '--collector.textfile.directory=/host/etc/node-exporter/'
+    container_name: node-exporter
+    image: prom/node-exporter
+    pid: 'host'
+    ports:
+      - 9100:9100
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+      - /etc:/host/etc:ro
+      - /run:/run:ro
+      - /var/lib:/var/lib:ro
+
+  opodsync:
+    build:
+      context: ./opodsync
+      dockerfile: Dockerfile
+    container_name: opodsync
+    ports:
+      - 8083:8080
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/opodsync/server/data:/var/www/server/data
+
+  pihole:
+    container_name: pihole
+    environment:
+      TZ: Europe/Berlin
+      WEBPASSWORD: ${WEBPASSWORD}
+    image: pihole/pihole:latest
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 8081:80/tcp
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/pihole/etc/pihole:/etc/pihole
+      - /srv/docker/pihole/etc/dnsmasq.d:/etc/dnsmasq.d
+      - /srv/docker/pihole/var/log:/var/log
+
+  postgresql:
+    container_name: postgresql
+    environment:
+      - POSTGRES_USER=pgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    image: postgres:16.3-alpine3.19
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/postgresql:/var/lib/postgresql
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/prometheus:/etc/prometheus
+
+  radicale:
+    build:
+      context: /srv/docker/radicale
+    container_name: radicale
+    ports:
+      - 5232:5232
+    restart: unless-stopped
+    volumes:
+      - /src/docker/radicale/storage:/radicale

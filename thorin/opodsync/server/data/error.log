@@ -1,0 +1,862 @@
+[22-Aug-2024 11:25:34 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:25:34 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:25:34 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:25:34 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:34 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:36 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:36 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:36 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 11:58:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:14 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:14 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:14 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:14 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:17 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:17 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:17 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:02:17 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:25:47 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:25:47 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:25:47 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:25:47 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:25:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:25:56 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 12:26:04 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:13:00 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(33): DB->simple()
+#3 /var/www/server/inc/DB.php(17): DB->migrate()
+#4 /var/www/server/index.php(82): DB->__construct()
+#5 {main}
+[22-Aug-2024 13:13:00 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(33): DB->simple()
+#3 /var/www/server/inc/DB.php(17): DB->migrate()
+#4 /var/www/server/index.php(82): DB->__construct()
+#5 {main}
+[22-Aug-2024 13:13:27 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:13:27 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:13:27 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:13:27 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:24:25 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:24:25 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:24:25 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:24:25 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:40 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:40 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:40 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:40 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:45 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:45 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:45 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:27:45 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:42 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:44 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:43:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:50 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:52 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:54 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:54 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:44:54 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:47:51 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:47:53 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:47:53 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 13:47:53 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 14:16:59 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 14:16:59 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 14:23:24 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 14:23:24 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 14:23:24 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}
+[22-Aug-2024 14:23:24 UTC] ErrorException: SQLite3Stmt::execute(): Unable to execute statement: database is locked in /var/www/server/inc/DB.php:81
+Stack trace:
+#0 [internal function]: {closure}()
+#1 /var/www/server/inc/DB.php(81): SQLite3Stmt->execute()
+#2 /var/www/server/inc/DB.php(98): DB->simple()
+#3 /var/www/server/inc/DB.php(26): DB->firstColumn()
+#4 /var/www/server/inc/DB.php(17): DB->migrate()
+#5 /var/www/server/index.php(82): DB->__construct()
+#6 {main}

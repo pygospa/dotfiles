@@ -1,0 +1,149 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/v5/search for icons options
+
+title: "Thorin"
+subtitle: "192.168.1.12"
+logo: "assets/icons/thorin.png"
+#icon: "fas fa-skull-crossbones" # Optional icon
+
+header: true
+footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
+
+# Optional theme customization
+theme: default
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#ffffff"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link: "#3273dc"
+    link-hover: "#363636"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link: "#3273dc"
+    link-hover: "#ffdd57"
+
+# Optional message
+#message:
+#  #url: https://b4bz.io
+#  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+#  title: "Demo !"
+#  icon: "fa fa-grin"
+#  content: "This is a dummy homepage demo. <br /> Find more information on <a href='https://github.com/bastienwirtz/homer'>github.com/bastienwirtz/homer</a>"
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "Contribute"
+    icon: "fab fa-github"
+    url: "https://github.com/bastienwirtz/homer"
+    target: "_blank" # optional html a tag target attribute
+  - name: "Wiki"
+    icon: "fas fa-book"
+    url: "https://www.wikipedia.org/"
+  # this will link to a second homer page that will load config from additional-page.yml and keep default config values as in config.yml file
+  # see url field and assets/additional-page.yml.dist used in this example:
+  #- name: "another page!"
+  #  icon: "fas fa-file-alt"
+  #  url: "#additional-page" 
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Devices"
+    icon: "fas fa-laptop-house"
+    items:
+      - name: "Wlan Router"
+        subtitle: "Linksys WRT1900AC"
+        logo: "assets/logos/linksys.svg"
+        tag: "infra"
+        url: "http://192.168.1.1"
+      - name: "Vodafone Modem"
+        subtitle: "Vodafone WiFi 6 Station TG6442VF"
+        logo: "assets/logos/vodafone.svg"
+        tag: "infra"
+        url: "http://192.168.0.1"
+          #- name: "Kabel Deutschland Router"
+          #  subtitle: "HitronTechnologies CVE30360-KDG"
+          #  logo: "assets/logos/hitron.png"
+          #  tag: "infra"
+          #  url: "http://192.168.0.1"
+  - name: "Applications"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Home Assistant"
+        logo: "assets/logos/homeassistant.png"
+        tag: "app"
+        url: "http://192.168.1.12:8123"
+      - name: "NextCloud"
+        logo: "assets/logos/nextcloud.png"
+        tag: "app"
+        url: "//${hostname}:8181"
+#        url: "http://192.168.1.12:8181/"
+      - name: "Pihole"
+        logo: "assets/logos/pihole.svg"
+        subtitle: "PiHole admin pannel"
+        tag: "app"
+        url: "http://192.168.1.12:8081/admin"
+      - name: "Radicale"
+        logo: "assets/logos/radicale.svg"
+        subtitle: "CalDAV and CardDAV server"
+        tag: "app"
+        url: "http://192.168.1.12:5232"
+      - name: "oPodSync"
+        logo: "assets/logos/opodsync.svg"
+        subtitle: "Podcast synchronization server"
+        tag: "app"
+        url: "http://192.168.1.12:8083"
+  - name: "Monitoring"
+    icon: "fas fa-desktop"
+    items:
+      - name: "Grafana"
+        logo: "assets/logos/grafana.svg"
+        tag: "monitoring"
+        url: "http://192.168.1.12:3000"
+      - name: "Prometheus"
+        logo: "assets/logos/prometheus.svg"
+        tag: "monitoring"
+        url: "http://192.168.1.12:9090"
+      - name: "cAdvisor"
+        logo: "assets/logos/cadvisor.svg"
+        tag: "monitoring"
+        url: "http://192.168.1.12:8084"
+      - name: "Prometheus Node Exporter"
+        logo: "assets/logos/node-exporter.png"
+        tag: "monitoring"
+        url: "http://192.168.1.12:9100"
+  - name: "Health Links"
+    icon: "fas fa-laptop-medical"
+    items:
+      - name: "Körperwerte Tabelle"
+        logo: "assets/logos/google-spreadsheet.png"
+        target: "_blank"
+        url: "https://docs.google.com/spreadsheets/d/17tPfCfvt8tVDhkCPbhojIoHHcZgr7flCoHlRAuvAtaQ/edit#gid=1132046408"
+  - name: "Local Links"
+    icon: "fas fa-house"
+    items:
+      - name: "Syncthing"
+        subtitle: "https://127.0.0.1:8384"
+        logo: "assets/logos/syncthing.png"
+        tag: "app"
+        url: "https://127.0.0.1:8384"

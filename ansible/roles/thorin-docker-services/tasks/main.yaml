@@ -1,0 +1,48 @@
+---
+- name: Ensure /srv/docker directory exists
+  file:
+    path: "/srv/docker"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  become: true
+
+- name: Copy .env file to /srv/docker
+  copy:
+    src: ../thorin/env
+    dest: /srv/docker/.env
+    owner: root
+    group: root
+    mode: 0600
+  become: true
+
+- name: Symlink docker-compose.yaml
+  file:
+    src: /home/pygospa/dot/thorin/docker-compose.yaml
+    dest: /srv/docker/docker-compose.yaml
+    state: link
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- name: Symlink docker services volumes
+  file:
+    src: /home/pygospa/dot/thorin/{{ item }}
+    dest: /srv/docker/{{ item }}
+    state: link
+    owner: root
+    group: root
+    mode: 0755
+  become: true
+  loop:
+    - homer
+    - opodsync
+    - radicale
+
+- name: Start or update containers
+  command: docker-compose up -d
+  args:
+    chdir: /srv/docker
+  become: true
