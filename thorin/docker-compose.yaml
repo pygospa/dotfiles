@@ -110,12 +110,14 @@ services:
     container_name: pihole
     environment:
       TZ: Europe/Berlin
-      WEBPASSWORD: ${WEBPASSWORD}
+      FTLCONF_webserver_api_password: ${WEBPASSWORD}
+      FTLCONF_dns_listeningMode: all
     image: pihole/pihole:latest
     ports:
       - 53:53/tcp
       - 53:53/udp
       - 8081:80/tcp
+      - 443:443/tcp
     restart: unless-stopped
     volumes:
       - /srv/docker/pihole/etc/pihole:/etc/pihole
